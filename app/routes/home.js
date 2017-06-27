@@ -45,7 +45,6 @@ let themes = [
 
 export default Ember.Route.extend({
     model(params){
-        console.log(params)
         return {
             layers,
             themes,
