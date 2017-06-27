@@ -2,5 +2,7 @@
 {{model.guid}}
 
 {{#each model.layers as |layer|}}
-    {{layer.sectionHeader}}
+
+    {{layer-wrapper layer=layer}}
+
 {{/each}}
