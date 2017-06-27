@@ -1,5 +1,6 @@
 {
   "name": "osfpages-admin",
   "dependencies": {
+    "font-awesome": "^4.7.0"
   }
 }
