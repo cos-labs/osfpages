@@ -1,2 +1,8 @@
 {{outlet}}
 {{model.guid}}
+
+{{#each model.layers as |layer|}}
+
+    {{layer-wrapper layer=layer}}
+
+{{/each}}
