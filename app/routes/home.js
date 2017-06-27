@@ -4,14 +4,26 @@ import Ember from 'ember';
 
 let layers = [
     {
-        sectionHeader: 'Section header',
+        sectionHeader: 'Title',
         showInMenu: true,
         data: {
             type: 'wiki',
             source: 'some source'
         },
         settings: {
-            themeId: 3,
+            themeId: 2,
+            truncate: false
+        }
+    },
+    {
+        sectionHeader: 'Example Wiki Page',
+        showInMenu: true,
+        data: {
+            type: 'wiki',
+            source: 'some source'
+        },
+        settings: {
+            themeId: 1,
             truncate: false
         }
     }
@@ -23,6 +35,11 @@ let themes = [
         id: 1,
         background: '#eeeeee',
         color: '#333333'
+    },
+    {
+        id: 2,
+        background: '#666666',
+        color: '#f8f8f8'
     }
 ];
 
