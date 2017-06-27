@@ -3,8 +3,17 @@
 @import "ember-bootstrap/bootstrap";
 
 
+/* Pages-nav */
+.pages-nav ul{
+    list-style-type: none;
+    li {
+        float: left;
+        padding: 4px;
+    }
+}
+
 /* Home */
 
 .home-content {
-padding: 50px;
+    padding: 50px;
 }
