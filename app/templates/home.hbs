@@ -1,8 +1,15 @@
 {{outlet}}
-{{model.guid}}
-
+<div class="container home-header">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="home-content">
+                <button class="btn btn-default pull-right" {{action toggleProperty 'editMode'}}>Toggle Edit Mode</button>
+            </div>
+        </div>
+    </div>
+</div>
 {{#each model.layers as |layer|}}
 
-    {{layer-wrapper layer=layer}}
+    {{layer-wrapper layer=layer editMode=editMode}}
 
 {{/each}}
