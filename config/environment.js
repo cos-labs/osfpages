@@ -5,7 +5,11 @@ module.exports = function(environment) {
     modulePrefix: 'osfpages-admin',
     environment: environment,
     rootURL: '/',
+      csrfCookie: 'csrftoken',
+      authorizationType: 'token',
     locationType: 'auto',
+      osfAPIUrl: 'https://staging-api.osf.io',
+      osfHostUrl: 'https://staging-api.osf.io',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -20,6 +24,9 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+        usingCors: true,
+        corsWithCreds: true,
+        apiURL: 'https://staging-api.osf.io'
     }
   };
 
@@ -41,6 +48,12 @@ module.exports = function(environment) {
 
     ENV.APP.rootElement = '#ember-testing';
   }
+
+    if (environment === 'stage') {
+        ENV['osfHostUrl'] = 'https://staging-api.osf.io';
+        ENV['osfApiUrl'] = 'https://staging-api.osf.io';
+
+    }
 
   if (environment === 'production') {
 
