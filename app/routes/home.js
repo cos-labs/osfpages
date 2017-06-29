@@ -4,6 +4,18 @@ import Ember from 'ember';
 
 let layers = [
     {
+        sectionHeader: 'Info',
+        showInMenu: true,
+        data: {
+            type: 'info',
+        },
+        settings: {
+            themeId: 2,
+            showDescription: true,
+           showAuthors: true
+        }
+    },
+    {
         sectionHeader: 'Title',
         showInMenu: true,
         data: {
