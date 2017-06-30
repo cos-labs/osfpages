@@ -1,0 +1,72 @@
+{{yield}}
+<div class="bootstrap-iso">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <form method="post">
+                    <div class="form-group ">
+                        <label class="control-label " for="info-title">
+                            Section Title
+                        </label>
+                        <input class="form-control" id="sectionTitle" name="info-title" type="text" />
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label ">
+                            Check all that apply
+                        </label>
+                        <div class=" ">
+                            <div class="checkbox">
+                                <label class="checkbox">
+                                    <input name="info-checkbox" type="checkbox" id="showInNavigation" value="Add to links menu" /> Add section to navigation
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label class="checkbox">
+                                    <input name="info-checkbox" type="checkbox" id="showDescription" value="Show project description" /> Show project description
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label class="checkbox">
+                                    <input name="info-checkbox" type="checkbox" id="showContributors" value="Show contributors" /> Show contributors
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label class="checkbox">
+                                    <input name="info-checkbox" type="checkbox" id="showBibliographicContributors" value="Show bibliographic contributors only" /> Show bibliographic contributors only
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label class="checkbox">
+                                    <input name="info-checkbox" type="checkbox" id="showAffiliatedIntuitions"  value="Show affiliated intuitions" /> Show affiliated intuitions
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label " for="info-theme-select">
+                            Select a Theme
+                        </label>
+                        <select class="select form-control" id="themeId" name="info-theme-select">
+                            <option value="1">
+                                Theme 1
+                            </option>
+                            <option value="2">
+                                Theme 2
+                            </option>
+                            <option value="3">
+                                Theme 3
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <button class="btn btn-primary " name="submit" type="submit">
+                                Save 
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -6,16 +6,16 @@
                     <h2> {{layer.sectionHeader}}</h2>
                     Some contents here
 
+                    {{component layer.component}}
+
                     {{#unless editMode}}
                         <button class="btn btn-default" {{action toggleProperty 'showSettings'}}>Edit section</button>
                     {{/unless}}
                 </div>
                 {{#if showSettings}}
                     <div class="layer-settings">
-                        These are the settings
-                        <button class="btn btn-default" {{action toggleProperty 'showSettings'}}>Close</button>
-
-
+                        <button type="button" class="close" aria-label="Close" {{action toggleProperty 'showSettings'}} ><span aria-hidden="true">&times;</span></button>
+                        {{component layer.settings.component layer=layer}}
                     </div>
                 {{/if}}
             </div>
