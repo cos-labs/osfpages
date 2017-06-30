@@ -36,11 +36,11 @@
     "ember-data": "^2.12.0",
     "ember-export-application-global": "^1.0.5",
     "ember-load-initializers": "^0.6.0",
+      "ember-osf": "^0.5.4",
     "ember-resolver": "^2.0.3",
     "ember-source": "~2.12.0",
     "ember-welcome-page": "^2.0.2",
-    "loader.js": "^4.2.3",
-    "ember-osf": "git+https://github.com/CenterForOpenScience/ember-osf.git#f6d676e179733a0ca6f59090ad0805a1a56f6e4d"
+    "loader.js": "^4.2.3"
   },
   "engines": {
     "node": ">= 4"
