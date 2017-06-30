@@ -1,26 +1,23 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+
 	init() {
     	this._super(...arguments);
     	this.errors = [];
 
   },
-  	didRender() {
+  	didInsertElement() {
     	this._super(...arguments);
-    	//get the settings properties
-    	var infoSettings = this.get('layer').settings.properties;
-    	$.each( infoSettings, function( key, value ) {		
-    		
-    		if(typeof(value) === "boolean"){
-    			$("#"+key).prop('checked', value);
-    		}else{
-    		   $("#"+key).val(value);
-    		}
-    		
-		});
-
-
+  },
+    actions: {
+	    saveForm() {
+			console.log(JSON.stringify(this.get('layer').settings.properties));
+	    },
+	     selectTheme(theme) {
+	     	this.get('layer').settings.properties.themeId
+      		this.set('theme', theme);
+    	}
   }
 
 });

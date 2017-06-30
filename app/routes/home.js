@@ -16,7 +16,7 @@ let layers = [
                 showContributors: true,
                 showBibliographicContributors: false,
                 showAffiliatedIntuitions: true,
-                themeId: 3,
+                themeId: 2,
             }
         }
     }
@@ -25,12 +25,14 @@ let layers = [
 let themes = [
     {
         id: 1,
-        background: '#eeeeee',
+        name:"Dark",
+        background: '#9e9e9e',
         color: '#333333'
     },
     {
         id: 2,
-        background: '#666666',
+        name:"light",
+        background: '#eeeeee',
         color: '#f8f8f8'
     }
 ];
