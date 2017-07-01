@@ -50,6 +50,7 @@
   "dependencies": {
     "babel": "^6.23.0",
     "babel-cli": "^6.24.1",
+    "ember-power-select": "^1.8.5",
     "yargs": "^8.0.2"
   }
 }

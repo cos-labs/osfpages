@@ -51,14 +51,14 @@
                         <label class="control-label " for="info-theme-select">
                             Select a Theme
                         </label>
-
-                        <select onchange={{action "selectTheme" value="target.value"}}>
-                          {{#each themes as |theme|}}
-                            <option value={{theme.id}} selected={{eq layer.settings.properties.themeId theme.id}}>{{theme.name}}</option>
-                          {{/each}}
-                        </select>
-
+                        {{#power-select
+                            selected=layer.settings.properties.themeId 
+                            options=themes 
+                           onchange=(action (mut layer.settings.properties.themeId)) as |theme|}}
+                          {{theme.id}}
+                        {{/power-select}}
                     </div>
+
                     <div class="form-group">
                         <div>
                             <button class="btn btn-primary " name="save" {{action "saveForm"}}>
