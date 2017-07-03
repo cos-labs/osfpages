@@ -1,0 +1,30 @@
+<div class="add-layer">
+    <div class="container">
+        <div class="row">
+            {{#if open}}
+                <div class="col-xs-4">
+                    <button class="btn btn-default btn-block" {{action 'addLayer' 'wiki'}}>Add Wiki layer</button>
+                </div>
+                <div class="col-xs-4">
+                    <button class="btn btn-default btn-block" {{action 'addLayer' 'link'}}>Add Link layer</button>
+                </div>
+                <div class="col-xs-4">
+                    <button class="btn btn-default btn-block" {{action 'addLayer' 'file'}} >Add Download layer</button>
+                </div>
+                <div class="add-layer-toggle">
+                    <div {{action 'toggleProperty' 'open'}}> Close </div>
+                </div>
+
+            {{else}}
+                <div class="add-layer-toggle">
+                    <div {{action 'toggleProperty' 'open'}}> Add layer </div>
+                </div>
+            {{/if}}
+
+
+
+
+        </div>
+    </div>
+
+</div>
