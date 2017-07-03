@@ -2,43 +2,54 @@ import Ember from 'ember';
 
 /* Using static data for now. GUID will load from server */
 
-let layers = [
+let layers = [  
     {
-        sectionHeader: 'Title',
+        sectionHeader: 'Info',
         showInMenu: true,
-        data: {
-            type: 'wiki',
-            source: 'some source'
-        },
+        component: 'info-layer',
         settings: {
-            themeId: 2,
-            truncate: false
+            component: 'info-layer-settings',
+            properties: {
+                sectionTitle:"Info Title",
+                showInNavigation: false,
+                showDescription: true,
+                showContributors: true,
+                showBibliographicContributors: false,
+                showAffiliatedIntuitions: true,
+                themeId: 2,
+            }
         }
     },
-    {
-        sectionHeader: 'Example Wiki Page',
+        {
+        sectionHeader: 'Info',
         showInMenu: true,
-        data: {
-            type: 'wiki',
-            source: 'some source'
-        },
+        component: 'info-layer',
         settings: {
-            themeId: 1,
-            truncate: false
+            component: 'info-layer-settings',
+            properties: {
+                sectionTitle:"Info Title",
+                showInNavigation: false,
+                showDescription: true,
+                showContributors: true,
+                showBibliographicContributors: false,
+                showAffiliatedIntuitions: true,
+                themeId: 2,
+            }
         }
     }
 ];
 
-
 let themes = [
     {
         id: 1,
-        background: '#eeeeee',
+        name:"Dark",
+        background: '#9e9e9e',
         color: '#333333'
     },
     {
         id: 2,
-        background: '#666666',
+        name:"light",
+        background: '#eeeeee',
         color: '#f8f8f8'
     }
 ];
