@@ -20,23 +20,22 @@ let layers = [
             }
         }
     },
-    {
-        sectionHeader: 'Info',
+     {
+        sectionHeader: 'Link',
         showInMenu: true,
-        component: 'layer-info',
+        component: 'layer-link',
         settings: {
-            component: 'layer-info-settings',
+            component: 'layer-link-settings',
             properties: {
-                sectionTitle:"Info Title",
+                sectionTitle:"Link Title",
                 showInNavigation: true,
-                showDescription: true,
-                showContributors: true,
-                showBibliographicContributors: false,
-                showAffiliatedIntuitions: true,
+                sectionLinkDescription:"this link goes to a place",
+                sectionLink:"www.example.com",
                 themeId: 2,
             }
         }
     }
+
 ];
 
 let themes = {
