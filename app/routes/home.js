@@ -35,6 +35,20 @@ let layers = [
         }
     },
     {
+        sectionHeader: 'Download',
+        showInMenu: true,
+        component: 'layer-file',
+        settings: {
+            component: 'layer-file-settings',
+            description: '',
+            properties: {
+                sectionTitle:"Download this file",
+                showInNavigation: true,
+                themeId: 1,
+            }
+        }
+    },
+    {
         sectionHeader: 'Wiki example',
         showInMenu: true,
         component: 'layer-wiki',
