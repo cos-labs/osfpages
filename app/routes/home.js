@@ -33,6 +33,20 @@ let layers = [
                 themeId: 2,
             }
         }
+    },
+    {
+        sectionHeader: 'Wiki example',
+        showInMenu: true,
+        component: 'layer-wiki',
+        settings: {
+            component: 'layer-wiki-settings',
+            properties: {
+                sectionTitle:"Wiki example",
+                showInNavigation: true,
+                addShowMore: false,
+                themeId: 2,
+            }
+        }
     }
 ];
 
