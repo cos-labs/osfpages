@@ -3,9 +3,9 @@ import Ember from 'ember';
 /* Using static data for now. GUID will load from server */
 
 let layers = [
-    {
+        {
         sectionHeader: 'Title',
-        showInMenu: false,
+        showInMenu: true,
         component: 'layer-title',
         settings: {
             component: 'layer-title-settings',
@@ -20,9 +20,9 @@ let layers = [
     {
         sectionHeader: 'Info',
         showInMenu: true,
-        component: 'info-layer',
+        component: 'layer-info',
         settings: {
-            component: 'info-layer-settings',
+            component: 'layer-info-settings',
             properties: {
                 sectionTitle:"Info Title",
                 showInNavigation: true,

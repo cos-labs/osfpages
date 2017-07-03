@@ -1,7 +1,7 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('info-layer', 'Integration | Component | info layer', {
+moduleForComponent('layer-info', 'Integration | Component | layer info', {
   integration: true
 });
 
@@ -10,15 +10,15 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{info-layer}}`);
+  this.render(hbs`{{layer-info}}`);
 
   assert.equal(this.$().text().trim(), '');
 
   // Template block usage:
   this.render(hbs`
-    {{#info-layer}}
+    {{#layer-info}}
       template block text
-    {{/info-layer}}
+    {{/layer-info}}
   `);
 
   assert.equal(this.$().text().trim(), 'template block text');
