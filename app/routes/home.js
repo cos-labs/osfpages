@@ -6,9 +6,9 @@ let layers = [
     {
         sectionHeader: 'Info',
         showInMenu: true,
-        component: 'info-layer',
+        component: 'layer-info',
         settings: {
-            component: 'info-layer-settings',
+            component: 'layer-info-settings',
             properties: {
                 sectionTitle:"Info Title",
                 showInNavigation: false,
@@ -23,9 +23,9 @@ let layers = [
         {
         sectionHeader: 'Info',
         showInMenu: true,
-        component: 'info-layer',
+        component: 'layer-info',
         settings: {
-            component: 'info-layer-settings',
+            component: 'layer-info-settings',
             properties: {
                 sectionTitle:"Info Title",
                 showInNavigation: false,
