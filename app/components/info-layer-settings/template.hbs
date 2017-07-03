@@ -1,5 +1,4 @@
-{{yield}}
-<div class="bootstrap-iso">
+<div class="info-layer-settings">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12">
@@ -53,8 +52,8 @@
                         </label>
                         Current theme {{layer.settings.properties.themeId}}
                         {{#power-select
-                            selected=layer.settings.properties.themeId 
-                            options=themes 
+                            selected=layer.settings.properties.themeId
+                            options=themes
                             onchange=(action (mut layer.settings.properties.themeId)) as |theme|}}
                           {{theme.name}}
                         {{/power-select}}
@@ -63,7 +62,7 @@
                     <div class="form-group">
                         <div>
                             <button class="btn btn-primary " name="save" {{action "saveForm"}}>
-                                Save 
+                                Save
                             </button>
                         </div>
                     </div>

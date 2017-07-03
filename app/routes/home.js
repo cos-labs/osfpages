@@ -2,7 +2,21 @@ import Ember from 'ember';
 
 /* Using static data for now. GUID will load from server */
 
-let layers = [  
+let layers = [
+    {
+        sectionHeader: 'Title',
+        showInMenu: false,
+        component: 'layer-title',
+        settings: {
+            component: 'layer-title-settings',
+            properties: {
+                showLinks: true,
+                showTitle: true,
+                showInNavigation: false,
+                themeId: 1,
+            }
+        }
+    },
     {
         sectionHeader: 'Info',
         showInMenu: true,
@@ -11,24 +25,7 @@ let layers = [
             component: 'info-layer-settings',
             properties: {
                 sectionTitle:"Info Title",
-                showInNavigation: false,
-                showDescription: true,
-                showContributors: true,
-                showBibliographicContributors: false,
-                showAffiliatedIntuitions: true,
-                themeId: 2,
-            }
-        }
-    },
-        {
-        sectionHeader: 'Info',
-        showInMenu: true,
-        component: 'info-layer',
-        settings: {
-            component: 'info-layer-settings',
-            properties: {
-                sectionTitle:"Info Title",
-                showInNavigation: false,
+                showInNavigation: true,
                 showDescription: true,
                 showContributors: true,
                 showBibliographicContributors: false,
@@ -39,20 +36,20 @@ let layers = [
     }
 ];
 
-let themes = [
-    {
+let themes = {
+    1: {
         id: 1,
-        name:"Dark",
+        name: "dark",
         background: '#9e9e9e',
-        color: '#333333'
-    },
-    {
-        id: 2,
-        name:"light",
-        background: '#eeeeee',
         color: '#f8f8f8'
+    },
+    2: {
+        id: 2,
+        name: "light",
+        background: '#eeeeee',
+        color: '#333333'
     }
-];
+};
 
 export default Ember.Route.extend({
     model(params){
