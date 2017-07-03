@@ -50,20 +50,20 @@ let layers = [
     }
 ];
 
-let themes = {
-    1: {
+let themes = [
+    {
         id: 1,
         name: "dark",
         background: '#9e9e9e',
         color: '#f8f8f8'
     },
-    2: {
+    {
         id: 2,
         name: "light",
         background: '#eeeeee',
         color: '#333333'
     }
-};
+];
 
 export default Ember.Route.extend({
     model(params){

@@ -1,0 +1,12 @@
+<div class="form-group ">
+    <label class="control-label " for="info-theme-select">
+        Select a Theme
+    </label>
+    Current theme {{currentTheme.name}}
+    {{#power-select
+        selected=currentTheme
+        options=themes
+        onchange=(action (mut currentTheme)) as |theme|}}
+        {{theme.name}}
+    {{/power-select}}
+</div>

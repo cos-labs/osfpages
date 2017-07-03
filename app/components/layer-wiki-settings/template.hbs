@@ -7,7 +7,7 @@
                         <label class="control-label " for="info-title">
                             Section Title
                         </label>
-                        {{input class="form-control" value=layer.settings.properties.sectionTitle id="sectionTitle" name="wiki-title" type="text"}}
+                        {{input class="form-control" value=layer.settings.properties.sectionTitle id="wikiSectionTitle" name="wiki-title" type="text"}}
                     </div>
                     <div class="form-group ">
                         <label class="control-label ">
@@ -28,18 +28,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group ">
-                        <label class="control-label " for="info-theme-select">
-                            Select a Theme
-                        </label>
-                        Current theme {{layer.settings.properties.themeId}}
-                        {{#power-select
-                            selected=layer.settings.properties.themeId
-                            options=themes
-                            onchange=(action (mut layer.settings.properties.themeId)) as |theme|}}
-                            {{theme.name}}
-                        {{/power-select}}
-                    </div>
+                    {{theme-select themes=themes currentTheme=theme}}
+
 
                     <div class="form-group">
                         <div>
