@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 /* Using static data for now. GUID will load from server */
 
-let layers = [  
+let layers = [
     {
         sectionHeader: 'Info',
         showInMenu: true,
@@ -39,20 +39,20 @@ let layers = [
     }
 ];
 
-let themes = [
-    {
+let themes = {
+    1: {
         id: 1,
-        name:"Dark",
+        name: "Dark",
         background: '#9e9e9e',
-        color: '#333333'
-    },
-    {
-        id: 2,
-        name:"light",
-        background: '#eeeeee',
         color: '#f8f8f8'
+    },
+    2: {
+        id: 2,
+        name: "light",
+        background: '#eeeeee',
+        color: '#333333'
     }
-];
+};
 
 export default Ember.Route.extend({
     model(params){
