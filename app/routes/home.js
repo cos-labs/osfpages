@@ -4,23 +4,20 @@ import Ember from 'ember';
 
 let layers = [
     {
-        sectionHeader: 'Info',
-        showInMenu: true,
-        component: 'info-layer',
+        sectionHeader: 'Title',
+        showInMenu: false,
+        component: 'layer-title',
         settings: {
-            component: 'info-layer-settings',
+            component: 'title-layer-settings',
             properties: {
-                sectionTitle:"Info Title",
+                showLinks: true,
+                showTitle: true,
                 showInNavigation: false,
-                showDescription: true,
-                showContributors: true,
-                showBibliographicContributors: false,
-                showAffiliatedIntuitions: true,
-                themeId: 2,
+                themeId: 1,
             }
         }
     },
-        {
+    {
         sectionHeader: 'Info',
         showInMenu: true,
         component: 'info-layer',
@@ -28,7 +25,7 @@ let layers = [
             component: 'info-layer-settings',
             properties: {
                 sectionTitle:"Info Title",
-                showInNavigation: false,
+                showInNavigation: true,
                 showDescription: true,
                 showContributors: true,
                 showBibliographicContributors: false,

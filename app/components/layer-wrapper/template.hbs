@@ -4,7 +4,7 @@
             <div class="col-xs-12">
                 <div class="layer clearfix">
                     <div class="layer-content">
-                        {{component layer.component layer=layer}}
+                        {{component layer.component layer=layer node=node layers=layers}}
                         {{#unless editMode}}
                             <button class="btn btn-default" {{action toggleProperty 'showSettings'}}>Edit section</button>
                         {{/unless}}
