@@ -56,11 +56,14 @@ let themes = [
 
 export default Ember.Route.extend({
     model(params){
-        return {
-            layers,
-            themes,
-            guid: params.guid
-        }
+        return this.store.findRecord('node', 'a3rz4').then((result)=>{
+            return {
+                layers,
+                themes,
+                guid: params.guid,
+                node: result
+            };
+        });
     }
 });
 

@@ -1,15 +1,24 @@
 {{outlet}}
 
+
 <div class="container home-header">
     <div class="row">
         <div class="col-xs-12">
             <div class="home-content">
-                {{pages-menu layers=model.layers}}
+                {{pages-menu layers=model.layers node=model.node}}
                 <button class="btn btn-default pull-right" {{action toggleProperty 'editMode'}}>Toggle Edit Mode</button>
             </div>
         </div>
     </div>
 </div>
+
+{{model.node.title}}
+
+
 {{#each model.layers as |layer|}}
     {{layer-wrapper layer=layer editMode=editMode themes=model.themes}}
 {{/each}}
+
+
+{{layer-footer guid=model.guid}}
+
