@@ -8,7 +8,7 @@ let layers = [
         showInMenu: false,
         component: 'layer-title',
         settings: {
-            component: 'title-layer-settings',
+            component: 'layer-title-settings',
             properties: {
                 showLinks: true,
                 showTitle: true,
