@@ -2,8 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
     showSettings: false,
-    theme: Ember.computed('themes', function(){
-        return this.get('themes')[this.get('layer.settings.properties.themeId')]
+    theme: Ember.computed('themes', 'layer.settings.properties.themeId', function(){
+        debugger;
+        return this.get('themes').filter((item)=>{
+            return item.id === this.get('layer.settings.properties.themeId');
+        })[0];
     }),
     actions: {
         showSettings (){
