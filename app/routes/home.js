@@ -19,6 +19,23 @@ let layers = [
                 themeId: 2,
             }
         }
+    },
+        {
+        sectionHeader: 'Info',
+        showInMenu: true,
+        component: 'info-layer',
+        settings: {
+            component: 'info-layer-settings',
+            properties: {
+                sectionTitle:"Info Title",
+                showInNavigation: false,
+                showDescription: true,
+                showContributors: true,
+                showBibliographicContributors: false,
+                showAffiliatedIntuitions: true,
+                themeId: 2,
+            }
+        }
     }
 ];
 

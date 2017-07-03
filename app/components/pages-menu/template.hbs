@@ -1,7 +1,7 @@
 <div class="pages-nav">
     <ul>
         {{#each layers as |layer|}}
-            {{#if layer.showInMenu}}
+            {{#if layer.settings.properties.showInNavigation}}
                 <li>
                     <a href="#">{{layer.sectionHeader}}</a>
                 </li>
