@@ -13,7 +13,7 @@ let layers = [
                 showLinks: true,
                 showTitle: true,
                 showInNavigation: false,
-                themeId: 1,
+                themeId: 4,
             }
         }
     },
@@ -35,6 +35,20 @@ let layers = [
         }
     },
     {
+        sectionHeader: 'Download',
+        showInMenu: true,
+        component: 'layer-file',
+        settings: {
+            component: 'layer-file-settings',
+            description: '',
+            properties: {
+                sectionTitle:"Download this file",
+                showInNavigation: true,
+                themeId: 3,
+            }
+        }
+    },
+    {
         sectionHeader: 'Wiki example',
         showInMenu: true,
         component: 'layer-wiki',
@@ -44,7 +58,7 @@ let layers = [
                 sectionTitle:"Wiki example",
                 showInNavigation: true,
                 addShowMore: false,
-                themeId: 2,
+                themeId: 5,
             }
         }
     }
@@ -54,13 +68,43 @@ let themes = [
     {
         id: 1,
         name: "dark",
+        type: "dark",
         background: '#9e9e9e',
         color: '#f8f8f8'
     },
     {
         id: 2,
         name: "light",
+        type: "light",
         background: '#eeeeee',
+        color: '#333333'
+    },
+    {
+        id: 3,
+        name: "green",
+        type: "dark",
+        background: '#009688',
+        color: '#ebebeb',
+    },
+    {
+        id: 4,
+        name: "blue",
+        type: "dark",
+        background: '#00BCD4',
+        color: '#ffffff'
+    },
+    {
+        id: 5,
+        name: "white",
+        type: "light",
+        background: '#ffffff',
+        color: '#333333'
+    },
+    {
+        id: 6,
+        name: "darkblue",
+        type: "dark",
+        background: '#ffffff',
         color: '#333333'
     }
 ];

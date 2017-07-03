@@ -1,0 +1,41 @@
+<div class="info-layer-settings">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <form class="info">
+                    <div class="form-group">
+                        <label class="control-label " for="info-title">
+                            Section Title
+                        </label>
+                        {{input class="form-control" value=layer.settings.properties.sectionTitle id="wikiSectionTitle" name="wiki-title" type="text"}}
+                    </div>
+                    <div class="checkbox">
+                        <label class="checkbox">
+                            {{input type="checkbox" name="info-checkbox" type="checkbox" checked=layer.settings.properties.showInNavigation}}
+                            Add section to navigation
+                        </label>
+                    </div>
+                    <div>
+                        <h4> Select a file from OSF </h4>
+
+
+                    </div>
+
+                    {{input class="form-control" value=layer.settings.description name="file-description" type="text"}}
+
+
+                    {{theme-select themes=themes currentTheme=theme}}
+
+
+                    <div class="form-group">
+                        <div>
+                            <button class="btn btn-primary " name="save" {{action "saveForm"}}>
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
