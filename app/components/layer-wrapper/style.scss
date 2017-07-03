@@ -10,12 +10,27 @@
 
 
 .layer-settings {
-	float:right;
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.93);
     padding: 25px;
     min-height: 200px;
+    width: 40%;
     color: #333333;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
+@mixin settings-shadow($color){
+    box-shadow: -8px 0px 13px -7px $color;
+}
+
+.theme-dark .layer-settings{
+    @include settings-shadow(#888);
+
+}
+
+.theme-light .layer-settings{
+    @include settings-shadow(#ccc);
+}
 
 

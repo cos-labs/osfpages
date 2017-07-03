@@ -39,7 +39,7 @@ let layers = [
 let themes = {
     1: {
         id: 1,
-        name: "Dark",
+        name: "dark",
         background: '#9e9e9e',
         color: '#f8f8f8'
     },
