@@ -1,0 +1,13 @@
+<div class="">
+
+    {{#if layer.settings.properties.showLinks}}
+        {{pages-menu layers=layers}}
+    {{/if}}
+
+    {{#if layer.settings.properties.showTitle}}
+        <div class="p-xl">
+            <h1>{{node.title}}</h1>
+        </div>
+    {{/if}}
+    <button class="btn btn-default pull-right" {{action toggleProperty 'editMode'}}>Toggle Edit Mode</button>
+</div>
