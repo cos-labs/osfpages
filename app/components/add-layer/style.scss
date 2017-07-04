@@ -1,7 +1,7 @@
 .add-layer-toggle>div {
     border: 1px solid #ccc;
     width: 60px;
-    padding: 10px;
+    padding: 20px 0;
     border-radius: 30px;
     background: #fff;
     text-align: center;
@@ -10,12 +10,22 @@
     left: 50%;
     margin-top: -30px;
     cursor: pointer;
+    z-index: 99;
 }
 .add-layer-toggle>div:hover {
-    background-color: blue;
+    background-color: #9E9E9E;
+    border-color: #a3a3a3;
+    color: #fff;
 }
 
 .add-layer{
-    height: 3px;
+    height: 0;
+}
+
+.add-layer.open{
+    height: 100px;
     background: #607D8B;
+    .add-layer-toggle>div {
+        margin-top: 60px
+    }
 }
