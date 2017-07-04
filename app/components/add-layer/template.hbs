@@ -12,13 +12,13 @@
                     <button class="btn btn-default btn-block" {{action 'addLayer' 'file'}} >Add Download layer</button>
                 </div>
                 <div class="add-layer-toggle">
-                    <div {{action 'toggleProperty' 'isOpen'}}> Close </div>
+                    <div {{action 'toggleProperty' 'isOpen'}}> {{fa-icon "times"}} </div>
                 </div>
             </div>
         </div>
     {{else}}
         <div class="add-layer-toggle">
-            <div {{action 'toggleProperty' 'isOpen'}}> Add </div>
+            <div {{action 'toggleProperty' 'isOpen'}}> {{fa-icon "plus"}} </div>
         </div>
     {{/if}}
 </div>

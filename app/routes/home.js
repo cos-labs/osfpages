@@ -1,9 +1,11 @@
 import Ember from 'ember';
 
 /* Using static data for now. GUID will load from server */
+const Layer = Ember.Object.extend();
 
-let layers = [
-        {
+
+let layers = Ember.A([
+    Layer.create({
         sectionHeader: 'Title',
         showInMenu: true,
         component: 'layer-title',
@@ -16,8 +18,8 @@ let layers = [
                 themeId: 4,
             }
         }
-    },
-    {
+    }),
+    Layer.create({
         sectionHeader: 'Info',
         showInMenu: true,
         component: 'layer-info',
@@ -33,8 +35,8 @@ let layers = [
                 themeId: 2,
             }
         }
-    },
-    {
+    }),
+    Layer.create({
         sectionHeader: 'Download',
         showInMenu: true,
         component: 'layer-file',
@@ -47,8 +49,8 @@ let layers = [
                 themeId: 3,
             }
         }
-    },
-    {
+    }),
+    Layer.create({
         sectionHeader: 'Wiki example',
         showInMenu: true,
         component: 'layer-wiki',
@@ -61,8 +63,9 @@ let layers = [
                 themeId: 5,
             }
         }
-    }
-];
+    })
+]);
+
 
 let themes = [
     {
