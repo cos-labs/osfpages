@@ -1,0 +1,31 @@
+.add-layer-toggle>div {
+    border: 1px solid #ccc;
+    width: 40px;
+    padding: 10px 0;
+    border-radius: 30px;
+    background: #fff;
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    left: 50%;
+    margin-top: -20px;
+    cursor: pointer;
+    z-index: 99;
+}
+.add-layer-toggle>div:hover {
+    background-color: #9E9E9E;
+    border-color: #a3a3a3;
+    color: #fff;
+}
+
+.add-layer{
+    height: 0;
+}
+
+.add-layer.open{
+    height: 90px;
+    background: #607D8B;
+    .add-layer-toggle>div {
+        margin-top: 55px
+    }
+}

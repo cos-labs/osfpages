@@ -1,5 +1,6 @@
-{{#each model.layers as |layer|}}
+{{#each model.layers as |layer index|}}
     {{layer-wrapper node=model.node layer=layer layers=model.layers editMode=editMode themes=model.themes}}
+    {{add-layer index=index layers=model.layers}}
 {{/each}}
 
 
