@@ -21,11 +21,8 @@
 
                     </div>
 
-                    {{input class="form-control" value=layer.settings.description name="file-description" type="text"}}
-
-
+                    {{file-browser rootItem=node openFile=(action 'fileDetail') openNode=(action 'nodeDetail') value=later.settings.properties.downloadFile}}
                     {{theme-select themes=themes currentTheme=theme}}
-
 
                     <div class="form-group">
                         <div>
