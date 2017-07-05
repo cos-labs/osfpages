@@ -1,9 +1,25 @@
 import Ember from 'ember';
 
 /* Using static data for now. GUID will load from server */
+const Layer = Ember.Object.extend();
 
-let layers = [
-    {
+
+let layers = Ember.A([
+    Layer.create({
+        sectionHeader: 'Title',
+        showInMenu: true,
+        component: 'layer-title',
+        settings: {
+            component: 'layer-title-settings',
+            properties: {
+                showLinks: true,
+                showTitle: true,
+                showInNavigation: false,
+                themeId: 4,
+            }
+        }
+    }),
+    Layer.create({
         sectionHeader: 'Info',
         showInMenu: true,
         component: 'layer-info',
@@ -19,8 +35,8 @@ let layers = [
                 themeId: 2,
             }
         }
-    },
-     {
+    }),
+    Layer.create({
         sectionHeader: 'Link',
         showInMenu: true,
         component: 'layer-link',
@@ -34,24 +50,82 @@ let layers = [
                 themeId: 2,
             }
         }
-    }
+    }),
+    Layer.create({
+        sectionHeader: 'Download',
+        showInMenu: true,
+        component: 'layer-file',
+        settings: {
+            component: 'layer-file-settings',
+            description: '',
+            properties: {
+                sectionTitle:"Download this file",
+                showInNavigation: true,
+                themeId: 3,
+            }
+        }
+    }),
+    Layer.create({
+        sectionHeader: 'Wiki example',
+        showInMenu: true,
+        component: 'layer-wiki',
+        settings: {
+            component: 'layer-wiki-settings',
+            properties: {
+                sectionTitle:"Wiki example",
+                showInNavigation: true,
+                addShowMore: false,
+                themeId: 5,
+            }
+        }
+    })
+]);
 
-];
 
-let themes = {
-    1: {
+let themes = [
+    {
         id: 1,
         name: "dark",
+        type: "dark",
         background: '#9e9e9e',
         color: '#f8f8f8'
     },
-    2: {
+    {
         id: 2,
         name: "light",
+        type: "light",
         background: '#eeeeee',
         color: '#333333'
+    },
+    {
+        id: 3,
+        name: "green",
+        type: "dark",
+        background: '#009688',
+        color: '#ebebeb',
+    },
+    {
+        id: 4,
+        name: "blue",
+        type: "dark",
+        background: '#00BCD4',
+        color: '#ffffff'
+    },
+    {
+        id: 5,
+        name: "white",
+        type: "light",
+        background: '#ffffff',
+        color: '#333333'
+    },
+    {
+        id: 6,
+        name: "darkblue",
+        type: "dark",
+        background: '#ffffff',
+        color: '#333333'
     }
-};
+];
 
 export default Ember.Route.extend({
     model(params){
