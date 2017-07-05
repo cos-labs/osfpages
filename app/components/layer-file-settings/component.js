@@ -4,7 +4,7 @@ export default Ember.Component.extend({
 	file_object: null,
 	actions: {
        fileDetail(file) {
-       		this.set('layer.settings.properties.downloadLink' , file._internalModel.__data.links.download)
+       		this.set('layer.settings.properties.downloadLink' ,  file.data.links.download)
         },
 
         nodeDetail(node) {
