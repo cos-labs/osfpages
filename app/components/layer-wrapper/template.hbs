@@ -16,7 +16,12 @@
                         </div>
                     {{/if}}
                 </div>
-
+                {{#if (gt index 0) }}
+                    <div class="layer-order">
+                        <button {{action 'moveBefore' index}}> {{fa-icon 'angle-up'}} </button>
+                        <button {{action 'moveAfter' index}}>{{fa-icon 'angle-down'}}</button>
+                    </div>
+                {{/if}}
             </div>
         </div>
     </div>

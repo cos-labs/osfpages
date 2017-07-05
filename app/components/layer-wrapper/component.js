@@ -10,6 +10,18 @@ export default Ember.Component.extend({
     actions: {
         showSettings (){
             this.set('showSettings', true);
+        },
+        moveBefore(index){
+            let layers = this.get('layers');
+            let removed = layers.objectAt(index);
+            layers.insertAt(index-1, removed);
+            layers.removeAt(index+1);
+        },
+        moveAfter(index){
+            let layers = this.get('layers');
+            let removed = layers.objectAt(index);
+            layers.insertAt(index+2, removed);
+            layers.removeAt(index);
         }
     }
 });
