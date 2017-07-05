@@ -6,6 +6,11 @@
         </p>
 
     {{/if}}
+
+    {{#if layer.settings.properties.showfileviewer}}
+    	{{file-renderer download=layer.settings.properties.downloadLink width="800" height="1000" allowfullscreen=true}}
+    {{/if}}
+
      <a class="btn btn-default" href={{layer.settings.properties.downloadLink}} >Download</a>
 
 </div>
