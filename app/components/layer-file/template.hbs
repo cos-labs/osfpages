@@ -1,9 +1,11 @@
 <div class="">
     <h2>{{layer.settings.properties.sectionTitle}}</h2>
-
     {{#if layer.settings.description}}
         <p>
             {{layer.settings.description}}
         </p>
+
     {{/if}}
+     <a class="btn btn-default" href={{layer.settings.properties.downloadLink}} >Download</a>
+
 </div>

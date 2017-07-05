@@ -45,6 +45,7 @@ let layers = Ember.A([
             description: '',
             properties: {
                 sectionTitle:"Download this file",
+                downloadLink: "www.example.com",
                 showInNavigation: true,
                 themeId: 3,
             }
@@ -114,7 +115,7 @@ let themes = [
 
 export default Ember.Route.extend({
     model(params){
-        return this.store.findRecord('node', 'a3rz4').then((result)=>{
+        return this.store.findRecord('node', 'jyu4t').then((result)=>{
             return {
                 layers,
                 themes,
