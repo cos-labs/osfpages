@@ -1,6 +1,8 @@
 {{#each model.layers as |layer index|}}
     {{layer-wrapper node=model.node layer=layer layers=model.layers editMode=editMode themes=model.themes index=index}}
-    {{add-layer index=index layers=model.layers}}
+    {{#if editMode}} 
+    	{{add-layer index=index layers=model.layers}}
+    {{/if}}
 {{/each}}
 
 
