@@ -7,6 +7,9 @@ export default Ember.Component.extend({
             return item.id === this.get('layer.settings.properties.themeId');
         })[0];
     }),
+    lastIndex: Ember.computed('layers',function (){
+       return  this.get('layers').length-1;
+    }),
     actions: {
         showSettings (){
             this.set('showSettings', true);
