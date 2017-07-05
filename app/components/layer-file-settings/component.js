@@ -5,10 +5,6 @@ export default Ember.Component.extend({
 	actions: {
        fileDetail(file) {
        		this.set('layer.settings.properties.downloadLink' ,  file.data.links.download)
-        },
-
-        nodeDetail(node) {
-            this.transitionToRoute('nodes.detail', node);
         }
 
 	}
