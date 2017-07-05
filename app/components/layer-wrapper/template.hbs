@@ -16,7 +16,19 @@
                         </div>
                     {{/if}}
                 </div>
+                <div class="layer-order">
+                    {{#if (gt index 0) }}
+                        <button class="btn btn-default" {{action 'moveBefore' index}}> {{fa-icon 'angle-double-up'}} </button>
+                    {{else}}
+                        <button class="btn btn-default" disabled> {{fa-icon 'angle-double-up'}} </button>
+                    {{/if}}
 
+                    {{#if (lt index lastIndex)}}
+                        <button class="btn btn-default" {{action 'moveAfter' index}}>{{fa-icon 'angle-double-down'}}</button>
+                    {{else}}
+                        <button class="btn btn-default" disabled>{{fa-icon 'angle-double-down'}}</button>
+                    {{/if}}
+                </div>
             </div>
         </div>
     </div>
