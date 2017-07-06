@@ -37,6 +37,21 @@ let layers = Ember.A([
         }
     }),
     Layer.create({
+        sectionHeader: 'Link',
+        showInMenu: true,
+        component: 'layer-link',
+        settings: {
+            component: 'layer-link-settings',
+            properties: {
+                sectionTitle:"Link Title",
+                showInNavigation: true,
+                sectionLinkDescription:"this link goes to a place",
+                sectionLink:"www.example.com",
+                themeId: 2,
+            }
+        }
+    }),
+    Layer.create({
         sectionHeader: 'Download',
         showInMenu: true,
         component: 'layer-file',
@@ -45,6 +60,8 @@ let layers = Ember.A([
             description: '',
             properties: {
                 sectionTitle:"Download this file",
+                showFileviewer: true,
+                downloadLink: "www.example.com",
                 showInNavigation: true,
                 themeId: 3,
             }
@@ -108,8 +125,8 @@ let themes = [
         id: 6,
         name: "darkblue",
         type: "dark",
-        background: '#ffffff',
-        color: '#333333'
+        background: '#31708f',
+        color: '#f5f5f5'
     }
 ];
 

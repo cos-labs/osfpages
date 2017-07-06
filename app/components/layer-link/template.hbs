@@ -1,0 +1,24 @@
+{{yield}}
+
+
+<h2>{{layer.settings.properties.sectionTitle}}</h2>
+<div class="layer-footer p-v-md">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 p-md">
+            	{{#if layer.settings.properties.sectionLinkDescription}}
+				    <p>
+				        {{layer.settings.properties.sectionLinkDescription}}
+				    </p>
+			    {{/if}}
+            </div>
+            <div class="col-sm-4">
+
+				{{#if layer.settings.properties.sectionLink}}
+                <a href="//{{layer.settings.properties.sectionLink}}" type="button" class="btn btn-info" target="_blank">Open</a>
+                {{/if}}
+
+            </div>
+        </div>
+    </div>
+</div>

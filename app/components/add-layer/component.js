@@ -40,9 +40,9 @@ export default Ember.Component.extend({
                 case 'link': // Update when link is ready
                     item = Layer.create({
                         sectionHeader : 'Link',
-                        component: 'layer-file',
+                        component: 'layer-link',
                         settings: {
-                            component: 'layer-file-settings',
+                            component: 'layer-link-settings',
                             description: 'Add link description',
                             properties: {
                                 sectionTitle: 'Link example',
