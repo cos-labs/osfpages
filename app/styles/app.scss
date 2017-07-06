@@ -4,6 +4,23 @@
 @import "ember-power-select";
 
 
+.scroll-top {
+    position: fixed;
+    right: 30px;
+    bottom: 10px;
+    height: 40px;
+    width: 40px;
+    border-radius: 25px;
+    background: #ccc;
+    text-align: center;
+    font-size: 26px;
+    cursor: pointer;
+    z-index: 999;
+}
+.scroll-top:hover {
+    background: #eee;
+}
+
 /* Pages-nav */
 .pages-nav ul{
     list-style-type: none;
