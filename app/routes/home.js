@@ -124,8 +124,8 @@ let themes = [
         id: 6,
         name: "darkblue",
         type: "dark",
-        background: '#ffffff',
-        color: '#333333'
+        background: '#31708f',
+        color: '#f5f5f5'
     }
 ];
 
