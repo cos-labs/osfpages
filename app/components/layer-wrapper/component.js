@@ -2,6 +2,18 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
     showSettings: false,
+    showLayer : true,
+    didReceiveAttrs() {
+        this._super(...arguments);
+          if(this.get("layer").component === "layer-title"){
+            console.log(this.get("layer").component , false)
+            this.set('showLayer', false);
+
+        }else{
+          console.log(this.get("layer").component , true)
+          this.set('showLayer', true);
+        }
+     },
     theme: Ember.computed('themes', 'layer.settings.properties.themeId', function(){
         return this.get('themes').filter((item)=>{
             return item.id === this.get('layer.settings.properties.themeId');

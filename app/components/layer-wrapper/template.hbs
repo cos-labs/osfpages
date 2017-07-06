@@ -1,6 +1,11 @@
 <div class="layer-wrapper {{layer.component}} theme-{{theme.type}}" style="background-color:{{theme.background}}; color: {{theme.color}}" >
     <div class="container">
         <div class="row">
+            {{#if editMode}} 
+                {{#if showLayer}}
+                    {{remove-layer index=index layers=layers}}
+               {{/if}}
+            {{/if}}
             <div class="col-xs-12">
                 <div class="layer clearfix">
                     <div class="layer-content">
