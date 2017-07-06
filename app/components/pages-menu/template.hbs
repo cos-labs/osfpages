@@ -1,9 +1,9 @@
 <div class="pages-nav">
     <ul>
-        {{#each layers as |layer|}}
+        {{#each layers as |layer index|}}
             {{#if layer.settings.properties.showInNavigation}}
                 <li>
-                    <a href="#">{{layer.sectionHeader}}</a>
+                    <button class="btn btn-link" {{action 'scrollToLayer' index}}>{{layer.sectionHeader}}</button>
                 </li>
             {{/if}}
         {{/each}}

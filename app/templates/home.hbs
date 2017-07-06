@@ -1,6 +1,6 @@
 {{#each model.layers as |layer index|}}
     {{layer-wrapper node=model.node layer=layer layers=model.layers editMode=editMode themes=model.themes index=index}}
-    {{#if editMode}} 
+    {{#if editMode}}
     	{{add-layer index=index layers=model.layers}}
     {{/if}}
 {{/each}}
@@ -8,3 +8,4 @@
 
 {{layer-footer guid=model.guid}}
 
+<div class="scroll-top" {{action 'scrollToTop'}}>{{fa-icon 'angle-up'}}</div>
