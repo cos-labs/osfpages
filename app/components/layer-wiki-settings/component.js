@@ -5,16 +5,19 @@ export default Ember.Component.extend({
     session: Ember.inject.service(),
     currentWiki: null,
     wikis: Ember.computed('node', function(){
-        return this.get('node.wikis');
+        let wikis = this.get('node.wikis');
+        let wikiId = this.get('layer.settings.wikiId');
+        this.get('node.wikis').then((result)=>{
+            let loadedWiki = result.find(function (item) {
+                return item.get('id') === wikiId;
+            });
+            this.set('currentWiki', loadedWiki);
+        });
+        return wikis;
     }),
-    actions: {
-        selectWiki(id){
-            this.set('currentWiki', id);
-            this.loadCurrentWiki();
-        }
-    },
     loadCurrentWiki() {
-        let url = this.get('currentWiki').get('links.download');
+        let currentWiki = this.get('currentWiki');
+        let url = currentWiki.get('links.download');
         let headers = {};
         let authType = config['ember-simple-auth'].authorizer;
         this.get('session').authorize(authType, (headerName, content) => {
@@ -28,12 +31,12 @@ export default Ember.Component.extend({
             this.get('layer').set('wikiContent', data);
         });
     },
-    init(){
-        this._super(...arguments);
-        let currentWiki = this.get('currentWiki');
-        if(currentWiki){
+    actions: {
+        selectWiki(selected){
+            this.set('layer.settings.wikiId', selected.get('id'));
+            this.set('currentWiki', selected);
             this.loadCurrentWiki();
         }
-    }
+    },
 
 });
