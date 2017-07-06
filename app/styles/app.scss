@@ -19,3 +19,18 @@
 .home-content {
     padding: 50px;
 }
+
+
+/* Index */
+.index-page {
+    margin-top: 50px;
+    background: #FFC107 url('/img/bg.png') no-repeat center;
+    color: #fff;
+    height: 500px;
+    padding-top: 100px;
+    text-align: center;
+    h1 {
+        text-shadow: 0px 0px 12px rgb(88, 88, 88);
+        font-size: 46px;
+    }
+}
