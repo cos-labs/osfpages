@@ -1,0 +1,32 @@
+.remove-layer-toggle>div {
+    border: 1px solid #ccc;
+    width: 40px;
+    padding: 10px 0;
+    border-radius: 30px;
+    background: #fff;
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    left:5%;
+    margin-top: 40px;
+    cursor: pointer;
+    z-index: 99;
+    color:#333333;
+}
+.remove-layer-toggle>div:hover {
+    background-color: #9E9E9E;
+    border-color: #a3a3a3;
+    color: #fff;
+}
+
+.remove-layer{
+    height: 0;
+}
+
+.remove-layer.open{
+    height: 90px;
+    background: #607D8B;
+    .add-layer-toggle>div {
+        margin-top: 55px
+    }
+}
