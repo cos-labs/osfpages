@@ -5,12 +5,10 @@ export default Ember.Component.extend({
     showLayer : true,
     didReceiveAttrs() {
         this._super(...arguments);
-          if(this.get("layer").component === "layer-title"){
-            console.log(this.get("layer").component , false)
+        if(this.get("layer").component === "layer-title"){
             this.set('showLayer', false);
 
         }else{
-          console.log(this.get("layer").component , true)
           this.set('showLayer', true);
         }
      },
