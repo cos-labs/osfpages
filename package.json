@@ -30,6 +30,7 @@
     "ember-cli-qunit": "^3.1.0",
     "ember-cli-sass": "^6.2.0",
     "ember-cli-shims": "^1.0.2",
+    "ember-cli-showdown": "^3.2.2",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-uglify": "^1.2.0",
     "ember-component-css": "^0.3.4",

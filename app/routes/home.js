@@ -73,6 +73,7 @@ let layers = Ember.A([
         component: 'layer-wiki',
         settings: {
             component: 'layer-wiki-settings',
+            wikiId: '',
             properties: {
                 sectionTitle:"Wiki example",
                 showInNavigation: true,
@@ -131,7 +132,8 @@ let themes = [
 
 export default Ember.Route.extend({
     model(params){
-        return this.store.findRecord('node', 'jyu4t').then((result)=>{
+        // If testing and parameter is not working use this 'jyu4t' for params.guid
+        return this.store.findRecord('node', params.guid).then((result)=>{
             return {
                 layers,
                 themes,
