@@ -73,6 +73,7 @@ let layers = Ember.A([
         component: 'layer-wiki',
         settings: {
             component: 'layer-wiki-settings',
+            wikiId: '',
             properties: {
                 sectionTitle:"Wiki example",
                 showInNavigation: true,

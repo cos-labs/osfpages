@@ -5,21 +5,21 @@
                 <div class="layer clearfix">
                     <div class="layer-content">
                         {{component layer.component layer=layer node=node layers=layers editMode=editMode}}
-                        {{#if editMode}} 
+                        {{#if editMode}}
                             <button class="btn btn-default" {{action toggleProperty 'showSettings'}}>Edit section</button>
                         {{/if}}
                     </div>
                     {{#if showSettings}}
-                        {{#if editMode}} 
+                        {{#if editMode}}
 
                         <div class="layer-settings">
                             <button type="button" class="close" aria-label="Close" {{action toggleProperty 'showSettings'}} ><span aria-hidden="true">&times;</span></button>
-                            {{component layer.settings.component layer=layer themes=themes theme=theme node=node editMode=editMode}} 
+                            {{component layer.settings.component layer=layer themes=themes theme=theme node=node editMode=editMode}}
                         </div>
                         {{/if}}
                     {{/if}}
                 </div>
-                {{#if editMode}} 
+                {{#if editMode}}
                 <div class="layer-order">
                     {{#if (gt index 0) }}
                         <button class="btn btn-default" {{action 'moveBefore' index}}> {{fa-icon 'angle-double-up'}} </button>
