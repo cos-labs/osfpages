@@ -1,5 +1,6 @@
 <div> 
-        <a class="pull-left" href="#"{{action toggleProperty 'editMode'}} title="Toggle Edit Mode">{{fa-icon "edit" size="lg"}}</a><br/>
+        <a class="pull-left" href="#"{{action toggleProperty 'editMode'}} title="Toggle Edit Mode" style="color:{{theme.color}}">{{fa-icon "edit" size="lg"}}</a><br/>
+
     {{#if layer.settings.properties.showTitle}}
          <h1>{{node.title}}</h1>
     {{/if}}
@@ -7,7 +8,7 @@
     <div class="">
 
 	    {{#if layer.settings.properties.showLinks}}
-	        {{pages-menu layers=layers}}
+	        {{pages-menu layers=layers theme=theme}}
 	    {{/if}}
     </div>
 </div>
