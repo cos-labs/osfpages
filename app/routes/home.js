@@ -47,7 +47,7 @@ let layers = Ember.A([
                 showInNavigation: true,
                 sectionLinkDescription:"this link goes to a place",
                 sectionLink:"www.example.com",
-                themeId: 2,
+                themeId: 5,
             }
         }
     }),
@@ -127,6 +127,13 @@ let themes = [
         type: "dark",
         background: '#31708f',
         color: '#f5f5f5'
+    },
+    {
+        id: 7,
+        name: "orange",
+        type: "light",
+        background: '#f07057',
+        color: '#ffffff'
     }
 ];
 

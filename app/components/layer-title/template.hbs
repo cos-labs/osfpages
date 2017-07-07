@@ -1,10 +1,15 @@
-<div class="">
-    <button class="btn btn-default" {{action toggleProperty 'editMode'}} title="Toggle Edit Mode">{{fa-icon "edit" size="lg"}}</button>
+<div> 
 
     {{#if layer.settings.properties.showTitle}}
          <h1>{{node.title}}</h1>
     {{/if}}
-     {{#if layer.settings.properties.showLinks}}
-        {{pages-menu layers=layers}}
-    {{/if}}
+
+    <div class="">
+        <a class="pull-left" href="#"{{action toggleProperty 'editMode'}} title="Toggle Edit Mode">{{fa-icon "edit" size="lg"}}</a>
+
+	    {{#if layer.settings.properties.showLinks}}
+	        {{pages-menu layers=layers}}
+	    {{/if}}
+    </div>
 </div>
+
