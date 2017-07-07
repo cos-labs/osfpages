@@ -2,9 +2,6 @@
     <div class="container">
         <div class="row">
             {{#if editMode}} 
-                {{#if shouldRemoveLayer}}
-                    {{remove-layer index=index layers=layers}}
-               {{/if}}
             {{/if}}
             <div class="col-xs-12">
                 <div class="layer clearfix">
@@ -19,7 +16,7 @@
 
                         <div class="layer-settings">
                             <button type="button" class="close" aria-label="Close" {{action toggleProperty 'showSettings'}} ><span aria-hidden="true">&times;</span></button>
-                            {{component layer.settings.component layer=layer themes=themes theme=theme node=node editMode=editMode}}
+                            {{component layer.settings.component layer=layer themes=themes theme=theme node=node editMode=editMode index=index layers=layers}}
                         </div>
                         {{/if}}
                     {{/if}}

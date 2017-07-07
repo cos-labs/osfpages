@@ -48,6 +48,8 @@
                     </div>
                     {{theme-select themes=themes currentTheme=theme}}
 
+                    {{remove-layer index=index layers=layers}}
+
                     <div class="form-group">
                         <div>
                             <button class="btn btn-primary " name="save" {{action "saveForm"}}>
