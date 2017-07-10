@@ -3,9 +3,6 @@ import Ember from 'ember';
 export default Ember.Component.extend({
 
     showSettings: false,
-    shouldRemoveLayer : Ember.computed('layer', function(){
-        return this.get('layer').component !== 'layer-title'
-    }),
     theme: Ember.computed('themes', 'layer.settings.properties.themeId', function(){
         return this.get('themes').filter((item)=>{
             return item.id === this.get('layer.settings.properties.themeId');

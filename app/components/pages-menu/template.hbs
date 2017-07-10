@@ -1,12 +1,13 @@
-<div class="pages-nav">
+<div class="pages-nav nav navbar-nav pull-right">
     <ul>
         {{#each layers as |layer index|}}
             {{#if layer.settings.properties.showInNavigation}}
                 <li>
-                    <button class="btn btn-link" {{action 'scrollToLayer' index}}>{{layer.sectionHeader}}</button>
+                    <button class="btn btn-link" {{action 'scrollToLayer' index}} style="color:{{theme.color}}">{{layer.sectionHeader}}</button>
                 </li>
             {{/if}}
         {{/each}}
     </ul>
 </div>
+
 

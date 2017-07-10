@@ -51,3 +51,24 @@
         font-size: 46px;
     }
 }
+
+
+/*New theme*/
+.btn-outline-cus{
+    background: transparent;
+    border: 1px solid #5bc0de;
+    color:#5bc0de;
+    border-radius:4px; 
+}
+
+.btn-outline-default-cus{
+    background: transparent;
+    border: 1px solid #999;
+    color:#999;
+    border-radius:4px; 
+}
+
+btn-outline-default-cus:hover{
+        background: transparent;
+
+}

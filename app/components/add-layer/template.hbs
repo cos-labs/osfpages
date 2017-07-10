@@ -3,13 +3,13 @@
         <div class="container">
             <div class="row p-v-md">
                 <div class="col-xs-4">
-                    <button class="btn btn-default btn-block" {{action 'addLayer' 'wiki'}}>Add Wiki layer</button>
+                    <button class="btn btn-default btn-block" {{action 'addLayer' 'wiki'}}>{{fa-icon "wikipedia-w"}} <br /> Add Wiki layer </button>
                 </div>
                 <div class="col-xs-4">
-                    <button class="btn btn-default btn-block" {{action 'addLayer' 'link'}}>Add Link layer</button>
+                    <button class="btn btn-default btn-block" {{action 'addLayer' 'link'}}>{{fa-icon "link"}} <br /> Add Link layer</button>
                 </div>
                 <div class="col-xs-4">
-                    <button class="btn btn-default btn-block" {{action 'addLayer' 'file'}} >Add Download layer</button>
+                    <button class="btn btn-default btn-block" {{action 'addLayer' 'file'}}>{{fa-icon "download"}} <br /> Add Download layer</button>
                 </div>
                 <div class="add-layer-toggle">
                     <div {{action 'toggleProperty' 'isOpen'}}> {{fa-icon "times"}} </div>

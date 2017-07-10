@@ -15,7 +15,7 @@ let layers = Ember.A([
                 showLinks: true,
                 showTitle: true,
                 showInNavigation: false,
-                themeId: 4,
+                themeId: 3,
             }
         }
     }),
@@ -47,7 +47,7 @@ let layers = Ember.A([
                 showInNavigation: true,
                 sectionLinkDescription:"this link goes to a place",
                 sectionLink:"www.example.com",
-                themeId: 2,
+                themeId: 5,
             }
         }
     }),
@@ -63,7 +63,7 @@ let layers = Ember.A([
                 showFileviewer: true,
                 downloadLink: "www.example.com",
                 showInNavigation: true,
-                themeId: 3,
+                themeId: 6,
             }
         }
     }),
@@ -127,6 +127,13 @@ let themes = [
         type: "dark",
         background: '#31708f',
         color: '#f5f5f5'
+    },
+    {
+        id: 7,
+        name: "orange",
+        type: "light",
+        background: '#f07057',
+        color: '#ffffff'
     }
 ];
 
