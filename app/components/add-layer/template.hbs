@@ -1,5 +1,5 @@
-<div class="add-layer {{if isOpen 'open'}}">
-    {{#if isOpen}}
+{{#liquid-if isOpen use='toDown'}}
+    <div class="add-layer {{if isOpen 'open'}}">
         <div class="container">
             <div class="row p-v-md">
                 <div class="col-xs-4">
@@ -11,14 +11,17 @@
                 <div class="col-xs-4">
                     <button class="btn btn-default btn-block" {{action 'addLayer' 'file'}}>{{fa-icon "download"}} <br /> Add Download layer</button>
                 </div>
-                <div class="add-layer-toggle">
-                    <div {{action 'toggleProperty' 'isOpen'}}> {{fa-icon "times"}} </div>
-                </div>
             </div>
         </div>
+    </div>
+{{/liquid-if}}
+
+{{#unless isOpen}}
+    <div class="add-layer-toggle">
+        <div {{action 'toggleProperty' 'isOpen'}}> {{fa-icon "plus"}} </div>
+    </div>
     {{else}}
-        <div class="add-layer-toggle">
-            <div {{action 'toggleProperty' 'isOpen'}}> {{fa-icon "plus"}} </div>
-        </div>
-    {{/if}}
-</div>
+     <div class="add-layer-toggle">
+        <div {{action 'toggleProperty' 'isOpen'}}> {{fa-icon "times"}} </div>
+    </div>
+{{/unless}}

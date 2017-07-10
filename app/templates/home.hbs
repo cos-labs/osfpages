@@ -5,7 +5,6 @@
             <button class="btn-outline-cus pull-right" {{action 'toggleEditMode'}}>{{currentMode}}</button>
         </div>
     </div>
-
 {{/if}}
 {{#each model.layers as |layer index|}}
     {{layer-wrapper node=model.node layer=layer layers=model.layers editMode=editMode themes=model.themes index=index}}
@@ -13,7 +12,6 @@
     	{{add-layer index=index layers=model.layers}}
     {{/if}}
 {{/each}}
-
 
 {{layer-footer guid=model.guid}}
 
