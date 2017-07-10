@@ -15,7 +15,7 @@ let layers = Ember.A([
                 showLinks: true,
                 showTitle: true,
                 showInNavigation: false,
-                themeId: 4,
+                themeId: 3,
             }
         }
     }),
@@ -63,7 +63,7 @@ let layers = Ember.A([
                 showFileviewer: true,
                 downloadLink: "www.example.com",
                 showInNavigation: true,
-                themeId: 3,
+                themeId: 6,
             }
         }
     }),
