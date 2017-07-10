@@ -11,6 +11,20 @@ export default Ember.Component.extend({
     lastIndex: Ember.computed('layers',function (){
        return  this.get('layers').length-1;
     }),
+    adjustSize: Ember.computed('showSettings', function(){
+        if(this.get('showSettings')){
+            let settingsHeight = this.$().find('.layer-settings').innerHeight();
+            let contentHeight = this.$().find('.layer-content').innerHeight();
+            if(settingsHeight > contentHeight){
+                this.$().find('.layer-content').innerHeight(settingsHeight);
+            } else {
+                this.$().find('.layer-settings').innerHeight(contentHeight);
+
+            }
+        } else {
+            this.$().find('.layer-content').height('auto');
+        }
+    }),
     actions: {
         showSettings (){
             this.set('showSettings', true);
