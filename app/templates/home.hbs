@@ -1,9 +1,11 @@
+<div style="background: #dff0d8">
 {{#each model.layers as |layer index|}}
-    {{layer-wrapper node=model.node layer=layer layers=model.layers editMode=editMode themes=model.themes index=index}}
+    {{layer-wrapper node=model.node layer=layer layers=model.layers editMode=editMode themes=model.themes index=index model=model}}
     {{#if editMode}}
     	{{add-layer index=index layers=model.layers}}
     {{/if}}
 {{/each}}
+</div>
 
 
 {{layer-footer guid=model.guid}}

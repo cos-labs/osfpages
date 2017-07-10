@@ -1,12 +1,16 @@
 <div id="layer{{index}}" class="layer-wrapper {{layer.component}} theme-{{theme.type}}" style="background-color:{{theme.background}}; color: {{theme.color}};" >
     <div class="container">
         <div class="row">
-            {{#if editMode}} 
-            {{/if}}
             <div class="col-xs-12">
                 <div class="layer clearfix">
-                    <div class="layer-content">
-                        {{component layer.component layer=layer node=node layers=layers editMode=editMode theme=theme}}
+                    <div class="layer-content" id="liquid-bind-demo">
+                        
+                        {{#liquid-bind layer.component as |currentActiveComponentName|}}
+                          {{component currentActiveComponentName layer=layer node=node layers=layers editMode=editMode theme=theme }}
+                        {{/liquid-bind}}
+
+<!--                         {{component layer.component layer=layer node=node layers=layers editMode=editMode theme=theme model=model}}
+ -->
                         {{#if editMode}}
                             <button class="btn btn-outline-default-cus" style="color:{{theme.color}}; border-color:{{theme.color}};" {{action toggleProperty 'showSettings'}}>Edit section</button>
                         {{/if}}
