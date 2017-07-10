@@ -23,9 +23,19 @@
 }
 
 .add-layer.open{
-    height: 90px;
+    height: 120px;
     background: #dff0d8;
     .add-layer-toggle>div {
         margin-top: 55px
     }
+}
+.add-layer .btn-block {
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    background: rgba(255, 255, 255, 0.65);
+}
+
+.add-layer .btn-block:hover {
+    background: rgba(255, 255, 255, 0.95);
 }
