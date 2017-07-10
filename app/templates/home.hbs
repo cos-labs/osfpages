@@ -1,13 +1,19 @@
-<div style="background: #dff0d8">
+{{#if isAdmin}}
+    <div class="editMenu">
+        <div class="container p-sm">
+            You are logged in as Administrator.
+            <button class="btn-outline-cus pull-right" {{action 'toggleEditMode'}}>{{currentMode}}</button>
+        </div>
+    </div>
+{{/if}}
 {{#each model.layers as |layer index|}}
     {{layer-wrapper node=model.node layer=layer layers=model.layers editMode=editMode themes=model.themes index=index}}
     {{#if editMode}}
     	{{add-layer index=index layers=model.layers}}
     {{/if}}
 {{/each}}
-</div>
-
 
 {{layer-footer guid=model.guid}}
 
 <div class="scroll-top" {{action 'scrollToTop'}}>{{fa-icon 'angle-up'}}</div>
+

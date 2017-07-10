@@ -1,0 +1,13 @@
+.theme-box {
+    width: 24px;
+    text-align: center;
+    float: left;
+    border: 3px solid #eee;
+    margin: 2px;
+    cursor: pointer;
+}
+
+
+.theme-box:hover, .theme-box.selected {
+    border-color:#009688;
+}

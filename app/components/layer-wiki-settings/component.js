@@ -36,7 +36,9 @@ export default Ember.Component.extend({
             this.set('layer.settings.wikiId', selected.get('id'));
             this.set('currentWiki', selected);
             this.loadCurrentWiki();
+        },
+        saveForm(){
+            this.set('showSettings', false);
         }
-    },
-
+    }
 });
