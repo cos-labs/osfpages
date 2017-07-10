@@ -1,7 +1,7 @@
 <div id="layer{{index}}" class="layer-wrapper {{layer.component}} theme-{{theme.type}}" style="background-color:{{theme.background}}; color: {{theme.color}};" >
     <div class="container">
         <div class="row">
-            {{#if editMode}} 
+            {{#if editMode}}
             {{/if}}
             <div class="col-xs-12">
                 <div class="layer clearfix">
@@ -16,7 +16,7 @@
 
                         <div class="layer-settings">
                             <button type="button" class="close" aria-label="Close" {{action toggleProperty 'showSettings'}} ><span aria-hidden="true">&times;</span></button>
-                            {{component layer.settings.component layer=layer themes=themes theme=theme node=node editMode=editMode index=index layers=layers}}
+                            {{component layer.settings.component layer=layer themes=themes theme=theme node=node editMode=editMode index=index layers=layers showSettings=showSettings}}
                         </div>
                         {{/if}}
                     {{/if}}
