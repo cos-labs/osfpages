@@ -4,7 +4,10 @@
     </label>
     <div class="theme-block p-sm">
         {{#each themes as |theme|}}
-            <div class="theme-box {{if (eq theme currentTheme) 'selected'}}" style="background:{{theme.background}}; color: {{theme.color}}">A</div>
+            <div class="theme-box {{if (eq theme currentTheme) 'selected'}}"
+                 style="background:{{theme.background}}; color: {{theme.color}}"
+                 {{action 'updateTheme' theme}}
+            >A</div>
         {{/each}}
     </div>
 </div>
