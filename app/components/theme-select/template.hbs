@@ -1,12 +1,13 @@
-<div class="form-group ">
+<div class="form-group clearfix m-b-lg">
     <label class="control-label " for="info-theme-select">
         Select a Theme
     </label>
-    Current theme {{currentTheme.name}}
-    {{#power-select
-        selected=currentTheme
-        options=themes
-        onchange=(action (mut currentTheme)) as |theme|}}
-        {{theme.name}}
-    {{/power-select}}
+    <div class="theme-block p-sm">
+        {{#each themes as |theme|}}
+            <div class="theme-box {{if (eq theme currentTheme) 'selected'}}"
+                 style="background:{{theme.background}}; color: {{theme.color}}"
+                 {{action 'updateTheme' theme}}
+            >A</div>
+        {{/each}}
+    </div>
 </div>
