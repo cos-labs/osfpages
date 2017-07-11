@@ -1,11 +1,9 @@
-{{#if isAdmin}}
-    <div class="editMenu">
-        <div class="container p-sm">
-            You are logged in as Administrator.
-            <button class="btn-outline-cus pull-right" {{action 'toggleEditMode'}}>{{currentMode}}</button>
-        </div>
+<div class="editMenu">
+    <div class="container p-sm">
+        {{#if isAdmin}}You are logged in as Administrator.{{/if}}
+        <button class="btn-outline-cus pull-right" {{action 'toggleEditMode'}}>{{currentMode}}</button>
     </div>
-{{/if}}
+</div>
 {{#each model.layers as |layer index|}}
     {{layer-wrapper node=model.node layer=layer layers=model.layers editMode=editMode themes=model.themes index=index}}
     {{#if editMode}}

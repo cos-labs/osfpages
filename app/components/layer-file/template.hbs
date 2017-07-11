@@ -10,7 +10,11 @@
 
     {{#if layer.settings.properties.showFileviewer}}
         <div class="m-v-lg">
-            {{file-renderer download=layer.settings.properties.downloadLink width="100%" height="1000" allowfullscreen=true}}
+            {{#if layer.settings.properties.downloadLink}}
+                {{file-renderer download=layer.settings.properties.downloadLink width="100%" height="1000" allowfullscreen=true}}
+            {{else}}
+                <p> Select a file to render. </p>
+            {{/if}}
         </div>
     {{/if}}
 

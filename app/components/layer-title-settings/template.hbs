@@ -5,16 +5,7 @@
                 <form class="info">
 
                     <div class="form-group ">
-                        <label class="control-label ">
-                            Check all that apply
-                        </label>
                         <div>
-                            <div class="checkbox">
-                                <label class="checkbox">
-                                    {{input type="checkbox" name="info-checkbox" type="checkbox" checked=layer.settings.properties.showLinks}}
-                                    Show in navigation
-                                </label>
-                            </div>
                             <div class="checkbox">
                                 <label class="checkbox">
                                     {{input type="checkbox" name="info-checkbox" type="checkbox" checked=layer.settings.properties.showTitle}}
@@ -24,8 +15,6 @@
                         </div>
                     </div>
                     {{theme-select themes=themes currentTheme=theme}}
-
-
                     <div class="form-group">
                         <div>
                             <button class="btn btn-primary " name="save" {{action "saveForm"}}>

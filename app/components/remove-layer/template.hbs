@@ -1,3 +1,16 @@
-{{yield}}
-	<a href="#" class="pull-right remove-layer-toggle"><div  {{action 'removeLayer'}} > Remove Section {{fa-icon "trash"}}</div></a>
-	<br/ >
+<div class="m-v-md clearfix">
+    <a href="#" class="pull-right remove-layer-toggle"><div  {{action 'showRemove'}} > Remove Section {{fa-icon "trash"}}</div></a>
+</div>
+
+{{#if showRemove}}
+    {{#bs-modal onSubmit=(action "removeLayer") onHidden=(action 'hideRemove') as |modal|}}
+        {{#modal.header}}
+            <h4 class="modal-title">Remove section?</h4>
+        {{/modal.header}}
+        {{#modal.body}}Are you sure you want to delete this section?{{/modal.body}}
+        {{#modal.footer as |footer|}}
+            {{#bs-button onClick=(action modal.close) type="default"}}Cancel {{/bs-button}}
+            {{#bs-button onClick=(action modal.submit) type="danger"}}Delete{{/bs-button}}
+        {{/modal.footer}}
+    {{/bs-modal}}
+{{/if}}

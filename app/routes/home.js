@@ -61,7 +61,7 @@ let layers = Ember.A([
             properties: {
                 sectionTitle:"Download this file",
                 showFileviewer: true,
-                downloadLink: "www.example.com",
+                downloadLink: '',
                 showInNavigation: true,
                 themeId: 6,
             }
