@@ -2,29 +2,35 @@
 	<h2>{{layer.settings.properties.sectionTitle}}</h2>
 
     {{#if layer.settings.properties.showDescription}}
-    <h4>Description</h4>
-    <p>
-        {{node.description}}
-    </p>
+        <h4>Description</h4>
+        <p>{{node.description}}</p>
     {{/if}}
 
     {{#if (and layer.settings.properties.showContributors (not layer.settings.properties.showBibliographicContributors))}}
-        <h4> Contributors </h4>
-        {{#each users as |user|}}
-            {{user.fullName}}
-        {{/each}}
+        <div class="m-v-md">
+            <h4> Contributors </h4>
+            {{#each users as |user|}}
+                {{user.fullName}}
+            {{/each}}
+        </div>
     {{/if}}
 
 
     {{#if layer.settings.properties.showBibliographicContributors}}
-        <h4>Bibliographic Contributors</h4>
-        {{#each bibliographicUsers as |user|}}
-            {{user.fullName}}
-        {{/each}}
+        <div class="m-v-md">
+            <h4>Bibliographic Contributors</h4>
+            {{#each bibliographicUsers as |user|}}
+                {{user.fullName}}
+            {{/each}}
+        </div>
     {{/if}}
 
-    {{#if layer.settings.properties.showAffiliatedIntuitions}}
-        <h4>Affiliated Intuitions</h4>
+    {{#if (and layer.settings.properties.showAffiliatedIntuitions institutions)}}
+        <div class="m-v-md">
+            <h4>Affiliated Intuitions</h4>
+            {{#each institutions as |institution|}}
+                {{institution.name}}
+            {{/each}}
+        </div>
     {{/if}}
-
 </div>
