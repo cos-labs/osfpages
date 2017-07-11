@@ -26,10 +26,18 @@
                     </div>
                     <h5>File description</h5>
                     {{input class="form-control" value=layer.settings.description name="file-description" type="text"}}
-                    {{file-browser rootItem=node openFile=(action 'fileDetail') }}
-                    {{theme-select themes=themes currentTheme=theme}}
 
-                    {{remove-layer index=index layers=layers}}
+                    <div class="m-v-md osf-box">
+                        {{file-browser rootItem=node openFile=(action 'fileDetail') }}
+                    </div>
+
+                    <div class="m-v-md">
+                        {{theme-select themes=themes currentTheme=theme}}
+                    </div>
+
+                    <div class="m-v-md">
+                        {{remove-layer index=index layers=layers}}
+                    </div>
                     <div class="form-group">
                         <div>
                             <button class="btn btn-primary " name="save" {{action "saveForm"}}>

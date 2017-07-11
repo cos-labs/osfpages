@@ -30,12 +30,7 @@
                         </label>
                         {{input class="form-control" value=layer.settings.properties.sectionLink name="link-title" type="text"  key-down="validateLink"}}
                     </div>
-                    <div class="form-group ">
-                        <label class="control-label " for="link-theme-select">
-                            Select a Theme
-                        </label>
-                        {{theme-select themes=themes currentTheme=theme}}
-                    </div>
+                    {{theme-select themes=themes currentTheme=theme}}
 
                     {{remove-layer index=index layers=layers}}
 
