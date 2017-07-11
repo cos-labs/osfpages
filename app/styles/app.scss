@@ -39,8 +39,10 @@
 .editMenu {
     background: #1b67a4;
     box-shadow: 0 -8px 26px 5px #000000;
-    position: relative;
+    position: fixed;
     color: #fff;
+    width: 100%;
+    z-index: 99;
 }
 
 .layer-title {
