@@ -5,8 +5,8 @@
                 <div class="layer clearfix">
                     <div class="layer-content">
                         {{#if editMode}}
-        <button class="btn btn-outline-default-cus pull-right m-md" style="color:{{theme.color}}; border-color:{{theme.color}};" {{action toggleProperty 'showSettings'}}>Edit section</button>
-    {{/if}}
+                            <button class="btn btn-outline-default-cus pull-right m-md" style="color:{{theme.color}}; border-color:{{theme.color}};" {{action toggleProperty 'showSettings'}}>Edit section</button>
+                        {{/if}}
                         {{component layer.component layer=layer node=node layers=layers editMode=editMode theme=theme}}
                     </div>
                     {{#if showSettings}}
