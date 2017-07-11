@@ -1,4 +1,3 @@
-{{yield}}
 <div>
 	<h2>{{layer.settings.properties.sectionTitle}}</h2>
 
@@ -8,22 +7,20 @@
         {{node.description}}
     </p>
     {{/if}}
-    
-    {{#if layer.settings.properties.showContributors}}
-    <h4>Contributors</h4>
-    	<ul class="contributors-list">
-		  <li>Brian A. Nosek</li>
-		  <li>Nicole M. Lindner</li>
-		  <li>Calvin Lai</li>
-		  <li>Charles R. Ebersole</li>
-		  <li>Ian Hussey</li>
-		  <li>Jordan Axt</li>
-		</ul>
 
+    {{#if layer.settings.properties.showContributors}}
+        <h4> Contributors </h4>
+        {{#each users as |user|}}
+            {{user.fullName}}
+        {{/each}}
     {{/if}}
 
+
     {{#if layer.settings.properties.showBibliographicContributors}}
-    <h4>Bibliographic Contributors</h4>
+        <h4>Bibliographic Contributors</h4>
+        {{#each bibliographicUsers as |user|}}
+            {{user.fullName}}
+        {{/each}}
     {{/if}}
 
     {{#if layer.settings.properties.showAffiliatedIntuitions}}
