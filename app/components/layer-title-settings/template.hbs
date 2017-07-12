@@ -14,6 +14,12 @@
                             </div>
                         </div>
                     </div>
+                    <div class="m-v-md">
+                        Adjust title size:
+                        <button class="btn btn-sm btn-default text-small" {{action 'titleSize' 'smaller'}}>A</button>
+                        <button class="btn btn-sm btn-default text-big" {{action 'titleSize' 'bigger'}}>A</button>
+
+                    </div>
                     {{theme-select themes=themes currentTheme=theme layer=layer}}
                     <div class="form-group">
                         <div>

@@ -11,10 +11,12 @@ let layers = Ember.A([
         component: 'layer-title',
         settings: {
             component: 'layer-title-settings',
+            backgroundImage: 'http://localhost:4200/img/bg.png',
             properties: {
                 showLinks: true,
                 showTitle: true,
                 showInNavigation: false,
+                h1Size: null,
                 themeId: 3,
             }
         }
