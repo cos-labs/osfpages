@@ -1,3 +1,15 @@
 .title {
     padding-top:60px;
 }
+
+.layer-title-content {
+    &.left {
+       text-align: left;
+    }
+    &.center {
+        text-align: center;
+    }
+    &.right {
+        text-align: right;
+    }
+}
