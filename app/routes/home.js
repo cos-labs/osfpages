@@ -13,7 +13,7 @@ let layers = Ember.A([
             component: 'layer-title-settings',
             backgroundImage: 'http://localhost:4200/img/bg.png',
             properties: {
-                showLinks: true,
+                showNavigation: true,
                 showTitle: true,
                 showInNavigation: false,
                 h1Size: null,
