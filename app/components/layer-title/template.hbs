@@ -1,13 +1,12 @@
 <div>
+    {{#if layer.settings.properties.showLinks}}
+        <div class="title-menu">
+            {{pages-menu layers=layers theme=theme}}
+        </div>
+    {{/if}}
+
     {{#if layer.settings.properties.showTitle}}
          <h1 class="title">{{node.title}}</h1>
     {{/if}}
-
-    <div class="">
-
-	    {{#if layer.settings.properties.showLinks}}
-	        {{pages-menu layers=layers theme=theme}}
-	    {{/if}}
-    </div>
 </div>
 
