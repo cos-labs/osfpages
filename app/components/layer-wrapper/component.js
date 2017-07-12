@@ -25,6 +25,12 @@ export default Ember.Component.extend({
             this.$().find('.layer-content').height('auto');
         }
     }),
+    style: Ember.computed('layer.settings.backgroundImage', function(){
+        let bgColor = 'background-color: ' + this.get('theme.background') + '; ';
+        let bgImage = this.get('layer.settings.backgroundImage') ? 'background-image: url(' + this.get('layer.settings.backgroundImage') + '); ' : '';
+        let color = 'color: ' + this.get('theme.color') + '; '
+        return Ember.String.htmlSafe(bgColor + bgImage + color);
+    }),
     actions: {
         showSettings (){
             this.set('showSettings', true);
