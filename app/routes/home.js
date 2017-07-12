@@ -56,6 +56,19 @@ let layers = Ember.A([
         }
     }),
     Layer.create({
+        sectionHeader: 'Image',
+        showInMenu: false,
+        component: 'layer-image',
+        settings: {
+            component: 'layer-image-settings',
+            properties: {
+                height: 500,
+                url: 'http://localhost:4200/img/sample.jpg',
+                themeId: 3,
+            }
+        }
+    }),
+    Layer.create({
         sectionHeader: 'Download',
         showInMenu: true,
         component: 'layer-file',
