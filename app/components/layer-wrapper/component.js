@@ -25,11 +25,17 @@ export default Ember.Component.extend({
             this.$().find('.layer-content').height('auto');
         }
     }),
-    style: Ember.computed('layer.settings.backgroundImage', function(){
+    style: Ember.computed('layer.settings.backgroundImage', 'layer.settings.properties.height', function(){
         let bgColor = 'background-color: ' + this.get('theme.background') + '; ';
-        let bgImage = this.get('layer.settings.backgroundImage') ? 'background-image: url(' + this.get('layer.settings.backgroundImage') + '); ' : '';
+        let bgImage = '';
+        if(this.get('layer.component') === 'layer-image'){
+            bgImage = 'background-image: url(' + this.get('layer.settings.properties.url') + '); '
+        } else if (this.get('layer.settings.backgroundImage')){
+            bgImage = 'background-image: url(' + this.get('layer.settings.backgroundImage') + '); '
+        }
+        let height = this.get('layer.settings.properties.height') ? 'height: ' + this.get('layer.settings.properties.height') + 'px;' : '';
         let color = 'color: ' + this.get('theme.color') + '; '
-        return Ember.String.htmlSafe(bgColor + bgImage + color);
+        return Ember.String.htmlSafe(bgColor + bgImage + color + height);
     }),
     actions: {
         showSettings (){

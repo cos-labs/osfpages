@@ -1,0 +1,29 @@
+<div class="title-layer-settings ">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <form class="info">
+
+                    <div class="m-v-md">
+                        <label class="control-label " for="image-url">
+                            Image url
+                        </label>
+                        {{input class="form-control" value=layer.settings.properties.url name="image-url" type="text"}}
+                    </div>
+                    <div class="m-v-md">
+                        Adjust height:
+                        <button class="btn btn-sm btn-default" {{action 'layerHeight' 'smaller'}}>{{fa-icon 'fa-minus'}}</button>
+                        <button class="btn btn-sm btn-default" {{action 'layerHeight' 'bigger'}}>{{fa-icon 'fa-plus'}}</button>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <button class="btn btn-primary " name="save" {{action "saveForm"}}>
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
