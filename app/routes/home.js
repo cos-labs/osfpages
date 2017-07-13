@@ -41,6 +41,23 @@ let layers = Ember.A([
         }
     }),
     Layer.create({
+        sectionHeader: 'Image-Text',
+        showInMenu: true,
+        component: 'layer-image-text',
+        settings: {
+            component: 'layer-image-text-settings',
+            properties: {
+                sectionTitle:"Image here ",
+                showInNavigation: true,
+                imageUrl: 'http://localhost:4200/img/sample.jpg',
+                text: 'Lorem ipsum dolor sit amet',
+                imageOnLeft: true,
+                textAlignment: 'left',
+                themeId: 4,
+            }
+        }
+    }),
+    Layer.create({
         sectionHeader: 'Link',
         showInMenu: true,
         component: 'layer-link',
@@ -167,5 +184,3 @@ export default Ember.Route.extend({
         });
     }
 });
-
-
