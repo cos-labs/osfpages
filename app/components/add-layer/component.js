@@ -52,6 +52,23 @@ export default Ember.Component.extend({
                         }
                     });
                     break;
+                case 'advanced': // Update when link is ready
+                    item = Layer.create({
+                        sectionHeader: 'Advanced',
+                        showInMenu: true,
+                        component: 'layer-advanced',
+                        content:"<h3>Click to edit the Advanced Layer</h3><div>Mauris imperdiet <strong>ligula a mauris porttitor ultricies.</strong> Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellentesque ut metus odio. Integer fringilla nulla id leo consequat, a sollicitudin sapien fringilla. Fusce vestibulum malesuada nisl. Fusce augue leo, tempus eget mattis vel, imperdiet at nulla.</div>",
+                        settings: {
+                            component: 'layer-advanced-settings',
+                            properties: {
+                                sectionTitle:"Info advanced",
+                                showInNavigation: true,
+                                themeId: 7,
+
+                            }
+                        }
+                    });
+                    break;
             }
             let index = this.get('index')+1;
             this.get('layers').insertAt(index,item);

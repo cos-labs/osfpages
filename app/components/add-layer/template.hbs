@@ -2,14 +2,17 @@
     <div class="add-layer {{if isOpen 'open'}}">
         <div class="container">
             <div class="row p-v-md">
-                <div class="col-xs-4">
+                <div class="col-xs-3">
                     <button class="btn btn-default btn-block" {{action 'addLayer' 'wiki'}}>{{fa-icon "wikipedia-w"}} <br /> Add Wiki layer </button>
                 </div>
-                <div class="col-xs-4">
+                <div class="col-xs-3">
                     <button class="btn btn-default btn-block" {{action 'addLayer' 'link'}}>{{fa-icon "link"}} <br /> Add Link layer</button>
                 </div>
-                <div class="col-xs-4">
+                <div class="col-xs-3">
                     <button class="btn btn-default btn-block" {{action 'addLayer' 'file'}}>{{fa-icon "download"}} <br /> Add Download layer</button>
+                </div>
+                <div class="col-xs-3">
+                    <button class="btn btn-default btn-block" {{action 'addLayer' 'advanced'}}>{{fa-icon "paint-brush"}} <br /> Add Advanced layer</button>
                 </div>
             </div>
         </div>
