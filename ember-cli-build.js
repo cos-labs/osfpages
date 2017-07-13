@@ -7,6 +7,9 @@ module.exports = function(defaults) {
       'bootstrapVersion': 3,
       'importBootstrapFont': true,
       'importBootstrapCSS': false
+    },
+    'ember-froala-editor': {
+      languages : false
     }
   });
 
