@@ -35,7 +35,7 @@ let layers = Ember.A([
                 showDescription: true,
                 showContributors: true,
                 showBibliographicContributors: false,
-                showAffiliatedIntuitions: true,
+                showAffiliatedInstitutions: true,
                 themeId: 2,
             }
         }
