@@ -24,6 +24,18 @@ let layers = Ember.A([
         }
     }),
     Layer.create({
+        sectionHeader: 'Advanced',
+        showInMenu: true,
+        component: 'layer-advanced',
+        settings: {
+            component: 'layer-advanced-settings',
+            properties: {
+                sectionTitle:"Info advanced",
+                showInNavigation: true,
+            }
+        }
+    }),
+    Layer.create({
         sectionHeader: 'Info',
         showInMenu: true,
         component: 'layer-info',
