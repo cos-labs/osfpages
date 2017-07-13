@@ -3,7 +3,7 @@
         {{#each layers as |layer index|}}
             {{#if layer.settings.properties.showInNavigation}}
                 <li>
-                    <button class="btn btn-link" {{action 'scrollToLayer' index}} style="color:{{theme.color}}">{{layer.sectionHeader}}</button>
+                    <button class="btn btn-link" {{action 'scrollToLayer' index}} style="color:{{theme.color}}">{{layer.settings.properties.sectionTitle}}</button>
                 </li>
             {{/if}}
         {{/each}}
