@@ -52,6 +52,40 @@ export default Ember.Component.extend({
                         }
                     });
                     break;
+                case 'image': // Update when link is ready
+                    item = Layer.create({
+                        sectionHeader: 'Image',
+                        showInMenu: false,
+                        component: 'layer-image',
+                        settings: {
+                            component: 'layer-image-settings',
+                            properties: {
+                                height: 500,
+                                url: 'http://localhost:4200/img/sample.jpg',
+                                themeId: 3,
+                            }
+                        }
+                    });
+                    break;
+                case 'image-text': // Update when link is ready
+                    item = Layer.create({
+                        sectionHeader: 'Image-Text',
+                        showInMenu: true,
+                        component: 'layer-image-text',
+                        settings: {
+                            component: 'layer-image-text-settings',
+                            properties: {
+                                sectionTitle:"Image here ",
+                                showInNavigation: true,
+                                imageUrl: 'http://localhost:4200/img/sample.jpg',
+                                text: 'Lorem ipsum dolor sit amet',
+                                imageOnLeft: true,
+                                textAlignment: 'left',
+                                themeId: 4,
+                            }
+                        }
+                    });
+                    break;
             }
             let index = this.get('index')+1;
             this.get('layers').insertAt(index,item);

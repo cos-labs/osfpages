@@ -9,26 +9,19 @@
     margin-top: -20px;
     cursor: pointer;
     z-index: 99;
-    color: #fff;
+    background: #FFF;
+    color: #BBB;
     box-shadow: 0 0 5px -1px #333;
     font-size: 16px;
 }
 
-.add-layer-toggle>div.plus {
-    background: linear-gradient(to bottom, rgb(118, 168, 60) 0%, #63912d 100%);
-
-}
-.add-layer-toggle>div.times {
-    background: linear-gradient(to bottom, rgb(190, 189, 189), #9E9E9E 100%);
-}
 
 .add-layer{
     height: 0;
 }
 
 .add-layer.open{
-    height: 120px;
-    background: #dff0d8;
+    height: 170px;
     box-shadow: inset 0 0 200px #999, inset 0 0 11px #000;
     .add-layer-toggle>div {
         margin-top: 55px
@@ -39,6 +32,8 @@
     font-size: 16px;
     border: none;
     background: rgba(255, 255, 255, 0.65);
+    white-space:normal;
+    height: 120px;
 }
 
 .add-layer .btn-block:hover {

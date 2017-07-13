@@ -23,6 +23,7 @@ export default Ember.Component.extend({
     getAffiliatedInst: function (){
         const node = this.get('node');
         if (!node) { return };
+        if(this.get('institutions').length > 0) { return; }
         const institutions = Ember.A();
         loadAll(node, 'affiliatedInstitutions', institutions).then(() => {
             institutions.forEach((item) => {
