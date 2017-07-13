@@ -64,7 +64,6 @@ export default Ember.Component.extend({
                                 sectionTitle:"Info advanced",
                                 showInNavigation: true,
                                 themeId: 7,
-
                             }
                         }
                     });

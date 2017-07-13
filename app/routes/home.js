@@ -50,8 +50,25 @@ let layers = Ember.A([
                 showDescription: true,
                 showContributors: true,
                 showBibliographicContributors: false,
-                showAffiliatedIntuitions: true,
+                showAffiliatedInstitutions: true,
                 themeId: 2,
+            }
+        }
+    }),
+    Layer.create({
+        sectionHeader: 'Image-Text',
+        showInMenu: true,
+        component: 'layer-image-text',
+        settings: {
+            component: 'layer-image-text-settings',
+            properties: {
+                sectionTitle:"Image here ",
+                showInNavigation: true,
+                imageUrl: 'http://localhost:4200/img/sample.jpg',
+                text: 'Lorem ipsum dolor sit amet',
+                imageOnLeft: true,
+                textAlignment: 'left',
+                themeId: 4,
             }
         }
     }),
@@ -182,5 +199,3 @@ export default Ember.Route.extend({
         });
     }
 });
-
-

@@ -25,7 +25,7 @@ export default Ember.Component.extend({
             this.$().find('.layer-content').height('auto');
         }
     }),
-    style: Ember.computed('layer.settings.backgroundImage', 'layer.settings.properties.height', function(){
+    style: Ember.computed('theme', 'layer.settings.backgroundImage', 'layer.settings.properties.height', function(){
         let bgColor = 'background-color: ' + this.get('theme.background') + '; ';
         let bgImage = '';
         if(this.get('layer.component') === 'layer-image'){
