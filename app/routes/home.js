@@ -32,6 +32,8 @@ let layers = Ember.A([
             properties: {
                 sectionTitle:"Info advanced",
                 showInNavigation: true,
+                themeId: 3,
+
             }
         }
     }),
