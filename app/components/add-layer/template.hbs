@@ -2,14 +2,20 @@
     <div class="add-layer {{if isOpen 'open'}}">
         <div class="container">
             <div class="row p-v-md">
-                <div class="col-xs-4">
-                    <button class="btn btn-default btn-block" {{action 'addLayer' 'wiki'}}>{{fa-icon "wikipedia-w"}} <br /> Add Wiki layer </button>
+                <div class="col-sm-2">
+                    <button class="btn btn-default btn-block" {{action 'addLayer' 'wiki'}}>{{fa-icon "wikipedia-w"}} <br /> Wiki</button>
                 </div>
-                <div class="col-xs-4">
-                    <button class="btn btn-default btn-block" {{action 'addLayer' 'link'}}>{{fa-icon "link"}} <br /> Add Link layer</button>
+                <div class="col-sm-2">
+                    <button class="btn btn-default btn-block" {{action 'addLayer' 'link'}}>{{fa-icon "link"}} <br /> Link</button>
                 </div>
-                <div class="col-xs-4">
-                    <button class="btn btn-default btn-block" {{action 'addLayer' 'file'}}>{{fa-icon "download"}} <br /> Add Download layer</button>
+                <div class="col-sm-2">
+                    <button class="btn btn-default btn-block" {{action 'addLayer' 'file'}}>{{fa-icon "download"}} <br /> Download</button>
+                </div>
+                <div class="col-sm-2">
+                    <button class="btn btn-default btn-block" {{action 'addLayer' 'image'}}>{{fa-icon "image"}} <br /> Background Image</button>
+                </div>
+                <div class="col-sm-2">
+                    <button class="btn btn-default btn-block" {{action 'addLayer' 'image-text'}}>{{fa-icon "image"}} <br /> Image and Text</button>
                 </div>
             </div>
         </div>
