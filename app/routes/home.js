@@ -7,7 +7,6 @@ const Layer = Ember.Object.extend();
 let layers = Ember.A([
     Layer.create({
         sectionHeader: 'Title',
-        showInMenu: true,
         component: 'layer-title',
         settings: {
             component: 'layer-title-settings',
@@ -25,7 +24,6 @@ let layers = Ember.A([
     }),
     Layer.create({
         sectionHeader: 'Advanced',
-        showInMenu: true,
         component: 'layer-advanced',
         content:'<h3>Click to edit the Advanced Layer</h3><div><img src="http://xxntkd86l336rq5h3k2kbv9l.wpengine.netdna-cdn.com/wp-content/uploads/sites/62/2017/02/cowork-6-1.jpg" style="width: 552px; height: 368.099px;" class="fr-fic fr-fil fr-dii">Mauris imperdiet <strong>ligula a mauris porttitor ultricies.</strong> Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellentesque ut metus odio. Integer fringilla nulla id leo consequat, a sollicitudin sapien fringilla. Fusce vestibulum malesuada nisl. Fusce augue leo, tempus eget mattis vel, imperdiet at nulla.</div>',
         settings: {
@@ -40,7 +38,6 @@ let layers = Ember.A([
     }),
     Layer.create({
         sectionHeader: 'Info',
-        showInMenu: true,
         component: 'layer-info',
         settings: {
             component: 'layer-info-settings',
@@ -57,7 +54,6 @@ let layers = Ember.A([
     }),
     Layer.create({
         sectionHeader: 'Link',
-        showInMenu: true,
         component: 'layer-link',
         settings: {
             component: 'layer-link-settings',
@@ -72,7 +68,6 @@ let layers = Ember.A([
     }),
     Layer.create({
         sectionHeader: 'Image',
-        showInMenu: false,
         component: 'layer-image',
         settings: {
             component: 'layer-image-settings',
@@ -85,7 +80,6 @@ let layers = Ember.A([
     }),
     Layer.create({
         sectionHeader: 'Download',
-        showInMenu: true,
         component: 'layer-file',
         settings: {
             component: 'layer-file-settings',
@@ -101,7 +95,6 @@ let layers = Ember.A([
     }),
     Layer.create({
         sectionHeader: 'Wiki example',
-        showInMenu: true,
         component: 'layer-wiki',
         settings: {
             component: 'layer-wiki-settings',
