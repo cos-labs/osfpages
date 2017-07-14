@@ -20,16 +20,16 @@
 }
 
 @mixin settings-shadow($color){
-    box-shadow: -8px 0px 13px -7px $color;
+    box-shadow: 0 0px 21px 0 $color;
 }
 
 .theme-dark .layer-settings{
-    @include settings-shadow(#888);
+    @include settings-shadow(#484848);
 
 }
 
 .theme-light .layer-settings{
-    @include settings-shadow(#ccc);
+    @include settings-shadow(#CCCCCC);
 }
 
 
