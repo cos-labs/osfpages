@@ -9,9 +9,59 @@ let layers = Ember.A([
         sectionHeader: 'Title',
         component: 'layer-title',
         settings: {
-            component: 'layer-title-settings',
+            component: 'layer-settings',
+            values: {
+                backgroundImage: 'http://localhost:4200/img/bg.png',
+                showNavigation: true,
+                showTitle: true,
+                showInNavigation: false,
+                h1Size: null,
+                alignment: 'right',
+                lead: 'Some lead text',
+            },
+            form: [
+                {
+                    type: 'text',
+                    label: 'Background image',
+                    value: 'backgroundImage',
+                    validation: null,
+                },
+                {
+                    type: 'checkbox',
+                    label: 'Show in navigation',
+                    value: 'showNavigation',
+                    validation: null,
+                },
+                {
+                    type: 'checkbox',
+                    label: 'Show title',
+                    value: 'showTitle',
+                    validation: null,
+                },
+                {
+                    type: 'increment',
+                    label: 'Title size',
+                    value: 'h1Size',
+                    incrementSize: 4,
+                    validation: null,
+                },
+                {
+                    type: 'select',
+                    label: 'Alignment',
+                    value: 'alignment',
+                    options: ['left','center', 'right'],
+                    validation: null,
+                },
+                {
+                    type: 'text',
+                    label: 'Title text',
+                    value: 'lead',
+                    validation: null,
+                },
+            ],
             backgroundImage: 'http://localhost:4200/img/bg.png',
-            properties: {
+            properties: { // Will remove this
+                backgroundImage: 'http://localhost:4200/img/bg.png',
                 showNavigation: true,
                 showTitle: true,
                 showInNavigation: false,
