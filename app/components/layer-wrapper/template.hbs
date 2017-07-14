@@ -4,11 +4,14 @@
             <div class="col-xs-12">
                 <div class="layer clearfix">
                     <div class="layer-content">
-                        {{#if editMode}}
-                            <button class="btn btn-outline-default-cus pull-right m-md" style="color:{{theme.color}}; border-color:{{theme.color}};" {{action toggleProperty 'showSettings'}}>Edit section</button>
-                        {{/if}}
+
                         {{component layer.component layer=layer node=node layers=layers editMode=editMode theme=theme}}
                     </div>
+                    {{#if (and editMode (not showSettings))}}
+                        <div class="clearfix m-v-md">
+                            <button class="btn btn-outline-default-cus pull-right m-md" style="color:{{theme.color}}; border-color:{{theme.color}};" {{action toggleProperty 'showSettings'}}>Edit section</button>
+                        </div>
+                    {{/if}}
                     {{#if showSettings}}
                         {{#if editMode}}
 
