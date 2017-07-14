@@ -5,7 +5,7 @@ export default Ember.Component.extend({
   didRender() {
     this._super(...arguments); 
     this.$('div#froala-editor').html(this.get('layer.content'));
-    if(this.get("editMode")){
+    if(this.get("editMode") && this.get('showSettings') == false){
 	    $(() => {
 		    this.$('div#froala-editor').froalaEditor({
 		      toolbarInline: true,
@@ -22,7 +22,7 @@ export default Ember.Component.extend({
 		}else{
 			this.$('div#froala-editor').froalaEditor('destroy');
 			this.$('div#froala-editor').addClass( "fr-view" );
-
 		}
+
 	}
 });
