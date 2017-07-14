@@ -5,7 +5,7 @@ export default Ember.Component.extend({
   didRender() {
     this._super(...arguments); 
     this.$('div#froala-editor').html(this.get('layer.content'));
-    if(this.get("editMode") && this.get('showSettings') == false){
+    if(this.get("editMode") && !this.get('showSettings')){
 	    $(() => {
 		    this.$('div#froala-editor').froalaEditor({
 		      toolbarInline: true,
