@@ -9,6 +9,11 @@
                         {{/if}}
                         {{component layer.component layer=layer node=node layers=layers editMode=editMode theme=theme showSettings=showSettings}}
                     </div>
+                    {{#if (and editMode (not showSettings))}}
+                        <div class="clearfix m-v-md">
+                            <button class="btn btn-outline-default-cus pull-right m-md" style="color:{{theme.color}}; border-color:{{theme.color}};" {{action toggleProperty 'showSettings'}}>Edit section</button>
+                        </div>
+                    {{/if}}
                     {{#if showSettings}}
                         {{#if editMode}}
 
@@ -38,5 +43,3 @@
         </div>
     </div>
 </div>
-
-{{adjustSize}}

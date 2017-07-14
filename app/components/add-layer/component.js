@@ -84,25 +84,6 @@ export default Ember.Component.extend({
                         }
                     });
                     break;
-                case 'image-text': // Update when link is ready
-                    item = Layer.create({
-                        sectionHeader: 'Image-Text',
-                        showInMenu: true,
-                        component: 'layer-image-text',
-                        settings: {
-                            component: 'layer-image-text-settings',
-                            properties: {
-                                sectionTitle:"Image here ",
-                                showInNavigation: true,
-                                imageUrl: 'http://localhost:4200/img/sample.jpg',
-                                text: 'Lorem ipsum dolor sit amet',
-                                imageOnLeft: true,
-                                textAlignment: 'left',
-                                themeId: 4,
-                                                            }
-                        }
-                    });
-                    break;
             }
             let index = this.get('index')+1;
             this.get('layers').insertAt(index,item);
