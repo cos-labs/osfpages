@@ -21,6 +21,8 @@ export default Ember.Component.extend({
 		  });
 		}else{
 			this.$('div#froala-editor').froalaEditor('destroy');
+			this.$('div#froala-editor').addClass( "fr-view" );
+
 		}
 	}
 });
