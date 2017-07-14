@@ -11,25 +11,25 @@
     background: rgba(255, 255, 255, 0.93);
     padding: 25px;
     min-height: 100px;
-    width: 40%;
+    width: 100%;
     color: #333333;
-    position: absolute;
-    top: 0;
-    right: 0;
+    float: left;
     z-index:10;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
 }
 
 @mixin settings-shadow($color){
-    box-shadow: -8px 0px 13px -7px $color;
+    box-shadow: 0 0px 21px 0 $color;
 }
 
 .theme-dark .layer-settings{
-    @include settings-shadow(#888);
+    @include settings-shadow(#484848);
 
 }
 
 .theme-light .layer-settings{
-    @include settings-shadow(#ccc);
+    @include settings-shadow(#CCCCCC);
 }
 
 
