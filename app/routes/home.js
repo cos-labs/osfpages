@@ -27,6 +27,12 @@ let layers = Ember.A([
                     validation: null,
                 },
                 {
+                    type: 'text',
+                    label: 'Title text',
+                    value: 'lead',
+                    validation: null,
+                },
+                {
                     type: 'checkbox',
                     label: 'Show in navigation',
                     value: 'showNavigation',
@@ -52,12 +58,7 @@ let layers = Ember.A([
                     options: ['left','center', 'right'],
                     validation: null,
                 },
-                {
-                    type: 'text',
-                    label: 'Title text',
-                    value: 'lead',
-                    validation: null,
-                },
+
             ],
             backgroundImage: 'http://localhost:4200/img/bg.png',
             properties: { // Will remove this

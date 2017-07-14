@@ -4,11 +4,25 @@
             <div class="col-xs-12">
                 <form class="form">
                     {{#each layer.settings.form as |item|}}
+                        <!--Text-->
                         {{#if (eq item.type 'text')}}
                             {{item.label}}
                             {{input class="form-control" value=(get layer.settings.values item.value)  type="text"}}
                         {{/if}}
+
+                        <!--Checkbox -->
+                        {{#if (eq item.type 'checkbox')}}
+                            <div class="checkbox">
+                                <label class="checkbox">
+                                    {{input type="checkbox" checked=(get layer.settings.values item.value)}}
+                                    {{item.label}}
+                                </label>
+                            </div>
+                        {{/if}}
+
                     {{/each}}
+
+
                 </form>
             </div>
         </div>
