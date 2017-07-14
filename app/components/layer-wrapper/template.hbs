@@ -4,8 +4,7 @@
             <div class="col-xs-12">
                 <div class="layer clearfix">
                     <div class="layer-content">
-
-                        {{component layer.component layer=layer node=node layers=layers editMode=editMode theme=theme}}
+                        {{component layer.component layer=layer node=node layers=layers editMode=editMode theme=theme showSettings=showSettings}}
                     </div>
                     {{#if (and editMode (not showSettings))}}
                         <div class="clearfix m-v-md">

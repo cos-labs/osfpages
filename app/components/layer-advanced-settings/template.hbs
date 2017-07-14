@@ -1,0 +1,33 @@
+{{yield}}
+<div class="info-layer-settings">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <form class="info">
+         
+                    <div class="form-group ">
+                        <div>
+                            <div class="checkbox">
+                                <label class="checkbox">
+                                    {{input type="checkbox" name="info-checkbox" type="checkbox" checked=layer.settings.properties.showInNavigation}}
+                                    Add section to navigation
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{theme-select themes=themes currentTheme=theme  layer=layer}}
+
+                    {{remove-layer index=index layers=layers}}
+                    <div class="form-group">
+                        <div>
+                            <button class="btn btn-primary " name="save" {{action "saveForm"}}>
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

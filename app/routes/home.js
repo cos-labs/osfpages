@@ -24,6 +24,21 @@ let layers = Ember.A([
         }
     }),
     Layer.create({
+        sectionHeader: 'Advanced',
+        showInMenu: true,
+        component: 'layer-advanced',
+        content:'<h3>Click to edit the Advanced Layer</h3><div><img src="http://xxntkd86l336rq5h3k2kbv9l.wpengine.netdna-cdn.com/wp-content/uploads/sites/62/2017/02/cowork-6-1.jpg" style="width: 552px; height: 368.099px;" class="fr-fic fr-fil fr-dii">Mauris imperdiet <strong>ligula a mauris porttitor ultricies.</strong> Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellentesque ut metus odio. Integer fringilla nulla id leo consequat, a sollicitudin sapien fringilla. Fusce vestibulum malesuada nisl. Fusce augue leo, tempus eget mattis vel, imperdiet at nulla.</div>',
+        settings: {
+            component: 'layer-advanced-settings',
+            properties: {
+                sectionTitle:"Info advanced",
+                showInNavigation: true,
+                themeId: 5,
+
+            }
+        }
+    }),
+    Layer.create({
         sectionHeader: 'Info',
         showInMenu: true,
         component: 'layer-info',
@@ -37,23 +52,6 @@ let layers = Ember.A([
                 showBibliographicContributors: false,
                 showAffiliatedInstitutions: true,
                 themeId: 2,
-            }
-        }
-    }),
-    Layer.create({
-        sectionHeader: 'Image-Text',
-        showInMenu: true,
-        component: 'layer-image-text',
-        settings: {
-            component: 'layer-image-text-settings',
-            properties: {
-                sectionTitle:"Image here ",
-                showInNavigation: true,
-                imageUrl: 'http://localhost:4200/img/sample.jpg',
-                text: 'Lorem ipsum dolor sit amet',
-                imageOnLeft: true,
-                textAlignment: 'left',
-                themeId: 4,
             }
         }
     }),
