@@ -9,46 +9,92 @@ export default Ember.Component.extend({
             switch(type) {
                 case 'wiki' :
                     item = Layer.create({
-                        sectionHeader : 'Wiki',
+                        sectionHeader: 'Wiki example',
                         component: 'layer-wiki',
                         settings: {
-                            component: 'layer-wiki-settings',
-                            properties: {
-                                sectionTitle: 'Wiki example',
+                            component: 'layer-settings',
+                            wikiId: '',
+                            values: {
+                                sectionTitle:"Wiki example",
                                 showInNavigation: true,
                                 addShowMore: false,
-                                themeId: 5
-                            }
+                                themeId: 5,
+                            },
+                            form: [
+                                {
+                                    type: 'checkbox',
+                                    label: 'Show in navigation',
+                                    value: 'showInNavigation',
+                                    validation: null,
+                                },
+                                {
+                                    type: 'checkbox',
+                                    label: 'Add show more',
+                                    value: 'addShowMore',
+                                    validation: null,
+                                }
+                            ]
                         }
                     });
                     break;
                 case 'file':
                     item = Layer.create({
-                        sectionHeader : 'Download',
+                        sectionHeader: 'Download',
                         component: 'layer-file',
                         settings: {
-                            component: 'layer-file-settings',
-                            description: 'Add description',
-                            properties: {
-                                sectionTitle: 'Download example',
+                            component: 'layer-settings',
+                            values: {
+                                sectionTitle:"Download this file",
+                                sectionDescription:"",
+                                showFileviewer: true,
+                                downloadLink: '',
                                 showInNavigation: true,
-                                themeId: 2
-                            }
+                                themeId: 6,
+                            },
+                            form: [
+                                {
+                                    type: 'checkbox',
+                                    label: 'Show in navigation',
+                                    value: 'showInNavigation',
+                                    validation: null,
+                                },
+                                {
+                                    type: 'checkbox',
+                                    label: 'Show file viewer',
+                                    value: 'showFileviewer',
+                                    validation: null,
+                                }
+                            ]
                         }
                     });
                     break;
                 case 'link':
                     item = Layer.create({
-                        sectionHeader : 'Link',
+                        sectionHeader: 'Link',
                         component: 'layer-link',
                         settings: {
-                            component: 'layer-link-settings',
-                            description: 'Add link description',
-                            properties: {
-                                sectionTitle: 'Link example',
+                            component: 'layer-settings',
+                            values: {
+                                sectionTitle:"Link Title",
                                 showInNavigation: true,
-                                themeId: 1
-                            }
+                                sectionDescription:"this link goes to a place",
+                                sectionLink:"www.example.com",
+                                themeId: 5,
+                            },
+                            form: [
+                                {
+                                    type: 'checkbox',
+                                    label: 'Show in navigation',
+                                    value: 'showInNavigation',
+                                    validation: null,
+                                },
+                                {
+                                    type: 'text',
+                                    label: 'Link address',
+                                    value: 'sectionLink',
+                                    validation: null,
+                                },
+                            ]
                         }
                     });
                     break;
@@ -56,29 +102,51 @@ export default Ember.Component.extend({
                     item = Layer.create({
                         sectionHeader: 'Advanced',
                         component: 'layer-advanced',
-                        content:'<h3>Click to edit the Advanced Layer</h3><div><img src="http://xxntkd86l336rq5h3k2kbv9l.wpengine.netdna-cdn.com/wp-content/uploads/sites/62/2017/02/cowork-6-1.jpg" style="width: 552px; height: 368.099px;" class="fr-fic fr-fil fr-dii">Mauris imperdiet <strong>ligula a mauris porttitor ultricies.</strong> Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellentesque ut metus odio. Integer fringilla nulla id leo consequat, a sollicitudin sapien fringilla. Fusce vestibulum malesuada nisl. Fusce augue leo, tempus eget mattis vel, imperdiet at nulla.</div>',
+                        content:'<div><img src="http://xxntkd86l336rq5h3k2kbv9l.wpengine.netdna-cdn.com/wp-content/uploads/sites/62/2017/02/cowork-6-1.jpg" style="width: 552px; height: 368.099px;" class="fr-fic fr-fil fr-dii">Mauris imperdiet <strong>ligula a mauris porttitor ultricies.</strong> Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellentesque ut metus odio. Integer fringilla nulla id leo consequat, a sollicitudin sapien fringilla. Fusce vestibulum malesuada nisl. Fusce augue leo, tempus eget mattis vel, imperdiet at nulla.</div>',
                         settings: {
-                            component: 'layer-advanced-settings',
-                            properties: {
-                                sectionTitle:"Info advanced",
+                            component: 'layer-settings',
+                            values: {
+                                sectionTitle:"Advanced",
                                 showInNavigation: true,
-                                themeId: 7,
-                           }
+                                themeId: 5,
+                            },
+                            form: [
+                                {
+                                    type: 'checkbox',
+                                    label: 'Show in navigation',
+                                    value: 'showInNavigation',
+                                    validation: null,
+                                },
+                            ]
                         }
                     });
                     break;
-
                 case 'image':
                     item = Layer.create({
                         sectionHeader: 'Image',
                         component: 'layer-image',
                         settings: {
-                            component: 'layer-image-settings',
-                            properties: {
+                            component: 'layer-settings',
+                            values: {
                                 height: 500,
                                 url: 'http://localhost:4200/img/sample.jpg',
                                 themeId: 3,
-                            }
+                            },
+                            form: [
+                                {
+                                    type: 'text',
+                                    label: 'Image link',
+                                    value: 'url',
+                                    validation: null,
+                                },
+                                {
+                                    type: 'increment',
+                                    label: 'Section height',
+                                    value: 'height',
+                                    incrementSize: 20,
+                                    validation: null,
+                                }
+                            ]
                         }
                     });
                     break;
