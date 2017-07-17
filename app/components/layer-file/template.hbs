@@ -1,8 +1,13 @@
 <div class="">
     {{edit-text showSettings=showSettings editMode=editMode layer=layer type="title"}}
-    {{edit-text showSettings=showSettings editMode=editMode layer=layer}}
+    <div class="row">
+        <div class="col-sm-12 p-md">
 
+        {{edit-text showSettings=showSettings editMode=editMode layer=layer}}
 
+        </div>
+
+    </div>
 
     {{#if layer.settings.values.showFileviewer}}
         <div class="m-v-lg">
