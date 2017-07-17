@@ -8,7 +8,7 @@
                         <div>
                             <div class="checkbox">
                                 <label class="checkbox">
-                                    {{input type="checkbox" name="link-checkbox" type="checkbox" checked=layer.settings.properties.showInNavigation}}
+                                    {{input type="checkbox" name="link-checkbox" type="checkbox" checked=layer.settings.values.showInNavigation}}
                                     Add section to navigation
                                 </label>
                             </div>
@@ -18,7 +18,7 @@
                          <label class="control-label " for="link-title">
                             Link to
                         </label>
-                        {{input class="form-control" value=layer.settings.properties.sectionLink name="link-title" type="text"  key-down="validateLink"}}
+                        {{input class="form-control" value=layer.settings.values.sectionLink name="link-title" type="text"  key-down="validateLink"}}
                     </div>
                     {{theme-select themes=themes layer=layer}}
 

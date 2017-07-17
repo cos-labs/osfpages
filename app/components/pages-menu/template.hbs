@@ -1,7 +1,7 @@
 <div class="pages-nav nav navbar-nav pull-right">
     <ul>
         {{#each layers as |layer index|}}
-            {{#if layer.settings.properties.showInNavigation}}
+            {{#if layer.settings.values.showInNavigation}}
                 <li>
                     <button class="btn btn-link" {{action 'scrollToLayer' index}} style="color:{{theme.color}}">{{layer.settings.properties.sectionTitle}}</button>
                 </li>
