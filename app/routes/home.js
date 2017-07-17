@@ -84,12 +84,6 @@ let layers = Ember.A([
             },
             form: [
                 {
-                    type: 'text',
-                    label: 'Title text',
-                    value: 'sectionTitle',
-                    validation: null,
-                },
-                {
                     type: 'checkbox',
                     label: 'Show in navigation',
                     value: 'showInNavigation',
@@ -113,12 +107,6 @@ let layers = Ember.A([
                 themeId: 2,
             },
             form: [
-                {
-                    type: 'text',
-                    label: 'Title text',
-                    value: 'sectionTitle',
-                    validation: null,
-                },
                 {
                     type: 'checkbox',
                     label: 'Show in navigation',
@@ -166,12 +154,6 @@ let layers = Ember.A([
             },
             form: [
                 {
-                    type: 'text',
-                    label: 'Title text',
-                    value: 'sectionTitle',
-                    validation: null,
-                },
-                {
                     type: 'checkbox',
                     label: 'Show in navigation',
                     value: 'showInNavigation',
@@ -207,6 +189,7 @@ let layers = Ember.A([
                     type: 'increment',
                     label: 'Section height',
                     value: 'height',
+                    incrementSize: 20,
                     validation: null,
                 }
             ]
@@ -226,12 +209,6 @@ let layers = Ember.A([
                 themeId: 6,
             },
             form: [
-                {
-                    type: 'text',
-                    label: 'Title text',
-                    value: 'sectionTitle',
-                    validation: null,
-                },
                 {
                     type: 'checkbox',
                     label: 'Show in navigation',
@@ -260,12 +237,6 @@ let layers = Ember.A([
                 themeId: 5,
             },
             form: [
-                {
-                    type: 'text',
-                    label: 'Title text',
-                    value: 'sectionTitle',
-                    validation: null,
-                },
                 {
                     type: 'checkbox',
                     label: 'Show in navigation',
