@@ -20,6 +20,17 @@
                             </div>
                         {{/if}}
 
+                        <!--Increment -->
+                        {{#if (eq item.type 'increment')}}
+                            <div class="m-v-md">
+                                {{item.label}}
+                                <button class="btn btn-sm btn-default text-small" {{action 'changeSize' 'smaller' item}}>{{fa-icon 'fa-minus'}}</button>
+                                {{layer.settings.values.h1Size}}
+                                <button class="btn btn-sm btn-default text-big" {{action 'changeSize' 'bigger' item}}>{{fa-icon 'fa-plus'}}</button>
+                            </div>
+                        {{/if}}
+
+
                     {{/each}}
 
 
