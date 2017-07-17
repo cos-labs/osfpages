@@ -24,7 +24,6 @@ export default Ember.Component.extend({
 
 			    //Save to model
 			    this.$('div#froala-editor').on('froalaEditor.contentChanged froalaEditor.initialized',(e, editor) => {
-
 			        this.set('layer.settings.properties.sectionDescription' , editor.html.get());
 			      }).froalaEditor();
 			  });
@@ -32,18 +31,6 @@ export default Ember.Component.extend({
 				this.$('div#froala-editor').froalaEditor('destroy');
 				this.$('div#froala-editor').addClass( "fr-view" );
 			}
-		console.log(this.get('type'))
 
 	},
-	actions:{
-    	editMode:function(){
-    		console.log('fff')
-    		// if(this.get('editMode')){
-    		// 	this.toggleProperty('isEditing');
-    		// }
-    	}
-  	}
 });
-
-
-    // {{edit-text showSettings=showSettings editMode=editMode layer=layer}}
