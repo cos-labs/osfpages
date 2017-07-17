@@ -6,33 +6,26 @@ export default Ember.Component.extend({
 	}),
   	didRender() {
 	    this._super(...arguments); 
-	    this.$('div#froala-editor').html(this.get('layer.settings.properties.sectionTitle'));
+	    this.$('div#froala-editor').html(this.get('layer.settings.properties.sectionDescription'));
 	    if(this.get("editMode") && !this.get('showSettings')){
 		    $(() => {
 			    this.$('div#froala-editor').froalaEditor({
 			      toolbarInline: true,
-			      charCounterCount: false,
-				  paragraphFormat: {
-				    H2: 'Heading 2',
-				    H3: 'Heading 3',
-				    H4: 'Heading 4'
-
-				  },
+			      charCounterCount: true,
 	  			  multiLine: false,
 	  			  imagePaste: false,
 	  			  charCounterMax: 140,
 	  			  pastePlain: true,
-	  			  pasteDeniedTags: ['p' ,'a', 'i', 'ul', 'li'],
 	  			  pasteAllowedStyleProps: [],
 				  quickInsertButtons: [],
-			      toolbarButtons: ['bold', 'italic', 'underline', 'paragraphFormat' ,'align',  'undo', 'redo'],
+			      toolbarButtons: ['bold', 'italic', 'underline' ,'align',  'undo', 'redo'],
 			      toolbarVisibleWithoutSelection: true
 			    });
 
 			    //Save to model
 			    this.$('div#froala-editor').on('froalaEditor.contentChanged froalaEditor.initialized',(e, editor) => {
 
-			        this.set('layer.settings.properties.sectionTitle' , editor.html.get());
+			        this.set('layer.settings.properties.sectionDescription' , editor.html.get());
 			      }).froalaEditor();
 			  });
 			}else{
