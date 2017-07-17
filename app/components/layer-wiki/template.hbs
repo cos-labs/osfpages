@@ -5,6 +5,31 @@
         {{markdown-to-html layer.wikiContent}}
     </div>
 
+
+
+
+    {{#if editMode}}
+        {{#if showSelect}}
+            {{#power-select
+                options=wikis
+                selected=currentWiki
+                onchange=(action "selectWiki") as |wiki|}}
+                {{wiki.name}}
+            {{/power-select}}
+        {{else}}
+            <div class="select-box p-v-md m-t-md" {{action 'showSelect'}}>
+                <p>
+                    {{#if layer.wikiContent}}
+                        Change selection
+                    {{else}}
+                        Select a wiki page
+                    {{/if}}
+                </p>
+            </div>
+        {{/if}}
+    {{/if}}
+
+
     {{#if layer.settings.values.addShowMore}}
         <div class="show-more">
             Show more

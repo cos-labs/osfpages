@@ -12,12 +12,13 @@ let layers = Ember.A([
             component: 'layer-settings',
             values: {
                 backgroundImage: 'http://localhost:4200/img/bg.png',
+                backgroundCover: true,
                 showNavigation: true,
                 showTitle: true,
                 showLead: true,
                 showInNavigation: false,
                 h1Size: 30,
-                themeId: 2,
+                themeId: 6,
                 alignment: 'right',
                 lead: 'Some lead text',
             },
@@ -30,7 +31,7 @@ let layers = Ember.A([
                 },
                 {
                     type: 'text',
-                    label: 'Title text',
+                    label: 'Lead text',
                     value: 'lead',
                     validation: null,
                 },
@@ -38,6 +39,12 @@ let layers = Ember.A([
                     type: 'checkbox',
                     label: 'Show navigation',
                     value: 'showNavigation',
+                    validation: null,
+                },
+                {
+                    type: 'checkbox',
+                    label: 'Fit image to section size',
+                    value: 'backgroundCover',
                     validation: null,
                 },
                 {

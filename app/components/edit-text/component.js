@@ -1,9 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-	isTitle: Ember.computed('type', function() {
-      return this.get('type')== "title";
-    }),
     didRender() {
         this._super(...arguments);
         this.$('div#froala-editor').html(this.get('layer.settings.values.sectionDescription'));
