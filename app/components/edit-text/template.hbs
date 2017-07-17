@@ -1,11 +1,9 @@
-	{{#if isTitle}}
-		{{#if editMode}}
-			{{input class="edit-text-title"  maxlength=140 value=layer.settings.values.sectionTitle}}
-		{{else}}
-			<h2>{{layer.settings.values.sectionTitle}}</h2>
-		{{/if}}
-	{{else}}
-		<div id="froala-editor"  class="fr-view">
-
-		</div>
-	{{/if}}
+{{#if (eq type 'title')}}
+    {{#if editMode}}
+        {{input class="edit-text-title"  maxlength=140 value=layer.settings.values.sectionTitle}}
+    {{else}}
+        <h2>{{layer.settings.values.sectionTitle}}</h2>
+    {{/if}}
+{{else}}
+    <div id="froala-editor"  class="fr-view"></div>
+{{/if}}
