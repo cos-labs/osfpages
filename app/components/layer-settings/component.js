@@ -33,13 +33,13 @@ export default Ember.Component.extend({
             var url = new RegExp(regexQuery,"i");
             if (url.test(userInput)) {
                 if(userInput.split(".").length > 2){
-                    console.log('valid url: ' + userInput);
+                    //valid url:
                     $('.input').css('border-color', '#4caf50');
 
                 }
                 return true;
             }
-            console.log('invalid url: ' + userInput);
+            //invalid url:
             $('.input').css('border-color', '#f44336');
             return false;
         }
