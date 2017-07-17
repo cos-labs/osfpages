@@ -14,6 +14,7 @@ let layers = Ember.A([
                 backgroundImage: 'http://localhost:4200/img/bg.png',
                 showNavigation: true,
                 showTitle: true,
+                showLead: true,
                 showInNavigation: false,
                 h1Size: 30,
                 alignment: 'right',
@@ -42,6 +43,12 @@ let layers = Ember.A([
                     type: 'checkbox',
                     label: 'Show title',
                     value: 'showTitle',
+                    validation: null,
+                },
+                {
+                    type: 'checkbox',
+                    label: 'Show lead text',
+                    value: 'showLead',
                     validation: null,
                 },
                 {

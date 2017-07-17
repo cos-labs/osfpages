@@ -6,13 +6,15 @@
                     {{#each layer.settings.form as |item|}}
                         <!--Text-->
                         {{#if (eq item.type 'text')}}
+                        <div class="m-v-md">
                             {{item.label}}
                             {{input class="form-control" value=(get layer.settings.values item.value)  type="text"}}
+                        </div>
                         {{/if}}
 
                         <!--Checkbox -->
                         {{#if (eq item.type 'checkbox')}}
-                            <div class="checkbox">
+                            <div class="checkbox m-v-md">
                                 <label class="checkbox">
                                     {{input type="checkbox" checked=(get layer.settings.values item.value)}}
                                     {{item.label}}
@@ -41,8 +43,6 @@
                                 </div>
                             </div>
                         {{/if}}
-
-
                     {{/each}}
 
 
