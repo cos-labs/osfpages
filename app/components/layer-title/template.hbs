@@ -1,18 +1,16 @@
-<div class="layer-title-content {{layer.settings.properties.alignment}}">
-    {{#if layer.settings.properties.showTitle}}
+<div class="layer-title-content {{layer.settings.values.alignment}}">
+    {{#if layer.settings.values.showTitle}}
          <h1 class="title" style="{{titleStyle}}">{{node.title}}</h1>
     {{/if}}
 
-    {{#if layer.settings.properties.lead}}
-        <p class="lead">{{layer.settings.properties.lead}}</p>
+    {{#if layer.settings.values.showLead}}
+        <p class="lead">{{layer.settings.values.lead}}</p>
     {{/if}}
 
-    {{#if layer.settings.properties.showNavigation}}
+    {{#if layer.settings.values.showNavigation}}
         <div class="title-menu clearfix m-t-xl">
             {{pages-menu layers=layers theme=theme}}
         </div>
     {{/if}}
-
-
 </div>
 

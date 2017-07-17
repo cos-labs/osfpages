@@ -1,12 +1,12 @@
 <div>
     {{edit-text showSettings=showSettings editMode=editMode layer=layer type="title"}}
 
-    {{#if layer.settings.properties.showDescription}}
+    {{#if layer.settings.values.showDescription}}
         <h4>Description</h4>
         <p>{{node.description}}</p>
     {{/if}}
 
-    {{#if (and layer.settings.properties.showContributors (not layer.settings.properties.showBibliographicContributors))}}
+    {{#if (and layer.settings.values.showContributors (not layer.settings.values.showBibliographicContributors))}}
         <div class="m-v-md">
             <h4> Contributors </h4>
             {{#each users as |user|}}
@@ -16,7 +16,7 @@
     {{/if}}
 
 
-    {{#if layer.settings.properties.showBibliographicContributors}}
+    {{#if layer.settings.values.showBibliographicContributors}}
         <div class="m-v-md">
             <h4>Bibliographic Contributors</h4>
             {{#each bibliographicUsers as |user|}}
@@ -25,7 +25,7 @@
         </div>
     {{/if}}
 
-    {{#if (and layer.settings.properties.showAffiliatedInstitutions institutions)}}
+    {{#if (and layer.settings.values.showAffiliatedInstitutions institutions)}}
         <div class="m-v-md">
             <h4>Affiliated Institutions</h4>
             {{#each institutions as |institution|}}

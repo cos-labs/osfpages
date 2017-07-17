@@ -1,0 +1,68 @@
+<div class="">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <form class="form">
+                    {{#each layer.settings.form as |item|}}
+                        <!--Text-->
+                        {{#if (eq item.type 'text')}}
+                        <div class="m-v-md">
+                            {{item.label}}
+                            {{input class="form-control" value=(get layer.settings.values item.value)  type="text"}}
+                        </div>
+                        {{/if}}
+
+                        <!--Checkbox -->
+                        {{#if (eq item.type 'checkbox')}}
+                            <div class="checkbox m-v-md">
+                                <label class="checkbox">
+                                    {{input type="checkbox" checked=(get layer.settings.values item.value)}}
+                                    {{item.label}}
+                                </label>
+                            </div>
+                        {{/if}}
+
+                        <!--Increment -->
+                        {{#if (eq item.type 'increment')}}
+                            <div class="m-v-md">
+                                {{item.label}}
+                                <button class="btn btn-sm btn-default text-small" {{action 'changeSize' 'smaller' item}}>{{fa-icon 'fa-minus'}}</button>
+                                {{layer.settings.values.h1Size}}
+                                <button class="btn btn-sm btn-default text-big" {{action 'changeSize' 'bigger' item}}>{{fa-icon 'fa-plus'}}</button>
+                            </div>
+                        {{/if}}
+
+                        <!--Select -->
+                        {{#if (eq item.type 'select')}}
+                            <div class="m-v-md">
+                                {{item.label}}
+                                <div class="btn-group" role="group" aria-label="...">
+                                    {{#each item.options as |option|}}
+                                        <button type="button" class="btn btn-default {{if (eq layer.settings.values.alignment option) 'active'}}" {{action 'runOption' option item}} >{{option}}</button>
+                                    {{/each}}
+                                </div>
+                            </div>
+                        {{/if}}
+
+                        <!--File Select -->
+                        {{#if (eq item.type 'fileSelect')}}
+                            <div class="m-v-md osf-box">
+                                {{file-browser rootItem=node openFile=(action 'fileDetail') }}
+                            </div>
+                        {{/if}}
+
+
+                    {{/each}}
+                </form>
+                {{theme-select themes=themes layer=layer}}
+                <div class="form-group">
+                    <div>
+                        <button class="btn btn-primary " name="save" {{action "saveForm"}}>
+                            Save
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
