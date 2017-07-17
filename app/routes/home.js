@@ -17,6 +17,7 @@ let layers = Ember.A([
                 showLead: true,
                 showInNavigation: false,
                 h1Size: 30,
+                themeId: 2,
                 alignment: 'right',
                 lead: 'Some lead text',
             },
@@ -67,18 +68,7 @@ let layers = Ember.A([
                     validation: null,
                 },
 
-            ],
-            backgroundImage: 'http://localhost:4200/img/bg.png',
-            properties: { // Will remove this
-                backgroundImage: 'http://localhost:4200/img/bg.png',
-                showNavigation: true,
-                showTitle: true,
-                showInNavigation: false,
-                h1Size: null,
-                alignment: 'right',
-                lead: 'Some lead text',
-                themeId: 3,
-            }
+            ]
         }
     }),
     Layer.create({

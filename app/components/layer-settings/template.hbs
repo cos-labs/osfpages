@@ -44,9 +44,15 @@
                             </div>
                         {{/if}}
                     {{/each}}
-
-
                 </form>
+                {{theme-select themes=themes layer=layer}}
+                <div class="form-group">
+                    <div>
+                        <button class="btn btn-primary " name="save" {{action "saveForm"}}>
+                            Save
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
