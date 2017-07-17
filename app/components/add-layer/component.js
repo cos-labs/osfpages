@@ -37,7 +37,7 @@ export default Ember.Component.extend({
                         }
                     });
                     break;
-                case 'link': // Update when link is ready
+                case 'link':
                     item = Layer.create({
                         sectionHeader : 'Link',
                         component: 'layer-link',
@@ -52,7 +52,7 @@ export default Ember.Component.extend({
                         }
                     });
                     break;
-                case 'advanced': // Update when link is ready
+                case 'advanced':
                     item = Layer.create({
                         sectionHeader: 'Advanced',
                         component: 'layer-advanced',
@@ -68,7 +68,7 @@ export default Ember.Component.extend({
                     });
                     break;
 
-                case 'image': // Update when link is ready
+                case 'image':
                     item = Layer.create({
                         sectionHeader: 'Image',
                         component: 'layer-image',
