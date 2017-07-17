@@ -30,7 +30,7 @@ let layers = Ember.A([
                 },
                 {
                     type: 'text',
-                    label: 'Title text',
+                    label: 'Lead text',
                     value: 'lead',
                     validation: null,
                 },
