@@ -9,12 +9,29 @@
 
     </div>
 
+    {{#if editMode}}
+        {{#if showSelect}}
+            <div class="">
+                {{file-browser rootItem=node openFile=(action 'fileDetail') }}
+            </div>
+        {{else}}
+            <div class="select-file p-v-md" {{action 'showSelect'}}>
+                <p>
+                    {{#if layer.settings.values.downloadLink}}
+                        Change selection
+                    {{else}}
+                        Select a file
+                    {{/if}}
+                </p>
+            </div>
+        {{/if}}
+    {{/if}}
+
+
     {{#if layer.settings.values.showFileviewer}}
         <div class="m-v-lg">
             {{#if layer.settings.values.downloadLink}}
                 {{file-renderer download=layer.settings.values.downloadLink width="100%" height="1000" allowfullscreen=true}}
-            {{else}}
-                <p> Select a file to render. </p>
             {{/if}}
         </div>
     {{/if}}

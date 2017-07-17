@@ -40,12 +40,6 @@
                             </div>
                         {{/if}}
 
-                        {{#if (eq item.type 'fileSelect')}}
-                            <div class="m-v-md osf-box">
-                                {{file-browser rootItem=node openFile=(action 'fileDetail') }}
-                            </div>
-                        {{/if}}
-
 
                     {{/each}}
                 </form>

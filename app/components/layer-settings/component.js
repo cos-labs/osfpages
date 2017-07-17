@@ -14,9 +14,6 @@ export default Ember.Component.extend({
         runOption(option, item){
             this.set('layer.settings.values.' + item.value, option);
         },
-        fileDetail(file) {
-            this.set('layer.settings.values.downloadLink' ,  file.data.links.download)
-        },
         saveForm(){
 
         }

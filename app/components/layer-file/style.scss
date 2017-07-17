@@ -1,3 +1,13 @@
+.file-browser {
+    background: #FFF;
+}
+
 .file-browser .file-browser-list {
     height: 300px;
+}
+
+.select-file {
+    border: 2px dashed #ccc;
+    text-align: center;
+    cursor: pointer;
 }
