@@ -12,6 +12,7 @@ let layers = Ember.A([
             component: 'layer-settings',
             values: {
                 backgroundImage: 'http://localhost:4200/img/bg.png',
+                backgroundCover: true,
                 showNavigation: true,
                 showTitle: true,
                 showLead: true,
@@ -38,6 +39,12 @@ let layers = Ember.A([
                     type: 'checkbox',
                     label: 'Show navigation',
                     value: 'showNavigation',
+                    validation: null,
+                },
+                {
+                    type: 'checkbox',
+                    label: 'Fit image to section size',
+                    value: 'backgroundCover',
                     validation: null,
                 },
                 {
