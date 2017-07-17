@@ -9,6 +9,9 @@ export default Ember.Component.extend({
             if(direction === 'smaller') {
                 this.decrementProperty('layer.settings.values.' + item.value, item.incrementSize);
             }
+        },
+        runOption(option, item){
+            this.set('layer.settings.values.' + item.value, option);
         }
     }
 });

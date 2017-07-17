@@ -30,6 +30,18 @@
                             </div>
                         {{/if}}
 
+                        <!--Select -->
+                        {{#if (eq item.type 'select')}}
+                            <div class="m-v-md">
+                                {{item.label}}
+                                <div class="btn-group" role="group" aria-label="...">
+                                    {{#each item.options as |option|}}
+                                        <button type="button" class="btn btn-default {{if (eq layer.settings.values.alignment option) 'active'}}" {{action 'runOption' option item}} >{{option}}</button>
+                                    {{/each}}
+                                </div>
+                            </div>
+                        {{/if}}
+
 
                     {{/each}}
 
