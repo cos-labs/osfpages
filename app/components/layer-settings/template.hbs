@@ -4,15 +4,13 @@
             <div class="col-xs-12">
                 <form class="form">
                     {{#each layer.settings.form as |item|}}
-                        <!--Text-->
                         {{#if (eq item.type 'text')}}
-                        <div class="m-v-md">
+                            <div class="m-v-md">
                             {{item.label}}
                             {{input class="form-control" value=(get layer.settings.values item.value)  type="text"}}
                         </div>
                         {{/if}}
 
-                        <!--Checkbox -->
                         {{#if (eq item.type 'checkbox')}}
                             <div class="checkbox m-v-md">
                                 <label class="checkbox">
@@ -22,7 +20,6 @@
                             </div>
                         {{/if}}
 
-                        <!--Increment -->
                         {{#if (eq item.type 'increment')}}
                             <div class="m-v-md">
                                 {{item.label}}
@@ -32,7 +29,6 @@
                             </div>
                         {{/if}}
 
-                        <!--Select -->
                         {{#if (eq item.type 'select')}}
                             <div class="m-v-md">
                                 {{item.label}}
@@ -44,7 +40,6 @@
                             </div>
                         {{/if}}
 
-                        <!--File Select -->
                         {{#if (eq item.type 'fileSelect')}}
                             <div class="m-v-md osf-box">
                                 {{file-browser rootItem=node openFile=(action 'fileDetail') }}

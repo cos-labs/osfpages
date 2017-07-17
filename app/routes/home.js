@@ -18,7 +18,7 @@ let layers = Ember.A([
                 showLead: true,
                 showInNavigation: false,
                 h1Size: 30,
-                themeId: 2,
+                themeId: 6,
                 alignment: 'right',
                 lead: 'Some lead text',
             },
