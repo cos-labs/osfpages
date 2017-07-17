@@ -34,10 +34,13 @@ export default Ember.Component.extend({
             if (url.test(userInput)) {
                 if(userInput.split(".").length > 2){
                     console.log('valid url: ' + userInput);
+                    $('.input').css('border-color', '#4caf50');
+
                 }
                 return true;
             }
             console.log('invalid url: ' + userInput);
+            $('.input').css('border-color', '#f44336');
             return false;
         }
     }
