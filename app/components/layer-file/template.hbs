@@ -1,11 +1,7 @@
 <div class="">
-    <h2>{{layer.settings.properties.sectionTitle}}</h2>
-    {{#if layer.settings.description}}
-        <p>
-            {{layer.settings.description}}
-        </p>
+    {{edit-text showSettings=showSettings editMode=editMode layer=layer type="title"}}
+    {{edit-text showSettings=showSettings editMode=editMode layer=layer}}
 
-    {{/if}}
 
 
     {{#if layer.settings.properties.showFileviewer}}

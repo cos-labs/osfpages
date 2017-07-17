@@ -78,7 +78,7 @@ let layers = Ember.A([
         settings: {
             component: 'layer-advanced-settings',
             properties: {
-                sectionTitle:"Info advanced",
+                sectionTitle:"Advanced",
                 showInNavigation: true,
                 themeId: 5,
 
@@ -109,7 +109,7 @@ let layers = Ember.A([
             properties: {
                 sectionTitle:"Link Title",
                 showInNavigation: true,
-                sectionLinkDescription:"this link goes to a place",
+                sectionDescription:"this link goes to a place",
                 sectionLink:"www.example.com",
                 themeId: 5,
             }
@@ -132,9 +132,9 @@ let layers = Ember.A([
         component: 'layer-file',
         settings: {
             component: 'layer-file-settings',
-            description: '',
             properties: {
                 sectionTitle:"Download this file",
+                sectionDescription:"",
                 showFileviewer: true,
                 downloadLink: '',
                 showInNavigation: true,

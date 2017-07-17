@@ -1,16 +1,13 @@
 {{yield}}
 
-
-<h2>{{layer.settings.properties.sectionTitle}}</h2>
+{{edit-text showSettings=showSettings editMode=editMode layer=layer type="title"}}
 <div class="layer-footer p-v-md">
     <div class="container">
         <div class="row">
             <div class="col-sm-10 p-md">
-            	{{#if layer.settings.properties.sectionLinkDescription}}
-				    <p>
-				        {{layer.settings.properties.sectionLinkDescription}}
-				    </p>
-			    {{/if}}
+
+            {{edit-text showSettings=showSettings editMode=editMode layer=layer}}
+
             </div>
             <div class="col-sm-2">
 
