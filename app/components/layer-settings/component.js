@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+    file_object: null,
     actions: {
         changeSize(direction, item){
             if(direction === 'bigger') {
@@ -12,6 +13,9 @@ export default Ember.Component.extend({
         },
         runOption(option, item){
             this.set('layer.settings.values.' + item.value, option);
+        },
+        fileDetail(file) {
+            this.set('layer.settings.values.downloadLink' ,  file.data.links.download)
         },
         saveForm(){
 

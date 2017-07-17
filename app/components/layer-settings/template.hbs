@@ -43,6 +43,15 @@
                                 </div>
                             </div>
                         {{/if}}
+
+                        <!--File Select -->
+                        {{#if (eq item.type 'fileSelect')}}
+                            <div class="m-v-md osf-box">
+                                {{file-browser rootItem=node openFile=(action 'fileDetail') }}
+                            </div>
+                        {{/if}}
+
+
                     {{/each}}
                 </form>
                 {{theme-select themes=themes layer=layer}}
