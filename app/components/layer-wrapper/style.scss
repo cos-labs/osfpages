@@ -35,6 +35,11 @@
     @include settings-shadow(#CCCCCC);
 }
 
+.layer-image {
+    button.btn-outline-default-cus {
+        background: #666;
+    }
+}
 
 .layer-order{
     position: absolute;
