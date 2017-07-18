@@ -8,11 +8,10 @@ export default Ember.Component.extend({
             this.get('node.files').then((result)=>{
                 result.objectAt(0).get('files').then((files)=>{
                     if(files.length === 0){
-                        $(".no-files-on-osf").text('No Files found in OSF Project.')
                         this.set('noFileFound', true);
                         return false;
                     }else{
-                      this.set('noFileFound', false);
+                        this.set('noFileFound', false);
                     }
                     let fileDatesLinks = {}
                     let fileModifiedDates = []
