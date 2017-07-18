@@ -8,22 +8,26 @@
         </div>
 
     </div>
-
-    {{#if editMode}}
-        {{#if showSelect}}
-            <div class="">
-                {{file-browser rootItem=node openFile=(action 'fileDetail') }}
-            </div>
-        {{else}}
-            <div class="select-box p-v-md" {{action 'showSelect'}}>
-                <p>
-                    {{#if layer.settings.values.downloadLink}}
-                        Change selection
-                    {{else}}
-                        Select a file
-                    {{/if}}
-                </p>
-            </div>
+    {{#if noFileFound}}
+      <div class="no-files-on-osf p-v-md">
+      </div>
+    {{else}}
+        {{#if editMode}}
+            {{#if showSelect}}
+                <div class="">
+                    {{file-browser rootItem=node openFile=(action 'fileDetail') }}
+                </div>
+            {{else}}
+                <div class="select-box p-v-md" {{action 'showSelect'}}>
+                    <p>
+                        {{#if layer.settings.values.downloadLink}}
+                            Change selection
+                        {{else}}
+                            Select a file
+                        {{/if}}
+                    </p>
+                </div>
+            {{/if}}
         {{/if}}
     {{/if}}
 

@@ -2,10 +2,19 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
     showSelect: false,
+    noFileFound: true,
     didRender() {
         if(!this.get('layer.settings.values.downloadLink')){
             this.get('node.files').then((result)=>{
                 result.objectAt(0).get('files').then((files)=>{
+                    if(files.length === 0){
+                        console.log('no files')
+                        $(".no-files-on-osf").text('No Files found in OSF Project.')
+                        this.set('noFileFound', true);
+                        return false;
+                    }else{
+                      this.set('noFileFound', false);
+                    }
                     let fileDatesLinks = {}
                     let fileModifiedDates = []
                     for(let i = 0; i < files.length; i++){
@@ -17,7 +26,6 @@ export default Ember.Component.extend({
                 });
             });
         }
-
     },
     actions: {
         fileDetail(file) {
