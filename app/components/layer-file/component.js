@@ -8,7 +8,6 @@ export default Ember.Component.extend({
             this.get('node.files').then((result)=>{
                 result.objectAt(0).get('files').then((files)=>{
                     if(files.length === 0){
-                        console.log('no files')
                         $(".no-files-on-osf").text('No Files found in OSF Project.')
                         this.set('noFileFound', true);
                         return false;
