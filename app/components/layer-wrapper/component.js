@@ -8,7 +8,7 @@ export default Ember.Component.extend({
             return item.id === this.get('layer.settings.values.themeId');
         })[0];
     }),
-    lastIndex: Ember.computed('layers',function (){
+    lastIndex: Ember.computed('layers.[]',function (){
        return  this.get('layers').length-1;
     }),
     style: Ember.computed('theme', 'layer.settings.values.backgroundImage', 'layer.settings.values.backgroundCover', 'layer.settings.values.height', function(){

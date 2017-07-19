@@ -4,14 +4,17 @@
         <button class="btn-outline-cus pull-right" {{action 'toggleEditMode'}}>{{currentMode}}</button>
     </div>
 </div>
-{{#each model.layers as |layer index|}}
-    {{layer-wrapper node=model.node layer=layer layers=model.layers editMode=editMode themes=model.themes index=index}}
-    {{#if editMode}}
-    	{{add-layer index=index layers=model.layers}}
-    {{/if}}
-{{/each}}
+<div class="p-t-xl">
+    {{#each model.layers as |layer index|}}
+        {{layer-wrapper node=model.node layer=layer layers=model.layers editMode=editMode themes=model.themes index=index}}
+        {{#if editMode}}
+            {{add-layer index=index layers=model.layers}}
+        {{/if}}
+    {{/each}}
 
-{{layer-footer guid=model.guid}}
+    {{layer-footer guid=model.guid}}
+</div>
+
 
 <div class="scroll-top" {{action 'scrollToTop'}}>{{fa-icon 'angle-up'}}</div>
 
