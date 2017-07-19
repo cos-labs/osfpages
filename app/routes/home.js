@@ -6,7 +6,7 @@ const Layer = Ember.Object.extend();
 let layers = {};
  $.ajax({
         type: "GET",
-        url: "/themes/theme_1.json",
+        url: "/themes/theme_4.json",
         async: false,
         success: function (data) {
             layers = data;
@@ -58,11 +58,18 @@ let themes = [
     },
     {
         id: 7,
-        name: "orange",
+        name: "yellow",
         type: "light",
-        background: '#f07057',
+        background: '#f3cd59',
+        color: '#333333'
+    },
+    {
+        id: 8,
+        name: "gray-blue",
+        type: "dark",
+        background: '#4c636c',
         color: '#ffffff'
-    }
+    },
 ];
 
 export default Ember.Route.extend({
