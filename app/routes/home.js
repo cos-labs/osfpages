@@ -8,8 +8,7 @@ let layers = {};
         type: "GET",
         url: "/themes/theme_1.json",
         async: false,
-        success: function (data, status, jqXHR) {
-            console.log(data)
+        success: function (data) {
             layers = data;
         }});
 
