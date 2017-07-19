@@ -2,6 +2,29 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
     showSelect: false,
+    noFileFound: true,
+    didRender() {
+        if(!this.get('layer.settings.values.downloadLink')){
+            this.get('node.files').then((result)=>{
+                result.objectAt(0).get('files').then((files)=>{
+                    if(files.length === 0){
+                        this.set('noFileFound', true);
+                        return false;
+                    }else{
+                        this.set('noFileFound', false);
+                    }
+                    let fileDatesLinks = {}
+                    let fileModifiedDates = []
+                    for(let i = 0; i < files.length; i++){
+                        fileModifiedDates.push(files.objectAt(i).get('dateModified'));
+                        fileDatesLinks[files.objectAt(i).get('dateModified')] = files.objectAt(i).get('links').download;
+                    }                
+                    let mostRecentDate = new Date(Math.max.apply(null,fileModifiedDates));
+                    this.set('layer.settings.values.downloadLink' , fileDatesLinks[mostRecentDate]);
+                });
+            });
+        }
+    },
     actions: {
         fileDetail(file) {
             this.set('showSelect', false);
