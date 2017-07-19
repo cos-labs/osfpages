@@ -42,7 +42,7 @@ export default Ember.Component.extend({
             headers,
             url
         }).done(data => {
-            this.get('layer').set('wikiContent', data);
+            this.set('layer.wikiContent', data);
         });
     },
     wikis: Ember.computed('node', function(){
