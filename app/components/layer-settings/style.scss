@@ -10,7 +10,27 @@
     }
 }
 
-.move-button {
+.settings-button {
     background: transparent;
     border: none;
+}
+
+.remove-layer-toggle>div {
+    color:#f44336;
+}
+
+.theme-box {
+    width: 24px;
+    text-align: center;
+    border: 1px solid #eee;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.theme-box:hover, .theme-box.selected {
+    border-color:#009688;
 }
