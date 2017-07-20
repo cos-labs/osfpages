@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+    queryParams: ['editMode'],
     isAdmin: Ember.computed('node', function(){
         return this.get('model.node.currentUserPermissions').includes('admin');
     }),
