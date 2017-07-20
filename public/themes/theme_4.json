@@ -1,0 +1,99 @@
+[
+   {
+      "sectionHeader":"Title",
+      "component":"layer-title",
+      "settings":{
+         "component":"layer-settings",
+         "values":{
+            "backgroundImage":"http://colabonconvent.com/wp-content/uploads/2014/03/Colabonconvent-13.jpg",
+            "backgroundCover":true,
+            "showNavigation":true,
+            "showTitle":true,
+            "showLead":true,
+            "showInNavigation":false,
+            "h1Size":30,
+            "themeId":2,
+            "alignment":"right",
+            "lead":"People theme"
+         },
+         "form":[
+            {
+               "type":"text",
+               "label":"Background image",
+               "value":"backgroundImage",
+               "validation":null
+            },
+            {
+               "type":"text",
+               "label":"Lead text",
+               "value":"lead",
+               "validation":null
+            },
+            {
+               "type":"checkbox",
+               "label":"Show navigation",
+               "value":"showNavigation",
+               "validation":null
+            },
+            {
+               "type":"checkbox",
+               "label":"Fit image to section size",
+               "value":"backgroundCover",
+               "validation":null
+            },
+            {
+               "type":"checkbox",
+               "label":"Show title",
+               "value":"showTitle",
+               "validation":null
+            },
+            {
+               "type":"checkbox",
+               "label":"Show lead text",
+               "value":"showLead",
+               "validation":null
+            },
+            {
+               "type":"increment",
+               "label":"Title size",
+               "value":"h1Size",
+               "size":20,
+               "incrementSize":4,
+               "validation":null
+            },
+            {
+               "type":"select",
+               "label":"Alignment",
+               "value":"alignment",
+               "options":[
+                  "left",
+                  "center",
+                  "right"
+               ],
+               "validation":null
+            }
+         ]
+      }
+   },
+   {
+      "sectionHeader":"People",
+      "component":"layer-advanced",
+      "content": "<div><img src=\"http://dreamatico.com/data_images/people/people-2.jpg\" style=\"width: 407px; height: 289.415px;\" class=\"fr-fic fr-dii fr-fil fr-rounded padding circle\"></div><div><br></div><div><br></div><h3>John Doe</h3><div>Mauris imperdiet <strong>ligula a mauris porttitor ultricies.</strong> Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellen</div><p style=\"text-align: right;\"><br></p><p><br></p><p><br></p><p><br></p><p><br></p><h3><img src=\"http://www.hgsitebuilder.com/files/writeable/uploads/basekit-template-images/hostgator465_hostgator596_opt_75_istock_000009641800small.jpg\" class=\"fr-fic fr-dii fr-rounded fr-fir padding circle\" style=\"width: 385px; height: 256.728px;\"></h3><h3><br></h3><h3>Jan Alleman</h3><div>Mauris imperdiet <strong>ligula a mauris porttitor ultricies.</strong> Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellen</div><h3 style=\"text-align: right;\"><br></h3><p><br></p><h3 style=\"text-align: right;\"><br></h3><p><br></p><h3><img src=\"http://dreamatico.com/data_images/people/people-2.jpg\" class=\"fr-fic fr-fil fr-dii fr-rounded circle padding\" style=\"width: 404px; height: 269.387px;\">John Doe</h3><div>Mauris imperdiet <strong>ligula a mauris porttitor ultricies.</strong> Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pelle</div><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p>",
+      "settings":{
+         "component":"layer-settings",
+         "values":{
+            "sectionTitle":"People",
+            "showInNavigation":true,
+            "themeId":5
+         },
+         "form":[
+            {
+               "type":"checkbox",
+               "label":"Show in navigation",
+               "value":"showInNavigation",
+               "validation":null
+            }
+         ]
+      }
+   }
+]
