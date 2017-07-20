@@ -2,25 +2,9 @@ import Ember from 'ember';
 
 /* Using static data for now. GUID will load from server */
 const Layer = Ember.Object.extend();
-
 let layers = {};
- $.ajax({
-        type: "GET",
-        url: "/themes/theme_1.json",
-        async: false,
-        success: function (data) {
-            layers = data;
-        }});
-
 
 let themes = [
-    {
-        id: 1,
-        name: "dark",
-        type: "dark",
-        background: '#9e9e9e',
-        color: '#f8f8f8'
-    },
     {
         id: 2,
         name: "light",
@@ -58,14 +42,30 @@ let themes = [
     },
     {
         id: 7,
-        name: "orange",
+        name: "yellow",
         type: "light",
-        background: '#f07057',
+        background: '#f3cd59',
+        color: '#333333'
+    },
+    {
+        id: 8,
+        name: "gray-blue",
+        type: "dark",
+        background: '#4c636c',
         color: '#ffffff'
-    }
+    },
 ];
 
 export default Ember.Route.extend({
+    beforeModel(){
+        $.ajax({
+            type: "GET",
+            url: "/themes/theme_2.json",
+            async: false,
+            success: function (data) {
+                layers = data;
+            }});
+    },
     model(params){
         // If testing and parameter is not working use this 'jyu4t' for params.guid
         return this.store.findRecord('node', params.guid).then((result)=>{
