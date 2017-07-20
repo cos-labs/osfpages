@@ -36,9 +36,9 @@
                "label":"Alignment",
                "value":"alignment",
                "options":[
-                  "left",
-                  "center",
-                  "right"
+                  "align-left",
+                  "align-center",
+                  "align-right"
                ],
                "validation":null
             }

@@ -1,16 +1,20 @@
 <div class="p-md">
     <div class="layer-settings-inner">
         <div class="layer-order inline-block">
+
+
             {{#if (gt index 0) }}
-                <button class="settings-button" style="color:{{theme.color}};" {{action 'moveBefore' index}}> {{fa-icon 'long-arrow-up'}} Move up</button>
+                <button class="settings-button" style="color:{{theme.color}};" {{action 'moveBefore' index}}> {{fa-icon 'angle-up'}}  {{#bs-tooltip placement="bottom"}}Move up{{/bs-tooltip}}</button>
+
             {{else}}
-                <button class="settings-button" style="color:{{theme.color}};"  disabled> {{fa-icon 'long-arrow-up'}} Move up</button>
+                <button class="settings-button " style="color:{{theme.color}};"  disabled> {{fa-icon 'angle-up'}}{{#bs-tooltip placement="bottom"}}Already at top{{/bs-tooltip}}</button>
+
             {{/if}}
 
             {{#if (lt index lastIndex)}}
-                <button class="settings-button" style="color:{{theme.color}};" {{action 'moveAfter' index}}>{{fa-icon 'long-arrow-down'}} Move down</button>
+                <button class="settings-button" style="color:{{theme.color}};" {{action 'moveAfter' index}}>{{fa-icon 'angle-down'}} {{#bs-tooltip placement="bottom"}}Move down{{/bs-tooltip}}</button>
             {{else}}
-                <button class="settings-button" style="color:{{theme.color}};" disabled>{{fa-icon 'long-arrow-down'}} Move down</button>
+                <button class="settings-button" style="color:{{theme.color}};" disabled>{{fa-icon 'angle-down'}} {{#bs-tooltip placement="bottom"}}Already at bottom{{/bs-tooltip}}</button>
             {{/if}}
         </div>
 
@@ -18,12 +22,10 @@
         {{#each layer.settings.form as |item|}}
             {{#if (eq item.type 'image')}}
                 <div class="inline-block">
-                    {{#bs-button}}
-                        <button class="settings-button">{{fa-icon 'image'}}</button>
-                        {{#bs-popover placement="bottom"}}
-                            {{input class="form-control" value=(get layer.settings.values item.value)  type="text"}}
-                        {{/bs-popover}}
-                    {{/bs-button}}
+                    <button class="settings-button">{{fa-icon 'image'}}</button>
+                    {{#bs-popover placement="bottom"}}
+                        {{input class="form-control" value=(get layer.settings.values item.value)  type="text"}}
+                    {{/bs-popover}}
                 </div>
 
 
@@ -33,9 +35,9 @@
             {{#if (eq item.type 'increment')}}
                 <div class="inline-block">
                     {{item.label}}
-                    <button class="btn btn-sm btn-default text-small" {{action 'changeSize' 'smaller' item}}>{{fa-icon 'fa-minus'}}</button>
+                    <button class="settings-button text-small" {{action 'changeSize' 'smaller' item}}>{{fa-icon 'fa-minus'}}</button>
                     {{layer.settings.values.h1Size}}
-                    <button class="btn btn-sm btn-default text-big" {{action 'changeSize' 'bigger' item}}>{{fa-icon 'fa-plus'}}</button>
+                    <button class="settings-button text-big" {{action 'changeSize' 'bigger' item}}>{{fa-icon 'fa-plus'}}</button>
                 </div>
             {{/if}}
 
@@ -44,7 +46,7 @@
                     {{item.label}}
                     <div class="btn-group" role="group" aria-label="...">
                         {{#each item.options as |option|}}
-                            <button type="button" class="btn btn-default {{if (eq layer.settings.values.alignment option) 'active'}}" {{action 'runOption' option item}} >{{option}}</button>
+                            <button type="button" class="settings-button {{if (eq layer.settings.values.alignment option) 'active'}}" {{action 'runOption' option item}} >{{fa-icon option}}</button>
                         {{/each}}
                     </div>
                 </div>
