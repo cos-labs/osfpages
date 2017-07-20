@@ -60,7 +60,7 @@ export default Ember.Route.extend({
     beforeModel(){
         $.ajax({
             type: "GET",
-            url: "/themes/theme_3.json",
+            url: "/themes/theme_2.json",
             async: false,
             success: function (data) {
                 layers = data;
