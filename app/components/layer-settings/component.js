@@ -6,11 +6,8 @@ export default Ember.Component.extend({
     lastIndex: Ember.computed('layers.[]',function (){
         return  this.get('layers').length-1;
     }),
-    currentTheme: Ember.computed('layer.settings.values.themeId', function(){
-        return this.get('themes').find((item)=>{
-            return item.id === this.get('layer.settings.values.themeId');
-        })
-    }),
+    backgroundPalette: ['#9e9e9e', '#eeeeee', '#009688', '#00BCD4', '#ffffff', '#31708f', '#f07057'],
+    colorPalette: ['#f8f8f8', '#333333', '#ebebeb', '#ffffff', '#f5f5f5'],
     actions: {
         changeSize(direction, item){
             if(direction === 'bigger') {
@@ -48,9 +45,13 @@ export default Ember.Component.extend({
             this.get('layers').removeAt(index);
             this.set('showRemoveModal', false);
         },
-        // Theme select
-        updateTheme(newSelection){
-            this.set('layer.settings.values.themeId', newSelection.id);
+        // Colors selection
+        updateBgColor(newColor){
+            this.set('layer.settings.values.bgColor', newColor);
+        },
+        updateColor(newColor){
+            this.set('layer.settings.values.color', newColor);
         }
+
     }
 });

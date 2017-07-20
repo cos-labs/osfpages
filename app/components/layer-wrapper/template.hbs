@@ -1,4 +1,4 @@
-<div id="layer{{index}}" class="layer-wrapper {{layer.component}} theme-{{theme.type}}" style="background-position: center; {{style}}">
+<div id="layer{{index}}" class="layer-wrapper {{layer.component}}" style="background-position: center; {{style}}">
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
@@ -6,12 +6,12 @@
 
                     {{#if editMode}}
                         <div class="layer-settings">
-                            {{component layer.settings.component layer=layer themes=themes theme=theme node=node editMode=editMode index=index layers=layers showSettings=showSettings}}
+                            {{component layer.settings.component layer=layer node=node editMode=editMode index=index layers=layers showSettings=showSettings}}
                         </div>
                     {{/if}}
 
                     <div class="layer-content">
-                        {{component layer.component layer=layer node=node layers=layers editMode=editMode theme=theme showSettings=showSettings}}
+                        {{component layer.component layer=layer node=node layers=layers editMode=editMode showSettings=showSettings}}
                     </div>
                 </div>
                 {{#if editMode}}

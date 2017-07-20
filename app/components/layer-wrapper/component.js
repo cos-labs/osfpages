@@ -1,15 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-
     showSettings: false,
-    theme: Ember.computed('themes', 'layer.settings.values.themeId', function(){
-        return this.get('themes').filter((item)=>{
-            return item.id === this.get('layer.settings.values.themeId');
-        })[0];
-    }),
-    style: Ember.computed('theme', 'layer.settings.values.backgroundImage', 'layer.settings.values.backgroundCover', 'layer.settings.values.height', function(){
-        let bgColor = 'background-color: ' + this.get('theme.background') + '; ';
+    style: Ember.computed('layer.settings.values.bgColor', 'layer.settings.values.color', 'layer.settings.values.backgroundImage', 'layer.settings.values.backgroundCover', 'layer.settings.values.height', function(){
+        let bgColor =  'background-color: ' + (this.get('layer.settings.values.bgColor') || '#FFF') + '; ';
+        let color =  'color: ' + (this.get('layer.settings.values.color') || '#333') + '; ' ;
         let bgImage = '';
         let bgCover = '';
         if(this.get('layer.component') === 'layer-image'){
@@ -19,8 +14,7 @@ export default Ember.Component.extend({
             bgImage = 'background-image: url(' + this.get('layer.settings.values.backgroundImage') + '); ';
         }
         let height = this.get('layer.settings.values.height') ? 'height: ' + this.get('layer.settings.values.height') + 'px;' : '';
-        let color = 'color: ' + this.get('theme.color') + '; '
-        return Ember.String.htmlSafe(bgColor + bgImage + bgCover + color + height);
+        return Ember.String.htmlSafe(bgImage + bgCover + height + bgColor + color);
     }),
     actions: {
         showSettings (){

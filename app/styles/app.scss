@@ -78,7 +78,8 @@ body {
 }
 
 
-/*New theme*/
+/* New theme */
+
 .btn-outline-cus{
     background: transparent;
     border: 1px solid #5bc0de;
@@ -96,4 +97,28 @@ body {
 btn-outline-default-cus:hover{
         background: transparent;
 
+}
+
+
+/* Palette skin */
+.sp-replacer {
+    border: none;
+    background: transparent;
+    color: #fff;
+}
+.sp-preview {
+    width: 20px;
+}
+.sp-container {
+    background: #fff;
+    border: none;
+    box-shadow: 0 7px 23px -1px #333;
+}
+.sp-container button {
+    background: #e1e1de;
+    border: none;
+    margin-top: 5px;
+    padding: 8px;
+    text-shadow: none;
+    border: 1px solid #ccc;
 }

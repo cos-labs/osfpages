@@ -31,6 +31,9 @@
     display: inline-block;
 }
 
+.theme-block {
+    width: 220px;
+}
 .theme-box:hover, .theme-box.selected {
     border-color:#009688;
 }
@@ -39,4 +42,12 @@
     border-right: 1px solid #ccc;
     height: 30px;
     margin: 0 5px;
+}
+
+.settings-group {
+    display: inline;
+    border: 1px solid #ccc;
+    padding: 3px 4px;
+    margin-right: 5px;
+    border-radius: 2px;
 }
