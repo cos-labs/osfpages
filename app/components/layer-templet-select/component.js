@@ -4,7 +4,7 @@ export default Ember.Component.extend({
  	isOpen: null,
 	actions: {
 		renderTemplet(type){
-			self=this;
+			let self=this;
             let theme;
             switch(type) {
                 case 'all':
