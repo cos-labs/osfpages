@@ -34,3 +34,9 @@
 .theme-box:hover, .theme-box.selected {
     border-color:#009688;
 }
+
+.settings-divider {
+    border-right: 1px solid #ccc;
+    height: 30px;
+    margin: 0 5px;
+}

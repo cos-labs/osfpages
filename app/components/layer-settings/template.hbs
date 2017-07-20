@@ -1,28 +1,30 @@
 <div class="p-md">
     <div class="layer-settings-inner">
+
         <div class="layer-order inline-block">
-
-
             {{#if (gt index 0) }}
-                <button class="settings-button" style="color:{{theme.color}};" {{action 'moveBefore' index}}> {{fa-icon 'angle-up'}}  {{#bs-tooltip placement="bottom"}}Move up{{/bs-tooltip}}</button>
+                <button class="settings-button" {{action 'moveBefore' index}}> {{fa-icon 'angle-up'}}  {{#bs-tooltip placement="bottom"}}Move up{{/bs-tooltip}}</button>
 
             {{else}}
-                <button class="settings-button " style="color:{{theme.color}};"  disabled> {{fa-icon 'angle-up'}}{{#bs-tooltip placement="bottom"}}Already at top{{/bs-tooltip}}</button>
+                <button class="settings-button " disabled> {{fa-icon 'angle-up'}}{{#bs-tooltip placement="bottom"}}Already at top{{/bs-tooltip}}</button>
 
             {{/if}}
 
             {{#if (lt index lastIndex)}}
-                <button class="settings-button" style="color:{{theme.color}};" {{action 'moveAfter' index}}>{{fa-icon 'angle-down'}} {{#bs-tooltip placement="bottom"}}Move down{{/bs-tooltip}}</button>
+                <button class="settings-button" {{action 'moveAfter' index}}>{{fa-icon 'angle-down'}} {{#bs-tooltip placement="bottom"}}Move down{{/bs-tooltip}}</button>
             {{else}}
-                <button class="settings-button" style="color:{{theme.color}};" disabled>{{fa-icon 'angle-down'}} {{#bs-tooltip placement="bottom"}}Already at bottom{{/bs-tooltip}}</button>
+                <button class="settings-button" disabled>{{fa-icon 'angle-down'}} {{#bs-tooltip placement="bottom"}}Already at bottom{{/bs-tooltip}}</button>
             {{/if}}
         </div>
 
-
+        <div class="inline-block settings-divider"></div>
         {{#each layer.settings.form as |item|}}
             {{#if (eq item.type 'image')}}
                 <div class="inline-block">
-                    <button class="settings-button">{{fa-icon 'image'}}</button>
+                    <button class="settings-button">
+                        {{fa-icon 'image'}}
+                        {{#bs-tooltip placement="bottom"}}{{item.label}}{{/bs-tooltip}}
+                    </button>
                     {{#bs-popover placement="bottom"}}
                         {{input class="form-control" value=(get layer.settings.values item.value)  type="text"}}
                     {{/bs-popover}}
