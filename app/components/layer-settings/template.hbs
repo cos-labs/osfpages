@@ -2,15 +2,15 @@
     <div class="layer-settings-inner">
         <div class="layer-order">
             {{#if (gt index 0) }}
-                <button class="btn btn-default btn-outline-default-cus" style="color:{{theme.color}};" {{action 'moveBefore' index}}> {{fa-icon 'angle-double-up'}} </button>
+                <button class="move-button" style="color:{{theme.color}};" {{action 'moveBefore' index}}> {{fa-icon 'long-arrow-up'}} Move up</button>
             {{else}}
-                <button class="btn btn-default btn-outline-default-cus" style="color:{{theme.color}};"  disabled> {{fa-icon 'angle-double-up'}} </button>
+                <button class="move-button" style="color:{{theme.color}};"  disabled> {{fa-icon 'long-arrow-up'}} Move up</button>
             {{/if}}
 
             {{#if (lt index lastIndex)}}
-                <button class="btn btn-default btn-outline-default-cus" style="color:{{theme.color}};" {{action 'moveAfter' index}}>{{fa-icon 'angle-double-down'}}</button>
+                <button class="move-button" style="color:{{theme.color}};" {{action 'moveAfter' index}}>{{fa-icon 'long-arrow-down'}} Move down</button>
             {{else}}
-                <button class="btn btn-default btn-outline-default-cus" style="color:{{theme.color}};" disabled>{{fa-icon 'angle-double-down'}}</button>
+                <button class="move-button" style="color:{{theme.color}};" disabled>{{fa-icon 'long-arrow-down'}} Move down</button>
             {{/if}}
         </div>
         {{theme-select themes=themes layer=layer}}
