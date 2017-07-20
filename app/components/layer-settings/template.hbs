@@ -1,57 +1,18 @@
-<div class="">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-12">
-                <form class="form">
-                    {{#each layer.settings.form as |item|}}
-                        {{#if (eq item.type 'text')}}
-                            <div class="m-v-md">
-                            {{item.label}}
-                            {{input class="form-control" value=(get layer.settings.values item.value)  type="text"}}
-                        </div>
-                        {{/if}}
+<div class="p-md">
+    <div class="layer-settings-inner">
+        <div class="layer-order">
+            {{#if (gt index 0) }}
+                <button class="btn btn-default btn-outline-default-cus" style="color:{{theme.color}};" {{action 'moveBefore' index}}> {{fa-icon 'angle-double-up'}} </button>
+            {{else}}
+                <button class="btn btn-default btn-outline-default-cus" style="color:{{theme.color}};"  disabled> {{fa-icon 'angle-double-up'}} </button>
+            {{/if}}
 
-                        {{#if (eq item.type 'checkbox')}}
-                            <div class="checkbox m-v-md">
-                                <label class="checkbox">
-                                    {{input type="checkbox" checked=(get layer.settings.values item.value)}}
-                                    {{item.label}}
-                                </label>
-                            </div>
-                        {{/if}}
-
-                        {{#if (eq item.type 'increment')}}
-                            <div class="m-v-md">
-                                {{item.label}}
-                                <button class="btn btn-sm btn-default text-small" {{action 'changeSize' 'smaller' item}}>{{fa-icon 'fa-minus'}}</button>
-                                {{layer.settings.values.h1Size}}
-                                <button class="btn btn-sm btn-default text-big" {{action 'changeSize' 'bigger' item}}>{{fa-icon 'fa-plus'}}</button>
-                            </div>
-                        {{/if}}
-
-                        {{#if (eq item.type 'select')}}
-                            <div class="m-v-md">
-                                {{item.label}}
-                                <div class="btn-group" role="group" aria-label="...">
-                                    {{#each item.options as |option|}}
-                                        <button type="button" class="btn btn-default {{if (eq layer.settings.values.alignment option) 'active'}}" {{action 'runOption' option item}} >{{option}}</button>
-                                    {{/each}}
-                                </div>
-                            </div>
-                        {{/if}}
-
-                    {{/each}}
-                </form>
-                {{theme-select themes=themes layer=layer}}
-                {{remove-layer index=index layers=layers}}
-                <div class="form-group">
-                    <div>
-                        <button class="btn btn-primary " name="save" {{action "saveForm"}}>
-                            Save
-                        </button>
-                    </div>
-                </div>
-            </div>
+            {{#if (lt index lastIndex)}}
+                <button class="btn btn-default btn-outline-default-cus" style="color:{{theme.color}};" {{action 'moveAfter' index}}>{{fa-icon 'angle-double-down'}}</button>
+            {{else}}
+                <button class="btn btn-default btn-outline-default-cus" style="color:{{theme.color}};" disabled>{{fa-icon 'angle-double-down'}}</button>
+            {{/if}}
         </div>
+        {{theme-select themes=themes layer=layer}}
     </div>
 </div>

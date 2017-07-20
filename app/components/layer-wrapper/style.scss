@@ -10,48 +10,16 @@
 
 
 .layer-settings {
-    background: rgba(255, 255, 255, 0.93);
-    padding: 25px;
-    min-height: 100px;
-    width: 100%;
-    color: #333333;
-    float: left;
-    z-index:10;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-    border-bottom: 1px solid #eee;
+
 }
 
 @mixin settings-shadow($color){
     box-shadow: 0 0px 21px 0 $color;
 }
 
-.theme-dark .layer-settings{
-    @include settings-shadow(#484848);
-
-}
-
-.theme-light .layer-settings{
-    @include settings-shadow(#CCCCCC);
-}
-
 .layer-image {
     button.btn-outline-default-cus {
         background: #666;
-    }
-}
-
-.layer-order{
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-left: -20px;
-    padding-top: 20px;
-    width: 20px;
-    button {
-        float: left;
-        margin-top: 5px;
-
     }
 }
 

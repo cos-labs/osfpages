@@ -8,9 +8,6 @@ export default Ember.Component.extend({
             return item.id === this.get('layer.settings.values.themeId');
         })[0];
     }),
-    lastIndex: Ember.computed('layers.[]',function (){
-       return  this.get('layers').length-1;
-    }),
     style: Ember.computed('theme', 'layer.settings.values.backgroundImage', 'layer.settings.values.backgroundCover', 'layer.settings.values.height', function(){
         let bgColor = 'background-color: ' + this.get('theme.background') + '; ';
         let bgImage = '';
@@ -29,17 +26,6 @@ export default Ember.Component.extend({
         showSettings (){
             this.set('showSettings', true);
         },
-        moveBefore(index){
-            let layers = this.get('layers');
-            let removed = layers.objectAt(index);
-            layers.insertAt(index-1, removed);
-            layers.removeAt(index+1);
-        },
-        moveAfter(index){
-            let layers = this.get('layers');
-            let removed = layers.objectAt(index);
-            layers.insertAt(index+2, removed);
-            layers.removeAt(index);
-        }
+
     }
 });
