@@ -1,12 +1,13 @@
 <div class="editMenu">
     <div class="container p-sm">
         {{#if isAdmin}}You are logged in as Administrator.{{/if}}
+        {{save-indicator editMode=editMode}}
         {{layer-template-select layers=model.layers}}
         <button class="btn-outline-cus pull-right" {{action 'toggleEditMode'}}>{{currentMode}}</button>
 
     </div>
 </div>
-<div class="p-t-xl">
+<div class="holder p-t-xl">
     {{#each model.layers as |layer index|}}
         {{layer-wrapper node=model.node layer=layer layers=model.layers editMode=editMode themes=model.themes index=index}}
         {{#if editMode}}
