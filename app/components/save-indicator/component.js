@@ -11,8 +11,14 @@ export default Ember.Component.extend({
 				self.send('save');
 			});
 
+			$('.checkbox , .settings-wrapper button, .theme-block').on( "click", function() {
+				self.send('save');
+			})
+
 		}else{
-			$( "body" ).unbind("keyup");
+			$( ".holder" ).unbind("keyup");
+			$('.checkbox , .settings-wrapper button, .theme-block').unbind("click");
+
 		}
 	},
 	actions : {
