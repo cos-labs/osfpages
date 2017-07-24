@@ -1,10 +1,14 @@
 <div class="layer-title-content {{layer.settings.values.alignment}}">
     {{#if layer.settings.values.showTitle}}
-         <h1 class="title" style="{{titleStyle}}">{{node.title}}</h1>
+        <h1 class="title" style="{{titleStyle}}">{{node.title}}</h1>
     {{/if}}
 
     {{#if layer.settings.values.showLead}}
-        <p class="lead">{{layer.settings.values.lead}}</p>
+        {{#if editMode}}
+            {{input class="edit-title-lead" value=layer.settings.values.lead}}
+        {{else}}
+            <p class="lead">{{layer.settings.values.lead}}</p>
+        {{/if}}
     {{/if}}
 
     {{#if layer.settings.values.showNavigation}}
