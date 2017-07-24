@@ -12,8 +12,8 @@
             "showLead":true,
             "showInNavigation":false,
             "h1Size":30,
-             "bgColor":"#FFFFFF",
-             "color": "#333333",
+             "bgColor":"#333333",
+             "color": "#EEEEEE",
              "alignment":"right",
             "lead":"Some lead text"
          },
