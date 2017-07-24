@@ -51,6 +51,9 @@ export default Ember.Component.extend({
         },
         updateColor(newColor){
             this.set('layer.settings.values.color', newColor);
+        },
+        toggleCheck(check){
+            this.toggleProperty('layer.settings.values.' + check.value);
         }
 
     }

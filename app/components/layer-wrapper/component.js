@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
     showSettings: false,
-    style: Ember.computed('layer.settings.values.bgColor', 'layer.settings.values.color', 'layer.settings.values.backgroundImage', 'layer.settings.values.backgroundCover', 'layer.settings.values.height', function(){
+    style: Ember.computed('layer.settings.values.bgColor', 'layer.settings.values.color', 'layer.settings.values.url', 'layer.settings.values.backgroundImage', 'layer.settings.values.backgroundCover', 'layer.settings.values.height', function(){
         let bgColor =  'background-color: ' + (this.get('layer.settings.values.bgColor') || '#FFF') + '; ';
         let color =  'color: ' + (this.get('layer.settings.values.color') || '#333') + '; ' ;
         let bgImage = '';

@@ -98,7 +98,19 @@ btn-outline-default-cus:hover{
         background: transparent;
 
 }
+.modal-footer {
+    border-top: none;
+}
+.modal-header {
+    border-bottom: none;
+}
 
+.popover, .modal-content {
+    border-radius: 0;
+}
+.checkbox {
+    font-size: 16px;
+}
 
 /* Palette skin */
 .sp-replacer {
@@ -112,7 +124,7 @@ btn-outline-default-cus:hover{
 .sp-container {
     background: #fff;
     border: none;
-    box-shadow: 0 7px 23px -1px #333;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2)
 }
 .sp-container button {
     background: #e1e1de;
@@ -123,3 +135,14 @@ btn-outline-default-cus:hover{
     border: 1px solid #ccc;
 }
 /* end */
+
+.checkbox, .settings-block>i{
+    cursor: pointer;
+}
+i.text-disabled {
+    color: #E0E0E0;
+}
+.checkbox:hover {
+    color: #000;
+}
+
