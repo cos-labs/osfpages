@@ -10,6 +10,10 @@ export default Ember.Component.extend({
 		    this.$('div#froala-editor').froalaEditor({
 		      toolbarInline: true,
 		      charCounterCount: false,
+		      imageStyles: {
+			    circle: 'Circle',
+			    padding: 'Padding',
+			  },
 		      toolbarButtons: ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', '-', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'indent', 'outdent', '-', 'insertImage', 'insertLink', 'insertFile', 'insertVideo', 'undo', 'redo'],
 		      toolbarVisibleWithoutSelection: true
 		    });
