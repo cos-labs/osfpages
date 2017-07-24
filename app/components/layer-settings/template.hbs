@@ -3,29 +3,28 @@
 
         <div class="layer-order inline-block">
             {{#if (gt index 0) }}
-                <button class="settings-button" {{action 'moveBefore' index}}> <i class="material-icons">arrow_upward</i>  {{#bs-tooltip placement="bottom"}}Move up{{/bs-tooltip}}</button>
+                <div class="settings-button" {{action 'moveBefore' index}}> <i class="material-icons">arrow_upward</i>  {{#bs-tooltip placement="bottom"}}Move up{{/bs-tooltip}}</div>
 
             {{else}}
-                <button class="settings-button " disabled>  <i class="material-icons">arrow_upward</i>  {{#bs-tooltip placement="bottom"}}Already at top{{/bs-tooltip}}</button>
+                <div class="settings-button " disabled>  <i class="material-icons">arrow_upward</i>  {{#bs-tooltip placement="bottom"}}Already at top{{/bs-tooltip}}</div>
 
             {{/if}}
 
             {{#if (lt index lastIndex)}}
-                <button class="settings-button" {{action 'moveAfter' index}}> <i class="material-icons">arrow_downward</i>  {{#bs-tooltip placement="bottom"}}Move down{{/bs-tooltip}}</button>
+                <div class="settings-button" {{action 'moveAfter' index}}> <i class="material-icons">arrow_downward</i>  {{#bs-tooltip placement="bottom"}}Move down{{/bs-tooltip}}</div>
             {{else}}
-                <button class="settings-button" disabled> <i class="material-icons">arrow_downward</i>  {{#bs-tooltip placement="bottom"}}Already at bottom{{/bs-tooltip}}</button>
+                <div class="settings-button" disabled> <i class="material-icons">arrow_downward</i>  {{#bs-tooltip placement="bottom"}}Already at bottom{{/bs-tooltip}}</div>
             {{/if}}
         </div>
 
-        <div class="inline-block settings-divider"></div>
         {{#each layer.settings.form as |item|}}
             {{#if (eq item.type 'image')}}
                 <div class="inline-block">
-                    <button class="settings-button">
+                    <div class="settings-button">
                         <i class="material-icons">insert_photo</i>
 
                         {{#bs-tooltip placement="bottom"}}{{item.label}}{{/bs-tooltip}}
-                    </button>
+                    </div>
                     {{#bs-popover placement="bottom"}}
                         {{input class="form-control" value=(get layer.settings.values item.value)  type="text"}}
                     {{/bs-popover}}
@@ -38,9 +37,9 @@
             {{#if (eq item.type 'increment')}}
                 <div class="inline-block settings-group">
                     {{item.label}}
-                    <button class="settings-button text-small" {{action 'changeSize' 'smaller' item}}><i class="material-icons">remove</i> </button>
+                    <div class="settings-button text-small" {{action 'changeSize' 'smaller' item}}><i class="material-icons">remove</i> </div>
                     {{layer.settings.values.h1Size}}
-                    <button class="settings-button text-big" {{action 'changeSize' 'bigger' item}}><i class="material-icons">add</i> </button>
+                    <div class="settings-button text-big" {{action 'changeSize' 'bigger' item}}><i class="material-icons">add</i> </div>
                 </div>
             {{/if}}
 
@@ -49,7 +48,7 @@
                     {{item.label}}
                     <div class="btn-group" role="group" aria-label="...">
                         {{#each item.options as |option|}}
-                            <button type="button" class="settings-button {{if (eq layer.settings.values.alignment option) 'active'}}" {{action 'runOption' option item}} >
+                            <div type="button" class="settings-button {{if (eq layer.settings.values.alignment option) 'active'}}" {{action 'runOption' option item}} >
                                 <i class="material-icons">
                                     {{#if (eq option 'left')}}
                                         format_align_left
@@ -61,18 +60,18 @@
                                         format_align_right
                                     {{/if}}
                                 </i>
-                            </button>
+                            </div>
 
                         {{/each}}
                     </div>
                 </div>
             {{/if}}
+            <div class="inline-block settings-divider m-h-sm"></div>
 
         {{/each}}
 
 
         <div class="theme-block inline-block">
-            Theme:
             <div class="settings-group">
                 <i class="material-icons">format_color_fill</i>
                 {{spectrum-color-picker
@@ -107,13 +106,11 @@
             </div>
 
 
-
-
         </div>
 
 
-        <div class="inline-block" {{action 'showRemove'}}>
-            <button class="settings-button remove-layer-toggle"><i class="material-icons">delete</i> </button>
+        <div class="inline-block pull-right" {{action 'showRemove'}}>
+            <div class="settings-button remove-layer-toggle"><i class="material-icons">delete</i> </div>
         </div>
 
     </div>
