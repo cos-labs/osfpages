@@ -124,7 +124,14 @@
                 }}
             </div>
 
+            <div class="inline-block settings-divider m-h-sm"></div>
 
+            <div class="inline-block settings-button" >
+                <i class="material-icons info-circle ">info_outline</i>
+                {{#bs-popover placement="bottom"}}
+                    {{get helpText layer.component}}
+                {{/bs-popover}}
+            </div>
         </div>
 
 
