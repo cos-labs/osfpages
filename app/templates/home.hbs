@@ -1,8 +1,13 @@
 <div class="editMenu">
     <div class="container p-sm">
-        {{#if isAdmin}}You are logged in as Administrator.{{/if}}
         {{layer-template-select layers=model.layers}}
-        <button class="btn-outline-cus pull-right" {{action 'toggleEditMode'}}>{{currentMode}}</button>
+        <button class="btn-outline-cus pull-right" {{action 'toggleEditMode'}}>
+            {{#if editMode}}
+                <i class="material-icons">close</i> Finish editing
+            {{else}}
+                <i class="material-icons">edit</i> Edit
+            {{/if}}
+        </button>
 
     </div>
 </div>
