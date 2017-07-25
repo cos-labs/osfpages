@@ -28,6 +28,10 @@ body {
     text-align: center;
     cursor: pointer;
 }
+.inline-block {
+    display: inline-block;
+}
+
 
 
 /* Pages-nav */
@@ -52,7 +56,6 @@ body {
     color: #fff;
     width: 100%;
     z-index: 9999;
-    height: 50px;
 }
 
 .layer-title {
@@ -78,7 +81,8 @@ body {
 }
 
 
-/*New theme*/
+/* New theme */
+
 .btn-outline-cus{
     background: transparent;
     border: 1px solid #5bc0de;
@@ -96,4 +100,64 @@ body {
 btn-outline-default-cus:hover{
         background: transparent;
 
+}
+.modal-footer {
+    border-top: none;
+}
+.modal-header {
+    border-bottom: none;
+}
+
+.popover, .modal-content {
+    border-radius: 0;
+}
+.checkbox {
+    font-size: 16px;
+}
+
+/* Palette skin */
+.sp-replacer {
+    border: none;
+    background: transparent;
+    color: #fff;
+}
+.sp-preview {
+    width: 20px;
+}
+.sp-container {
+    background: #fff;
+    border: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2)
+}
+.sp-container button {
+    background: #e1e1de;
+    border: none;
+    margin-top: 5px;
+    padding: 8px;
+    text-shadow: none;
+    border: 1px solid #ccc;
+}
+/* end */
+
+.checkbox, .settings-block>i{
+    cursor: pointer;
+}
+i.text-disabled {
+    color: #E0E0E0;
+}
+.checkbox:hover {
+    color: #000;
+}
+
+img.theme-thumb {
+    height: 200px;
+    width: auto;
+}
+
+button.btn {
+    border-radius: 2px;
+}
+
+button .material-icons {
+    vertical-align: bottom;
 }

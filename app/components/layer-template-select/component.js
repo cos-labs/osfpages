@@ -26,7 +26,8 @@ export default Ember.Component.extend({
 				url: '/themes/' + theme,
 				async: false,
 				success: function(data) {
-					self.set('layers', data)
+					self.set('layers', data);
+					self.set('isOpen', false);
 				}
 			});
 		},

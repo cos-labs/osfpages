@@ -16,45 +16,16 @@
             "showLead":true,
             "showInNavigation":false,
             "h1Size":30,
-            "themeId":6,
-            "alignment":"right",
+             "bgColor":"#333333",
+             "color": "#EEEEEE",
+             "alignment":"right",
             "lead":"Some lead text"
          },
          "form":[
             {
-               "type":"text",
+               "type":"image",
                "label":"Background image",
                "value":"backgroundImage",
-               "validation":null
-            },
-            {
-               "type":"text",
-               "label":"Lead text",
-               "value":"lead",
-               "validation":null
-            },
-            {
-               "type":"checkbox",
-               "label":"Show navigation",
-               "value":"showNavigation",
-               "validation":null
-            },
-            {
-               "type":"checkbox",
-               "label":"Fit image to section size",
-               "value":"backgroundCover",
-               "validation":null
-            },
-            {
-               "type":"checkbox",
-               "label":"Show title",
-               "value":"showTitle",
-               "validation":null
-            },
-            {
-               "type":"checkbox",
-               "label":"Show lead text",
-               "value":"showLead",
                "validation":null
             },
             {
@@ -66,7 +37,7 @@
                "validation":null
             },
             {
-               "type":"select",
+               "type":"alignment",
                "label":"Alignment",
                "value":"alignment",
                "options":[
@@ -75,7 +46,36 @@
                   "right"
                ],
                "validation":null
-            }
+            },
+             {
+                 "type": "settings",
+                 "items": [
+                     {
+                         "type":"checkbox",
+                         "label":"Show navigation",
+                         "value":"showNavigation",
+                         "validation":null
+                     },
+                     {
+                         "type":"checkbox",
+                         "label":"Fit image to section size",
+                         "value":"backgroundCover",
+                         "validation":null
+                     },
+                     {
+                         "type":"checkbox",
+                         "label":"Show title",
+                         "value":"showTitle",
+                         "validation":null
+                     },
+                     {
+                         "type":"checkbox",
+                         "label":"Show lead text",
+                         "value":"showLead",
+                         "validation":null
+                     }
+                 ]
+             }
          ]
       }
    },
@@ -92,15 +92,22 @@
          "values":{
             "sectionTitle":"Advanced",
             "showInNavigation":true,
-            "themeId":5
+             "bgColor":"#FFFFFF",
+             "color": "#333333"
          },
          "form":[
-            {
-               "type":"checkbox",
-               "label":"Show in navigation",
-               "value":"showInNavigation",
-               "validation":null
-            }
+             {
+                 "type" : "settings",
+                 "items": [
+                     {
+                         "type":"checkbox",
+                         "label":"Show in navigation",
+                         "value":"showInNavigation",
+                         "validation":null
+                     }
+                 ]
+             }
+
          ]
       }
    },
@@ -120,39 +127,45 @@
             "showContributors":true,
             "showBibliographicContributors":false,
             "showAffiliatedInstitutions":true,
-            "themeId":2
+             "bgColor":"#FFFFFF",
+             "color": "#333333"
          },
          "form":[
-            {
-               "type":"checkbox",
-               "label":"Show in navigation",
-               "value":"showInNavigation",
-               "validation":null
-            },
-            {
-               "type":"checkbox",
-               "label":"Show description",
-               "value":"showDescription",
-               "validation":null
-            },
-            {
-               "type":"checkbox",
-               "label":"Show contributors",
-               "value":"showContributors",
-               "validation":null
-            },
-            {
-               "type":"checkbox",
-               "label":"Show only bibliographic contributors",
-               "value":"showBibliographicContributors",
-               "validation":null
-            },
-            {
-               "type":"checkbox",
-               "label":"Show affiliated institutions",
-               "value":"showAffiliatedInstitutions",
-               "validation":null
-            }
+             {
+                 "type": "settings",
+                 "items": [
+                     {
+                         "type": "checkbox",
+                         "label": "Show in navigation",
+                         "value": "showInNavigation",
+                         "validation": null
+                     },
+                     {
+                         "type": "checkbox",
+                         "label": "Show description",
+                         "value": "showDescription",
+                         "validation": null
+                     },
+                     {
+                         "type": "checkbox",
+                         "label": "Show contributors",
+                         "value": "showContributors",
+                         "validation": null
+                     },
+                     {
+                         "type": "checkbox",
+                         "label": "Show only bibliographic contributors",
+                         "value": "showBibliographicContributors",
+                         "validation": null
+                     },
+                     {
+                         "type": "checkbox",
+                         "label": "Show affiliated institutions",
+                         "value": "showAffiliatedInstitutions",
+                         "validation": null
+                     }
+                 ]
+             }
          ]
       }
    },
@@ -170,21 +183,27 @@
             "showInNavigation":true,
             "sectionDescription":"this link goes to a place",
             "sectionLink":"www.example.com",
-            "themeId":5
+             "bgColor":"#FFFFFF",
+             "color": "#333333"
          },
          "form":[
-            {
-               "type":"checkbox",
-               "label":"Show in navigation",
-               "value":"showInNavigation",
-               "validation":null
-            },
-            {
-               "type":"text",
-               "label":"Link address",
-               "value":"sectionLink",
-               "validation":null
-            }
+             {
+                 "type": "settings",
+                 "items": [
+                     {
+                         "type": "checkbox",
+                         "label": "Show in navigation",
+                         "value": "showInNavigation",
+                         "validation": null
+                     },
+                     {
+                         "type": "text",
+                         "label": "Link address",
+                         "value": "sectionLink",
+                         "validation": null
+                     }
+                 ]
+             }
          ]
       }
    },
@@ -200,11 +219,12 @@
          "values":{
             "height":500,
             "url":"http://localhost:4200/img/sample.jpg",
-            "themeId":3
+             "bgColor":"#FFFFFF",
+             "color": "#333333"
          },
          "form":[
             {
-               "type":"text",
+               "type":"image",
                "label":"Image link",
                "value":"url",
                "validation":null
@@ -234,21 +254,27 @@
             "showFileviewer":true,
             "downloadLink":"",
             "showInNavigation":true,
-            "themeId":6
+             "bgColor":"#FFFFFF",
+             "color": "#333333"
          },
          "form":[
-            {
-               "type":"checkbox",
-               "label":"Show in navigation",
-               "value":"showInNavigation",
-               "validation":null
-            },
-            {
-               "type":"checkbox",
-               "label":"Show file viewer",
-               "value":"showFileviewer",
-               "validation":null
-            }
+             {
+                 "type": "settings",
+                 "items": [
+                     {
+                         "type": "checkbox",
+                         "label": "Show in navigation",
+                         "value": "showInNavigation",
+                         "validation": null
+                     },
+                     {
+                         "type": "checkbox",
+                         "label": "Show file viewer",
+                         "value": "showFileviewer",
+                         "validation": null
+                     }
+                 ]
+             }
          ]
       }
    },
@@ -266,21 +292,27 @@
             "sectionTitle":"Wiki example",
             "showInNavigation":true,
             "addShowMore":false,
-            "themeId":5
+            "bgColor":"#FFFFFF",
+            "color": "#333333"
          },
          "form":[
-            {
-               "type":"checkbox",
-               "label":"Show in navigation",
-               "value":"showInNavigation",
-               "validation":null
-            },
-            {
-               "type":"checkbox",
-               "label":"Add show more",
-               "value":"addShowMore",
-               "validation":null
-            }
+             {
+                 "type": "settings",
+                 "items": [
+                     {
+                         "type": "checkbox",
+                         "label": "Show in navigation",
+                         "value": "showInNavigation",
+                         "validation": null
+                     },
+                     {
+                         "type": "checkbox",
+                         "label": "Add show more",
+                         "value": "addShowMore",
+                         "validation": null
+                     }
+                 ]
+             }
          ]
       }
    }

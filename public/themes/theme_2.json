@@ -16,65 +16,65 @@
             "showLead":true,
             "showInNavigation":false,
             "h1Size":47,
-            "themeId":6,
+             "bgColor":"#FFFFFF",
+             "color": "#333333",
             "alignment":"center",
             "lead":"Wiki Theme"
          },
          "form":[
             {
-               "type":"text",
-               "label":"Background image",
-               "value":"backgroundImage",
-               "validation":null
+                "type":"image",
+                "label":"Background image",
+                "value":"backgroundImage",
+                "validation":null
             },
             {
-               "type":"text",
-               "label":"Lead text",
-               "value":"lead",
-               "validation":null
+                 "type":"increment",
+                 "label":"Title size",
+                 "value":"h1Size",
+                 "size":20,
+                 "incrementSize":4,
+                 "validation":null
             },
             {
-               "type":"checkbox",
-               "label":"Show navigation",
-               "value":"showNavigation",
-               "validation":null
+                 "type":"alignment",
+                 "label":"Alignment",
+                 "value":"alignment",
+                 "options":[
+                     "left",
+                     "center",
+                     "right"
+                 ],
+                 "validation":null
             },
             {
-               "type":"checkbox",
-               "label":"Fit image to section size",
-               "value":"backgroundCover",
-               "validation":null
-            },
-            {
-               "type":"checkbox",
-               "label":"Show title",
-               "value":"showTitle",
-               "validation":null
-            },
-            {
-               "type":"checkbox",
-               "label":"Show lead text",
-               "value":"showLead",
-               "validation":null
-            },
-            {
-               "type":"increment",
-               "label":"Title size",
-               "value":"h1Size",
-               "size":20,
-               "incrementSize":4,
-               "validation":null
-            },
-            {
-               "type":"select",
-               "label":"Alignment",
-               "value":"alignment",
-               "options":[
-                  "left",
-                  "center",
-                  "right"
-               ],
-               "validation":null
+                 "type": "settings",
+                 "items": [
+                     {
+                         "type": "checkbox",
+                         "label": "Show navigation",
+                         "value": "showNavigation",
+                         "validation": null
+                     },
+                     {
+                         "type": "checkbox",
+                         "label": "Fit image to section size",
+                         "value": "backgroundCover",
+                         "validation": null
+                     },
+                     {
+                         "type": "checkbox",
+                         "label": "Show title",
+                         "value": "showTitle",
+                         "validation": null
+                     },
+                     {
+                         "type": "checkbox",
+                         "label": "Show lead text",
+                         "value": "showLead",
+                         "validation": null
+                     }
+                 ]
             }
          ]
       }
@@ -95,39 +95,45 @@
             "showContributors":true,
             "showBibliographicContributors":false,
             "showAffiliatedInstitutions":true,
-            "themeId":8
+             "bgColor":"#FFFFFF",
+             "color": "#333333"
          },
          "form":[
-            {
-               "type":"checkbox",
-               "label":"Show in navigation",
-               "value":"showInNavigation",
-               "validation":null
-            },
-            {
-               "type":"checkbox",
-               "label":"Show description",
-               "value":"showDescription",
-               "validation":null
-            },
-            {
-               "type":"checkbox",
-               "label":"Show contributors",
-               "value":"showContributors",
-               "validation":null
-            },
-            {
-               "type":"checkbox",
-               "label":"Show only bibliographic contributors",
-               "value":"showBibliographicContributors",
-               "validation":null
-            },
-            {
-               "type":"checkbox",
-               "label":"Show affiliated institutions",
-               "value":"showAffiliatedInstitutions",
-               "validation":null
-            }
+             {
+                 "type": "settings",
+                 "items": [
+                     {
+                         "type": "checkbox",
+                         "label": "Show in navigation",
+                         "value": "showInNavigation",
+                         "validation": null
+                     },
+                     {
+                         "type": "checkbox",
+                         "label": "Show description",
+                         "value": "showDescription",
+                         "validation": null
+                     },
+                     {
+                         "type": "checkbox",
+                         "label": "Show contributors",
+                         "value": "showContributors",
+                         "validation": null
+                     },
+                     {
+                         "type": "checkbox",
+                         "label": "Show only bibliographic contributors",
+                         "value": "showBibliographicContributors",
+                         "validation": null
+                     },
+                     {
+                         "type": "checkbox",
+                         "label": "Show affiliated institutions",
+                         "value": "showAffiliatedInstitutions",
+                         "validation": null
+                     }
+                 ]
+             }
          ]
       }
    },
@@ -145,21 +151,27 @@
             "sectionTitle":"Wiki",
             "showInNavigation":true,
             "addShowMore":false,
-            "themeId":2
+             "bgColor":"#FFFFFF",
+             "color": "#333333"
          },
          "form":[
-            {
-               "type":"checkbox",
-               "label":"Show in navigation",
-               "value":"showInNavigation",
-               "validation":null
-            },
-            {
-               "type":"checkbox",
-               "label":"Add show more",
-               "value":"addShowMore",
-               "validation":null
-            }
+             {
+                 "type": "settings",
+                 "items": [
+                     {
+                         "type": "checkbox",
+                         "label": "Show in navigation",
+                         "value": "showInNavigation",
+                         "validation": null
+                     },
+                     {
+                         "type": "checkbox",
+                         "label": "Add show more",
+                         "value": "addShowMore",
+                         "validation": null
+                     }
+                 ]
+             }
          ]
       }
    }

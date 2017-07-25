@@ -2777,6 +2777,12 @@ ember-source@~2.12.0:
     rsvp "^3.4.0"
     simple-dom "^0.3.0"
 
+ember-spectrum-color-picker@^0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/ember-spectrum-color-picker/-/ember-spectrum-color-picker-0.5.2.tgz#dbb9d0e95a7da468573b000024ebef3ba0294050"
+  dependencies:
+    ember-cli-babel "^5.1.6"
+
 ember-string-ishtmlsafe-polyfill@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/ember-string-ishtmlsafe-polyfill/-/ember-string-ishtmlsafe-polyfill-1.1.0.tgz#ecde33419ff912b91dd8acf0640eb74b9758408e"
