@@ -1,0 +1,9 @@
+{{#if isSaving}}
+<p class="text-center">Saving...</p>
+{{else}}
+<p class="text-center"style="cursor: pointer;" {{action 'save'}}> {{fa-icon "floppy-o"}} All changes saved </p>
+{{/if}}
+
+{{#each layers as |layer index|}}
+{{layer.settings.values.sectionTitle}}
+{{/each}}
