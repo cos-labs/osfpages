@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-let layers = {};
+let theme = {};
 
 export default Ember.Route.extend({
     beforeModel(){
@@ -9,14 +9,14 @@ export default Ember.Route.extend({
             url: "/themes/theme_1.json",
             async: false,
             success: function (data) {
-                layers = data;
+                theme = data;
             }});
     },
     model(params){
         // If testing and parameter is not working use this 'jyu4t' for params.guid
         return this.store.findRecord('node', params.guid).then((result)=>{
             return {
-                layers,
+                theme,
                 guid: params.guid,
                 node: result
             };
