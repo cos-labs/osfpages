@@ -2,7 +2,7 @@
     <div class="container p-sm">
         <div class="row">
             <div class="col-sm-3">
-                {{layer-template-select layers=model.layers}}
+                {{layer-template-select theme=model.theme}}
             </div>
             <div class="col-sm-9 clearfix">
                 <div class="pull-right">
@@ -20,10 +20,10 @@
 </div>
 
 <div class="holder p-t-xl">
-    {{#each model.layers as |layer index|}}
-        {{layer-wrapper node=model.node layer=layer layers=model.layers editMode=editMode index=index}}
+    {{#each model.theme.layers as |layer index|}}
+        {{layer-wrapper node=model.node layer=layer layers=model.theme.layers editMode=editMode index=index}}
         {{#if editMode}}
-            {{add-layer index=index layers=model.layers}}
+            {{add-layer index=index layers=model.theme.layers}}
         {{/if}}
     {{/each}}
 

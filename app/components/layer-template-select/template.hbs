@@ -6,28 +6,15 @@
       {{/modal.header}}
       {{#modal.body}}
          <div class="row p-v-md">
-            <div class="col-sm-6">
-               <button class="btn btn-default btn-block" {{action 'renderTemplate' 'wiki'}}><img class="theme-thumb" src="img/wiki.png" alt="Wiki template">
-               <hr />
-               Wiki </button>
-            </div>
-            <div class="col-sm-6">
-               <button class="btn btn-default btn-block" {{action 'renderTemplate' 'all'}} ><img class="theme-thumb" src="img/all.png" alt="All layers">
-               <hr />
-               Everything</button>
-            </div>
-         </div>
-         <div class="row p-v-md">
-            <div class="col-sm-6">
-               <button class="btn btn-default btn-block" {{action 'renderTemplate' 'people'}}><img class="theme-thumb" src="img/people.png" alt="Team template">
-               <hr />
-               People</button>
-            </div>
-            <div class="col-sm-6">
-               <button class="btn btn-default btn-block" {{action 'renderTemplate' 'file'}}><img class="theme-thumb" src="img/file.png" alt="File template">
-               <hr />
-               File </button>
-            </div>
+            {{#each themeList as |item|}}
+                <div class="col-sm-6 m-b-md">
+                    <button class="btn btn-default btn-block {{if (eq theme.id item.id) 'active' }} " {{action 'renderTemplate' item.id}}>
+                        <img class="theme-thumb" src="{{item.thumb}}" alt="{{item.name}} template">
+                        <hr />
+                        {{item.name}}
+                    </button>
+                </div>
+            {{/each}}
          </div>
       {{/modal.body}}
       {{#modal.footer as |footer|}}
