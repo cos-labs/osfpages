@@ -29,8 +29,6 @@ export default Ember.Component.extend({
 		renderTemplate(id) {
 			let self = this;
 			let theme = `theme_${id}.json`;
-			console.log(theme);
-
 			$.ajax({
 				type: 'GET',
 				url: '/themes/' + theme,
