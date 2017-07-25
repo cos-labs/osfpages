@@ -12,66 +12,66 @@
             "showLead":true,
             "showInNavigation":false,
             "h1Size":30,
-            "themeId":6,
+             "bgColor":"#FFFFFF",
+             "color": "#333333",
             "alignment":"center",
             "lead":"File Theme"
          },
          "form":[
             {
-               "type":"text",
+               "type":"image",
                "label":"Background image",
                "value":"backgroundImage",
                "validation":null
             },
-            {
-               "type":"text",
-               "label":"Lead text",
-               "value":"lead",
-               "validation":null
-            },
-            {
-               "type":"checkbox",
-               "label":"Show navigation",
-               "value":"showNavigation",
-               "validation":null
-            },
-            {
-               "type":"checkbox",
-               "label":"Fit image to section size",
-               "value":"backgroundCover",
-               "validation":null
-            },
-            {
-               "type":"checkbox",
-               "label":"Show title",
-               "value":"showTitle",
-               "validation":null
-            },
-            {
-               "type":"checkbox",
-               "label":"Show lead text",
-               "value":"showLead",
-               "validation":null
-            },
-            {
-               "type":"increment",
-               "label":"Title size",
-               "value":"h1Size",
-               "size":20,
-               "incrementSize":4,
-               "validation":null
-            },
-            {
-               "type":"select",
-               "label":"Alignment",
-               "value":"alignment",
-               "options":[
-                  "left",
-                  "center",
-                  "right"
-               ],
-               "validation":null
-            }
+             {
+                 "type":"increment",
+                 "label":"Title size",
+                 "value":"h1Size",
+                 "size":20,
+                 "incrementSize":4,
+                 "validation":null
+             },
+             {
+                 "type":"alignment",
+                 "label":"Alignment",
+                 "value":"alignment",
+                 "options":[
+                     "left",
+                     "center",
+                     "right"
+                 ],
+                 "validation":null
+             },
+             {
+                 "type": "settings",
+                 "items": [
+                     {
+                         "type":"checkbox",
+                         "label":"Show navigation",
+                         "value":"showNavigation",
+                         "validation":null
+                     },
+                     {
+                         "type":"checkbox",
+                         "label":"Fit image to section size",
+                         "value":"backgroundCover",
+                         "validation":null
+                     },
+                     {
+                         "type":"checkbox",
+                         "label":"Show title",
+                         "value":"showTitle",
+                         "validation":null
+                     },
+                     {
+                         "type":"checkbox",
+                         "label":"Show lead text",
+                         "value":"showLead",
+                         "validation":null
+                     }
+                 ]
+             }
          ]
       }
    },
@@ -86,21 +86,27 @@
             "showFileviewer":true,
             "downloadLink":"",
             "showInNavigation":true,
-            "themeId":6
+             "bgColor":"#FFFFFF",
+             "color": "#333333"
          },
          "form":[
-            {
-               "type":"checkbox",
-               "label":"Show in navigation",
-               "value":"showInNavigation",
-               "validation":null
-            },
-            {
-               "type":"checkbox",
-               "label":"Show file viewer",
-               "value":"showFileviewer",
-               "validation":null
-            }
+             {
+                 "type": "settings",
+                 "items": [
+                     {
+                         "type": "checkbox",
+                         "label": "Show in navigation",
+                         "value": "showInNavigation",
+                         "validation": null
+                     },
+                     {
+                         "type": "checkbox",
+                         "label": "Show file viewer",
+                         "value": "showFileviewer",
+                         "validation": null
+                     }
+                 ]
+             }
          ]
       }
    }

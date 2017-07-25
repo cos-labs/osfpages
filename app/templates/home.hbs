@@ -1,15 +1,27 @@
 <div class="editMenu">
     <div class="container p-sm">
-        {{#if isAdmin}}<p class="text-center" style="margin: 0;padding: 0;">You are logged in as Administrator.</p>{{/if}}
-        {{save-indicator editMode=editMode}}
-        {{layer-template-select layers=model.layers}}
-        <button class="btn-outline-cus pull-right" style="margin-top: -30px;"{{action 'toggleEditMode'}}>{{currentMode}}</button>
-
+        <div class="row">
+            <div class="col-sm-3">
+                {{layer-template-select layers=model.layers}}
+            </div>
+            <div class="col-sm-9 clearfix">
+                <div class="pull-right">
+                    <button class="btn-outline-cus" {{action 'toggleEditMode'}}>
+                        {{#if editMode}}
+                            <i class="material-icons">close</i> Finish editing
+                        {{else}}
+                            <i class="material-icons">edit</i> Edit
+                        {{/if}}
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
 <div class="holder p-t-xl">
     {{#each model.layers as |layer index|}}
-        {{layer-wrapper node=model.node layer=layer layers=model.layers editMode=editMode themes=model.themes index=index}}
+        {{layer-wrapper node=model.node layer=layer layers=model.layers editMode=editMode index=index}}
         {{#if editMode}}
             {{add-layer index=index layers=model.layers}}
         {{/if}}

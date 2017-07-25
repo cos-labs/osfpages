@@ -18,7 +18,8 @@ export default Ember.Component.extend({
                                 sectionTitle:"Wiki example",
                                 showInNavigation: true,
                                 addShowMore: false,
-                                themeId: 5,
+                                bgColor:'#FFFFFF',
+                                color: '#333333',
                             },
                             form: [
                                 {
@@ -49,7 +50,8 @@ export default Ember.Component.extend({
                                 showFileviewer: true,
                                 downloadLink: '',
                                 showInNavigation: true,
-                                themeId: 6,
+                                bgColor:'#FFFFFF',
+                                color: '#333333',
                             },
                             form: [
                                 {
@@ -79,7 +81,8 @@ export default Ember.Component.extend({
                                 showInNavigation: true,
                                 sectionDescription:"this link goes to a place",
                                 sectionLink:"www.example.com",
-                                themeId: 5,
+                                bgColor:'#FFFFFF',
+                                color: '#333333',
                             },
                             form: [
                                 {
@@ -108,7 +111,8 @@ export default Ember.Component.extend({
                             values: {
                                 sectionTitle:"Advanced",
                                 showInNavigation: true,
-                                themeId: 5,
+                                bgColor:'#FFFFFF',
+                                color: '#333333',
                             },
                             form: [
                                 {
@@ -130,7 +134,8 @@ export default Ember.Component.extend({
                             values: {
                                 height: 500,
                                 url: 'http://localhost:4200/img/sample.jpg',
-                                themeId: 3,
+                                bgColor:'#FFFFFF',
+                                color: '#333333',
                             },
                             form: [
                                 {

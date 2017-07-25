@@ -2,29 +2,29 @@
 
    {{#bs-modal onSubmit=(action "renderTemplate") onHidden=(action 'toggleProperty' 'isOpen') as |modal|}}
       {{#modal.header}}
-         <h4 class="modal-title">Avaible Themes</h4>
+         <h4 class="modal-title">Available Themes</h4>
       {{/modal.header}}
       {{#modal.body}}
          <div class="row p-v-md">
             <div class="col-sm-6">
-               <button class="btn btn-default btn-block" {{action 'renderTemplate' 'wiki'}}><img src="img/wiki.png" alt="Smiley face" width="90%"> 
+               <button class="btn btn-default btn-block" {{action 'renderTemplate' 'wiki'}}><img class="theme-thumb" src="img/wiki.png" alt="Wiki template">
                <hr />
                Wiki </button>
             </div>
             <div class="col-sm-6">
-               <button class="btn btn-default btn-block" {{action 'renderTemplate' 'all'}} ><img src="img/all.png" alt="Smiley face" width="90%"> 
+               <button class="btn btn-default btn-block" {{action 'renderTemplate' 'all'}} ><img class="theme-thumb" src="img/all.png" alt="All layers">
                <hr />
-               All </button>
+               Everything</button>
             </div>
          </div>
          <div class="row p-v-md">
             <div class="col-sm-6">
-               <button class="btn btn-default btn-block" {{action 'renderTemplate' 'people'}}><img src="img/people.png" alt="Smiley face" width="90%"> 
+               <button class="btn btn-default btn-block" {{action 'renderTemplate' 'people'}}><img class="theme-thumb" src="img/people.png" alt="Team template">
                <hr />
-               Peole</button>
+               People</button>
             </div>
             <div class="col-sm-6">
-               <button class="btn btn-default btn-block" {{action 'renderTemplate' 'file'}}><img src="img/file.png" alt="Smiley face" width="90%"> 
+               <button class="btn btn-default btn-block" {{action 'renderTemplate' 'file'}}><img class="theme-thumb" src="img/file.png" alt="File template">
                <hr />
                File </button>
             </div>
@@ -35,4 +35,4 @@
       {{/modal.footer}}
    {{/bs-modal}}
 {{/if}}
-<button class="btn-outline-cus pull-left"  style="margin-top: -30px;" {{action 'toggleProperty' 'isOpen'}}> Select a Theme </button>
+<button class="btn-outline-cus"  {{action 'toggleProperty' 'isOpen'}}> Select a Theme </button>

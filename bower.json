@@ -2,6 +2,7 @@
   "name": "osfpages-admin",
   "dependencies": {
     "font-awesome": "^4.7.0",
-      "osf-style": "https://github.com/CenterForOpenScience/osf-style.git#48197d234baf07c321c56edfd9f48b5624374453"
+    "osf-style": "https://github.com/CenterForOpenScience/osf-style.git#48197d234baf07c321c56edfd9f48b5624374453",
+    "spectrum": "^1.8.0"
   }
 }

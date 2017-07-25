@@ -1,57 +1,149 @@
-<div class="">
-    <div class="container-fluid">
-        <div class="row settings-wrapper">
-            <div class="col-xs-12">
-                <form class="form">
-                    {{#each layer.settings.form as |item|}}
-                        {{#if (eq item.type 'text')}}
-                            <div class="m-v-md">
-                            {{item.label}}
-                            {{input class="form-control" value=(get layer.settings.values item.value)  type="text"}}
-                        </div>
-                        {{/if}}
+<div class="p-md">
+    <div class="layer-settings-inner">
 
-                        {{#if (eq item.type 'checkbox')}}
-                            <div class="checkbox m-v-md">
-                                <label class="checkbox">
-                                    {{input type="checkbox" checked=(get layer.settings.values item.value)}}
-                                    {{item.label}}
-                                </label>
+        <div class="layer-order inline-block">
+            {{#if (gt index 0) }}
+                <div class="settings-button" {{action 'moveBefore' index}}> <i class="material-icons">arrow_upward</i>  {{#bs-tooltip placement="bottom"}}Move up{{/bs-tooltip}}</div>
+
+            {{else}}
+                <div class="settings-button " disabled>  <i class="material-icons">arrow_upward</i>  {{#bs-tooltip placement="bottom"}}Already at top{{/bs-tooltip}}</div>
+
+            {{/if}}
+
+            {{#if (lt index lastIndex)}}
+                <div class="settings-button" {{action 'moveAfter' index}}> <i class="material-icons">arrow_downward</i>  {{#bs-tooltip placement="bottom"}}Move down{{/bs-tooltip}}</div>
+            {{else}}
+                <div class="settings-button" disabled> <i class="material-icons">arrow_downward</i>  {{#bs-tooltip placement="bottom"}}Already at bottom{{/bs-tooltip}}</div>
+            {{/if}}
+        </div>
+        <div class="inline-block settings-divider m-h-sm"></div>
+        {{#each layer.settings.form as |item|}}
+            {{#if (eq item.type 'image')}}
+                <div class="inline-block">
+                    <div class="settings-button">
+                        <i class="material-icons">insert_photo</i>
+
+                        {{#bs-tooltip placement="bottom"}}{{item.label}}{{/bs-tooltip}}
+                    </div>
+                    {{#bs-popover placement="bottom"}}
+                        {{input class="form-control" value=(get layer.settings.values item.value)  type="text"}}
+                    {{/bs-popover}}
+                </div>
+
+
+            {{/if}}
+
+
+            {{#if (eq item.type 'increment')}}
+                <div class="inline-block settings-group">
+                    {{item.label}}
+                    <div class="settings-button text-small" {{action 'changeSize' 'smaller' item}}><i class="material-icons">remove</i> </div>
+                    {{layer.settings.values.h1Size}}
+                    <div class="settings-button text-big" {{action 'changeSize' 'bigger' item}}><i class="material-icons">add</i> </div>
+                </div>
+            {{/if}}
+
+            {{#if (eq item.type 'alignment')}}
+                <div class="inline-block">
+                    <div class="btn-group" role="group" aria-label="...">
+                        {{#each item.options as |option|}}
+                            <div type="button" class="settings-button {{if (eq layer.settings.values.alignment option) 'active'}}" {{action 'runOption' option item}} >
+                                <i class="material-icons">
+                                    {{#if (eq option 'left')}}
+                                        format_align_left
+                                    {{/if}}
+                                    {{#if (eq option 'center')}}
+                                        format_align_center
+                                    {{/if}}
+                                    {{#if (eq option 'right')}}
+                                        format_align_right
+                                    {{/if}}
+                                </i>
                             </div>
-                        {{/if}}
 
-                        {{#if (eq item.type 'increment')}}
-                            <div class="m-v-md">
-                                {{item.label}}
-                                <button class="btn btn-sm btn-default text-small" {{action 'changeSize' 'smaller' item}}>{{fa-icon 'fa-minus'}}</button>
-                                {{layer.settings.values.h1Size}}
-                                <button class="btn btn-sm btn-default text-big" {{action 'changeSize' 'bigger' item}}>{{fa-icon 'fa-plus'}}</button>
-                            </div>
-                        {{/if}}
-
-                        {{#if (eq item.type 'select')}}
-                            <div class="m-v-md">
-                                {{item.label}}
-                                <div class="btn-group" role="group" aria-label="...">
-                                    {{#each item.options as |option|}}
-                                        <button type="button" class="btn btn-default {{if (eq layer.settings.values.alignment option) 'active'}}" {{action 'runOption' option item}} >{{option}}</button>
-                                    {{/each}}
-                                </div>
-                            </div>
-                        {{/if}}
-
-                    {{/each}}
-                </form>
-                {{theme-select themes=themes layer=layer}}
-                {{remove-layer index=index layers=layers}}
-                <div class="form-group">
-                    <div>
-                        <button class="btn btn-primary " name="save" {{action "saveForm"}}>
-                            Save
-                        </button>
+                        {{/each}}
                     </div>
                 </div>
+            {{/if}}
+
+            {{#if (eq item.type 'settings')}}
+                <div class="settings-block inline-block">
+                    <i class="material-icons">settings</i>
+                    <i class="material-icons">arrow_drop_down</i>
+                    {{#bs-popover placement="bottom"}}
+                        {{#each item.items as |check|}}
+                            {{#if (eq check.type 'checkbox')}}
+                                <div class="checkbox m-v-md" {{action 'toggleCheck' check}}>
+                                    {{#if (get layer.settings.values check.value)}}
+                                        <i class="material-icons text-success">check</i>
+                                    {{else}}
+                                        <i class="material-icons text-disabled">check</i>
+                                    {{/if}}
+                                    {{check.label}}
+                                </div>
+                            {{/if}}
+                        {{/each}}
+                    {{/bs-popover}}
+                </div>
+            {{/if}}
+            <div class="inline-block settings-divider m-h-sm"></div>
+        {{/each}}
+
+
+        <div class="theme-block inline-block">
+            <div class="settings-group">
+                <i class="material-icons">format_color_fill</i>
+                {{spectrum-color-picker
+                color=layer.settings.values.bgColor
+                showInput=true
+                preferredFormat='hex'
+                showPalette=true
+                palette=backgroundPalette
+                showPaletteOnly=true
+                togglePaletteOnly=true
+                hideAfterPaletteSelect=true
+                showInitial=true
+                onChange=(action "updateBgColor")
+                chooseText='Select'
+            }}
             </div>
+            <div class="settings-group">
+                <i class="material-icons">format_color_text</i> {{spectrum-color-picker
+                    color=layer.settings.values.color
+                    showInput=true
+                    preferredFormat='hex'
+                    showPalette=true
+                    palette=colorPalette
+                    showPaletteOnly=true
+                    togglePaletteOnly=true
+                    hideAfterPaletteSelect=true
+                    showInitial=true
+                    onChange=(action "updateColor")
+                    chooseText='Select'
+
+                }}
+            </div>
+
+
         </div>
+
+
+        <div class="inline-block pull-right" {{action 'showRemove'}}>
+            <div class="settings-button remove-layer-toggle"><i class="material-icons">delete</i> </div>
+        </div>
+
     </div>
 </div>
+
+
+{{#if showRemoveModal}}
+    {{#bs-modal onSubmit=(action "removeLayer") onHidden=(action 'hideRemove') as |modal|}}
+        {{#modal.header}}
+            <h4 class="modal-title">Are you sure you want to delete this section?</h4>
+        {{/modal.header}}
+        {{#modal.footer as |footer|}}
+            {{#bs-button onClick=(action modal.close) type="default"}}Cancel {{/bs-button}}
+            {{#bs-button onClick=(action modal.submit) type="danger"}}Delete{{/bs-button}}
+        {{/modal.footer}}
+    {{/bs-modal}}
+{{/if}}
