@@ -2,6 +2,10 @@
    {
       "sectionHeader":"Title",
       "component":"layer-title",
+      "help":{
+         "title": "Title Section",
+         "text": "The title section is used for displaying the title of your OSF project, all data here is pulled directly from your project."
+      },
       "settings":{
          "component":"layer-settings",
          "values":{
@@ -78,6 +82,10 @@
    {
       "sectionHeader":"Info",
       "component":"layer-info",
+      "help":{
+         "title": "Info Section",
+         "text": "The information section is used for displaying your project description, contributors and affiliated institutions from you OSF project."
+      },
       "settings":{
          "component":"layer-settings",
          "values":{
@@ -126,6 +134,10 @@
    {
       "sectionHeader":"Wiki",
       "component":"layer-wiki",
+      "help":{
+         "title": "Wiki Section",
+         "text": "The wiki section is used for displaying your project's wiki, all data from this section is from you OSF project."
+      },
       "settings":{
          "component":"layer-settings",
          "wikiId":"",

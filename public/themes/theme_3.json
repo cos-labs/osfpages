@@ -2,6 +2,10 @@
    {
       "sectionHeader":"Title",
       "component":"layer-title",
+      "help":{
+         "title": "Title Section",
+         "text": "The title section is used for displaying the title of your OSF project, all data here is pulled directly from your project."
+      },
       "settings":{
          "component":"layer-settings",
          "values":{
@@ -78,6 +82,10 @@
    {
       "sectionHeader":"Download",
       "component":"layer-file",
+      "help":{
+         "title": "File Section",
+         "text": "The file section is used to show files from your OSF project, you can write a short description about the file."
+      },
       "settings":{
          "component":"layer-settings",
          "values":{
