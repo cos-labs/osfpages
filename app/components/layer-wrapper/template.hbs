@@ -5,8 +5,6 @@
                 <div class="layer clearfix">
 
                     {{#if editMode}}
-                        {{guided-tours help=layer.help}}
-
                         <div class="layer-settings">
                             {{component layer.settings.component layer=layer node=node editMode=editMode index=index layers=layers showSettings=showSettings}}
                         </div>
