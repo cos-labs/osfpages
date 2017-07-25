@@ -28,6 +28,10 @@ body {
     text-align: center;
     cursor: pointer;
 }
+.inline-block {
+    display: inline-block;
+}
+
 
 
 /* Pages-nav */
@@ -52,7 +56,6 @@ body {
     color: #fff;
     width: 100%;
     z-index: 99;
-    height: 50px;
 }
 
 .layer-title {
