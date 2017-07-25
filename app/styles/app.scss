@@ -149,15 +149,36 @@ i.text-disabled {
     color: #000;
 }
 
-img.theme-thumb {
-    height: 200px;
-    width: auto;
-}
-
 button.btn {
     border-radius: 2px;
 }
 
 button .material-icons {
     vertical-align: bottom;
+}
+
+.pages-overlay {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    top: 0;
+    left: 0;
+    z-index: 99;
+    color: #333;
+    .content {
+        margin: 50px auto;
+    }
+    h2 {
+        color: #333;
+    }
+    .overlay-dismiss {
+        position: absolute;
+        right: 40px;
+        cursor: pointer;
+        color: #999;
+        i {
+            font-size: 36px;
+        }
+    }
 }
