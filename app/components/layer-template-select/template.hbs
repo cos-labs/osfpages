@@ -1,25 +1,33 @@
 {{#if isOpen}}
-
-   {{#bs-modal onSubmit=(action "renderTemplate") onHidden=(action 'toggleProperty' 'isOpen') as |modal|}}
-      {{#modal.header}}
-         <h4 class="modal-title">Available Themes</h4>
-      {{/modal.header}}
-      {{#modal.body}}
-         <div class="row p-v-md">
-            {{#each themeList as |item|}}
-                <div class="col-sm-6 m-b-md">
-                    <button class="btn btn-default btn-block {{if (eq theme.id item.id) 'active' }} " {{action 'renderTemplate' item.id}}>
-                        <img class="theme-thumb" src="{{item.thumb}}" alt="{{item.name}} template">
-                        <hr />
-                        {{item.name}}
-                    </button>
+    <div class="pages-overlay">
+        <div class="content">
+            <div class="container">
+                <div class="overlay-dismiss">
+                    <i class="material-icons" {{action 'dismiss'}}>close</i>
                 </div>
-            {{/each}}
-         </div>
-      {{/modal.body}}
-      {{#modal.footer as |footer|}}
-         {{#bs-button onClick=(action modal.close) type="default"}}Close {{/bs-button}}
-      {{/modal.footer}}
-   {{/bs-modal}}
+                <h2> Select a layout</h2>
+                <div class="row p-v-xl">
+                    {{#each themeList as |item|}}
+                        <div class="col-sm-4 m-b-lg">
+                            <div class="theme-select-item" {{action 'renderTemplate' item.id}}>
+                                {{#if (eq theme.id item.id)}}
+                                    <div class="theme-selected">
+                                        <i class="material-icons">check</i>
+                                    </div>
+                                {{/if}}
+                                <div class="theme-thumb" style="background:url('{{item.thumb}}')"></div>
+                                <div class="theme-content p-md">
+                                    <h3> {{item.name}}</h3>
+                                    <p>{{item.description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
 {{/if}}
+
+
 <button class="btn-outline-cus"  {{action 'toggleProperty' 'isOpen'}}> Select a Theme </button>

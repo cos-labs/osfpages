@@ -5,22 +5,41 @@ export default Ember.Component.extend({
         {
             id: 1,
             name: 'All',
-            thumb: '/img/all.png'
+            thumb: '/img/all.png',
+            description: 'Includes all section types.'
         },
         {
             id: 2,
             name: 'Wiki',
-            thumb: '/img/wiki.png'
+            thumb: '/img/wiki.png',
+            description: 'A basic page with title and wiki page.'
         },
         {
             id: 3,
             name: 'File',
-            thumb: '/img/file.png'
+            thumb: '/img/file.png',
+            description: 'Title and file sections ideal for showcasing papers.'
         },
         {
             id: 4,
             name: 'Team',
-            thumb: '/img/people.png'
+            thumb: '/img/people.png',
+            description: 'Title and custom section with list of researchers.'
+
+        },
+        {
+            id: 4,
+            name: 'Team',
+            thumb: '/img/people.png',
+            description: 'Includes all section types.'
+
+        },
+        {
+            id: 4,
+            name: 'Team',
+            thumb: '/img/people.png',
+            description: 'Includes all section types.'
+
 
         },
     ],
@@ -41,6 +60,9 @@ export default Ember.Component.extend({
 		},
 		toggleProperty(prop) {
 			this.toggleProperty(prop);
-		}
+		},
+        dismiss(){
+            this.set('isOpen', false);
+        }
 	}
 });
