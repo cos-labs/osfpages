@@ -6,3 +6,23 @@
     border-radius: 2px;
     text-decoration: none;
 }
+
+.pages-nav {
+    &.left {
+       text-align: left;
+       float:left
+    }
+    &.center {
+        text-align: center;
+        margin: 0 auto;
+        width:100%;
+    }
+    &.right {
+        text-align: right;
+        float: right;
+    }
+}
+
+.pages-nav ul{
+	display:inline-block;
+}
