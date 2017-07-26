@@ -182,10 +182,10 @@ export default Ember.Component.extend({
                     "settings": {
                         "component": "layer-settings",
                         "values": {
-                            "height": 150,
+                            "height": 100,
                             "bgColor": "#FFFFFF",
                             "color": "#333333",
-                            "alignment": "left"
+                            "alignment": "center"
 
                         },
                         "form": [
