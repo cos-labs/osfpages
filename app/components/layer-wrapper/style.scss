@@ -1,5 +1,6 @@
 .layer-wrapper {
     position: relative;
+    min-height: 55px;
 }
 .layer-content {
     padding: 25px;
@@ -10,7 +11,7 @@
 
 
 .layer-settings {
-    margin-top: 40px;
+    margin-top: 15px;
 }
 
 @mixin settings-shadow($color){
