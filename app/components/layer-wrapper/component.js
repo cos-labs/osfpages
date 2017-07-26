@@ -16,6 +16,18 @@ export default Ember.Component.extend({
         let height = this.get('layer.settings.values.height') ? 'height: ' + this.get('layer.settings.values.height') + 'px;' : '';
         return Ember.String.htmlSafe(bgImage + bgCover + height + bgColor + color);
     }),
+    didRender(){
+        let self = this;
+        $.each(this.get('layers'), function( index, layer ) {
+            if(layer.component === 'pages-menu'){
+                // $('.pages-menu' ).find('.layer-settings').css({
+                //  position: 'absolute',
+                //  width: "100%"
+                // });
+
+            }
+        });
+    },
     actions: {
         showSettings (){
             this.set('showSettings', true);
