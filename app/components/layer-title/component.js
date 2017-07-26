@@ -9,7 +9,11 @@ export default Ember.Component.extend({
 		let self = this;
 		$.each(this.get('layers'), function( index, layer ) {
 			if(layer.component === 'pages-menu'){
-				self.set('layer.settings.values.showNavigation' , false)
+				$('.pages-menu' ).find('.layer-settings').css({
+					position: 'absolute',
+					width: "100%"
+				});
+
 			}
 		});
 	}
