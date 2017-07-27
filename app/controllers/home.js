@@ -12,6 +12,12 @@ export default Ember.Controller.extend({
         },
         toggleEditMode(){
             this.toggleProperty('editMode');
+        },
+        undo(){
+            this.get('model.theme').undo();
+        },
+        redo(){
+            this.get('model.theme').redo();
         }
     }
 });

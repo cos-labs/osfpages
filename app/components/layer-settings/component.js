@@ -65,14 +65,14 @@ export default Ember.Component.extend({
             this.set('showRemoveModal', false);
         },
         // Colors selection
-        updateBgColor(newColor){
-            this.set('layer.settings.values.bgColor', newColor);
-        },
-        updateColor(newColor){
-            this.set('layer.settings.values.color', newColor);
-        },
+        // updateBgColor(newColor){
+        //     this.set('layer.settings.values.bgColor', newColor);
+        // },
+        // updateColor(newColor){
+        //     this.set('layer.settings.values.color', newColor);
+        // },
         toggleCheck(check){
-            this.toggleProperty('layer.settings.values.' + check.value);
+            this.toggleProperty('layer.settings.values.' + check.get('value'));
         }
     }
 });
