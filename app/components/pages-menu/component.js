@@ -13,7 +13,7 @@ export default Ember.Component.extend({
         if(this.get('layer.settings.values.stickToTop')){
             $(window).on('scroll.nav', function (e) {
 
-           
+
                 let _topOfNav = null;
                 _topOfNav = topOfNav;
                 if($('.editMenu')[0]){
@@ -21,6 +21,9 @@ export default Ember.Component.extend({
                     if (!self.get('editMode')) {
                         _topOfNav = topOfNav - 120 ;
                     }
+                }else{
+                    _topOfNav = topOfNav - 67;
+
                 }
 
                 if ( $(window).scrollTop() >= _topOfNav ) {
