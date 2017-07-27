@@ -214,7 +214,7 @@ export default Ember.Component.extend({
                          {
                             "type": "checkbox",
                             "label": "Stick to top of page on scroll",
-                            "value": "StickToTop",
+                            "value": "stickToTop",
                             "validation": null
                         }
                         ]

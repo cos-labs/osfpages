@@ -188,11 +188,13 @@ button .material-icons {
     }
 }
 
-
-
 .sticky-nav{
     width: 100%;
     position: fixed !important;
     top: 0;
     z-index:99;
+}
+
+.sticky-nav-adjustment{
+    top: 51px;
 }
