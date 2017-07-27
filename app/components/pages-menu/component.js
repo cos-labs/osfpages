@@ -7,7 +7,7 @@ export default Ember.Component.extend({
     sticky: Ember.observer('layer.settings.values.StickToTop' , function() {
         let topOfNav = $('.pages-menu').offset().top;
         if(this.get('layer.settings.values.StickToTop')){
-            $(window).on('scroll', function (e) { 
+            $(window).on('scroll.nav', function (e) { 
                 if ( $(window).scrollTop() >= topOfNav ) {
                     $('.pages-menu').addClass('sticky-nav')
                 }else{
@@ -15,7 +15,7 @@ export default Ember.Component.extend({
                 } 
             });
         }else{
-           $(window).off('scroll');
+           $(window).off('scroll.nav');
         }
    }),
     actions: {
