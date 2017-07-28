@@ -6,6 +6,12 @@ export default Ember.Component.extend({
     }),
     sticky: Ember.observer('layer.settings.values.stickToTop' , 'layers.[]' , function() {
         let topOfNav = null;
+
+        //These offsets are used to position the nav bar if and when there is the editmode bar present 
+        const EDIT_MODE_OFFSET = 50;
+        const ADMIN_VIEW_MODE_OFFSET = 120;
+        const VIEW_MODE_OFFSET = 67;
+
         if( $('.pages-menu')[0] ){
             topOfNav = $('.pages-menu').offset().top;
         }
@@ -13,24 +19,23 @@ export default Ember.Component.extend({
         if(this.get('layer.settings.values.stickToTop')){
             $(window).on('scroll.nav', function (e) {
 
-
-                let _topOfNav = null;
-                _topOfNav = topOfNav;
+                let paddedNavOffset = null;
+                paddedNavOffset = topOfNav;
                 if($('.editMenu')[0]){
-                    _topOfNav = topOfNav - 51;
+                    paddedNavOffset = topOfNav - EDIT_MODE_OFFSET;
                     if (!self.get('editMode')) {
-                        _topOfNav = topOfNav - 120 ;
+                        paddedNavOffset = topOfNav - ADMIN_VIEW_MODE_OFFSET ;
                     }
                 }else{
-                    _topOfNav = topOfNav - 67;
+                    paddedNavOffset = topOfNav - VIEW_MODE_OFFSET;
 
                 }
 
-                if ( $(window).scrollTop() >= _topOfNav ) {
+                if ( $(window).scrollTop() >= paddedNavOffset ) {
                     if($('.ghost-nav')[0] === undefined){
                         $('.pages-menu').parent().after("<div class='ghost-nav'></div>")
                     }
-                     
+
                     $('.pages-menu').addClass('sticky-nav')
                     $('.ghost-nav').css('margin-top' , $('.pages-menu').height());
 
