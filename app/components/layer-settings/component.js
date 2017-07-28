@@ -34,7 +34,7 @@ export default Ember.Component.extend({
             }
         },
         runOption(option, item){
-            this.set('layer.settings.values.' + item.value, option);
+            this.set('layer.settings.values.' + item.get('value'), option);
         },
         // Move layer
         moveBefore(index){
