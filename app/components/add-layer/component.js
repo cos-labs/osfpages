@@ -186,7 +186,7 @@ export default Ember.Component.extend({
                             "bgColor": "#FFFFFF",
                             "color": "#333333",
                             "alignment": "center",
-                            "StickToTop":false,
+                            "stickToTop":false,
 
                         },
                         "form": [
