@@ -14,8 +14,8 @@ export default Ember.Component.extend({
     helpText,
     file_object: null,
     showRemoveModal: false,
-    lastIndex: Ember.computed('layers.[]',function (){
-        return  this.get('layers').length-1;
+    lastIndex: Ember.computed('layers.content.[]',function (){
+        return  this.get('layers.content').length-1;
     }),
     backgroundPalette: ['#9e9e9e', '#eeeeee', '#009688', '#00BCD4', '#ffffff', '#31708f', '#f07057'],
     colorPalette: ['#f8f8f8', '#333333', '#ebebeb', '#ffffff', '#f5f5f5'],
@@ -27,10 +27,10 @@ export default Ember.Component.extend({
     actions: {
         changeSize(direction, item){
             if(direction === 'bigger') {
-                this.incrementProperty('layer.settings.values.' + item.value, item.incrementSize);
+                this.incrementProperty('layer.settings.values.' + item.get('value'), item.get('incrementSize'));
             }
             if(direction === 'smaller') {
-                this.decrementProperty('layer.settings.values.' + item.value, item.incrementSize);
+                this.decrementProperty('layer.settings.values.' + item.get('value'), item.get('incrementSize'));
             }
         },
         runOption(option, item){
@@ -41,16 +41,15 @@ export default Ember.Component.extend({
             let layers = this.get('layers');
             let removed = layers.objectAt(index);
             layers.insertAt(index-1, removed);
-            layers.removeAt(index+1);
+            layers.content.splice(index+1, 1);
             this.scrollToLayer(index-1);
         },
         moveAfter(index){
             let layers = this.get('layers');
             let removed = layers.objectAt(index);
             layers.insertAt(index+2, removed);
-            layers.removeAt(index);
+            layers.content.splice(index,1);
             this.scrollToLayer(index+1);
-
         },
         // Remove layer
         showRemove(){
@@ -64,13 +63,6 @@ export default Ember.Component.extend({
             this.get('layers').removeAt(index);
             this.set('showRemoveModal', false);
         },
-        // Colors selection
-        // updateBgColor(newColor){
-        //     this.set('layer.settings.values.bgColor', newColor);
-        // },
-        // updateColor(newColor){
-        //     this.set('layer.settings.values.color', newColor);
-        // },
         toggleCheck(check){
             this.toggleProperty('layer.settings.values.' + check.get('value'));
         }

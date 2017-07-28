@@ -177,7 +177,7 @@ export default Ember.Component.extend({
                     break;
             }
             let index = this.get('index')+1;
-            this.get('layers').insertAt(index,item);
+            this.get('layers.content').insertAt(index,item);
             this.set('isOpen', false);
 
         },
