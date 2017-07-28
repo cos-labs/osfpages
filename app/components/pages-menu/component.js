@@ -27,21 +27,34 @@ export default Ember.Component.extend({
                 }
 
                 if ( $(window).scrollTop() >= _topOfNav ) {
+                    if($('.ghost-nav')[0] === undefined){
+                        $('.pages-menu').parent().after("<div class='ghost-nav'></div>")
+                    }
+                     
                     $('.pages-menu').addClass('sticky-nav')
+                    $('.ghost-nav').css('margin-top' , $('.pages-menu').height());
+
                     if($('.editMenu')[0]){
                         $('.pages-menu').addClass('sticky-nav-adjustment')
                     }
-
                 }else{
+                    $('.ghost-nav').remove()
+
                     $('.pages-menu').removeClass('sticky-nav')
+                    $('.ghost-nav').css('margin-top' , '0');
+
                     if($('.editMenu')[0]){
                         $('.pages-menu').removeClass('sticky-nav-adjustment')
                     }
                 } 
             });
         }else{
+            $('.ghost-nav').remove()
+
             $(window).off('scroll.nav');
             $('.pages-menu').removeClass('sticky-nav' )
+            $('.ghost-nav').css('margin-top' , '0');
+
             if($('.editMenu')[0]){
                 $('.pages-menu').removeClass('sticky-nav-adjustment')
             }
