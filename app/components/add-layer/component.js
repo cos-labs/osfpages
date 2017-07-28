@@ -182,10 +182,11 @@ export default Ember.Component.extend({
                     "settings": {
                         "component": "layer-settings",
                         "values": {
-                            "height": 150,
+                            "height": 80,
                             "bgColor": "#FFFFFF",
                             "color": "#333333",
-                            "alignment": "center"
+                            "alignment": "center",
+                            "stickToTop":false,
 
                         },
                         "form": [
@@ -206,19 +207,30 @@ export default Ember.Component.extend({
                             "right"
                             ],
                             "validation": null
+                        },
+                        {
+                         "type": "settings",
+                         "items": [
+                         {
+                            "type": "checkbox",
+                            "label": "Stick to top of page on scroll",
+                            "value": "stickToTop",
+                            "validation": null
                         }
                         ]
                     }
-                };
-                break;
-            }
-            let index = this.get('index')+1;
-            this.get('layers').insertAt(index,item);
-            this.set('isOpen', false);
-
-        },
-        toggleProperty(prop){
-            this.toggleProperty(prop);
+                    ]
+                }
+            };
+            break;
         }
+        let index = this.get('index')+1;
+        this.get('layers').insertAt(index,item);
+        this.set('isOpen', false);
+
+    },
+    toggleProperty(prop){
+        this.toggleProperty(prop);
     }
+}
 });
