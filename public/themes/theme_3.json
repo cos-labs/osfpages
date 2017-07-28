@@ -6,7 +6,6 @@
             "sectionHeader": "Title",
             "component": "layer-title",
             "settings": {
-                "component": "layer-settings",
                 "values": {
                     "backgroundImage": "http://demo.rockettheme.com/live/wordpress/crystalline/wp-content/themes/rt_crystalline_wp/images/overlays/headers/header-1.png",
                     "backgroundCover": true,
@@ -82,7 +81,6 @@
             "sectionHeader": "Download",
             "component": "layer-file",
             "settings": {
-                "component": "layer-settings",
                 "values": {
                     "sectionTitle": "",
                     "sectionDescription": "",

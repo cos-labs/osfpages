@@ -6,7 +6,6 @@
             "sectionHeader": "Title",
             "component": "layer-title",
             "settings": {
-                "component": "layer-settings",
                 "values": {
                     "backgroundImage": "http://localhost:4200/img/bg.png",
                     "backgroundCover": true,
@@ -83,7 +82,6 @@
             "component": "layer-advanced",
             "content": "<div><img src=\"http://localhost:4200/img/img.jpg\" style=\"width: 552px; height: 368.099px;\" class=\"fr-fic fr-fil fr-dii\">Mauris imperdiet <strong>ligula a mauris porttitor ultricies.</strong> Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellentesque ut metus odio. Integer fringilla nulla id leo consequat, a sollicitudin sapien fringilla. Fusce vestibulum malesuada nisl. Fusce augue leo, tempus eget mattis vel, imperdiet at nulla.</div>",
             "settings": {
-                "component": "layer-settings",
                 "values": {
                     "sectionTitle": "Advanced",
                     "showInNavigation": true,
@@ -109,7 +107,6 @@
             "sectionHeader": "Info",
             "component": "layer-info",
             "settings": {
-                "component": "layer-settings",
                 "values": {
                     "sectionTitle": "Info Title",
                     "showInNavigation": true,
@@ -163,7 +160,6 @@
             "sectionHeader": "Link",
             "component": "layer-link",
             "settings": {
-                "component": "layer-settings",
                 "values": {
                     "sectionTitle": "Link Title",
                     "showInNavigation": true,
@@ -197,7 +193,6 @@
             "sectionHeader": "Image",
             "component": "layer-image",
             "settings": {
-                "component": "layer-settings",
                 "values": {
                     "height": 500,
                     "url": "http://localhost:4200/img/sample.jpg",
@@ -225,7 +220,6 @@
             "sectionHeader": "Download",
             "component": "layer-file",
             "settings": {
-                "component": "layer-settings",
                 "values": {
                     "sectionTitle": "Download this file",
                     "sectionDescription": "",
@@ -260,7 +254,6 @@
             "sectionHeader": "Wiki example",
             "component": "layer-wiki",
             "settings": {
-                "component": "layer-settings",
                 "wikiId": "",
                 "values": {
                     "sectionTitle": "Wiki example",

@@ -6,7 +6,6 @@
             "sectionHeader": "Title",
             "component": "layer-title",
             "settings": {
-                "component": "layer-settings",
                 "values": {
                     "backgroundImage": "http://colabonconvent.com/wp-content/uploads/2014/03/Colabonconvent-13.jpg",
                     "backgroundCover": true,
@@ -83,7 +82,6 @@
             "component": "layer-advanced",
             "content": "<div><img src=\"http://localhost:4200/img/p1.jpg\" style=\"width: 300px;\" class=\"fr-fic fr-dii fr-fil  padding circle\"></div><div><br></div><div><br></div><h3>John Doe</h3><div>Mauris imperdiet <strong>ligula a mauris porttitor ultricies.</strong> Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellen</div><p style=\"text-align: right;\"><br></p><p><br></p><p><br></p><p><br></p><p><br></p><h3><img src=\"http://localhost:4200/img/p2.jpg\" class=\"fr-fic fr-dii  fr-fir padding circle\" style=\"width: 300px;\"></h3><h3><br></h3><h3>Jan Alleman</h3><div>Mauris imperdiet <strong>ligula a mauris porttitor ultricies.</strong> Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellen</div><h3 style=\"text-align: right;\"><br></h3><p><br></p><h3 style=\"text-align: right;\"><br></h3><p><br></p><h3><img src=\"http://localhost:4200/img/p3.jpg\" class=\"fr-fic fr-fil fr-dii  circle padding\" style=\"width: 300px;\">John Doe</h3><div>Mauris imperdiet <strong>ligula a mauris porttitor ultricies.</strong> Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pelle</div><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p>",
             "settings": {
-                "component": "layer-settings",
                 "values": {
                     "sectionTitle": "People",
                     "showInNavigation": true,
