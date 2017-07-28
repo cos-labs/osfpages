@@ -60,6 +60,9 @@ export default Ember.Component.extend({
             }
         }
     }),
+    didRender(){
+        $('.layer-content').css('padding' , '0');
+    },
     actions: {
         scrollToLayer(index){
             let el = $('#layer'+index);
