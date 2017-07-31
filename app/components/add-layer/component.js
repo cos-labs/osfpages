@@ -221,6 +221,112 @@ export default Ember.Component.extend({
                 }
             };
             break;
+                case 'image':
+                item = {
+            "sectionHeader": "Image",
+            "component": "layer-image",
+            "settings": {
+                "values": {
+                    "height": 500,
+                    "url": "http://localhost:4200/img/sample.jpg",
+                    "bgColor": "#FFFFFF",
+                    "color": "#333333"
+                },
+                "form": [
+                    {
+                        "type": "image",
+                        "label": "Image link",
+                        "value": "url",
+                        "validation": null
+                    },
+                    {
+                        "type": "increment",
+                        "label": "Section height",
+                        "value": "height",
+                        "incrementSize": 20,
+                        "validation": null
+                    }
+                ]
+            }
+        };
+            break;
+                case 'title':
+                item = {
+            "sectionHeader": "Title",
+            "component": "layer-title",
+            "settings": {
+                "values": {
+                    "backgroundImage": "http://localhost:4200/img/bg.png",
+                    "backgroundCover": true,
+                    "showNavigation": true,
+                    "showTitle": true,
+                    "showLead": true,
+                    "showInNavigation": false,
+                    "h1Size": 30,
+                    "bgColor": "#333333",
+                    "color": "#EEEEEE",
+                    "alignment": "right",
+                    "lead": "Some lead text"
+                },
+                "form": [
+                    {
+                        "type": "image",
+                        "label": "Background image",
+                        "value": "backgroundImage",
+                        "validation": null
+                    },
+                    {
+                        "type": "increment",
+                        "label": "Title size",
+                        "value": "h1Size",
+                        "size": 20,
+                        "incrementSize": 4,
+                        "validation": null
+                    },
+                    {
+                        "type": "alignment",
+                        "label": "Alignment",
+                        "value": "alignment",
+                        "options": [
+                            "left",
+                            "center",
+                            "right"
+                        ],
+                        "validation": null
+                    },
+                    {
+                        "type": "settings",
+                        "items": [
+                            {
+                                "type": "checkbox",
+                                "label": "Show navigation",
+                                "value": "showNavigation",
+                                "validation": null
+                            },
+                            {
+                                "type": "checkbox",
+                                "label": "Fit image to section size",
+                                "value": "backgroundCover",
+                                "validation": null
+                            },
+                            {
+                                "type": "checkbox",
+                                "label": "Show title",
+                                "value": "showTitle",
+                                "validation": null
+                            },
+                            {
+                                "type": "checkbox",
+                                "label": "Show lead text",
+                                "value": "showLead",
+                                "validation": null
+                            }
+                        ]
+                    }
+                ]
+            }
+        };
+            break;
         }
         let index = this.get('index')+1;
         this.get('layers.content').insertAt(index,item);

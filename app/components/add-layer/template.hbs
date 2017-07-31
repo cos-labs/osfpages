@@ -1,37 +1,23 @@
 {{#liquid-if isOpen use='toDown'}}
 <div class="add-layer {{if isOpen 'open'}}">
     <div class="container">
-
-
+        <h2 style="color:white">Select a section template</h2>
         <div class="row p-v-md">
-
-            <div class="col-sm-2 col-md-offset-1">
-                <button class="btn btn-default btn-block" {{action 'addLayer' 'wiki'}}>{{fa-icon "wikipedia-w"}} <br /> Add Wiki  </button>
+        <div class="col-sm-12 text-center">
+                <div class="layer-links">
+                    <a class="fa fa-wikipedia-w layer-link" href="#" title="Add wiki" {{action 'addLayer' 'wiki'}}></a>
+                    <a class="fa fa-link layer-link" href="#" title="Add Link"  {{action 'addLayer' 'link'}}></a>
+                    <a class="fa fa-download layer-link" href="#" title="Add download" {{action 'addLayer' 'file'}}></a>
+                    
+                    <a class="fa fa-paint-brush layer-link" href="#" title="Add advanced" {{action 'addLayer' 'advanced'}}></a>
+                    <a class="fa fa-bars layer-link" href="#" title="Add navigation" {{action 'addLayer' 'navigation'}}></a>
+                    <a class="fa fa-info layer-link" href="#" title="Add info" {{action 'addLayer' 'info'}}></a>
+                    
+                    <a class="fa fa-image layer-link" href="#" title="Add background" {{action 'addLayer' 'image'}}></a>
+                    <a class="fa fa-tag layer-link" href="#" title="Add title" {{action 'addLayer' 'title'}}></a>
+                </div>
             </div>
-
-            <div class="col-sm-2">
-                <button class="btn btn-default btn-block" {{action 'addLayer' 'link'}}>{{fa-icon "link"}} <br /> Add Link </button>
-            </div>
-
-            <div class="col-sm-2">
-                <button class="btn btn-default btn-block" {{action 'addLayer' 'file'}}>{{fa-icon "download"}} <br /> Add Download </button>
-            </div>
-
-            <div class="col-sm-2">
-                <button class="btn btn-default btn-block" {{action 'addLayer' 'image'}}>{{fa-icon "image"}} <br />Add Background Image</button>
-            </div>
-
-            <div class="col-sm-2">
-                <button class="btn btn-default btn-block" {{action 'addLayer' 'advanced'}}>{{fa-icon "paint-brush"}} <br /> Add Advanced</button>
-            </div>
-
-            <div class="col-sm-2">
-            <button class="btn btn-default btn-block" {{action 'addLayer' 'navigation'}}>{{fa-icon "paint-brush"}} <br /> Add navigation</button>
-            </div>
-
         </div>
-
-
     </div>
 </div>
 {{/liquid-if}}
