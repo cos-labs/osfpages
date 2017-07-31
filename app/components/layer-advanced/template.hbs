@@ -1,9 +1,9 @@
 {{edit-text showSettings=showSettings editMode=editMode layer=layer type="title"}}
 
 {{#if editMode}}
-	{{quill-editor value=layer.content options=options textChange=(action "updateText")}}
+	{{quill-editor value=layer.content.content options=options textChange=(action "updateText")}}
 {{else}}
 <div  class="ql-editor">
-	{{{layer.content}}}
+	{{{layer.content.content}}}
 </div>
 {{/if}}

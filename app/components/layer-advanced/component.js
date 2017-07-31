@@ -25,7 +25,8 @@ export default Ember.Component.extend({
 
   actions: {
     updateText(editor) {
-      this.set('layer.content' , editor.root.innerHTML)
+      this.set('layer.content.content' , editor.root.innerHTML)
+
     }
   }
 });
