@@ -60,9 +60,14 @@ export default Ember.Component.extend({
 				}
 			});
 		},
-		toggleProperty(prop) {
-			this.toggleProperty(prop);
-		},
+        openOverlay(){
+            this.set('isOpen', true);
+            $('body').addClass('no-scroll');
+        },
+        closeOverlay(){
+            this.set('isOpen', false);
+            $('body').removeClass('no-scroll');
+        },
         dismiss(){
             this.set('isOpen', false);
         }

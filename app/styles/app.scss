@@ -22,7 +22,9 @@ body {
 .scroll-top:hover {
     background: #eee;
 }
-
+.no-scroll{
+    overflow: hidden;
+}
 .select-box {
     border: 2px dashed #ccc;
     text-align: center;
@@ -174,6 +176,7 @@ button .material-icons {
     left: 0;
     z-index: 99;
     color: #333;
+    overflow: scroll;
     .content {
         margin: 50px auto;
     }
