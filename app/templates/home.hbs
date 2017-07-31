@@ -6,8 +6,8 @@
             </div>
             <div class="col-sm-2">
             {{#if editMode}}
-                <button class="btn-outline-cus" {{action 'undo'}}><i class="material-icons">undo</i></button>
-                <button class="btn-outline-cus" {{action 'redo'}}><i class="material-icons">redo</i></button>
+                <button class="btn-outline-cus" disabled="{{unless model.theme.canUndo 'disabled'}}" {{action 'undo'}}><i class="material-icons">undo</i></button>
+                <button class="btn-outline-cus" disabled="{{unless model.theme.canRedo 'disabled'}}" {{action 'redo'}}><i class="material-icons">redo</i></button>
             {{/if}}
             </div>
             <div class="col-sm-7 clearfix">

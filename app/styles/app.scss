@@ -89,6 +89,9 @@ body {
     color:#5bc0de;
     border-radius:4px;
 }
+.btn-outline-cus[disabled] {
+    border-color: #31849c;
+}
 
 .btn-outline-default-cus{
     background: transparent;
