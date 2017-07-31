@@ -6,5 +6,7 @@
 {{#if editMode}}
 	{{quill-editor value=layer.content options=options textChange=(action "updateText")}}
 {{else}}
+<div  class="ql-editor">
 	{{{layer.content}}}
+</div>
 {{/if}}
