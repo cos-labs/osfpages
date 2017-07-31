@@ -1,7 +1,7 @@
 $bg: #313131;
 $gray: #565656;
 $text: #838383;
-$accent: #35c2ba;
+$accent: #5bc0de;
 
 $size: 2.25em;  // size of links
 $zoom: 1.2;     // amount of scale on hover
@@ -79,8 +79,8 @@ $space: 0.065;  // space between links
   align-items: center;
   justify-content: center;
   transition: all .4s ease-out;
-  transform: translateZ(0px); // tip from @trajektorijus, thank you!
-
+  transform: translateZ(0px); 
+  
   &:hover, 
   &:focus, 
   &:active {
@@ -108,7 +108,7 @@ $space: 0.065;  // space between links
     font-size: .35em;
     position: absolute;
     transition: .3s;
-    font-family: 'Alegreya Sans SC', sans-serif;
+    font-family: sans-serif;
   }
 
 }
