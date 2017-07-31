@@ -21,5 +21,14 @@ export default Ember.Controller.extend({
         redo(){
             this.get('model.theme').redo();
         }
+    },
+    init(){
+        this._super(...arguments);
+        $('body').on('click', function(e){
+            console.log('a');
+            if($(e.target).parents('.popover').length === 0){
+                $('.popover').hide();
+            }
+        })
     }
 });
