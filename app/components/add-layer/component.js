@@ -1,5 +1,4 @@
 import Ember from 'ember';
-const Layer = Ember.Object.extend();
 
 export default Ember.Component.extend({
     isOpen: null,
@@ -22,23 +21,23 @@ export default Ember.Component.extend({
                             "color": "#333333"
                         },
                         "form": [
-                        {
-                            "type": "settings",
-                            "items": [
                             {
-                                "type": "checkbox",
-                                "label": "Show in navigation",
-                                "value": "showInNavigation",
-                                "validation": null
-                            },
-                            {
-                                "type": "checkbox",
-                                "label": "Add show more",
-                                "value": "addShowMore",
-                                "validation": null
+                                "type": "settings",
+                                "items": [
+                                {
+                                    "type": "checkbox",
+                                    "label": "Show in navigation",
+                                    "value": "showInNavigation",
+                                    "validation": null
+                                },
+                                {
+                                    "type": "checkbox",
+                                    "label": "Add show more",
+                                    "value": "addShowMore",
+                                    "validation": null
+                                }
+                                ]
                             }
-                            ]
-                        }
                         ]
                     }
                 };
@@ -59,23 +58,23 @@ export default Ember.Component.extend({
                             "color": "#333333"
                         },
                         "form": [
-                        {
-                            "type": "settings",
-                            "items": [
                             {
-                                "type": "checkbox",
-                                "label": "Show in navigation",
-                                "value": "showInNavigation",
-                                "validation": null
-                            },
-                            {
-                                "type": "checkbox",
-                                "label": "Show file viewer",
-                                "value": "showFileviewer",
-                                "validation": null
+                                "type": "settings",
+                                "items": [
+                                {
+                                    "type": "checkbox",
+                                    "label": "Show in navigation",
+                                    "value": "showInNavigation",
+                                    "validation": null
+                                },
+                                {
+                                    "type": "checkbox",
+                                    "label": "Show file viewer",
+                                    "value": "showFileviewer",
+                                    "validation": null
+                                }
+                                ]
                             }
-                            ]
-                        }
                         ]
                     }
                 };
@@ -95,23 +94,23 @@ export default Ember.Component.extend({
                             "color": "#333333"
                         },
                         "form": [
-                        {
-                            "type": "settings",
-                            "items": [
                             {
-                                "type": "checkbox",
-                                "label": "Show in navigation",
-                                "value": "showInNavigation",
-                                "validation": null
-                            },
-                            {
-                                "type": "text",
-                                "label": "Link address",
-                                "value": "sectionLink",
-                                "validation": null
+                                "type": "settings",
+                                "items": [
+                                {
+                                    "type": "checkbox",
+                                    "label": "Show in navigation",
+                                    "value": "showInNavigation",
+                                    "validation": null
+                                },
+                                {
+                                    "type": "text",
+                                    "label": "Link address",
+                                    "value": "sectionLink",
+                                    "validation": null
+                                }
+                                ]
                             }
-                            ]
-                        }
                         ]
                     }
                 };
@@ -130,17 +129,17 @@ export default Ember.Component.extend({
                             "color": "#333333"
                         },
                         "form": [
-                        {
-                            "type": "settings",
-                            "items": [
                             {
-                                "type": "checkbox",
-                                "label": "Show in navigation",
-                                "value": "showInNavigation",
-                                "validation": null
+                                "type": "settings",
+                                "items": [
+                                {
+                                    "type": "checkbox",
+                                    "label": "Show in navigation",
+                                    "value": "showInNavigation",
+                                    "validation": null
+                                }
+                                ]
                             }
-                            ]
-                        }
                         ]
                     }
                 };
@@ -158,19 +157,19 @@ export default Ember.Component.extend({
                             "color": "#333333"
                         },
                         "form": [
-                        {
-                            "type": "image",
-                            "label": "Image link",
-                            "value": "url",
-                            "validation": null
-                        },
-                        {
-                            "type": "increment",
-                            "label": "Section height",
-                            "value": "height",
-                            "incrementSize": 20,
-                            "validation": null
-                        }
+                            {
+                                "type": "image",
+                                "label": "Image link",
+                                "value": "url",
+                                "validation": null
+                            },
+                            {
+                                "type": "increment",
+                                "label": "Section height",
+                                "value": "height",
+                                "incrementSize": 20,
+                                "validation": null
+                            }
                         ]
                     }
                 };
@@ -187,36 +186,35 @@ export default Ember.Component.extend({
                             "color": "#333333",
                             "alignment": "center",
                             "stickToTop":false,
-
                         },
                         "form": [
-                        {
-                            "type": "increment",
-                            "label": "Section height",
-                            "value": "height",
-                            "incrementSize": 20,
-                            "validation": null
-                        },
-                        {
-                            "type": "alignment",
-                            "label": "Alignment",
-                            "value": "alignment",
-                            "options": [
-                            "left",
-                            "center",
-                            "right"
-                            ],
-                            "validation": null
-                        },
-                        {
-                         "type": "settings",
-                         "items": [
-                         {
-                            "type": "checkbox",
-                            "label": "Stick to top of page on scroll",
-                            "value": "stickToTop",
-                            "validation": null
-                        }
+                            {
+                                "type": "increment",
+                                "label": "Section height",
+                                "value": "height",
+                                "incrementSize": 20,
+                                "validation": null
+                            },
+                            {
+                                "type": "alignment",
+                                "label": "Alignment",
+                                "value": "alignment",
+                                "options": [
+                                "left",
+                                "center",
+                                "right"
+                                ],
+                                "validation": null
+                            },
+                            {
+                             "type": "settings",
+                             "items": [
+                             {
+                                "type": "checkbox",
+                                "label": "Stick to top of page on scroll",
+                                "value": "stickToTop",
+                                "validation": null
+                            }
                         ]
                     }
                     ]
@@ -225,7 +223,7 @@ export default Ember.Component.extend({
             break;
         }
         let index = this.get('index')+1;
-        this.get('layers').insertAt(index,item);
+        this.get('layers.content').insertAt(index,item);
         this.set('isOpen', false);
 
     },

@@ -4,7 +4,13 @@
             <div class="col-sm-3">
                 {{layer-template-select theme=model.theme}}
             </div>
-            <div class="col-sm-9 clearfix">
+            <div class="col-sm-2">
+            {{#if editMode}}
+                <button class="btn-outline-cus" {{action 'undo'}}><i class="material-icons">undo</i></button>
+                <button class="btn-outline-cus" {{action 'redo'}}><i class="material-icons">redo</i></button>
+            {{/if}}
+            </div>
+            <div class="col-sm-7 clearfix">
                 <div class="pull-right">
                     <button class="btn-outline-cus" {{action 'toggleEditMode'}}>
                         {{#if editMode}}

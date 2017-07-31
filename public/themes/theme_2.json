@@ -6,7 +6,6 @@
             "sectionHeader": "Title",
             "component": "layer-title",
             "settings": {
-                "component": "layer-settings",
                 "values": {
                     "backgroundImage": "http://biblion.co.uk/images/books.jpg",
                     "backgroundCover": true,
@@ -82,7 +81,6 @@
             "sectionHeader": "Info",
             "component": "layer-info",
             "settings": {
-                "component": "layer-settings",
                 "values": {
                     "sectionTitle": "Project Summery",
                     "showInNavigation": true,
@@ -136,7 +134,6 @@
             "sectionHeader": "Wiki",
             "component": "layer-wiki",
             "settings": {
-                "component": "layer-settings",
                 "wikiId": "",
                 "values": {
                     "sectionTitle": "Wiki",

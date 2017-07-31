@@ -7,7 +7,7 @@ export default Ember.Component.extend({
 	}),
 	didRender(){
 		let self = this;
-		$.each(this.get('layers'), function( index, layer ) {
+		$.each(this.get('layers.content'), function( index, layer ) {
 			if(layer.component === 'pages-menu'){
 				self.set('layer.settings.values.showNavigation' , false)
 			}
