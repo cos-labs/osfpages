@@ -7,7 +7,7 @@ export default Ember.Component.extend({
     currentWiki: null,
     showSelect: false,
     reloadWiki: Ember.computed('layer.settings.wikiId', function(){
-        this.get('node.wikis').then((result)=>{
+        this.get('node.wikis').then(()=>{
             if(!this.get('layers.settings.wikiID')){
                 this.loadFirstWiki();
             }
