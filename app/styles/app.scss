@@ -22,7 +22,9 @@ body {
 .scroll-top:hover {
     background: #eee;
 }
-
+.no-scroll{
+    overflow: hidden;
+}
 .select-box {
     border: 2px dashed #ccc;
     text-align: center;
@@ -38,10 +40,14 @@ body {
 .pages-nav ul{
     list-style-type: none;
     padding-left: 0;
+
     li {
         float: left;
         padding: 4px;
     }
+}
+.layer-wrapper.pages-menu, .pages-menu .layer-content {
+    min-height: 0;
 }
 
 /* Home */
@@ -60,6 +66,7 @@ body {
 
 .layer-title {
     padding-top: 100px;
+    padding-bottom: 20px;
 }
 
 .layer-image {
@@ -88,6 +95,9 @@ body {
     border: 1px solid #5bc0de;
     color:#5bc0de;
     border-radius:4px;
+}
+.btn-outline-cus[disabled] {
+    border-color: #31849c;
 }
 
 .btn-outline-default-cus{
@@ -171,6 +181,7 @@ button .material-icons {
     left: 0;
     z-index: 99;
     color: #333;
+    overflow: scroll;
     .content {
         margin: 50px auto;
     }

@@ -4,7 +4,7 @@
 }
 .layer-content {
     padding: 25px;
-    min-height: 100px;
+    min-height: 60px;
     width:100%;
     float: left;
 }
@@ -25,3 +25,7 @@
 }
 
 
+.layer-info, .layer-wiki, .layer-file, .layer-link, .layer-advanced {
+    padding-top: 30px;
+    padding-bottom: 40px;
+}

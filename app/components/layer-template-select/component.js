@@ -1,4 +1,7 @@
+/*global $:true*/
+
 import Ember from 'ember';
+import TimeMachine from 'ember-time-machine';
 
 export default Ember.Component.extend({
     themeList: [
@@ -53,16 +56,26 @@ export default Ember.Component.extend({
 				url: '/themes/' + theme,
 				async: false,
 				success: function(data) {
-					self.set('theme', data);
+                    const content = Ember.Object.create(data);
+                    const timeMachine = TimeMachine.Object.create({ content });
+					self.set('theme', timeMachine);
 					self.set('isOpen', false);
-				}
+                    $('body').removeClass('no-scroll');
+                }
 			});
 		},
-		toggleProperty(prop) {
-			this.toggleProperty(prop);
-		},
+        openOverlay(){
+            this.set('isOpen', true);
+            $('body').addClass('no-scroll');
+        },
+        closeOverlay(){
+            this.set('isOpen', false);
+            $('body').removeClass('no-scroll');
+        },
         dismiss(){
             this.set('isOpen', false);
+            $('body').removeClass('no-scroll');
+
         }
 	}
 });

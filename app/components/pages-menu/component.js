@@ -1,13 +1,14 @@
+/*global $:true*/
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-    style: Ember.computed('layer.settings.values.color', function(){
-        return Ember.String.htmlSafe('color: ' + (this.get('layer.settings.values.color') || '#333') + '; ');
+    style: Ember.computed('layer.settings.values.color', 'layer.settings.values.fontSize', function(){
+        return Ember.String.htmlSafe('color: ' + (this.get('layer.settings.values.color') || '#333') + '; font-size: ' +  (this.get('layer.settings.values.fontSize')) + 'px;');
     }),
     sticky: Ember.observer('layer.settings.values.stickToTop' , 'layers.[]' , function() {
         let topOfNav = null;
 
-        //These offsets are used to position the nav bar if and when there is the editmode bar present 
+        //These offsets are used to position the nav bar if and when there is the editmode bar present
         const EDIT_MODE_OFFSET = 50;
         const ADMIN_VIEW_MODE_OFFSET = 120;
         const VIEW_MODE_OFFSET = 67;
@@ -17,8 +18,7 @@ export default Ember.Component.extend({
         }
         let self = this;
         if(this.get('layer.settings.values.stickToTop')){
-            $(window).on('scroll.nav', function (e) {
-
+            $(window).on('scroll.nav', function () {
                 let paddedNavOffset = null;
                 paddedNavOffset = topOfNav;
                 if($('.editMenu')[0]){
@@ -51,7 +51,7 @@ export default Ember.Component.extend({
                     if($('.editMenu')[0]){
                         $('.pages-menu').removeClass('sticky-nav-adjustment')
                     }
-                } 
+                }
             });
         }else{
             $('.ghost-nav').remove()

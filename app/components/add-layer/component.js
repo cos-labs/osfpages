@@ -181,7 +181,7 @@ export default Ember.Component.extend({
                     "settings": {
                         "component": "layer-settings",
                         "values": {
-                            "height": 80,
+                            "fontSize": 16,
                             "bgColor": "#FFFFFF",
                             "color": "#333333",
                             "alignment": "center",
