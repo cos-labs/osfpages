@@ -1,3 +1,5 @@
+/*global $:true*/
+
 import Ember from 'ember';
 import TimeMachine from 'ember-time-machine';
 
@@ -14,7 +16,7 @@ export default Ember.Route.extend({
                 const timeMachine = TimeMachine.Object.create({ content });
                 theme = timeMachine;
             }});
-    },  
+    },
     model(params){
         // If testing and parameter is not working use this 'jyu4t' for params.guid
         return this.store.findRecord('node', params.guid).then((result)=>{

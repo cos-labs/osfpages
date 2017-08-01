@@ -1,3 +1,5 @@
+/*global $:true*/
+
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
@@ -14,10 +16,22 @@ export default Ember.Controller.extend({
             this.toggleProperty('editMode');
         },
         undo(){
-            this.get('model.theme').undo();
+            if(this.get('model.theme').get('canUndo')){
+                this.get('model.theme').undo();
+            }
         },
         redo(){
-            this.get('model.theme').redo();
+            if(this.get('model.theme').get('canRedo')) {
+                this.get('model.theme').redo();
+            }
         }
+    },
+    init(){
+        this._super(...arguments);
+        $('body').on('click', function(e){
+            if($(e.target).parents('.popover').length === 0){
+                $('.popover').hide();
+            }
+        })
     }
 });
