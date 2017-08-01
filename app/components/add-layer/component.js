@@ -420,8 +420,8 @@ export default Ember.Component.extend({
                         "items": [
                         {
                             "type": "checkbox",
-                            "label": "Show title",
-                            "value": "showTitle",
+                            "label": "show in navigation",
+                            "value": "showInNavigation",
                             "validation": null
                         }
                         ]
