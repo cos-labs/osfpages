@@ -60,7 +60,8 @@ export default Ember.Component.extend({
                     const timeMachine = TimeMachine.Object.create({ content });
 					self.set('theme', timeMachine);
 					self.set('isOpen', false);
-				}
+                    $('body').removeClass('no-scroll');
+                }
 			});
 		},
         openOverlay(){
@@ -73,6 +74,8 @@ export default Ember.Component.extend({
         },
         dismiss(){
             this.set('isOpen', false);
+            $('body').removeClass('no-scroll');
+
         }
 	}
 });
