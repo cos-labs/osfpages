@@ -5,5 +5,11 @@
         <h2>{{layer.settings.values.sectionTitle}}</h2>
     {{/if}}
 {{else}}
-    <div id="froala-editor"  class="fr-view"></div>
+	{{#if editMode}}
+		{{quill-editor value=layer.content.settings.values.sectionDescription options=options textChange=(action "updateText")}}
+	{{else}}
+	<div  class="ql-editor">
+		{{{layer.content.settings.values.sectionDescription}}}
+	</div>
+	{{/if}}
 {{/if}}

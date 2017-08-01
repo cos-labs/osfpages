@@ -1,5 +1,9 @@
 {{edit-text showSettings=showSettings editMode=editMode layer=layer type="title"}}
 
-<div id="froala-editor"  class="fr-view">
+{{#if editMode}}
+	{{quill-editor value=layer.content.content options=options textChange=(action "updateText")}}
+{{else}}
+<div  class="ql-editor">
+	{{{layer.content.content}}}
 </div>
-
+{{/if}}
