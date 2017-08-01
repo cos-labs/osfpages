@@ -21,23 +21,23 @@ export default Ember.Component.extend({
                             "color": "#333333"
                         },
                         "form": [
+                        {
+                            "type": "settings",
+                            "items": [
                             {
-                                "type": "settings",
-                                "items": [
-                                {
-                                    "type": "checkbox",
-                                    "label": "Show in navigation",
-                                    "value": "showInNavigation",
-                                    "validation": null
-                                },
-                                {
-                                    "type": "checkbox",
-                                    "label": "Add show more",
-                                    "value": "addShowMore",
-                                    "validation": null
-                                }
-                                ]
+                                "type": "checkbox",
+                                "label": "Show in navigation",
+                                "value": "showInNavigation",
+                                "validation": null
+                            },
+                            {
+                                "type": "checkbox",
+                                "label": "Add show more",
+                                "value": "addShowMore",
+                                "validation": null
                             }
+                            ]
+                        }
                         ]
                     }
                 };
@@ -58,23 +58,23 @@ export default Ember.Component.extend({
                             "color": "#333333"
                         },
                         "form": [
+                        {
+                            "type": "settings",
+                            "items": [
                             {
-                                "type": "settings",
-                                "items": [
-                                {
-                                    "type": "checkbox",
-                                    "label": "Show in navigation",
-                                    "value": "showInNavigation",
-                                    "validation": null
-                                },
-                                {
-                                    "type": "checkbox",
-                                    "label": "Show file viewer",
-                                    "value": "showFileviewer",
-                                    "validation": null
-                                }
-                                ]
+                                "type": "checkbox",
+                                "label": "Show in navigation",
+                                "value": "showInNavigation",
+                                "validation": null
+                            },
+                            {
+                                "type": "checkbox",
+                                "label": "Show file viewer",
+                                "value": "showFileviewer",
+                                "validation": null
                             }
+                            ]
+                        }
                         ]
                     }
                 };
@@ -94,23 +94,23 @@ export default Ember.Component.extend({
                             "color": "#333333"
                         },
                         "form": [
+                        {
+                            "type": "settings",
+                            "items": [
                             {
-                                "type": "settings",
-                                "items": [
-                                {
-                                    "type": "checkbox",
-                                    "label": "Show in navigation",
-                                    "value": "showInNavigation",
-                                    "validation": null
-                                },
-                                {
-                                    "type": "text",
-                                    "label": "Link address",
-                                    "value": "sectionLink",
-                                    "validation": null
-                                }
-                                ]
+                                "type": "checkbox",
+                                "label": "Show in navigation",
+                                "value": "showInNavigation",
+                                "validation": null
+                            },
+                            {
+                                "type": "text",
+                                "label": "Link address",
+                                "value": "sectionLink",
+                                "validation": null
                             }
+                            ]
+                        }
                         ]
                     }
                 };
@@ -119,7 +119,7 @@ export default Ember.Component.extend({
                 item = {
                     "sectionHeader": "Advanced",
                     "component": "layer-advanced",
-                    "content": "<div><img src=\"http://localhost:4200/img/img.jpg\" style=\"width: 552px; height: 368.099px;\" class=\"fr-fic fr-fil fr-dii\">Mauris imperdiet <strong>ligula a mauris porttitor ultricies.</strong> Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellentesque ut metus odio. Integer fringilla nulla id leo consequat, a sollicitudin sapien fringilla. Fusce vestibulum malesuada nisl. Fusce augue leo, tempus eget mattis vel, imperdiet at nulla.</div>",
+                    "content": "<p>Mauris imperdie Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellentesque ut metus odio. Integer fringilla nulla id leo consequat, a sollicitudin sapien fringilla. Fusce vestibulum malesuada nisl. Fusce augue leo, tempus eget matssstis vel, imperdiet at nulla</p>",
                     "settings": {
                         "component": "layer-settings",
                         "values": {
@@ -129,17 +129,17 @@ export default Ember.Component.extend({
                             "color": "#333333"
                         },
                         "form": [
+                        {
+                            "type": "settings",
+                            "items": [
                             {
-                                "type": "settings",
-                                "items": [
-                                {
-                                    "type": "checkbox",
-                                    "label": "Show in navigation",
-                                    "value": "showInNavigation",
-                                    "validation": null
-                                }
-                                ]
+                                "type": "checkbox",
+                                "label": "Show in navigation",
+                                "value": "showInNavigation",
+                                "validation": null
                             }
+                            ]
+                        }
                         ]
                     }
                 };
@@ -157,19 +157,19 @@ export default Ember.Component.extend({
                             "color": "#333333"
                         },
                         "form": [
-                            {
-                                "type": "image",
-                                "label": "Image link",
-                                "value": "url",
-                                "validation": null
-                            },
-                            {
-                                "type": "increment",
-                                "label": "Section height",
-                                "value": "height",
-                                "incrementSize": 20,
-                                "validation": null
-                            }
+                        {
+                            "type": "image",
+                            "label": "Image link",
+                            "value": "url",
+                            "validation": null
+                        },
+                        {
+                            "type": "increment",
+                            "label": "Section height",
+                            "value": "height",
+                            "incrementSize": 20,
+                            "validation": null
+                        }
                         ]
                     }
                 };
@@ -188,33 +188,242 @@ export default Ember.Component.extend({
                             "stickToTop":false,
                         },
                         "form": [
-                            {
-                                "type": "increment",
-                                "label": "Font size",
-                                "value": "fontSize",
-                                "incrementSize": 1,
-                                "validation": null
-                            },
-                            {
-                                "type": "alignment",
-                                "label": "Alignment",
-                                "value": "alignment",
-                                "options": [
-                                "left",
-                                "center",
-                                "right"
-                                ],
-                                "validation": null
-                            },
-                            {
-                             "type": "settings",
-                             "items": [
-                             {
-                                "type": "checkbox",
-                                "label": "Stick to top of page on scroll",
-                                "value": "stickToTop",
-                                "validation": null
-                            }
+                        {
+                            "type": "increment",
+                            "label": "Section height",
+                            "value": "height",
+                            "incrementSize": 20,
+                            "validation": null
+                        },
+                        {
+                            "type": "alignment",
+                            "label": "Alignment",
+                            "value": "alignment",
+                            "options": [
+                            "left",
+                            "center",
+                            "right"
+                            ],
+                            "validation": null
+                        },
+                        {
+                         "type": "settings",
+                         "items": [
+                         {
+                            "type": "checkbox",
+                            "label": "Stick to top of page on scroll",
+                            "value": "stickToTop",
+                            "validation": null
+                        }
+                        ]
+                    }
+                    ]
+                }
+            };
+            break;
+            case 'image':
+            item = {
+                "sectionHeader": "Image",
+                "component": "layer-image",
+                "settings": {
+                    "values": {
+                        "height": 500,
+                        "url": "http://localhost:4200/img/sample.jpg",
+                        "bgColor": "#FFFFFF",
+                        "color": "#333333"
+                    },
+                    "form": [
+                    {
+                        "type": "image",
+                        "label": "Image link",
+                        "value": "url",
+                        "validation": null
+                    },
+                    {
+                        "type": "increment",
+                        "label": "Section height",
+                        "value": "height",
+                        "incrementSize": 20,
+                        "validation": null
+                    }
+                    ]
+                }
+            };
+            break;
+            case 'title':
+            item = {
+                "sectionHeader": "Title",
+                "component": "layer-title",
+                "settings": {
+                    "values": {
+                        "backgroundImage": "http://localhost:4200/img/bg.png",
+                        "backgroundCover": true,
+                        "showNavigation": true,
+                        "showTitle": true,
+                        "showLead": true,
+                        "showInNavigation": false,
+                        "h1Size": 30,
+                        "bgColor": "#333333",
+                        "color": "#EEEEEE",
+                        "alignment": "right",
+                        "lead": "Some lead text"
+                    },
+                    "form": [
+                    {
+                        "type": "image",
+                        "label": "Background image",
+                        "value": "backgroundImage",
+                        "validation": null
+                    },
+                    {
+                        "type": "increment",
+                        "label": "Title size",
+                        "value": "h1Size",
+                        "size": 20,
+                        "incrementSize": 4,
+                        "validation": null
+                    },
+                    {
+                        "type": "alignment",
+                        "label": "Alignment",
+                        "value": "alignment",
+                        "options": [
+                        "left",
+                        "center",
+                        "right"
+                        ],
+                        "validation": null
+                    },
+                    {
+                        "type": "settings",
+                        "items": [
+                        {
+                            "type": "checkbox",
+                            "label": "Show navigation",
+                            "value": "showNavigation",
+                            "validation": null
+                        },
+                        {
+                            "type": "checkbox",
+                            "label": "Fit image to section size",
+                            "value": "backgroundCover",
+                            "validation": null
+                        },
+                        {
+                            "type": "checkbox",
+                            "label": "Show title",
+                            "value": "showTitle",
+                            "validation": null
+                        },
+                        {
+                            "type": "checkbox",
+                            "label": "Show lead text",
+                            "value": "showLead",
+                            "validation": null
+                        }
+                        ]
+                    }
+                    ]
+                }
+            };
+            break;
+            case 'info':
+            item =  {
+                "sectionHeader": "Info",
+                "component": "layer-info",
+                "settings": {
+                    "values": {
+                        "sectionTitle": "Info Title",
+                        "showInNavigation": true,
+                        "showDescription": true,
+                        "showContributors": true,
+                        "showBibliographicContributors": false,
+                        "showAffiliatedInstitutions": true,
+                        "bgColor": "#FFFFFF",
+                        "color": "#333333"
+                    },
+                    "form": [
+                    {
+                        "type": "settings",
+                        "items": [
+                        {
+                            "type": "checkbox",
+                            "label": "Show in navigation",
+                            "value": "showInNavigation",
+                            "validation": null
+                        },
+                        {
+                            "type": "checkbox",
+                            "label": "Show description",
+                            "value": "showDescription",
+                            "validation": null
+                        },
+                        {
+                            "type": "checkbox",
+                            "label": "Show contributors",
+                            "value": "showContributors",
+                            "validation": null
+                        },
+                        {
+                            "type": "checkbox",
+                            "label": "Show only bibliographic contributors",
+                            "value": "showBibliographicContributors",
+                            "validation": null
+                        },
+                        {
+                            "type": "checkbox",
+                            "label": "Show affiliated institutions",
+                            "value": "showAffiliatedInstitutions",
+                            "validation": null
+                        }
+                        ]
+                    }
+                    ]
+                }
+            };
+            break;
+            case 'imangeAndText':
+            item = {
+                "sectionHeader": "Image-Text",
+                "component": "layer-image-text",
+                "settings": {
+                    "values": {
+                        "sectionTitle": "Image and Text",
+                        "showNavigation": true,
+                        "showInNavigation": true,
+                        "bgColor": "#ffffff",
+                        "color": "#333333",
+                        "alignment": "right",
+                        "sectionDescription": "Mauris imperdiet ligula a mauris porttitor ultricies. Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellentesque ut metus odio. Integer fringilla nulla id leo consequat, a sollicitudin sapien fringilla.",
+                        "image": "http://localhost:4200/img/img.jpg"
+                    },
+                    "form": [
+                    {
+                        "type": "image",
+                        "label": "choose your image",
+                        "value": "image",
+                        "validation": null
+                    },
+                    {
+                        "type": "alignment",
+                        "label": "Alignment",
+                        "value": "alignment",
+                        "options": [
+                        "left",
+                        "center",
+                        "right"
+                        ],
+                        "validation": null
+                    },
+                    {
+                        "type": "settings",
+                        "items": [
+                        {
+                            "type": "checkbox",
+                            "label": "show in navigation",
+                            "value": "showInNavigation",
+                            "validation": null
+                        }
                         ]
                     }
                     ]

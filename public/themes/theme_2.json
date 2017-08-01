@@ -14,8 +14,8 @@
                     "showLead": true,
                     "showInNavigation": false,
                     "h1Size": 47,
-                    "bgColor": "#FFFFFF",
-                    "color": "#333333",
+                    "bgColor": "#666666",
+                    "color": "#FFFFFF",
                     "alignment": "center",
                     "lead": "Wiki Theme"
                 },
