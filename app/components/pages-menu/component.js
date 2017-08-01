@@ -2,8 +2,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-    style: Ember.computed('layer.settings.values.color', function(){
-        return Ember.String.htmlSafe('color: ' + (this.get('layer.settings.values.color') || '#333') + '; ');
+    style: Ember.computed('layer.settings.values.color', 'layer.settings.values.fontSize', function(){
+        return Ember.String.htmlSafe('color: ' + (this.get('layer.settings.values.color') || '#333') + '; font-size: ' +  (this.get('layer.settings.values.fontSize')) + 'px;');
     }),
     sticky: Ember.observer('layer.settings.values.stickToTop' , 'layers.[]' , function() {
         let topOfNav = null;

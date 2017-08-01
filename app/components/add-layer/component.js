@@ -181,7 +181,7 @@ export default Ember.Component.extend({
                     "settings": {
                         "component": "layer-settings",
                         "values": {
-                            "height": 80,
+                            "fontSize": 16,
                             "bgColor": "#FFFFFF",
                             "color": "#333333",
                             "alignment": "center",
@@ -190,9 +190,9 @@ export default Ember.Component.extend({
                         "form": [
                             {
                                 "type": "increment",
-                                "label": "Section height",
-                                "value": "height",
-                                "incrementSize": 20,
+                                "label": "Font size",
+                                "value": "fontSize",
+                                "incrementSize": 1,
                                 "validation": null
                             },
                             {

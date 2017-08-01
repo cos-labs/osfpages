@@ -40,10 +40,14 @@ body {
 .pages-nav ul{
     list-style-type: none;
     padding-left: 0;
+
     li {
         float: left;
         padding: 4px;
     }
+}
+.layer-wrapper.pages-menu, .pages-menu .layer-content {
+    min-height: 0;
 }
 
 /* Home */
@@ -62,6 +66,7 @@ body {
 
 .layer-title {
     padding-top: 100px;
+    padding-bottom: 20px;
 }
 
 .layer-image {
