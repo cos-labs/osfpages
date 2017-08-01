@@ -8,7 +8,9 @@ const helpText = {
     'layer-image': 'The image section is used to show a banner like image.',
     'layer-link': 'The link section is used to display a link to a site, you can give a short description as well.',
     'layer-advanced': 'The Advanced section is used to make custom designs to your OSF site. you can edit this by using the inline editor.',
-    'pages-menu': 'The navigation is used for navigating the site, you can add each section to the navigation in the settings of that section.'
+    'pages-menu': 'The navigation is used for navigating the site, you can add each section to the navigation in the settings of that section.',
+    'layer-image-text': 'The text and image layer is used to show side by side text and images.'
+
 
 }
 

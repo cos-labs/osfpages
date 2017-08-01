@@ -80,7 +80,7 @@ $space: 0.065;  // space between links
   justify-content: center;
   transition: all .4s ease-out;
   transform: translateZ(0px); 
-  
+  border:none;
   &:hover, 
   &:focus, 
   &:active {

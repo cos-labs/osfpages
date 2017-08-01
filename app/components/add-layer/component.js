@@ -207,9 +207,9 @@ export default Ember.Component.extend({
                             "validation": null
                         },
                         {
-                           "type": "settings",
-                           "items": [
-                           {
+                         "type": "settings",
+                         "items": [
+                         {
                             "type": "checkbox",
                             "label": "Stick to top of page on scroll",
                             "value": "stickToTop",
@@ -374,6 +374,54 @@ export default Ember.Component.extend({
                             "type": "checkbox",
                             "label": "Show affiliated institutions",
                             "value": "showAffiliatedInstitutions",
+                            "validation": null
+                        }
+                        ]
+                    }
+                    ]
+                }
+            };
+            break;
+            case 'imangeAndText':
+            item = {
+                "sectionHeader": "Image-Text",
+                "component": "layer-image-text",
+                "settings": {
+                    "values": {
+                        "sectionTitle": "Image and Text",
+                        "showNavigation": true,
+                        "showInNavigation": true,
+                        "bgColor": "#ffffff",
+                        "color": "#333333",
+                        "alignment": "right",
+                        "sectionDescription": "Mauris imperdiet ligula a mauris porttitor ultricies. Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellentesque ut metus odio. Integer fringilla nulla id leo consequat, a sollicitudin sapien fringilla.",
+                        "image": "http://localhost:4200/img/img.jpg"
+                    },
+                    "form": [
+                    {
+                        "type": "image",
+                        "label": "choose your image",
+                        "value": "image",
+                        "validation": null
+                    },
+                    {
+                        "type": "alignment",
+                        "label": "Alignment",
+                        "value": "alignment",
+                        "options": [
+                        "left",
+                        "center",
+                        "right"
+                        ],
+                        "validation": null
+                    },
+                    {
+                        "type": "settings",
+                        "items": [
+                        {
+                            "type": "checkbox",
+                            "label": "Show title",
+                            "value": "showTitle",
                             "validation": null
                         }
                         ]
