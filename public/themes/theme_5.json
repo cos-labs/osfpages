@@ -1,0 +1,300 @@
+{
+    "id": 5,
+    "name" : "RPP",
+    "layers": [
+        {
+            "sectionHeader": "Title",
+            "component": "layer-title",
+            "settings": {
+                "values": {
+                    "backgroundImage": "http://localhost:4200/img/rpp.jpg",
+                    "backgroundCover": true,
+                    "showNavigation": false,
+                    "showTitle": true,
+                    "showLead": true,
+                    "showInNavigation": false,
+                    "h1Size": 40,
+                    "bgColor": "#FFFFFF",
+                    "color": "#333333",
+                    "alignment": "right",
+                    "lead": "Open Science Collaboration"
+                },
+                "form": [
+                    {
+                        "type": "image",
+                        "label": "Background image",
+                        "value": "backgroundImage",
+                        "validation": null
+                    },
+                    {
+                        "type": "increment",
+                        "label": "Title size",
+                        "value": "h1Size",
+                        "size": 20,
+                        "incrementSize": 4,
+                        "validation": null
+                    },
+                    {
+                        "type": "alignment",
+                        "label": "Alignment",
+                        "value": "alignment",
+                        "options": [
+                            "left",
+                            "center",
+                            "right"
+                        ],
+                        "validation": null
+                    },
+                    {
+                        "type": "settings",
+                        "items": [
+                            {
+                                "type": "checkbox",
+                                "label": "Show navigation",
+                                "value": "showNavigation",
+                                "validation": null
+                            },
+                            {
+                                "type": "checkbox",
+                                "label": "Fit image to section size",
+                                "value": "backgroundCover",
+                                "validation": null
+                            },
+                            {
+                                "type": "checkbox",
+                                "label": "Show title",
+                                "value": "showTitle",
+                                "validation": null
+                            },
+                            {
+                                "type": "checkbox",
+                                "label": "Show lead text",
+                                "value": "showLead",
+                                "validation": null
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "sectionHeader": "Navigation",
+            "component": "pages-menu",
+            "settings": {
+                "component": "layer-settings",
+                "values": {
+                    "fontSize": 16,
+                    "bgColor": "#00bcd4",
+                    "color": "#ffffff",
+                    "alignment": "right",
+                    "stickToTop": true
+                },
+                "form": [
+                    {
+                        "type": "increment",
+                        "label": "Font size",
+                        "value": "fontSize",
+                        "incrementSize": 1,
+                        "validation": null
+                    },
+                    {
+                        "type": "alignment",
+                        "label": "Alignment",
+                        "value": "alignment",
+                        "options": [
+                            "left",
+                            "center",
+                            "right"
+                        ],
+                        "validation": null
+                    },
+                    {
+                        "type": "settings",
+                        "items": [
+                            {
+                                "type": "checkbox",
+                                "label": "Stick to top of page on scroll",
+                                "value": "stickToTop",
+                                "validation": null
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "sectionHeader": "Wiki example",
+            "component": "layer-wiki",
+            "settings": {
+                "component": "layer-settings",
+                "wikiId": "",
+                "values": {
+                    "sectionTitle": "About",
+                    "showInNavigation": true,
+                    "addShowMore": false,
+                    "bgColor": "#eeeeee",
+                    "color": "#333333"
+                },
+                "form": [
+                    {
+                        "type": "settings",
+                        "items": [
+                            {
+                                "type": "checkbox",
+                                "label": "Show in navigation",
+                                "value": "showInNavigation",
+                                "validation": null
+                            },
+                            {
+                                "type": "checkbox",
+                                "label": "Add show more",
+                                "value": "addShowMore",
+                                "validation": null
+                            }
+                        ]
+                    }
+                ]
+            },
+            "wikiContent": "The Reproducibility Project: Psychology began in November 2011, finished primary data collection in December 2014, and published a summary of the results in August 2015. The project was coordinated by the Center for Open Science. Replication teams followed a research protocol and received logistical assistance as they collected materials, identified the key finding for replication, ran their experiment, conducted analyses, and reported their findings.\r\n\r\nAs stated in an initial report from 2012, \"The Reproducibility Project uses an open methodology to test the reproducibility of psychological science. It also models procedures designed to simplify and improve reproducibility\" (Open Science Collaboration, 2012). To that end, all project materials, data, and findings are posted on the Open Science Framework, a free service of the Center for Open Science. Moreover, the project models reproducibility by making it easy to reproduce the analyses of each individual project, and the results of the aggregate report.\r\n\r\nAs the first in-depth exploration of its kind, the project results provide insight into reproducibility and its correlates. With a large, open dataset, many additional research questions can be investigated.\r\n\r\nThe project was designed to be a collaborative endeavor. Ultimately over 270 contributors earned authorship on the summary report and 86 others provided volunteer support. Replication teams designed, ran, and reported their replication studies. Brian Nosek, Johanna Cohoon, and Mallory Kidwell provided project coordination. Marcel van Assen, Chris Hartgerink, and Robbie van Aert led the analysis of results, Fred Hasselman generated the figures, and Sacha Epskamp led the analysis audit. Scores of additional volunteers assisted with coding of articles, analyses, and administrative tasks.\r\n\r\nSince its inception, other similar initiatives have begun in other scientific domains. The Center for Open Science coordinates one of these such efforts, the Reproducibility Project: Cancer Biology."
+        },
+        {
+            "sectionHeader": "Wiki example",
+            "component": "layer-wiki",
+            "settings": {
+                "component": "layer-settings",
+                "wikiId": "yje3h",
+                "values": {
+                    "sectionTitle": "Abstract",
+                    "showInNavigation": true,
+                    "addShowMore": false,
+                    "bgColor": "#009688",
+                    "color": "#ffffff"
+                },
+                "form": [
+                    {
+                        "type": "settings",
+                        "items": [
+                            {
+                                "type": "checkbox",
+                                "label": "Show in navigation",
+                                "value": "showInNavigation",
+                                "validation": null
+                            },
+                            {
+                                "type": "checkbox",
+                                "label": "Add show more",
+                                "value": "addShowMore",
+                                "validation": null
+                            }
+                        ]
+                    }
+                ]
+            },
+            "wikiContent": "The Reproducibility Project: Psychology began in November 2011, finished primary data collection in December 2014, and published a summary of the results in August 2015. The project was coordinated by the Center for Open Science. Replication teams followed a research protocol and received logistical assistance as they collected materials, identified the key finding for replication, ran their experiment, conducted analyses, and reported their findings.\r\n\r\nAs stated in an initial report from 2012, \"The Reproducibility Project uses an open methodology to test the reproducibility of psychological science. It also models procedures designed to simplify and improve reproducibility\" (Open Science Collaboration, 2012). To that end, all project materials, data, and findings are posted on the Open Science Framework, a free service of the Center for Open Science. Moreover, the project models reproducibility by making it easy to reproduce the analyses of each individual project, and the results of the aggregate report.\r\n\r\nAs the first in-depth exploration of its kind, the project results provide insight into reproducibility and its correlates. With a large, open dataset, many additional research questions can be investigated.\r\n\r\nThe project was designed to be a collaborative endeavor. Ultimately over 270 contributors earned authorship on the summary report and 86 others provided volunteer support. Replication teams designed, ran, and reported their replication studies. Brian Nosek, Johanna Cohoon, and Mallory Kidwell provided project coordination. Marcel van Assen, Chris Hartgerink, and Robbie van Aert led the analysis of results, Fred Hasselman generated the figures, and Sacha Epskamp led the analysis audit. Scores of additional volunteers assisted with coding of articles, analyses, and administrative tasks.\r\n\r\nSince its inception, other similar initiatives have begun in other scientific domains. The Center for Open Science coordinates one of these such efforts, the Reproducibility Project: Cancer Biology."
+        },
+        {
+            "sectionHeader": "Download",
+            "component": "layer-file",
+            "settings": {
+                "component": "layer-settings",
+                "values": {
+                    "sectionTitle": "Download paper",
+                    "sectionDescription": "<p>Download the preprint version of our study from OSF</p>",
+                    "showFileviewer": false,
+                    "downloadLink": "https://staging-files.osf.io/v1/resources/nc43h/providers/osfstorage/59820ae08ca57e02367f2771",
+                    "showInNavigation": true,
+                    "bgColor": "#232323",
+                    "color": "#f5f5f5"
+                },
+                "form": [
+                    {
+                        "type": "settings",
+                        "items": [
+                            {
+                                "type": "checkbox",
+                                "label": "Show in navigation",
+                                "value": "showInNavigation",
+                                "validation": null
+                            },
+                            {
+                                "type": "checkbox",
+                                "label": "Show file viewer",
+                                "value": "showFileviewer",
+                                "validation": null
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "sectionHeader": "Download",
+            "component": "layer-file",
+            "settings": {
+                "component": "layer-settings",
+                "values": {
+                    "sectionTitle": "Effect size chart",
+                    "sectionDescription": "<p>Original study effect size versus replication effect size (correlation coefficients).</p>",
+                    "showFileviewer": true,
+                    "downloadLink": "https://staging-files.osf.io/v1/resources/nc43h/providers/osfstorage/59820aa20dc310022eaf02ba",
+                    "showInNavigation": true,
+                    "bgColor": "#FFFFFF",
+                    "color": "#333333"
+                },
+                "form": [
+                    {
+                        "type": "settings",
+                        "items": [
+                            {
+                                "type": "checkbox",
+                                "label": "Show in navigation",
+                                "value": "showInNavigation",
+                                "validation": null
+                            },
+                            {
+                                "type": "checkbox",
+                                "label": "Show file viewer",
+                                "value": "showFileviewer",
+                                "validation": null
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "sectionHeader": "Link",
+            "component": "layer-link",
+            "settings": {
+                "component": "layer-settings",
+                "values": {
+                    "sectionTitle": "Files",
+                    "showInNavigation": true,
+                    "sectionDescription": "<p>Visit project files page to see documents from all replication studies in this research.&nbsp;</p>",
+                    "sectionLink": "https://osf.io/ezcuj/files/",
+                    "bgColor": "#31708f",
+                    "color": "#ebebeb"
+                },
+                "form": [
+                    {
+                        "type": "settings",
+                        "items": [
+                            {
+                                "type": "checkbox",
+                                "label": "Show in navigation",
+                                "value": "showInNavigation",
+                                "validation": null
+                            },
+                            {
+                                "type": "text",
+                                "label": "Link address",
+                                "value": "sectionLink",
+                                "validation": null
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
