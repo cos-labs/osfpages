@@ -123,120 +123,39 @@
     }
   },
   {
-    "sectionHeader": "Image-Text",
-    "component": "layer-image-text",
-    "settings": {
-      "values": {
-        "sectionTitle": "Projects",
-        "showNavigation": true,
-        "showInNavigation": true,
-        "bgColor": "#eaeaea",
-        "color": "#333333",
-        "alignment": "center",
-        "sectionDescription": "Researched the shade tolerance that pants have. In ecology, shade tolerance refers to a plant's ability to tolerate low light levels. The term is also used in horticulture and landscaping, although in this context its use is sometimes sloppy, especially with respect to labeling of plants for sale in nurseries.[citation needed]\n\nShade tolerance is a relative term, a complex, multi-faceted property of plants, not a single variable or simple continuum. Different plant species exhibit different adaptations to shade. In fact, a particular plant can exhibit varying degrees of shade tolerance, or even of requirement for light, depending on its history or stage of development.",
-        "image": "http://localhost:4200/img/science.jpg"
-      },
-      "form": [
-        {
-          "type": "image",
-          "label": "choose your image",
-          "value": "image",
-          "validation": null
-        },
-        {
-          "type": "alignment",
-          "label": "Alignment",
-          "value": "alignment",
-          "options": [
-            "left",
-            "center",
-            "right"
-          ],
-          "validation": null
-        },
-        {
-          "type": "settings",
-          "items": [
-            {
-              "type": "checkbox",
-              "label": "show in navigation",
-              "value": "showInNavigation",
-              "validation": null
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "sectionHeader": "Image-Text",
-    "component": "layer-image-text",
-    "settings": {
-      "values": {
-        "sectionTitle": "",
-        "showNavigation": true,
-        "showInNavigation": false,
-        "bgColor": "#eaeaea",
-        "color": "#333333",
-        "alignment": "center",
-        "sectionDescription": "Researched the mechanics of bird flight, with emphasis on the varied forms of bird's wings.",
-        "image": "http://localhost:4200/img/bird.jpg"
-      },
-      "form": [
-        {
-          "type": "image",
-          "label": "choose your image",
-          "value": "image",
-          "validation": null
-        },
-        {
-          "type": "alignment",
-          "label": "Alignment",
-          "value": "alignment",
-          "options": [
-            "left",
-            "center",
-            "right"
-          ],
-          "validation": null
-        },
-        {
-          "type": "settings",
-          "items": [
-            {
-              "type": "checkbox",
-              "label": "show in navigation",
-              "value": "showInNavigation",
-              "validation": null
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "sectionHeader": "Image",
-    "component": "layer-image",
+    "sectionHeader": "Advanced",
+    "component": "layer-advanced",
+    "content": "<h3><br></h3><h3><span style=\"color: rgb(255, 194, 102);\">Interdisciplinary Perspectives</span></h3><p>July 22, 2011</p><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean</p><p>commodo ligula eget dolor. Aenean massa. Cum sociis natoque</p><p>penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p><p>Donec quam felis.</p><p><br></p><h3 class=\"ql-align-right ql-direction-rtl\"><span style=\"color: rgb(102, 163, 224);\">A Spatial History of Poststructuralism</span></h3><p class=\"ql-direction-rtl ql-align-right\">July 11, 2015</p><p class=\"ql-direction-rtl ql-align-right\">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean</p><p class=\"ql-direction-rtl ql-align-right\">commodo ligula eget dolor. Aenean massa. Cum sociis natoque</p><p class=\"ql-direction-rtl ql-align-right\">penatibus et magnis dis parturient montes, nascetur ridiculus mu</p><p class=\"ql-direction-rtl ql-align-right\">Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem</p><p class=\"ql-direction-rtl ql-align-right\">Nulla consequat massa quis enim. Donec pede justo</p><p class=\"ql-align-right\"><br></p><h3><span style=\"color: rgb(255, 194, 102);\">Quantitative Trends in Violence</span></h3><p>December 13, 2016</p><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean</p><p>commodo ligula eget dolor. Aenean massa. Cum sociis natoque</p><p>penatibus et magnis dis parturient montes</p><p><br></p>",
     "settings": {
       "component": "layer-settings",
       "values": {
-        "height": 320,
-        "url": "http://localhost:4200/img/sample.jpg",
-        "bgColor": "#FFFFFF",
+        "sectionTitle": "Research ",
+        "showInNavigation": true,
+        "bgColor": "#ffffff",
+        "alignment": "center",
         "color": "#333333"
       },
       "form": [
         {
-          "type": "image",
-          "label": "Image link",
-          "value": "url",
-          "validation": null
+          "type": "settings",
+          "items": [
+            {
+              "type": "checkbox",
+              "label": "Show in navigation",
+              "value": "showInNavigation",
+              "validation": null
+            }
+          ]
         },
         {
-          "type": "increment",
-          "label": "Section height",
-          "value": "height",
-          "incrementSize": 20,
+          "type": "alignment",
+          "label": "Alignment",
+          "value": "alignment",
+          "options": [
+            "left",
+            "center",
+            "right"
+          ],
           "validation": null
         }
       ]
@@ -248,7 +167,7 @@
     "settings": {
       "component": "layer-settings",
       "values": {
-        "sectionTitle": "Download this file",
+        "sectionTitle": "Resume",
         "sectionDescription": "",
         "showFileviewer": true,
         "downloadLink": "https://staging-files.osf.io/v1/resources/p7cvt/providers/osfstorage/5981ceba8ca57e022ea5ed96",
@@ -271,6 +190,45 @@
               "type": "checkbox",
               "label": "Show file viewer",
               "value": "showFileviewer",
+              "validation": null
+            }
+          ]
+        },
+        {
+          "type": "alignment",
+          "label": "Alignment",
+          "value": "alignment",
+          "options": [
+            "left",
+            "center",
+            "right"
+          ],
+          "validation": null
+        }
+      ]
+    }
+  },
+  {
+    "sectionHeader": "Advanced",
+    "component": "layer-advanced",
+    "content": "<p class=\"ql-align-center\">-</p><h3 class=\"ql-align-center\">JohnDoe@email.com</h3><p class=\"ql-align-center\"><br></p>",
+    "settings": {
+      "component": "layer-settings",
+      "values": {
+        "sectionTitle": "Contact",
+        "showInNavigation": true,
+        "bgColor": "#FFFFFF",
+        "alignment": "center",
+        "color": "#333333"
+      },
+      "form": [
+        {
+          "type": "settings",
+          "items": [
+            {
+              "type": "checkbox",
+              "label": "Show in navigation",
+              "value": "showInNavigation",
               "validation": null
             }
           ]
