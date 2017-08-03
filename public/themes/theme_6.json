@@ -133,6 +133,7 @@
                     "showInNavigation": true,
                     "addShowMore": false,
                     "bgColor": "#eeeeee",
+                    "alignment": "left",
                     "color": "#333333"
                 },
                 "form": [
@@ -152,6 +153,17 @@
                                 "validation": null
                             }
                         ]
+                    },
+                    {
+                        "type": "alignment",
+                        "label": "Alignment",
+                        "value": "alignment",
+                        "options": [
+                            "left",
+                            "center",
+                            "right"
+                        ],
+                        "validation": null
                     }
                 ]
             },
@@ -168,6 +180,7 @@
                     "showInNavigation": true,
                     "addShowMore": false,
                     "bgColor": "#009688",
+                    "alignment": "left",
                     "color": "#ffffff"
                 },
                 "form": [
@@ -187,6 +200,17 @@
                                 "validation": null
                             }
                         ]
+                    },
+                    {
+                        "type": "alignment",
+                        "label": "Alignment",
+                        "value": "alignment",
+                        "options": [
+                            "left",
+                            "center",
+                            "right"
+                        ],
+                        "validation": null
                     }
                 ]
             },
@@ -204,6 +228,7 @@
                     "downloadLink": "https://staging-files.osf.io/v1/resources/nc43h/providers/osfstorage/59820ae08ca57e02367f2771",
                     "showInNavigation": true,
                     "bgColor": "#232323",
+                    "alignment": "left",
                     "color": "#f5f5f5"
                 },
                 "form": [
@@ -223,6 +248,17 @@
                                 "validation": null
                             }
                         ]
+                    },
+                    {
+                        "type": "alignment",
+                        "label": "Alignment",
+                        "value": "alignment",
+                        "options": [
+                            "left",
+                            "center",
+                            "right"
+                        ],
+                        "validation": null
                     }
                 ]
             }
@@ -239,6 +275,7 @@
                     "downloadLink": "https://staging-files.osf.io/v1/resources/nc43h/providers/osfstorage/59820aa20dc310022eaf02ba",
                     "showInNavigation": true,
                     "bgColor": "#FFFFFF",
+                    "alignment": "left",
                     "color": "#333333"
                 },
                 "form": [
@@ -258,6 +295,17 @@
                                 "validation": null
                             }
                         ]
+                    },
+                    {
+                        "type": "alignment",
+                        "label": "Alignment",
+                        "value": "alignment",
+                        "options": [
+                            "left",
+                            "center",
+                            "right"
+                        ],
+                        "validation": null
                     }
                 ]
             }
@@ -273,6 +321,7 @@
                     "sectionDescription": "<p>Visit project files page to see documents from all replication studies in this research.&nbsp;</p>",
                     "sectionLink": "https://osf.io/ezcuj/files/",
                     "bgColor": "#31708f",
+                    "alignment": "left",
                     "color": "#ebebeb"
                 },
                 "form": [
@@ -292,6 +341,17 @@
                                 "validation": null
                             }
                         ]
+                    },
+                    {
+                        "type": "alignment",
+                        "label": "Alignment",
+                        "value": "alignment",
+                        "options": [
+                            "left",
+                            "center",
+                            "right"
+                        ],
+                        "validation": null
                     }
                 ]
             }

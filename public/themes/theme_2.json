@@ -152,7 +152,7 @@
                     "showInNavigation": true,
                     "addShowMore": false,
                     "bgColor": "#FFFFFF",
-                     "alignment": "center",
+                    "alignment": "center",
                     "color": "#333333"
                 },
                 "form": [
