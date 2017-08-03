@@ -1,0 +1,293 @@
+{
+    "id": 5,
+    "name" : "portfolio",
+    "layers": [
+  {
+    "sectionHeader": "Title",
+    "component": "layer-title",
+    "settings": {
+      "values": {
+        "backgroundImage": "http://localhost:4200/img/p4.jpg",
+        "backgroundCover": true,
+        "showNavigation": false,
+        "showTitle": true,
+        "showLead": true,
+        "showInNavigation": false,
+        "h1Size": 54,
+        "bgColor": "#333333",
+        "color": "#EEEEEE",
+        "alignment": "center",
+        "lead": "Lorem ipsum dolor sit amet consectetur adipisicing elitsed eiusmod"
+      },
+      "form": [
+        {
+          "type": "image",
+          "label": "Background image",
+          "value": "backgroundImage",
+          "validation": null
+        },
+        {
+          "type": "increment",
+          "label": "Title size",
+          "value": "h1Size",
+          "size": 20,
+          "incrementSize": 4,
+          "validation": null
+        },
+        {
+          "type": "alignment",
+          "label": "Alignment",
+          "value": "alignment",
+          "options": [
+            "left",
+            "center",
+            "right"
+          ],
+          "validation": null
+        },
+        {
+          "type": "settings",
+          "items": [
+            {
+              "type": "checkbox",
+              "label": "Show navigation",
+              "value": "showNavigation",
+              "validation": null
+            },
+            {
+              "type": "checkbox",
+              "label": "Fit image to section size",
+              "value": "backgroundCover",
+              "validation": null
+            },
+            {
+              "type": "checkbox",
+              "label": "Show title",
+              "value": "showTitle",
+              "validation": null
+            },
+            {
+              "type": "checkbox",
+              "label": "Show lead text",
+              "value": "showLead",
+              "validation": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "sectionHeader": "Navigation",
+    "component": "pages-menu",
+    "settings": {
+      "component": "layer-settings",
+      "values": {
+        "fontSize": 16,
+        "bgColor": "#2c2c2c",
+        "color": "#ebebeb",
+        "alignment": "center",
+        "stickToTop": false
+      },
+      "form": [
+        {
+          "type": "increment",
+          "label": "Section height",
+          "value": "height",
+          "incrementSize": 20,
+          "validation": null
+        },
+        {
+          "type": "alignment",
+          "label": "Alignment",
+          "value": "alignment",
+          "options": [
+            "left",
+            "center",
+            "right"
+          ],
+          "validation": null
+        },
+        {
+          "type": "settings",
+          "items": [
+            {
+              "type": "checkbox",
+              "label": "Stick to top of page on scroll",
+              "value": "stickToTop",
+              "validation": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "sectionHeader": "Image-Text",
+    "component": "layer-image-text",
+    "settings": {
+      "values": {
+        "sectionTitle": "Projects",
+        "showNavigation": true,
+        "showInNavigation": true,
+        "bgColor": "#eaeaea",
+        "color": "#333333",
+        "alignment": "center",
+        "sectionDescription": "Researched the shade tolerance that pants have. In ecology, shade tolerance refers to a plant's ability to tolerate low light levels. The term is also used in horticulture and landscaping, although in this context its use is sometimes sloppy, especially with respect to labeling of plants for sale in nurseries.[citation needed]\n\nShade tolerance is a relative term, a complex, multi-faceted property of plants, not a single variable or simple continuum. Different plant species exhibit different adaptations to shade. In fact, a particular plant can exhibit varying degrees of shade tolerance, or even of requirement for light, depending on its history or stage of development.",
+        "image": "http://localhost:4200/img/science.jpg"
+      },
+      "form": [
+        {
+          "type": "image",
+          "label": "choose your image",
+          "value": "image",
+          "validation": null
+        },
+        {
+          "type": "alignment",
+          "label": "Alignment",
+          "value": "alignment",
+          "options": [
+            "left",
+            "center",
+            "right"
+          ],
+          "validation": null
+        },
+        {
+          "type": "settings",
+          "items": [
+            {
+              "type": "checkbox",
+              "label": "show in navigation",
+              "value": "showInNavigation",
+              "validation": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "sectionHeader": "Image-Text",
+    "component": "layer-image-text",
+    "settings": {
+      "values": {
+        "sectionTitle": "",
+        "showNavigation": true,
+        "showInNavigation": false,
+        "bgColor": "#eaeaea",
+        "color": "#333333",
+        "alignment": "center",
+        "sectionDescription": "Researched the mechanics of bird flight, with emphasis on the varied forms of bird's wings.",
+        "image": "http://localhost:4200/img/bird.jpg"
+      },
+      "form": [
+        {
+          "type": "image",
+          "label": "choose your image",
+          "value": "image",
+          "validation": null
+        },
+        {
+          "type": "alignment",
+          "label": "Alignment",
+          "value": "alignment",
+          "options": [
+            "left",
+            "center",
+            "right"
+          ],
+          "validation": null
+        },
+        {
+          "type": "settings",
+          "items": [
+            {
+              "type": "checkbox",
+              "label": "show in navigation",
+              "value": "showInNavigation",
+              "validation": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "sectionHeader": "Image",
+    "component": "layer-image",
+    "settings": {
+      "component": "layer-settings",
+      "values": {
+        "height": 320,
+        "url": "http://localhost:4200/img/sample.jpg",
+        "bgColor": "#FFFFFF",
+        "color": "#333333"
+      },
+      "form": [
+        {
+          "type": "image",
+          "label": "Image link",
+          "value": "url",
+          "validation": null
+        },
+        {
+          "type": "increment",
+          "label": "Section height",
+          "value": "height",
+          "incrementSize": 20,
+          "validation": null
+        }
+      ]
+    }
+  },
+  {
+    "sectionHeader": "Download",
+    "component": "layer-file",
+    "settings": {
+      "component": "layer-settings",
+      "values": {
+        "sectionTitle": "Download this file",
+        "sectionDescription": "",
+        "showFileviewer": true,
+        "downloadLink": "https://staging-files.osf.io/v1/resources/p7cvt/providers/osfstorage/5981ceba8ca57e022ea5ed96",
+        "showInNavigation": true,
+        "bgColor": "#FFFFFF",
+        "alignment": "center",
+        "color": "#333333"
+      },
+      "form": [
+        {
+          "type": "settings",
+          "items": [
+            {
+              "type": "checkbox",
+              "label": "Show in navigation",
+              "value": "showInNavigation",
+              "validation": null
+            },
+            {
+              "type": "checkbox",
+              "label": "Show file viewer",
+              "value": "showFileviewer",
+              "validation": null
+            }
+          ]
+        },
+        {
+          "type": "alignment",
+          "label": "Alignment",
+          "value": "alignment",
+          "options": [
+            "left",
+            "center",
+            "right"
+          ],
+          "validation": null
+        }
+      ]
+    }
+  }
+]
+}

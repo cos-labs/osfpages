@@ -18,7 +18,8 @@ export default Ember.Component.extend({
                             "showInNavigation": true,
                             "addShowMore": false,
                             "bgColor": "#FFFFFF",
-                            "color": "#333333"
+                            "color": "#333333",
+                            "alignment": "center"
                         },
                         "form": [
                         {
@@ -37,6 +38,17 @@ export default Ember.Component.extend({
                                 "validation": null
                             }
                             ]
+                        },
+                        {
+                            "type": "alignment",
+                            "label": "Alignment",
+                            "value": "alignment",
+                            "options": [
+                            "left",
+                            "center",
+                            "right"
+                            ],
+                            "validation": null
                         }
                         ]
                     }
@@ -55,6 +67,7 @@ export default Ember.Component.extend({
                             "downloadLink": "",
                             "showInNavigation": true,
                             "bgColor": "#FFFFFF",
+                            "alignment": "center",
                             "color": "#333333"
                         },
                         "form": [
@@ -74,6 +87,17 @@ export default Ember.Component.extend({
                                 "validation": null
                             }
                             ]
+                        },
+                        {
+                            "type": "alignment",
+                            "label": "Alignment",
+                            "value": "alignment",
+                            "options": [
+                            "left",
+                            "center",
+                            "right"
+                            ],
+                            "validation": null
                         }
                         ]
                     }
@@ -91,6 +115,7 @@ export default Ember.Component.extend({
                             "sectionDescription": "this link goes to a place",
                             "sectionLink": "www.example.com",
                             "bgColor": "#FFFFFF",
+                            "alignment": "center",
                             "color": "#333333"
                         },
                         "form": [
@@ -110,6 +135,17 @@ export default Ember.Component.extend({
                                 "validation": null
                             }
                             ]
+                        },
+                        {
+                            "type": "alignment",
+                            "label": "Alignment",
+                            "value": "alignment",
+                            "options": [
+                            "left",
+                            "center",
+                            "right"
+                            ],
+                            "validation": null
                         }
                         ]
                     }
@@ -126,6 +162,7 @@ export default Ember.Component.extend({
                             "sectionTitle": "Advanced",
                             "showInNavigation": true,
                             "bgColor": "#FFFFFF",
+                            "alignment": "center",
                             "color": "#333333"
                         },
                         "form": [
@@ -139,6 +176,17 @@ export default Ember.Component.extend({
                                 "validation": null
                             }
                             ]
+                        },
+                        {
+                            "type": "alignment",
+                            "label": "Alignment",
+                            "value": "alignment",
+                            "options": [
+                            "left",
+                            "center",
+                            "right"
+                            ],
+                            "validation": null
                         }
                         ]
                     }
@@ -216,35 +264,6 @@ export default Ember.Component.extend({
                             "validation": null
                         }
                         ]
-                    }
-                    ]
-                }
-            };
-            break;
-            case 'image':
-            item = {
-                "sectionHeader": "Image",
-                "component": "layer-image",
-                "settings": {
-                    "values": {
-                        "height": 500,
-                        "url": "http://localhost:4200/img/sample.jpg",
-                        "bgColor": "#FFFFFF",
-                        "color": "#333333"
-                    },
-                    "form": [
-                    {
-                        "type": "image",
-                        "label": "Image link",
-                        "value": "url",
-                        "validation": null
-                    },
-                    {
-                        "type": "increment",
-                        "label": "Section height",
-                        "value": "height",
-                        "incrementSize": 20,
-                        "validation": null
                     }
                     ]
                 }
@@ -340,6 +359,7 @@ export default Ember.Component.extend({
                         "showBibliographicContributors": false,
                         "showAffiliatedInstitutions": true,
                         "bgColor": "#FFFFFF",
+                        "alignment": "center",
                         "color": "#333333"
                     },
                     "form": [
@@ -377,6 +397,17 @@ export default Ember.Component.extend({
                             "validation": null
                         }
                         ]
+                    },
+                    {
+                        "type": "alignment",
+                        "label": "Alignment",
+                        "value": "alignment",
+                        "options": [
+                        "left",
+                        "center",
+                        "right"
+                        ],
+                        "validation": null
                     }
                     ]
                 }

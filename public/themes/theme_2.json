@@ -89,6 +89,7 @@
                     "showBibliographicContributors": false,
                     "showAffiliatedInstitutions": true,
                     "bgColor": "#FFFFFF",
+                    "alignment": "center",
                     "color": "#333333"
                 },
                 "form": [
@@ -126,6 +127,17 @@
                                 "validation": null
                             }
                         ]
+                    },
+                    {
+                        "type": "alignment",
+                        "label": "Alignment",
+                        "value": "alignment",
+                        "options": [
+                            "left",
+                            "center",
+                            "right"
+                        ],
+                        "validation": null
                     }
                 ]
             }
@@ -140,6 +152,7 @@
                     "showInNavigation": true,
                     "addShowMore": false,
                     "bgColor": "#FFFFFF",
+                     "alignment": "center",
                     "color": "#333333"
                 },
                 "form": [
@@ -159,6 +172,17 @@
                                 "validation": null
                             }
                         ]
+                    },
+                    {
+                        "type": "alignment",
+                        "label": "Alignment",
+                        "value": "alignment",
+                        "options": [
+                            "left",
+                            "center",
+                            "right"
+                        ],
+                        "validation": null
                     }
                 ]
             }
