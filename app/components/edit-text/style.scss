@@ -1,10 +1,4 @@
-.edit-text-title{
-	border: none;
-    background: rgba(158, 158, 158, 0.08);
-    font-size: 30px;
-    width:100%;
-    border-radius: 2px;
-}
+
 
 .ql-editor{
     white-space: inherit;
@@ -13,10 +7,36 @@
 
 .left {
     text-align: left;
+    border: none;
+    background: rgba(158, 158, 158, 0.08);
+    font-size: 30px;
+    width:100%;
+    border-radius: 2px;
 }
 .center {
     text-align: center;
+    border: none;
+    background: rgba(158, 158, 158, 0.08);
+    font-size: 30px;
+    width:100%;
+    border-radius: 2px;
 }
 .right {
+    text-align: right;
+    border: none;
+    background: rgba(158, 158, 158, 0.08);
+    font-size: 30px;
+    width:100%;
+    border-radius: 2px;
+}
+
+
+.left-title {
+    text-align: left;
+}
+.center-title {
+    text-align: center;
+}
+.right-title {
     text-align: right;
 }
