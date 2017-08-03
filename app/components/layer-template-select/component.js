@@ -31,10 +31,10 @@ export default Ember.Component.extend({
 
         },
         {
-            id: 4,
-            name: 'Team',
-            thumb: '/img/people.png',
-            description: 'Includes all section types.'
+            id: 5,
+            name: 'RPP',
+            thumb: '/img/rpp.png',
+            description: 'Example of Reproducibility Project: Psychology'
 
         },
         {

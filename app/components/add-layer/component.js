@@ -190,9 +190,9 @@ export default Ember.Component.extend({
                         "form": [
                         {
                             "type": "increment",
-                            "label": "Section height",
-                            "value": "height",
-                            "incrementSize": 20,
+                            "label": "Font size",
+                            "value": "fontSize",
+                            "incrementSize": 1,
                             "validation": null
                         },
                         {
