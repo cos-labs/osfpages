@@ -1,6 +1,6 @@
 {{#if (eq type 'title')}}
     {{#if editMode}}
-        {{input type="text" class=layer.settings.values.alignment maxlength=140 value=layer.settings.values.sectionTitle }}
+        {{input class=layer.settings.values.alignment maxlength=140 value=layer.settings.values.sectionTitle }}
     {{else}}
         <div class="{{layer.settings.values.alignment}}-title"><h2>{{layer.settings.values.sectionTitle}}</h2></div>
     {{/if}}
