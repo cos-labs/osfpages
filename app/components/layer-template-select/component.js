@@ -34,7 +34,7 @@ export default Ember.Component.extend({
             id: 5,
             name: 'Portfolio',
             thumb: '/img/portfolio.png',
-            description: 'Includes all section types.'
+            description: 'Example of a portfolio page'
         },
         {
             id: 6,
