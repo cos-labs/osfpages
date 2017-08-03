@@ -32,18 +32,15 @@ export default Ember.Component.extend({
         },
         {
             id: 5,
+            name: 'Portfolio',
+            thumb: '/img/portfolio.png',
+            description: 'Example of a portfolio page'
+        },
+        {
+            id: 6,
             name: 'RPP',
             thumb: '/img/rpp.png',
             description: 'Example of Reproducibility Project: Psychology'
-
-        },
-        {
-            id: 4,
-            name: 'Team',
-            thumb: '/img/people.png',
-            description: 'Includes all section types.'
-
-
         },
     ],
 	isOpen: null,

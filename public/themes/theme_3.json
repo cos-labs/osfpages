@@ -88,7 +88,8 @@
                     "downloadLink": "",
                     "showInNavigation": true,
                     "bgColor": "#FFFFFF",
-                    "color": "#333333"
+                    "color": "#333333",
+                    "alignment": "left"
                 },
                 "form": [
                     {
@@ -107,6 +108,17 @@
                                 "validation": null
                             }
                         ]
+                    },
+                    {
+                        "type": "alignment",
+                        "label": "Alignment",
+                        "value": "alignment",
+                        "options": [
+                            "left",
+                            "center",
+                            "right"
+                        ],
+                        "validation": null
                     }
                 ]
             }

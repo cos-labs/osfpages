@@ -89,6 +89,7 @@
                     "showBibliographicContributors": false,
                     "showAffiliatedInstitutions": true,
                     "bgColor": "#FFFFFF",
+                    "alignment": "left",
                     "color": "#333333"
                 },
                 "form": [
@@ -126,6 +127,17 @@
                                 "validation": null
                             }
                         ]
+                    },
+                    {
+                        "type": "alignment",
+                        "label": "Alignment",
+                        "value": "alignment",
+                        "options": [
+                            "left",
+                            "center",
+                            "right"
+                        ],
+                        "validation": null
                     }
                 ]
             }
@@ -140,6 +152,7 @@
                     "sectionDescription": "Fresnel lens is a type of compact lens originally developed by French physicist Augustin-Jean Fresnel for lighthouses. Learn more about it in Wikipedia",
                     "sectionLink": "https://en.wikipedia.org/wiki/Fresnel_lens",
                     "bgColor": "#FFFFFF",
+                    "alignment": "left",
                     "color": "#333333"
                 },
                 "form": [
@@ -159,6 +172,17 @@
                                 "validation": null
                             }
                         ]
+                    },
+                    {
+                        "type": "alignment",
+                        "label": "Alignment",
+                        "value": "alignment",
+                        "options": [
+                            "left",
+                            "center",
+                            "right"
+                        ],
+                        "validation": null
                     }
                 ]
             }
@@ -201,6 +225,7 @@
                     "downloadLink": "",
                     "showInNavigation": true,
                     "bgColor": "#FFFFFF",
+                    "alignment": "left",
                     "color": "#333333"
                 },
                 "form": [
@@ -220,6 +245,17 @@
                                 "validation": null
                             }
                         ]
+                    },
+                    {
+                        "type": "alignment",
+                        "label": "Alignment",
+                        "value": "alignment",
+                        "options": [
+                            "left",
+                            "center",
+                            "right"
+                        ],
+                        "validation": null
                     }
                 ]
             }
@@ -233,6 +269,7 @@
                     "sectionTitle": "Advanced",
                     "showInNavigation": true,
                     "bgColor": "#FFFFFF",
+                    "alignment": "left",
                     "color": "#333333"
                 },
                 "form": [
@@ -246,6 +283,17 @@
                                 "validation": null
                             }
                         ]
+                    },
+                    {
+                        "type": "alignment",
+                        "label": "Alignment",
+                        "value": "alignment",
+                        "options": [
+                            "left",
+                            "center",
+                            "right"
+                        ],
+                        "validation": null
                     }
                 ]
             }
@@ -260,6 +308,7 @@
                     "showInNavigation": true,
                     "addShowMore": false,
                     "bgColor": "#FFFFFF",
+                    "alignment": "left",
                     "color": "#333333"
                 },
                 "form": [
@@ -279,6 +328,17 @@
                                 "validation": null
                             }
                         ]
+                    },
+                    {
+                        "type": "alignment",
+                        "label": "Alignment",
+                        "value": "alignment",
+                        "options": [
+                            "left",
+                            "center",
+                            "right"
+                        ],
+                        "validation": null
                     }
                 ]
             }
