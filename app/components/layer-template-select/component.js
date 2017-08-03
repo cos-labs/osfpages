@@ -35,15 +35,12 @@ export default Ember.Component.extend({
             name: 'Team',
             thumb: '/img/people.png',
             description: 'Includes all section types.'
-
         },
         {
-            id: 4,
-            name: 'Team',
-            thumb: '/img/people.png',
-            description: 'Includes all section types.'
-
-
+            id: 6,
+            name: 'RPP',
+            thumb: '/img/rpp.png',
+            description: 'Example of Reproducibility Project: Psychology'
         },
     ],
 	isOpen: null,
