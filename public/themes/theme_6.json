@@ -7,15 +7,15 @@
           "component": "layer-title",
           "settings": {
             "values": {
-              "backgroundImage": "https://www.childrenslearninginstitute.org/assets/aoes/aoe-logo.png",
+              "backgroundImage": "http://localhost:4200/img/logo.png",
               "backgroundCover": true,
               "showNavigation": true,
               "showTitle": true,
               "showLead": true,
               "showInNavigation": false,
-              "h1Size": 30,
+              "h1Size": 42,
               "bgColor": "#ffffff",
-              "color": "#333333",
+              "color": "#ffffff",
               "alignment": "right",
               "lead": "Institution Subtitle"
             },
@@ -85,7 +85,7 @@
             "values": {
               "sectionTitle": "About the Institution",
               "showInNavigation": true,
-              "bgColor": "#00bcd4",
+              "bgColor": "#f07057",
               "color": "#ffffff"
             },
             "form": [
@@ -109,7 +109,7 @@
           "settings": {
             "values": {
               "height": 500,
-              "url": "https://img-new.cgtrader.com/items/56980/4e3da0aad5/white-color-modern-educational-institution-3d-model-max-3ds.jpg",
+              "url": "http://localhost:4200/img/building.jpg",
               "bgColor": "#FFFFFF",
               "color": "#333333"
             },
@@ -192,7 +192,7 @@
               "showInNavigation": true,
               "sectionDescription": "<p>Mauris imperdie Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellentesque ut metus odio. Integer fringilla nulla id leo consequat, a sollicitudin sapien fringilla. Fusce vestibulum malesuada nisl. Fusce augue leo, tempus eget matssstis vel, imperdiet at nulla</p>",
               "sectionLink": "www.example.com",
-              "bgColor": "#9e9e9e",
+              "bgColor": "#31708f",
               "color": "#ffffff"
             },
             "form": [
