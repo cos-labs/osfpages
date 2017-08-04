@@ -47,7 +47,6 @@ export default Ember.Component.extend({
 	isOpen: null,
 	actions: {
 		renderTemplate(id) {
-            console.log(ENV.rootURL);
 			let self = this;
 			let theme = `theme_${id}.json`;
 			$.ajax({
