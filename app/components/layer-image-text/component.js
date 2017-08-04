@@ -7,5 +7,5 @@ export default Ember.Component.extend({
 		}else{
 			$('textarea').removeClass('side-description')
 		}
-  })
+	})
 });
