@@ -43,7 +43,7 @@ module.exports = function(environment) {
 
     if (environment === 'production') {
     ENV.locationType = 'hash';
-    ENV.rootURL = '/osfpages-admin/';
+    ENV.rootURL = '/osfpages/';
 
     }
 
