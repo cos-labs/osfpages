@@ -4,7 +4,7 @@ module.exports = function(environment) {
     var ENV = {
         modulePrefix: 'osfpages-admin',
         environment: environment,
-        rootURL: '/',
+        rootURL: '/osfpages/',
         locationType: 'auto',
         osfAPIUrl: 'https://staging-api.osf.io',
         EmberENV: {
