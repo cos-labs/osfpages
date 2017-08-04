@@ -1,7 +1,7 @@
 {
-    "id": 4,
-    "name": "File",
-    "layers":[
+   "id": 4,
+   "name": "File",
+   "layers":[
         {
           "sectionHeader": "Title",
           "component": "layer-title",
@@ -78,7 +78,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "sectionHeader": "Advanced",
           "component": "layer-advanced",
           "content": "<p>\t\tMauris imperdie Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellentesque ut metus odio. Integer fringilla nulla id leo consequat, a sollicitudin sapien fringilla. Fusce vestibulum malesuada nisl. Fusce augue leo, tempus eget matssstis vel, imperdiet at nulla. Mauris imperdie Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellentesque ut metus odio. Integer fringilla nulla id leo consequat, a sollicitudin sapien fringilla. Fusce vestibulum malesuada nisl. Fusce augue leo, tempus eget matssstis vel, imperdiet at nulla. Mauris imperdie Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellentesque ut metus odio. Integer fringilla nulla id leo consequat, a sollicitudin sapien fringilla. Fusce vestibulum malesuada nisl. Fusce augue leo, tempus eget matssstis vel, imperdiet at nulla.</p><p><br></p><p>\t\tMauris imperdie Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellentesque ut metus odio. Integer fringilla nulla id leo consequat, a sollicitudin sapien fringilla. Fusce vestibulum malesuada nisl. Fusce augue leo, tempus eget matssstis vel, imperdiet at nulla. Mauris imperdie Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellentesque ut metus odio. Integer fringilla nulla id leo consequat, a sollicitudin sapien fringilla. Fusce vestibulum malesuada nisl. Fusce augue leo, tempus eget matssstis vel, imperdiet at nulla. Mauris imperdie Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellentesque ut metus odio. Integer fringilla nulla id leo consequat, a sollicitudin sapien fringilla. Fusce vestibulum malesuada nisl. Fusce augue leo, tempus eget matssstis vel, imperdiet at nulla. Mauris imperdie Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellentesque ut metus odio. Integer fringilla nulla id leo consequat, a sollicitudin sapien fringilla. Fusce vestibulum malesuada nisl. Fusce augue leo, tempus eget matssstis vel, imperdiet at nulla</p>",
@@ -99,42 +98,6 @@
                     "value": "showInNavigation",
                     "validation": null
                   }
-=======
-            "sectionHeader": "People",
-            "component": "layer-advanced",
-            "content": "<div><img src=\"http://localhost:4200/img/p1.jpg\" style=\"width: 300px;\" class=\"fr-fic fr-dii fr-fil  padding circle\"></div><div><br></div><div><br></div><h3>John Doe</h3><div>Mauris imperdiet <strong>ligula a mauris porttitor ultricies.</strong> Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellen</div><p style=\"text-align: right;\"><br></p><p><br></p><p><br></p><p><br></p><p><br></p><h3><img src=\"http://localhost:4200/img/p2.jpg\" class=\"fr-fic fr-dii  fr-fir padding circle\" style=\"width: 300px;\"></h3><h3><br></h3><h3>Jan Alleman</h3><div>Mauris imperdiet <strong>ligula a mauris porttitor ultricies.</strong> Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellen</div><h3 style=\"text-align: right;\"><br></h3><p><br></p><h3 style=\"text-align: right;\"><br></h3><p><br></p><h3><img src=\"http://localhost:4200/img/p3.jpg\" class=\"fr-fic fr-fil fr-dii  circle padding\" style=\"width: 300px;\">John Doe</h3><div>Mauris imperdiet <strong>ligula a mauris porttitor ultricies.</strong> Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pelle</div><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p>",
-            "settings": {
-                "values": {
-                    "sectionTitle": "People",
-                    "showInNavigation": true,
-                    "bgColor": "#FFFFFF",
-                    "alignment": "left",
-                    "color": "#333333"
-                },
-                "form": [
-                    {
-                        "type": "settings",
-                        "items": [
-                            {
-                                "type": "checkbox",
-                                "label": "Show in navigation",
-                                "value": "showInNavigation",
-                                "validation": null
-                            }
-                        ]
-                    },
-                    {
-                        "type": "alignment",
-                        "label": "Alignment",
-                        "value": "alignment",
-                        "options": [
-                            "left",
-                            "center",
-                            "right"
-                        ],
-                        "validation": null
-                    }
->>>>>>> 145337e976a6f84d2fa84d3d6800c42983e64c58
                 ]
               }
             ]
@@ -254,4 +217,4 @@
           }
         }
       ]
-    }
+   }
