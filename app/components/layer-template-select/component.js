@@ -38,7 +38,7 @@ export default Ember.Component.extend({
 
         },
         {
-            id: 6,
+            id: 7,
             name: 'Institution',
             thumb: '/img/institution.png',
             description: 'Includes all section types.'
