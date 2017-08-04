@@ -26,12 +26,16 @@
 </div>
 
 <div class="holder p-t-xl">
-    {{#each model.theme.layers as |layer index|}}
-        {{layer-wrapper node=model.node layer=layer layers=model.theme.layers editMode=editMode index=index}}
-        {{#if editMode}}
-            {{add-layer index=index layers=model.theme.layers}}
-        {{/if}}
-    {{/each}}
+    {{#if  model.theme.layers}}
+        {{#each model.theme.layers as |layer index|}}
+            {{layer-wrapper node=model.node layer=layer layers=model.theme.layers editMode=editMode index=index}}
+            {{#if editMode}}
+                {{add-layer index=index layers=model.theme.layers}}
+            {{/if}}
+        {{/each}}
+    {{else}}
+        {{add-layer index=index layers=model.theme.layers}}
+    {{/if}}
 
     {{layer-footer guid=model.guid}}
 </div>

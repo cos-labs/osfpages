@@ -2,14 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
     showSelect: false,
-    noFileFound: true, //make computed property that observers the layers.[] and if change see if there is a file
+    noFileFound: true,
     didRender() {
-
-        console.log(this.get('layer.settings.values.downloadLink') ,  this.get('noFileFound'))
         if(!this.get('layer.settings.values.downloadLink')){
             this.get('node.files').then((result)=>{
                 result.objectAt(0).get('files').then((files)=>{
-                    console.log("files.length" , files.length);
                     if(files.length === 0){
                         this.set('noFileFound', true);
                         return false;
