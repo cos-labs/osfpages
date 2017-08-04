@@ -55,5 +55,8 @@
   "engines": {
     "node": ">= 4"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "broccoli-babel-transpiler": "^6.1.2"
+  }
 }
