@@ -23,6 +23,8 @@ export default Ember.Component.extend({
                     this.set('layer.settings.values.downloadLink' , fileDatesLinks[mostRecentDate]);
                 });
             });
+        }else{
+            this.set('noFileFound', false);
         }
     },
     actions: {
@@ -36,5 +38,5 @@ export default Ember.Component.extend({
         hideSelect(){
             this.set('showSelect', false);
         }
-	}
+    }
 });

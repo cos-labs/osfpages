@@ -86,8 +86,8 @@
                     "fontSize": 16,
                     "bgColor": "#00bcd4",
                     "color": "#ffffff",
-                    "alignment": "right",
-                    "stickToTop": true
+                    "alignment": "center",
+                    "stickToTop": false
                 },
                 "form": [
                     {

@@ -5,9 +5,8 @@ export default Ember.Component.extend({
     style: Ember.computed('layer.settings.values.color', 'layer.settings.values.fontSize', function(){
         return Ember.String.htmlSafe('color: ' + (this.get('layer.settings.values.color') || '#333') + '; font-size: ' +  (this.get('layer.settings.values.fontSize')) + 'px;');
     }),
-    sticky: Ember.observer('layer.settings.values.stickToTop' , 'layers.[]' , function() {
+    didRender(){
         let topOfNav = null;
-
         //These offsets are used to position the nav bar if and when there is the editmode bar present
         const EDIT_MODE_OFFSET = 50;
         const ADMIN_VIEW_MODE_OFFSET = 120;
@@ -63,17 +62,16 @@ export default Ember.Component.extend({
             if($('.editMenu')[0]){
                 $('.pages-menu').removeClass('sticky-nav-adjustment')
             }
-        }
-    }),
-    didRender(){
+        }    
+
         $('.layer-content').css('padding' , '0');
     },
     actions: {
-        scrollToLayer(index){
-            console.log(JSON.stringify(this.get('layers.content'), null, 2))
-            let el = $('#layer'+index);
-            let offset = el.offset();
-            $('body').animate({scrollTop:offset.top}, '500');
+            scrollToLayer(index){
+                console.log(JSON.stringify(this.get('layers.content'), null, 2))
+                let el = $('#layer'+index);
+                let offset = el.offset();
+                $('body').animate({scrollTop:offset.top}, '500');
+            }
         }
-    }
-});
+    });

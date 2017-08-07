@@ -56,6 +56,7 @@ export default Ember.Component.extend({
                     const timeMachine = TimeMachine.Object.create({ content });
 					self.set('theme', timeMachine);
 					self.set('isOpen', false);
+                    $('body').scrollTop(0);
                     $('body').removeClass('no-scroll');
                 }
 			});
