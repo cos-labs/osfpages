@@ -26,10 +26,9 @@ export default Ember.Component.extend({
         },
         {
             id: 4,
-            name: 'Team',
-            thumb: ENV.rootURL +'img/people.png',
-            description: 'Title and custom section with list of researchers.'
-
+            name: 'Institution',
+            thumb: '/img/institution.png',
+            description: 'Example of an institution homepage.'
         },
         {
             id: 5,
