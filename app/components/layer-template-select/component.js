@@ -27,7 +27,7 @@ export default Ember.Component.extend({
         {
             id: 4,
             name: 'Institution',
-            thumb: '/img/institution.png',
+            thumb:  ENV.rootURL +'img/institution.png',
             description: 'Example of an institution homepage.'
         },
         {
