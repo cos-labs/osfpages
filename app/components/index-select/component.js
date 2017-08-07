@@ -3,7 +3,5 @@ import ENV from '../../config/environment';
 
 
 export default Ember.Component.extend({
-	didRender(){
-		$('.index-page').css({'background' : '#FFC107 url(' + ENV.rootURL+ 'img/bg.png) no-repeat center' ,   'background-size': 'cover'});
-	}
+	didStyle: 'background: #FFC107 url('+ ENV.rootURL+'img/bg.png) no-repeat center; background-size: cover'
 });
