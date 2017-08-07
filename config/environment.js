@@ -42,8 +42,15 @@ module.exports = function(environment) {
     }
 
     if (environment === 'production') {
+        ENV.locationType = 'hash';
+        ENV.rootURL = '/osfpages/';
 
     }
+
+    if (process.env.BACKEND === 'stage') {
+        ENV.osfHostUrl = 'https://api.osf.io';
+    }
+
 
     return ENV;
 };

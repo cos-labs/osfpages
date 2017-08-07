@@ -2,43 +2,44 @@
 
 import Ember from 'ember';
 import TimeMachine from 'ember-time-machine';
+import ENV from '../../config/environment';
 
 export default Ember.Component.extend({
     themeList: [
         {
             id: 1,
             name: 'All',
-            thumb: '/img/all.png',
+            thumb: ENV.rootURL +'img/all.png',
             description: 'Includes all section types.'
         },
         {
             id: 2,
             name: 'Wiki',
-            thumb: '/img/wiki.png',
+            thumb: ENV.rootURL +'img/wiki.png',
             description: 'A basic page with title and wiki page.'
         },
         {
             id: 3,
             name: 'File',
-            thumb: '/img/file.png',
+            thumb: ENV.rootURL +'img/file.png',
             description: 'Title and file sections ideal for showcasing papers.'
         },
         {
             id: 4,
             name: 'Institution',
             thumb: '/img/institution.png',
-            description: 'Includes all section types.'
+            description: 'Example of an institution homepage.'
         },
         {
             id: 5,
             name: 'Portfolio',
-            thumb: '/img/portfolio.png',
+            thumb: ENV.rootURL +'img/portfolio.png',
             description: 'Example of a portfolio page'
         },
         {
             id: 6,
             name: 'RPP',
-            thumb: '/img/rpp.png',
+            thumb: ENV.rootURL +'img/rpp.png',
             description: 'Example of Reproducibility Project: Psychology'
         },
     ],
@@ -49,7 +50,7 @@ export default Ember.Component.extend({
 			let theme = `theme_${id}.json`;
 			$.ajax({
 				type: 'GET',
-				url: '/themes/' + theme,
+				url: ENV.rootURL +'themes/' + theme,
 				async: false,
 				success: function(data) {
                     const content = Ember.Object.create(data);

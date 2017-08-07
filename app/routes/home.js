@@ -2,6 +2,8 @@
 
 import Ember from 'ember';
 import TimeMachine from 'ember-time-machine';
+import ENV from '../config/environment';
+
 
 let theme = {};
 
@@ -9,7 +11,7 @@ export default Ember.Route.extend({
     beforeModel(){
         $.ajax({
             type: "GET",
-            url: "/themes/theme_1.json",
+            url: ENV.rootURL + "themes/theme_1.json",
             async: false,
             success: function (data) {
                 const content = Ember.Object.create(data);
