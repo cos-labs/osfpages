@@ -37,12 +37,12 @@ export default Ember.Route.extend({
 
         let osfPagesChildren = await OSFPages.get('files')
         
-        // let assets = osfPagesChildren.find(function(child){return child.get('name') === 'assets'})
+         let assets = osfPagesChildren.find(function(child){return child.get('name') === 'assets'})
+         let assetsChildren = await assets.get('files')
+         
+         console.log(assetsChildren.objectAt(1).get('links'));
 
-        // let assetsChildren = await assets.get('files')
-
-        let dataJSON = osfPagesChildren.find(function(child){ console.log(child) ;return child.get('name') === 'data.json'})
-        console.log(dataJSON.get('name'))
+        let dataJSON = osfPagesChildren.find(function(child){return child.get('name') === 'data.json'})
 
         const deferred = Ember.RSVP.defer();
 
@@ -53,7 +53,6 @@ export default Ember.Route.extend({
         xhttp.setRequestHeader('Authorization', `Bearer ${token}`);
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                console.log("response " , JSON.parse(this.responseText));
                 const content = Ember.Object.create(JSON.parse(this.responseText));
                 const timeMachine = TimeMachine.Object.create({ content });
                 theme = timeMachine;
