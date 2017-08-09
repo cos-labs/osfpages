@@ -3,13 +3,13 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
+    'ember-cli-babel': {
+      includePolyFill: true,
+    },
     'ember-bootstrap': {
       'bootstrapVersion': 3,
       'importBootstrapFont': true,
       'importBootstrapCSS': false
-    },
-    'ember-froala-editor': {
-      languages : false
     }
   });
 
