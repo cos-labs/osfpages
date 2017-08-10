@@ -22,8 +22,6 @@ function getToken() {
 export default Ember.Route.extend({
     setupController: function(controller, model) {
         controller.set('model' , model);
-        //set theme
-        //set model
     },
     model: async function(params){
         // If testing and parameter is not working use this 'jyu4t' for params.guid
@@ -34,13 +32,13 @@ export default Ember.Route.extend({
         let OSFStorage = await folder.objectAt(0).get('files')
         
         let OSFPages = OSFStorage.find(function(child){return child.get('name') === 'OSFPages'})
-
+        console.log(OSFPages)
         let osfPagesChildren = await OSFPages.get('files')
         
-         let assets = osfPagesChildren.find(function(child){return child.get('name') === 'assets'})
-         let assetsChildren = await assets.get('files')
+         // let assets = osfPagesChildren.find(function(child){return child.get('name') === 'assets'})
+         // let assetsChildren = await assets.get('files')
          
-         console.log(assetsChildren.objectAt(1).get('links'));
+         // console.log(assetsChildren.objectAt(1).get('links'));
 
         let dataJSON = osfPagesChildren.find(function(child){return child.get('name') === 'data.json'})
 

@@ -75,6 +75,9 @@ export default Ember.Component.extend({
         fileDetail(item){
             console.log(item.get('files'));
             this.set('layer.settings.values.backgroundImage' , item.get('links').download);
+        },
+        onFileInputChange(file){
+            console.log(file)
         }
     }
 });

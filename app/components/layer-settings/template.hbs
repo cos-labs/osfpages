@@ -27,8 +27,14 @@
             </div>
             {{#bs-popover placement="bottom"}}
             {{input class="form-control" value=(get layer.settings.values item.value)  type="text"}}
+
+            {{#file-chooser files=fileList as |component|}}
+            {{input type='file' change=(action 'onFileInputChange' target=component)}}
+            {{/file-chooser}}
+
+
             <div style="height: 200px !important;overflow: auto;">
-            {{file-browser rootItem=node openFile=(action 'fileDetail')}}
+                {{file-browser rootItem=node openFile=(action 'fileDetail')}}
             </div>
             {{/bs-popover}}
         </div>
