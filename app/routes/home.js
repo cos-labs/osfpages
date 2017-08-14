@@ -62,8 +62,8 @@ export default Ember.Route.extend({
         let node = await this.store.findRecord('node', params.guid)
         let firebaseDB = this.store.findRecord('home', params.guid)
 
-        let jsonBlob = await firebaseDB.then((file)=>{        
-            return  file.get('guid')
+        let jsonBlob = await firebaseDB.then((record)=>{        
+            return  record.get('jsonBlob')
         },function(reason) {
             return false;
         });
@@ -71,52 +71,52 @@ export default Ember.Route.extend({
 
 
 
-
-
-        // const contributors = Ember.A();
-        // loadAll(node, 'contributors', contributors).then(() => {
-        //     console.log('rgrgr')
-        //     console.log(contributors)
-        //     contributors.forEach((item) => {
-        //         console.log('item',item);
-        //             //this.get('users').pushObject(item.get('users'));
-
-        //         })
-        // });
-
         if(!jsonBlob){
-            let defaultJSON ='';
-            $.ajax({
-                type: "GET",
-                url: ENV.rootURL + "themes/theme_1.json",
-                async: false,
-                success: function (data) {
-                    defaultJSON = data;
-                }});
+            if( node.get('currentUserPermissions')[1] === 'write'){
+                let defaultJSON ='';
+                $.ajax({
+                    type: "GET",
+                    url: ENV.rootURL + "themes/theme_1.json",
+                    async: false,
+                    success: function (data) {
+                        defaultJSON = data;
+                    }});
 
 
-            //add to firebase  
-            let guid = {
-                id: params.guid,
-                guid: JSON.stringify(defaultJSON) 
-            };
-            let record = this.store.createRecord('home', guid);
-            record.save()
+                //add to firebase  
+                let guid = {
+                    id: params.guid,
+                    jsonBlob: JSON.stringify(defaultJSON) 
+                };
+                let record = this.store.createRecord('home', guid);
+                record.save()
 
-            jsonBlob =  JSON.stringify(defaultJSON);
+                jsonBlob =  JSON.stringify(defaultJSON);
+
+            }else{
+                let defaultJSON ='';
+                $.ajax({
+                    type: "GET",
+                    url: ENV.rootURL + "themes/theme_error.json",
+                    async: false,
+                    success: function (data) {
+                        defaultJSON = data;
+                    }
+                });
+                jsonBlob =  JSON.stringify(defaultJSON);
+           }
+       }
 
 
-        }
 
+       const content = Ember.Object.create(JSON.parse(jsonBlob));
+       const timeMachine = TimeMachine.Object.create({ content });
+       theme = timeMachine;
 
-        const content = Ember.Object.create(JSON.parse(jsonBlob));
-        const timeMachine = TimeMachine.Object.create({ content });
-        theme = timeMachine;
-
-        return {
-            theme,
-            guid: params.guid,
-            node: node
-        };
-    }
+       return {
+        theme,
+        guid: params.guid,
+        node: node
+    };
+}
 });
