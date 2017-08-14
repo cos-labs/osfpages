@@ -11,7 +11,7 @@ export default Ember.Component.extend({
         if (!node) { return }
         if(this.get('users').length > 0 || this.get('bibliographicUsers').length > 0) { return; }
         const contributors = Ember.A();
-        loadAll(node, 'contributors', contributors).then((result) => {
+        loadAll(node, 'contributors', contributors).then(() => {
             contributors.forEach((item) => {
                 this.get('users').pushObject(item.get('users'));
                 if(item.get('bibliographic')){

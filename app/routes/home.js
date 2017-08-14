@@ -19,7 +19,7 @@ export default Ember.Route.extend({
 
         let jsonBlob = await firebaseDB.then((record)=>{        
             return  record.get('jsonBlob')
-        },function(reason) {
+        },function() {
             return false;
         });
 
