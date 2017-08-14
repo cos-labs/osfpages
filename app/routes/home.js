@@ -3,6 +3,7 @@
 import Ember from 'ember';
 import TimeMachine from 'ember-time-machine';
 import ENV from '../config/environment';
+import loadAll from 'ember-osf/utils/load-relationship';
 
 
 let theme = {};
@@ -57,43 +58,53 @@ export default Ember.Route.extend({
     },
     model: async function(params){
 
-        let defaultJSON ='';
-        $.ajax({
-            type: "GET",
-            url: ENV.rootURL + "themes/theme_1.json",
-            async: false,
-            success: function (data) {
-                defaultJSON = data;
-            }});
-
-
-
-
+        // If testing and parameter is not working use this 'jyu4t' for params.guid
+        let node = await this.store.findRecord('node', params.guid)
         let firebaseDB = this.store.findRecord('home', params.guid)
 
-
-
-        console.log(firebaseDB)
         let jsonBlob = await firebaseDB.then((file)=>{        
             return  file.get('guid')
         },function(reason) {
             return false;
-
         });
 
-        // If testing and parameter is not working use this 'jyu4t' for params.guid
-        let node = await this.store.findRecord('node', params.guid)
-        
+
+
+
+
+
+        // const contributors = Ember.A();
+        // loadAll(node, 'contributors', contributors).then(() => {
+        //     console.log('rgrgr')
+        //     console.log(contributors)
+        //     contributors.forEach((item) => {
+        //         console.log('item',item);
+        //             //this.get('users').pushObject(item.get('users'));
+
+        //         })
+        // });
 
         if(!jsonBlob){
-            console.log('in blob lets add this guid' )
+            let defaultJSON ='';
+            $.ajax({
+                type: "GET",
+                url: ENV.rootURL + "themes/theme_1.json",
+                async: false,
+                success: function (data) {
+                    defaultJSON = data;
+                }});
+
+
             //add to firebase  
-            var guid = {
+            let guid = {
                 id: params.guid,
                 guid: JSON.stringify(defaultJSON) 
             };
-            var record = this.store.createRecord('home', guid);
+            let record = this.store.createRecord('home', guid);
             record.save()
+
+            jsonBlob =  JSON.stringify(defaultJSON);
+
 
         }
 
@@ -102,7 +113,6 @@ export default Ember.Route.extend({
         const timeMachine = TimeMachine.Object.create({ content });
         theme = timeMachine;
 
-        console.log(theme)
         return {
             theme,
             guid: params.guid,
