@@ -8,7 +8,6 @@ export default Ember.Component.extend({
     getAuthors: function() {
         // Cannot be called until node has loaded!
         const node = this.get('node');
-        console.log(node.get('id'))
         if (!node) { return }
         if(this.get('users').length > 0 || this.get('bibliographicUsers').length > 0) { return; }
         const contributors = Ember.A();

@@ -68,7 +68,7 @@ export default Ember.Route.extend({
        const timeMachine = TimeMachine.Object.create({ content });
        theme = timeMachine;
 
-       return {
+    return {
         theme,
         guid: params.guid,
         node: node
