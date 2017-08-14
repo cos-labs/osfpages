@@ -3,54 +3,9 @@
 import Ember from 'ember';
 import TimeMachine from 'ember-time-machine';
 import ENV from '../config/environment';
-import loadAll from 'ember-osf/utils/load-relationship';
 
 
 let theme = {};
-
-function getToken() {
-    let token;
-    const session = window.localStorage['ember_simple_auth-session'];
-    if (session) {
-        token = JSON.parse(session).authenticated;
-        if ('attributes' in token) {
-            return token.attributes.accessToken;
-        }
-        return token;
-    }
-}
-
-// function httpRequest(method, url , params, node , resolve){
-
-//     const deferred = Ember.RSVP.defer();
-
-//     let xhttp = new XMLHttpRequest();
-//     xhttp.open(method, url, true);
-//     xhttp.withCredentials = false;
-//     let token = getToken();
-//     xhttp.setRequestHeader('Authorization', `Bearer ${token}`);
-
-//     xhttp.onreadystatechange = function() {
-//         if (this.readyState == 4 && this.status == 200 ) {
-//             const content = Ember.Object.create(JSON.parse(this.responseText));
-//             const timeMachine = TimeMachine.Object.create({ content });
-//             theme = timeMachine;
-//             console.log(this.responseText)
-//             if(resolve){
-//                 deferred.resolve({
-//                     theme,
-//                     guid: params.guid,
-//                     node: node
-//                 });
-//             }else{
-//                 deferred.resolve(JSON.parse(this.responseText));
-//             }
-//         }
-//     };
-//     xhttp.send();
-//     return deferred.promise;
-// }
-
 
 export default Ember.Route.extend({
     setupController: function(controller, model) {
