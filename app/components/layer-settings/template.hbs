@@ -28,12 +28,7 @@
             {{#bs-popover placement="bottom"}}
             {{input class="form-control" value=(get layer.settings.values item.value)  type="text"}}
 
-
-
-
-            <div style="height: 200px !important;overflow: auto;">
-                {{file-browser rootItem=node openFile=(action 'fileDetail')}}
-            </div>
+            {{file-browser rootItem=node openFile=(action 'fileDetail')}}
             {{/bs-popover}}
         </div>
 

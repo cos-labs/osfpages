@@ -18,7 +18,7 @@ export default Ember.Route.extend({
         let firebaseDB = this.store.findRecord('home', params.guid)
 
         let jsonBlob = await firebaseDB.then((record)=>{        
-            return  record.get('jsonBlob')
+            return  record.get('pageData')
         },function() {
             return false;
         });
@@ -28,25 +28,23 @@ export default Ember.Route.extend({
 
         if(!jsonBlob){
             if( node.get('currentUserPermissions')[1] === 'write'){
-                let defaultJSON ='';
                 $.ajax({
                     type: "GET",
                     url: ENV.rootURL + "themes/theme_1.json",
                     async: false,
-                    success: function (data) {
-                        defaultJSON = data;
+                    success: (data)=> {
+                        //add to firebase  
+                        let guid = {
+                            id: params.guid,
+                            pageData: JSON.stringify(data) 
+                        };
+                        let record = this.store.createRecord('home', guid);
+                        record.save()
+
+                        jsonBlob =  JSON.stringify(data);
                     }});
 
 
-                //add to firebase  
-                let guid = {
-                    id: params.guid,
-                    jsonBlob: JSON.stringify(defaultJSON) 
-                };
-                let record = this.store.createRecord('home', guid);
-                record.save()
-
-                jsonBlob =  JSON.stringify(defaultJSON);
 
             }else{
                 let defaultJSON ='';

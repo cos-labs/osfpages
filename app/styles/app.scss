@@ -202,6 +202,10 @@ button .material-icons {
     font-size: 16px;
 }
 
+.file-browser-list{
+    height: 200px !important;
+    overflow: auto;
+}
 .file-browser-list>div>div>div>div{
     width:100%!important;
     text-overflow: ellipsis;
