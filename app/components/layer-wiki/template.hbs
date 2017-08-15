@@ -1,9 +1,20 @@
 <div class="">
     {{edit-text showSettings=showSettings editMode=editMode layer=layer type="title"  alignment=layer.settings.values.alignment}}
 
-    <div class="wiki-markdown">
+    <div class="wiki-markdown {{if (and isTruncated layer.settings.values.addShowMore) 'truncated'}} ">
         {{markdown-to-html layer.wikiContent}}
     </div>
+    {{#if layer.settings.values.addShowMore}}
+        <div class="show-more {{if isTruncated 'truncated'}}" {{action 'toggleShow'}}>
+            {{#if isTruncated}}
+                <i class="material-icons ">keyboard_arrow_down</i>
+                <span>Show more</span>
+            {{else}}
+                <i class="material-icons">keyboard_arrow_up</i>
+                <span>Show less</span>
+            {{/if}}
+        </div>
+    {{/if}}
 
     {{#if editMode}}
         {{#if showSelect}}
@@ -26,12 +37,5 @@
                 </p>
             </div>
         {{/if}}
-    {{/if}}
-
-
-    {{#if layer.settings.values.addShowMore}}
-        <div class="show-more">
-            Show more
-        </div>
     {{/if}}
 </div>
