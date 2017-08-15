@@ -6,6 +6,7 @@ export default Ember.Component.extend({
     session: Ember.inject.service(),
     currentWiki: null,
     showSelect: false,
+    isTruncated: false,
     reloadWiki: Ember.computed('layer.settings.wikiId', function(){
         this.get('node.wikis').then(()=>{
             if(!this.get('layers.settings.wikiID')){
@@ -73,6 +74,9 @@ export default Ember.Component.extend({
             this.loadCurrentWiki();
             this.set('showSelect', false);
 
+        },
+        toggleShow(){
+            this.toggleProperty('isTruncated');
         }
     }
 });
