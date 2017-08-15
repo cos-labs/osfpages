@@ -201,3 +201,13 @@ button .material-icons {
     padding: 15px;
     font-size: 16px;
 }
+
+.file-browser-list{
+    height: 200px !important;
+    overflow: auto;
+}
+.file-browser-item{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}

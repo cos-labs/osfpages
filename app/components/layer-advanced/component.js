@@ -1,4 +1,3 @@
-/*global $:true*/
 
 import Ember from 'ember';
 

@@ -71,6 +71,11 @@ export default Ember.Component.extend({
         },
         toggleCheck(check){
             this.toggleProperty('layer.settings.values.' + check.get('value'));
+        },
+        fileDetail(item){
+            this.set('layer.settings.values.backgroundImage' , item.get('links').download);
+        },
+        onFileInputChange(){
         }
     }
 });

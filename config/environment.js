@@ -19,6 +19,12 @@ module.exports = function(environment) {
             // when it is created
         },
 
+        firebase: {
+            apiKey: 'AIzaSyDl_AFSZ10H7Wcegd0UjmGHUt26fdaWvQQ', //safe to show to public in order for them to interact with Firebase
+            authDomain: 'osfpages.firebaseapp.com',
+            databaseURL: 'https://osfpages.firebaseio.com',
+            storageBucket: 'osfpages.appspot.com',
+        }
 
     };
 
