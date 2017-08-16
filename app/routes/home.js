@@ -6,7 +6,6 @@ import ENV from '../config/environment';
 
 
 let theme = {};
-
 export default Ember.Route.extend({
     setupController: function(controller, model) {
         controller.set('model' , model);
