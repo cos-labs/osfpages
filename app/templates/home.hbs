@@ -12,7 +12,7 @@
             </div>
             <div class="col-sm-7 clearfix">
                 <div class="pull-right">
-                    <button class="btn-outline-cus" {{action 'toggleEditMode'}}>
+                    <button class="btn-outline-cus" {{action 'toggleEditMode'}} {{action 'save' model.guid}}>
                         {{#if editMode}}
                             <i class="material-icons">close</i> Finish editing
                         {{else}}

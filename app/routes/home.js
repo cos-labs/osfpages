@@ -57,19 +57,28 @@ export default Ember.Route.extend({
                     }
                 });
                 jsonBlob =  JSON.stringify(defaultJSON);
-           }
-       }
+            }
+        }
 
 
 
-       const content = Ember.Object.create(JSON.parse(jsonBlob));
-       const timeMachine = TimeMachine.Object.create({ content });
-       theme = timeMachine;
+        const content = Ember.Object.create(JSON.parse(jsonBlob));
+        const timeMachine = TimeMachine.Object.create({ content });
+        theme = timeMachine;
 
-    return {
-        theme,
-        guid: params.guid,
-        node: node
-    };
-}
+        return {
+            theme,
+            guid: params.guid,
+            node: node
+        };
+    },
+    actions: {
+        save(guid){
+            this.store.findRecord('home', guid).then(function(data) {
+                data.set('pageData', JSON.stringify(theme.content));
+                data.save();
+            });
+
+        }
+    }
 });
