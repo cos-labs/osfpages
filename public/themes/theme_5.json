@@ -2,289 +2,244 @@
     "id": 5,
     "name" : "portfolio",
     "layers": [
-  {
-    "sectionHeader": "Title",
-    "component": "layer-title",
-    "settings": {
-      "values": {
-        "backgroundImage": "http://localhost:4200/img/p4.jpg",
-        "backgroundCover": true,
-        "showNavigation": false,
-        "showTitle": true,
-        "showLead": true,
-        "showInNavigation": false,
-        "h1Size": 54,
-        "bgColor": "#333333",
-        "color": "#EEEEEE",
-        "alignment": "center",
-        "lead": "Lorem ipsum dolor sit amet consectetur adipisicing elitsed eiusmod"
-      },
-      "form": [
         {
-          "type": "image",
-          "label": "Background image",
-          "value": "backgroundImage",
-          "validation": null
-        },
-        {
-          "type": "increment",
-          "label": "Title size",
-          "value": "h1Size",
-          "size": 20,
-          "incrementSize": 4,
-          "validation": null
-        },
-        {
-          "type": "alignment",
-          "label": "Alignment",
-          "value": "alignment",
-          "options": [
-            "left",
-            "center",
-            "right"
-          ],
-          "validation": null
-        },
-        {
-          "type": "settings",
-          "items": [
-            {
-              "type": "checkbox",
-              "label": "Show navigation",
-              "value": "showNavigation",
-              "validation": null
-            },
-            {
-              "type": "checkbox",
-              "label": "Fit image to section size",
-              "value": "backgroundCover",
-              "validation": null
-            },
-            {
-              "type": "checkbox",
-              "label": "Show title",
-              "value": "showTitle",
-              "validation": null
-            },
-            {
-              "type": "checkbox",
-              "label": "Show lead text",
-              "value": "showLead",
-              "validation": null
+            "sectionHeader": "Title",
+            "component": "layer-title",
+            "settings": {
+                "values": {
+                    "backgroundImage": "https://staging-files.osf.io/v1/resources/jyu4t/providers/osfstorage/5995b25f0dc310026218020a",
+                    "backgroundCover": true,
+                    "showNavigation": true,
+                    "showTitle": true,
+                    "showLead": true,
+                    "showInNavigation": false,
+                    "h1Size": 34,
+                    "bgColor": "#333333",
+                    "color": "#EEEEEE",
+                    "alignment": "left",
+                    "lead": "Portfolio for Carrina Lee, University of Wisconsin"
+                },
+                "form": [
+                    {
+                        "type": "image",
+                        "label": "Background image",
+                        "value": "backgroundImage",
+                        "validation": null
+                    },
+                    {
+                        "type": "increment",
+                        "label": "Title size",
+                        "value": "h1Size",
+                        "size": 20,
+                        "incrementSize": 4,
+                        "validation": null
+                    },
+                    {
+                        "type": "alignment",
+                        "label": "Alignment",
+                        "value": "alignment",
+                        "options": [
+                            "left",
+                            "center",
+                            "right"
+                        ],
+                        "validation": null
+                    },
+                    {
+                        "type": "settings",
+                        "items": [
+                            {
+                                "type": "checkbox",
+                                "label": "Show navigation",
+                                "value": "showNavigation",
+                                "validation": null
+                            },
+                            {
+                                "type": "checkbox",
+                                "label": "Fit image to section size",
+                                "value": "backgroundCover",
+                                "validation": null
+                            },
+                            {
+                                "type": "checkbox",
+                                "label": "Show title",
+                                "value": "showTitle",
+                                "validation": null
+                            },
+                            {
+                                "type": "checkbox",
+                                "label": "Show lead text",
+                                "value": "showLead",
+                                "validation": null
+                            }
+                        ]
+                    }
+                ]
             }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "sectionHeader": "Navigation",
-    "component": "pages-menu",
-    "settings": {
-      "component": "layer-settings",
-      "values": {
-        "fontSize": 16,
-        "bgColor": "#2c2c2c",
-        "color": "#ebebeb",
-        "alignment": "center",
-        "stickToTop": true
-      },
-      "form": [
-        {
-          "type": "increment",
-          "label": "Section height",
-          "value": "height",
-          "incrementSize": 20,
-          "validation": null
         },
         {
-          "type": "alignment",
-          "label": "Alignment",
-          "value": "alignment",
-          "options": [
-            "left",
-            "center",
-            "right"
-          ],
-          "validation": null
-        },
-        {
-          "type": "settings",
-          "items": [
-            {
-              "type": "checkbox",
-              "label": "Stick to top of page on scroll",
-              "value": "stickToTop",
-              "validation": null
+            "sectionHeader": "Advanced",
+            "component": "layer-advanced",
+            "content": "<h3 class=\"ql-align-center\"><br></h3><h3 class=\"ql-align-center\"><span style=\"color: rgb(255, 194, 102);\">Interdisciplinary Perspectives</span></h3><p class=\"ql-align-center\"><br></p><p class=\"ql-align-center\">July 22, 2011</p><p class=\"ql-align-center\">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p><p class=\"ql-align-center\">Aeneancommodo ligula eget dolor. Aenean massa. Cum sociis natoque</p><p class=\"ql-align-center\">penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p><p class=\"ql-align-center\">Donec quam felis.</p><p class=\"ql-align-center ql-direction-rtl\"><br></p><p class=\"ql-align-center ql-direction-rtl\"><br></p><h3 class=\"ql-align-center ql-direction-rtl\"><span style=\"color: rgb(102, 163, 224);\">A Spatial History of Poststructuralism</span></h3><p class=\"ql-align-center ql-direction-rtl\">July 11, 2015</p><p class=\"ql-align-center ql-direction-rtl\">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean</p><p class=\"ql-align-center ql-direction-rtl\">commodo ligula eget dolor. Aenean massa. Cum sociis natoque</p><p class=\"ql-align-center ql-direction-rtl\">penatibus et magnis dis parturient montes, nascetur ridiculus mu</p><p class=\"ql-align-center ql-direction-rtl\">Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem</p><p class=\"ql-align-center ql-direction-rtl\">Nulla consequat massa quis enim. Donec pede justo</p><p class=\"ql-align-center\"><br></p><h3 class=\"ql-align-center\"><span style=\"color: rgb(255, 194, 102);\">Quantitative Trends in Violence</span></h3><p class=\"ql-align-center\">December 13, 2016</p><p class=\"ql-align-center\">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean</p><p class=\"ql-align-center\">commodo ligula eget dolor. Aenean massa. Cum sociis natoque</p><p class=\"ql-align-center\">penatibus et magnis dis parturient montes</p><p><br></p>",
+            "settings": {
+                "component": "layer-settings",
+                "values": {
+                    "sectionTitle": "Research ",
+                    "showInNavigation": true,
+                    "bgColor": "#ffffff",
+                    "alignment": "center",
+                    "color": "#333333"
+                },
+                "form": [
+                    {
+                        "type": "settings",
+                        "items": [
+                            {
+                                "type": "checkbox",
+                                "label": "Show in navigation",
+                                "value": "showInNavigation",
+                                "validation": null
+                            }
+                        ]
+                    },
+                    {
+                        "type": "alignment",
+                        "label": "Alignment",
+                        "value": "alignment",
+                        "options": [
+                            "left",
+                            "center",
+                            "right"
+                        ],
+                        "validation": null
+                    }
+                ]
             }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "sectionHeader": "Advanced",
-    "component": "layer-advanced",
-    "content": "<h3 class=\"ql-align-center\"><br></h3><h3 class=\"ql-align-center\"><span style=\"color: rgb(255, 194, 102);\">Interdisciplinary Perspectives</span></h3><p class=\"ql-align-center\">July 22, 2011</p><p class=\"ql-align-center\">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p><p class=\"ql-align-center\"> Aeneancommodo ligula eget dolor. Aenean massa. Cum sociis natoque</p><p class=\"ql-align-center\">penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p><p class=\"ql-align-center\">Donec quam felis.</p><p class=\"ql-direction-rtl ql-align-center\"><br></p><h3 class=\"ql-direction-rtl ql-align-center\"><span style=\"color: rgb(102, 163, 224);\">A Spatial History of Poststructuralism</span></h3><p class=\"ql-direction-rtl ql-align-center\">July 11, 2015</p><p class=\"ql-direction-rtl ql-align-center\">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean</p><p class=\"ql-direction-rtl ql-align-center\">commodo ligula eget dolor. Aenean massa. Cum sociis natoque</p><p class=\"ql-direction-rtl ql-align-center\">penatibus et magnis dis parturient montes, nascetur ridiculus mu</p><p class=\"ql-direction-rtl ql-align-center\">Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem</p><p class=\"ql-direction-rtl ql-align-center\">Nulla consequat massa quis enim. Donec pede justo</p><p class=\"ql-align-center\"><br></p><h3 class=\"ql-align-center\"><span style=\"color: rgb(255, 194, 102);\">Quantitative Trends in Violence</span></h3><p class=\"ql-align-center\">December 13, 2016</p><p class=\"ql-align-center\">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean</p><p class=\"ql-align-center\">commodo ligula eget dolor. Aenean massa. Cum sociis natoque</p><p class=\"ql-align-center\">penatibus et magnis dis parturient montes</p><p><br></p>",
-    "settings": {
-      "component": "layer-settings",
-      "values": {
-        "sectionTitle": "Research ",
-        "showInNavigation": true,
-        "bgColor": "#ffffff",
-        "alignment": "center",
-        "color": "#333333"
-      },
-      "form": [
-        {
-          "type": "settings",
-          "items": [
-            {
-              "type": "checkbox",
-              "label": "Show in navigation",
-              "value": "showInNavigation",
-              "validation": null
-            }
-          ]
         },
         {
-          "type": "alignment",
-          "label": "Alignment",
-          "value": "alignment",
-          "options": [
-            "left",
-            "center",
-            "right"
-          ],
-          "validation": null
-        }
-      ]
-    }
-  },
-  {
-    "sectionHeader": "Advanced",
-    "component": "layer-advanced",
-    "content": "<p class=\"ql-align-center\">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p><p class=\"ql-align-center\"><br></p><p class=\"ql-align-center\">Com sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,</p><p class=\"ql-align-center\">ultricies nec, pellentesque eu, pretium quis, sem.Nulla consequat massa quis enim. Donec pede justo, fringilla vel,</p><p class=\"ql-align-center\">aliquet nec, vulputate eget, arcu.</p><p class=\"ql-align-center\"><br></p><p class=\"ql-align-center\">In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.</p><p class=\"ql-align-center\">Cras dapibus. Vivamus elementum semper nisi. Aenean</p><p><br></p>",
-    "settings": {
-      "component": "layer-settings",
-      "values": {
-        "sectionTitle": "Bio",
-        "showInNavigation": true,
-        "bgColor": "#66a3e0",
-        "alignment": "center",
-        "color": "#f5f5f5"
-      },
-      "form": [
-        {
-          "type": "settings",
-          "items": [
-            {
-              "type": "checkbox",
-              "label": "Show in navigation",
-              "value": "showInNavigation",
-              "validation": null
+            "sectionHeader": "Advanced",
+            "component": "layer-advanced",
+            "content": "<p class=\"ql-align-center\">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p><p class=\"ql-align-center\"><br></p><p class=\"ql-align-center\">Com sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,</p><p class=\"ql-align-center\">ultricies nec, pellentesque eu, pretium quis, sem.Nulla consequat massa quis enim. Donec pede justo, fringilla vel,</p><p class=\"ql-align-center\">aliquet nec, vulputate eget, arcu.</p><p class=\"ql-align-center\"><br></p><p class=\"ql-align-center\">In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.</p><p class=\"ql-align-center\">Cras dapibus. Vivamus elementum semper nisi. Aenean</p><p><br></p>",
+            "settings": {
+                "component": "layer-settings",
+                "values": {
+                    "sectionTitle": "Bio",
+                    "showInNavigation": true,
+                    "bgColor": "#00bcd4",
+                    "alignment": "center",
+                    "color": "#f5f5f5"
+                },
+                "form": [
+                    {
+                        "type": "settings",
+                        "items": [
+                            {
+                                "type": "checkbox",
+                                "label": "Show in navigation",
+                                "value": "showInNavigation",
+                                "validation": null
+                            }
+                        ]
+                    },
+                    {
+                        "type": "alignment",
+                        "label": "Alignment",
+                        "value": "alignment",
+                        "options": [
+                            "left",
+                            "center",
+                            "right"
+                        ],
+                        "validation": null
+                    }
+                ]
             }
-          ]
         },
         {
-          "type": "alignment",
-          "label": "Alignment",
-          "value": "alignment",
-          "options": [
-            "left",
-            "center",
-            "right"
-          ],
-          "validation": null
-        }
-      ]
-    }
-  },
-  {
-    "sectionHeader": "Download",
-    "component": "layer-file",
-    "settings": {
-      "component": "layer-settings",
-      "values": {
-        "sectionTitle": "Resume",
-        "sectionDescription": "",
-        "showFileviewer": true,
-        "downloadLink": "https://staging-files.osf.io/v1/resources/p7cvt/providers/osfstorage/5981ceba8ca57e022ea5ed96",
-        "showInNavigation": true,
-        "bgColor": "#FFFFFF",
-        "alignment": "center",
-        "color": "#333333"
-      },
-      "form": [
-        {
-          "type": "settings",
-          "items": [
-            {
-              "type": "checkbox",
-              "label": "Show in navigation",
-              "value": "showInNavigation",
-              "validation": null
-            },
-            {
-              "type": "checkbox",
-              "label": "Show file viewer",
-              "value": "showFileviewer",
-              "validation": null
+            "sectionHeader": "Download",
+            "component": "layer-file",
+            "settings": {
+                "component": "layer-settings",
+                "values": {
+                    "sectionTitle": "Resume",
+                    "sectionDescription": "",
+                    "showFileviewer": true,
+                    "downloadLink": "https://staging-files.osf.io/v1/resources/jyu4t/providers/osfstorage/5995b2f78ca57e025a1ee3a7",
+                    "showInNavigation": true,
+                    "bgColor": "#eeeeee",
+                    "alignment": "center",
+                    "color": "#333333"
+                },
+                "form": [
+                    {
+                        "type": "settings",
+                        "items": [
+                            {
+                                "type": "checkbox",
+                                "label": "Show in navigation",
+                                "value": "showInNavigation",
+                                "validation": null
+                            },
+                            {
+                                "type": "checkbox",
+                                "label": "Show file viewer",
+                                "value": "showFileviewer",
+                                "validation": null
+                            }
+                        ]
+                    },
+                    {
+                        "type": "alignment",
+                        "label": "Alignment",
+                        "value": "alignment",
+                        "options": [
+                            "left",
+                            "center",
+                            "right"
+                        ],
+                        "validation": null
+                    }
+                ]
             }
-          ]
         },
         {
-          "type": "alignment",
-          "label": "Alignment",
-          "value": "alignment",
-          "options": [
-            "left",
-            "center",
-            "right"
-          ],
-          "validation": null
-        }
-      ]
-    }
-  },
-  {
-    "sectionHeader": "Advanced",
-    "component": "layer-advanced",
-    "content": "<p class=\"ql-align-center\">-</p><h3 class=\"ql-align-center\">JohnDoe@email.com</h3><p class=\"ql-align-center\"><br></p>",
-    "settings": {
-      "component": "layer-settings",
-      "values": {
-        "sectionTitle": "Contact",
-        "showInNavigation": true,
-        "bgColor": "#ffc266",
-        "alignment": "center",
-        "color": "#f5f5f5"
-      },
-      "form": [
-        {
-          "type": "settings",
-          "items": [
-            {
-              "type": "checkbox",
-              "label": "Show in navigation",
-              "value": "showInNavigation",
-              "validation": null
+            "sectionHeader": "Advanced",
+            "component": "layer-advanced",
+            "content": "<p class=\"ql-align-center\">Please get in touch with general questions or comments here</p><h3 class=\"ql-align-center\">cl23blg@wisconsin.edu</h3><p class=\"ql-align-center\"><br></p><p class=\"ql-align-center\">I'm available for speaking engagements and workshops during summer months.&nbsp;</p><p class=\"ql-align-center\"><br></p>",
+            "settings": {
+                "component": "layer-settings",
+                "values": {
+                    "sectionTitle": "Contact",
+                    "showInNavigation": true,
+                    "bgColor": "#31708f",
+                    "alignment": "center",
+                    "color": "#f5f5f5"
+                },
+                "form": [
+                    {
+                        "type": "settings",
+                        "items": [
+                            {
+                                "type": "checkbox",
+                                "label": "Show in navigation",
+                                "value": "showInNavigation",
+                                "validation": null
+                            }
+                        ]
+                    },
+                    {
+                        "type": "alignment",
+                        "label": "Alignment",
+                        "value": "alignment",
+                        "options": [
+                            "left",
+                            "center",
+                            "right"
+                        ],
+                        "validation": null
+                    }
+                ]
             }
-          ]
-        },
-        {
-          "type": "alignment",
-          "label": "Alignment",
-          "value": "alignment",
-          "options": [
-            "left",
-            "center",
-            "right"
-          ],
-          "validation": null
         }
-      ]
-    }
-  }
-]
+    ]
 }
