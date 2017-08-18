@@ -62,14 +62,14 @@
 <div class="scroll-top" {{action 'scrollToTop'}}>{{fa-icon 'angle-up'}}</div>
 
 {{#if showNotSavedModal}}
-{{#bs-modal onSubmit=(action "toggleEditMode" true) onHidden=(action 'toggleModal' false) as |modal|}}
-{{#modal.header}}
-<h4 class="modal-title">You have unsaved changes, do you want to save them?</h4>
-{{/modal.header}}
-{{#modal.footer as |footer|}}
-{{#bs-button onClick=(action 'toggleEditMode') type="normal"}}Discard changes{{/bs-button}}
-{{#bs-button onClick=(action modal.submit) type="success"}}Save{{/bs-button}}
-{{/modal.footer}}
-{{/bs-modal}}
+    {{#bs-modal onSubmit=(action "toggleEditMode" true) onHidden=(action 'toggleModal' false) as |modal|}}
+        {{#modal.header}}
+            <h4 class="modal-title">You have unsaved changes, do you want to save them?</h4>
+        {{/modal.header}}
+        {{#modal.footer as |footer|}}
+            {{#bs-button onClick=(action 'toggleEditMode') type="normal"}}Discard changes{{/bs-button}}
+            {{#bs-button onClick=(action modal.submit) type="success"}}Save{{/bs-button}}
+        {{/modal.footer}}
+    {{/bs-modal}}
 {{/if}}
 

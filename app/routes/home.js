@@ -21,10 +21,6 @@ export default Ember.Route.extend({
         },function() {
             return false;
         });
-
-
-
-
         if(!jsonBlob){
             if( node.get('currentUserPermissions')[1] === 'write'){
                 $.ajax({
@@ -42,9 +38,6 @@ export default Ember.Route.extend({
 
                         jsonBlob =  JSON.stringify(data);
                     }});
-
-
-
             }else{
                 let defaultJSON ='';
                 $.ajax({
@@ -58,9 +51,6 @@ export default Ember.Route.extend({
                 jsonBlob =  JSON.stringify(defaultJSON);
             }
         }
-
-
-
         const content = Ember.Object.create(JSON.parse(jsonBlob));
         const timeMachine = TimeMachine.Object.create({ content });
         theme = timeMachine;

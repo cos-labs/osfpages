@@ -1,7 +1,6 @@
 /*global $:true*/
 
 import Ember from 'ember';
-import TimeMachine from 'ember-time-machine';
 import _ from 'lodash';
 
 
@@ -15,7 +14,7 @@ export default Ember.Controller.extend({
     isAdmin: Ember.computed('node', function(){
         return this.get('model.node.currentUserPermissions').includes('admin');
     }),
-    saving: Ember.observer('editMode', function(){
+    firebaseData: Ember.observer('editMode', function(){
         $(document).ready(()=>{
 
             let firebaseDB = this.store.findRecord('home', this.get('model.guid'))
