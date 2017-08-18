@@ -6,7 +6,6 @@ import ENV from '../config/environment';
 
 
 let theme = {};
-
 export default Ember.Route.extend({
     setupController: function(controller, model) {
         controller.set('model' , model);
@@ -22,10 +21,6 @@ export default Ember.Route.extend({
         },function() {
             return false;
         });
-
-
-
-
         if(!jsonBlob){
             if( node.get('currentUserPermissions')[1] === 'write'){
                 $.ajax({
@@ -43,9 +38,6 @@ export default Ember.Route.extend({
 
                         jsonBlob =  JSON.stringify(data);
                     }});
-
-
-
             }else{
                 let defaultJSON ='';
                 $.ajax({
@@ -57,19 +49,25 @@ export default Ember.Route.extend({
                     }
                 });
                 jsonBlob =  JSON.stringify(defaultJSON);
-           }
-       }
+            }
+        }
+        const content = Ember.Object.create(JSON.parse(jsonBlob));
+        const timeMachine = TimeMachine.Object.create({ content });
+        theme = timeMachine;
 
+        return {
+            theme,
+            guid: params.guid,
+            node: node
+        };
+    },
+    actions: {
+        save(guid){
+            this.store.findRecord('home', guid).then(function(data) {
+                data.set('pageData', JSON.stringify(theme.content));
+                data.save();
+            });
 
-
-       const content = Ember.Object.create(JSON.parse(jsonBlob));
-       const timeMachine = TimeMachine.Object.create({ content });
-       theme = timeMachine;
-
-    return {
-        theme,
-        guid: params.guid,
-        node: node
-    };
-}
+        }
+    }
 });
