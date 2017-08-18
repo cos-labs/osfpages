@@ -1,30 +1,38 @@
 <div class="editMenu">
     <div class="container p-sm">
         <div class="row">
-            <div class="col-sm-3">
-                {{layer-template-select theme=model.theme}}
-            </div>
             <div class="col-sm-2">
+                {{#if editMode}}
+                    {{layer-template-select theme=model.theme}}
+                {{/if}}
+            </div>
+            <div class="col-sm-3">
             {{#if editMode}}
                 <button class="btn-outline-cus" disabled="{{unless model.theme.canUndo 'disabled'}}" {{action 'undo'}}><i class="material-icons">undo</i></button>
                 <button class="btn-outline-cus" disabled="{{unless model.theme.canRedo 'disabled'}}" {{action 'redo'}}><i class="material-icons">redo</i></button>
             {{/if}}
             </div>
+            <div class="col-sm-2">
+            {{#if saved}}
+                Saving...
+            {{/if}}
+            {{#if published}}
+                Publishing...
+            {{/if}}
+            </div>
             <div class="col-sm-3">
                 {{#if editMode}}
-                    <span>Saving...</span>
-                {{else}}
-                    <span>All changes saved</span>
+                <div class="pull-right">
+                    <button class="btn-outline-cus" {{action 'publish'}}><i class="material-icons">publish</i> Publish</button>
+                    <button class="btn-outline-cus" {{action 'save'}}><i class="material-icons">save</i> Save</button>
+                </div>
                 {{/if}}
             </div>
-            <div class="col-sm-4 clearfix">
+            <div class="col-sm-2 clearfix">
                 <div class="pull-right">
-                    {{#if editMode}}
-                        <button class="btn-outline-cus" {{action 'publish'}}>Publish</button>
-                    {{/if}}
-                    <button class="btn-outline-cus" {{action 'toggleEditMode'}} >
+                    <button class="btn-outline-cus editModeBtn" {{action 'checkSaveState'}} >
                         {{#if editMode}}
-                            <i class="material-icons">close</i> Finish editing
+                            <i class="material-icons">close</i>Finish editing 
                         {{else}}
                             <i class="material-icons">edit</i> Edit
                         {{/if}}
@@ -52,4 +60,16 @@
 
 
 <div class="scroll-top" {{action 'scrollToTop'}}>{{fa-icon 'angle-up'}}</div>
+
+{{#if showNotSavedModal}}
+{{#bs-modal onSubmit=(action "toggleEditMode" true) onHidden=(action 'toggleEditMode') as |modal|}}
+{{#modal.header}}
+<h4 class="modal-title">You have unsaved changes, do you want to save them?</h4>
+{{/modal.header}}
+{{#modal.footer as |footer|}}
+{{#bs-button onClick=(action modal.close) type="normal"}}Discard changes{{/bs-button}}
+{{#bs-button onClick=(action modal.submit) type="success"}}Save{{/bs-button}}
+{{/modal.footer}}
+{{/bs-modal}}
+{{/if}}
 

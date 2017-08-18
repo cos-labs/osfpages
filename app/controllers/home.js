@@ -2,39 +2,35 @@
 
 import Ember from 'ember';
 import TimeMachine from 'ember-time-machine';
+import _ from 'lodash';
+
 
 
 export default Ember.Controller.extend({
     queryParams: ['editMode'],
-    timer: null,
+    showNotSavedModal: false,
+    published: false,
+    saved: false,
     isAdmin: Ember.computed('node', function(){
         return this.get('model.node.currentUserPermissions').includes('admin');
     }),
     saving: Ember.observer('editMode', function(){
+
         $(document).ready(()=>{
             let firebaseDB = this.store.findRecord('home', this.get('model.guid'))
 
-            if(this.get('editMode')){//AND CHECK IF THE MODEL ISDIRTY 
+            if(this.get('editMode')){
 
-                //get unpublishedPageData
                 firebaseDB.then((record)=>{ 
-                    let unpublishedPageData = record.get('unpublishedPageData');
-                    this.set('model.theme.content' , JSON.parse(record.get('unpublishedPageData')))  
+                    let pageData = record.get('unpublishedPageData');
+                    if(pageData === null){
+                        pageData =  record.get('pageData');
+                    }
+                    this.set('model.theme.content' , JSON.parse(pageData))  
+
                 });
 
-
-
-
-               // this.set('timer', setInterval(()=>{
-
-                    // this.store.findRecord('home', this.get('model.guid')).then((data)=> {
-                    //     console.log(this.get('model.theme.content'))
-                    //     data.set('unpublishedPageData', JSON.stringify(this.get('model.theme.content')));
-                    //     data.save();
-                    // });
-                //}, 5000));
             }else{
-                window.clearInterval(this.get('timer'));
                 firebaseDB.then((record)=>{ 
                     let pageData = record.get('pageData');
                     this.set('model.theme.content' , JSON.parse(record.get('pageData')))  
@@ -48,9 +44,23 @@ export default Ember.Controller.extend({
         scrollToTop(){
             $('body').animate({scrollTop:0}, '500');
         },
-        toggleEditMode(){
-            this.send('save' , this.get('model.guid') )
+        checkSaveState(){
+            if(this.get('editMode')){
+                this.set('showNotSavedModal' , true)
+            }else{
+                this.send('toggleEditMode')
+            }
+
+        },
+        toggleEditMode(shouldSave){
+
+            if(shouldSave){
+                this.send('save' , this.get('model.guid') )
+            }
+
             this.toggleProperty('editMode');
+            this.set('showNotSavedModal' , false)
+
         },
         undo(){
             if(this.get('model.theme').get('canUndo')){
@@ -63,19 +73,29 @@ export default Ember.Controller.extend({
             }
         },
         publish(){//publish will take unplblished data and put it in to page data on firebase 
+            this.set('published' , true)
             this.send('save' , this.get('model.guid') )
             this.store.findRecord('home', this.get('model.guid')).then((data)=> {               
                 data.set('pageData',  data.get('unpublishedPageData'));
                 data.save();
             });
+            setTimeout(()=>{
+                this.set('published' , false)
+            }, 2000);
         },
         save(guid){
+            if(!this.get('published')){
+                this.set('saved' , true)
+            }
             if(this.get('editMode')){
-               this.store.findRecord('home', this.get('model.guid')).then((data)=> {
+                this.store.findRecord('home', this.get('model.guid')).then((data)=> {
                     data.set('unpublishedPageData', JSON.stringify(this.get('model.theme.content')));
                     data.save();
                 });
             }
+            setTimeout(()=>{
+                this.set('saved' , false)
+            }, 2000);
         }
     },
     init(){

@@ -71,4 +71,13 @@ export default Ember.Route.extend({
             node: node
         };
     },
+    actions: {
+        save(guid){
+            this.store.findRecord('home', guid).then(function(data) {
+                data.set('pageData', JSON.stringify(theme.content));
+                data.save();
+            });
+
+        }
+    }
 });
