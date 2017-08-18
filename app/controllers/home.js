@@ -17,19 +17,17 @@ export default Ember.Controller.extend({
     }),
     saving: Ember.observer('editMode', function(){
         $(document).ready(()=>{
-            this.set('savedPageData' , this.get('model.theme.content.layers')) //save a version of pagedata so we can see if any changes have been made
 
             let firebaseDB = this.store.findRecord('home', this.get('model.guid'))
 
             if(this.get('editMode')){
-
                 firebaseDB.then((record)=>{ 
                     let pageData = record.get('unpublishedPageData');
                     if(pageData === null){
                         pageData =  record.get('pageData');
                     }
                     this.set('model.theme.content' , JSON.parse(pageData))  
-
+                    this.set('savedPageData' , JSON.parse(pageData).layers) //save a version of pagedata so we can see if any changes have been made
                 });
 
             }else{
@@ -48,10 +46,11 @@ export default Ember.Controller.extend({
         },
         checkSaveState(){
             if(this.get('editMode')){
-                if(_.isEqual( this.get('savedPageData'), this.get('model.theme.content.layers') )){//check to see if changes have been made
+                if(_.isEqual(this.get('savedPageData'), this.get('model.theme.content.layers') )){//check to see if changes have been made
                     this.send('toggleEditMode')
                 }else{
-                    this.set('showNotSavedModal' , true)
+                    this.send('toggleModal', true)
+                    //this.set('showNotSavedModal' , true)
                 }
             }else{
                 this.send('toggleEditMode')
@@ -63,9 +62,10 @@ export default Ember.Controller.extend({
             if(shouldSave){
                 this.send('save' , this.get('model.guid') )
             }
-
             this.toggleProperty('editMode');
-            this.set('showNotSavedModal' , false)
+            this.send('toggleModal', false)
+            //this.set('showNotSavedModal' , false)
+
 
         },
         undo(){
@@ -99,9 +99,15 @@ export default Ember.Controller.extend({
                     data.save();
                 });
             }
+
+            this.set('savedPageData' , this.get('model.theme.content.layers')) //save a version of pagedata so we can see if any changes have been made
+
             setTimeout(()=>{
                 this.set('saved' , false)
             }, 2000);
+        },
+        toggleModal(state){
+            this.set('showNotSavedModal' , state)
         }
     },
     init(){
