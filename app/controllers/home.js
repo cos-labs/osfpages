@@ -11,12 +11,14 @@ export default Ember.Controller.extend({
     showNotSavedModal: false,
     published: false,
     saved: false,
+    savedPageData: "",
     isAdmin: Ember.computed('node', function(){
         return this.get('model.node.currentUserPermissions').includes('admin');
     }),
     saving: Ember.observer('editMode', function(){
-
         $(document).ready(()=>{
+            this.set('savedPageData' , this.get('model.theme.content.layers')) //save a version of pagedata so we can see if any changes have been made
+
             let firebaseDB = this.store.findRecord('home', this.get('model.guid'))
 
             if(this.get('editMode')){
@@ -46,7 +48,11 @@ export default Ember.Controller.extend({
         },
         checkSaveState(){
             if(this.get('editMode')){
-                this.set('showNotSavedModal' , true)
+                if(_.isEqual( this.get('savedPageData'), this.get('model.theme.content.layers') )){//check to see if changes have been made
+                    this.send('toggleEditMode')
+                }else{
+                    this.set('showNotSavedModal' , true)
+                }
             }else{
                 this.send('toggleEditMode')
             }
@@ -72,7 +78,7 @@ export default Ember.Controller.extend({
                 this.get('model.theme').redo();
             }
         },
-        publish(){//publish will take unplblished data and put it in to page data on firebase 
+        publish(){//publish will take unpublished data and put it in to page data on firebase 
             this.set('published' , true)
             this.send('save' , this.get('model.guid') )
             this.store.findRecord('home', this.get('model.guid')).then((data)=> {               
