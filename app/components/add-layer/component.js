@@ -66,6 +66,7 @@ export default Ember.Component.extend({
                             "showFileviewer": true,
                             "showDownload": true,
                             "downloadLink": "",
+                            "buttonText":"Download",
                             "showInNavigation": true,
                             "bgColor": "#FFFFFF",
                             "alignment": "center",
