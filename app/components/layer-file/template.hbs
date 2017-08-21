@@ -42,6 +42,11 @@
     {{/if}}
 
     {{#if layer.settings.values.showDownload}}
-     <a class="btn pull-right btn-info btn-outline-cus btn-lg" href={{layer.settings.values.downloadLink}} >Download {{fa-icon "download"}}</a>
+        {{#if editMode}}
+         <a class="btn pull-right btn-info btn-outline-cus btn-lg" style="color:#5bc0de">{{input value=layer.settings.values.buttonText }}
+  {{fa-icon "download"}}</a>
+        {{else}}
+            <a class="btn pull-right btn-info btn-outline-cus btn-lg" href={{layer.settings.values.downloadLink}} >{{layer.settings.values.buttonText }}{{fa-icon "download"}}</a>
+        {{/if}}
     {{/if}}
 </div>
