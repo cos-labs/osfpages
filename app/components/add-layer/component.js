@@ -160,6 +160,7 @@ export default Ember.Component.extend({
                         "component": "layer-settings",
                         "values": {
                             "sectionTitle": "Advanced",
+                            "backgroundImage": "http://localhost:4200/img/bg.png",   
                             "showInNavigation": true,
                             "bgColor": "#FFFFFF",
                             "alignment": "center",
@@ -174,9 +175,21 @@ export default Ember.Component.extend({
                                 "label": "Show in navigation",
                                 "value": "showInNavigation",
                                 "validation": null
-                            }
+                            },
+                            {
+                                "type": "checkbox",
+                                "label": "Fit image to section size",
+                                "value": "backgroundCover",
+                                "validation": null
+                            },
                             ]
                         },
+                        {
+                            "type": "image",
+                            "label": "Background image",
+                            "value": "backgroundImage",
+                            "validation": null
+                        },  
                         {
                             "type": "alignment",
                             "label": "Alignment",
