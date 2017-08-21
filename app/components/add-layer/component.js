@@ -160,7 +160,7 @@ export default Ember.Component.extend({
                         "component": "layer-settings",
                         "values": {
                             "sectionTitle": "Advanced",
-                            "backgroundImage": "https://www.toptal.com/designers/subtlepatterns/patterns/confectionary.png",   
+                            "backgroundImage": "https://image.ibb.co/kCgzp5/confectionary.png",   
                             "showInNavigation": true,
                             "bgColor": "#FFFFFF",
                             "alignment": "center",
