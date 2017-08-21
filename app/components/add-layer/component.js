@@ -56,7 +56,7 @@ export default Ember.Component.extend({
                 break;
                 case 'file':
                 item = {
-                    "sectionHeader": "Download",
+                    "sectionHeader": "File",
                     "component": "layer-file",
                     "settings": {
                         "component": "layer-settings",
@@ -64,6 +64,7 @@ export default Ember.Component.extend({
                             "sectionTitle": "Download this file",
                             "sectionDescription": "",
                             "showFileviewer": true,
+                            "showDownload": true,
                             "downloadLink": "",
                             "showInNavigation": true,
                             "bgColor": "#FFFFFF",
@@ -80,6 +81,13 @@ export default Ember.Component.extend({
                                 "value": "showInNavigation",
                                 "validation": null
                             },
+                            {
+                                "type": "checkbox",
+                                "label": "Show download button",
+                                "value": "showDownload",
+                                "validation": null
+                            },
+
                             {
                                 "type": "checkbox",
                                 "label": "Show file viewer",
