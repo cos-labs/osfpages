@@ -12,10 +12,12 @@ export default Ember.Controller.extend({
     saved: false,
     savedPageData: "",
     isAdmin: Ember.computed('node', function(){
+        this.send('canUserEdit')
         return this.get('model.node.currentUserPermissions').includes('admin');
     }),
     firebaseData: Ember.observer('editMode', function(){
         $(document).ready(()=>{
+            this.send('canUserEdit')
 
             let firebaseDB = this.store.findRecord('home', this.get('model.guid'))
 
@@ -40,6 +42,13 @@ export default Ember.Controller.extend({
     }),
     editMode: false,
     actions: {
+        canUserEdit(){
+            if(this.get('model.node.currentUserPermissions').includes('admin')){    
+                this.set('editMode' , true)
+            }else{
+                this.set('editMode' , false)
+            }
+        },
         scrollToTop(){
             $('body').animate({scrollTop:0}, '500');
         },
