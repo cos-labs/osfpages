@@ -43,9 +43,7 @@ export default Ember.Controller.extend({
     editMode: false,
     actions: {
         canUserEdit(){
-            if(this.get('model.node.currentUserPermissions').includes('admin')){    
-                this.set('editMode' , true)
-            }else{
+            if(!this.get('model.node.currentUserPermissions').includes('admin')){    
                 this.set('editMode' , false)
             }
         },
