@@ -1,10 +1,23 @@
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-            <h2> {{layer.sectionHeader}}</h2>
-            Some contents here
+<div id="layer{{index}}" class="layer-wrapper {{layer.component}}" style="background-position: center; {{style}}">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="layer clearfix">
+
+                    {{#if editMode}}
+                        <div class="layer-settings">
+                            {{layer-settings layer=layer node=node editMode=editMode index=index layers=layers showSettings=showSettings}}
+                        </div>
+                    {{/if}}
+
+                    <div class="layer-content">
+                        {{component layer.component layer=layer node=node layers=layers editMode=editMode showSettings=showSettings}}
+                    </div>
+                </div>
+                {{#if editMode}}
+
+                {{/if}}
+            </div>
         </div>
     </div>
 </div>
-
-{{yield}}

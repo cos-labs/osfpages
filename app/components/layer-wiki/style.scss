@@ -1,0 +1,26 @@
+.wiki-markdown {
+    overflow: auto;
+    &.truncated {
+        height: 400px;
+    }
+}
+
+.show-more {
+    position: relative;
+    cursor: pointer;
+    border-bottom: 1px dotted #ccc;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 18px;
+    color: #666;
+    &.truncated {
+        margin-top: -25px;
+        box-shadow: inset 0 -35px 20px 4px #fff;
+    }
+    .material-icons {
+        vertical-align: middle;
+    }
+    &:hover {
+        color: #000;
+    }
+}

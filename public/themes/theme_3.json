@@ -1,0 +1,127 @@
+{
+    "id": 3,
+    "name": "File",
+    "layers": [
+        {
+            "sectionHeader": "Title",
+            "component": "layer-title",
+            "settings": {
+                "values": {
+                    "backgroundImage": "http://demo.rockettheme.com/live/wordpress/crystalline/wp-content/themes/rt_crystalline_wp/images/overlays/headers/header-1.png",
+                    "backgroundCover": true,
+                    "showNavigation": false,
+                    "showTitle": true,
+                    "showLead": true,
+                    "showInNavigation": false,
+                    "h1Size": 38,
+                    "bgColor": "#eeeeee",
+                    "color": "#333333",
+                    "alignment": "center",
+                    "lead": "Sed vehicula nec ante non porttitor. Cras at eros vel tellus sagittis pharetra rhoncus a ante. "
+                },
+                "form": [
+                    {
+                        "type": "image",
+                        "label": "Background image",
+                        "value": "backgroundImage",
+                        "validation": null
+                    },
+                    {
+                        "type": "increment",
+                        "label": "Title size",
+                        "value": "h1Size",
+                        "size": 20,
+                        "incrementSize": 4,
+                        "validation": null
+                    },
+                    {
+                        "type": "alignment",
+                        "label": "Alignment",
+                        "value": "alignment",
+                        "options": [
+                            "left",
+                            "center",
+                            "right"
+                        ],
+                        "validation": null
+                    },
+                    {
+                        "type": "settings",
+                        "items": [
+                            {
+                                "type": "checkbox",
+                                "label": "Show navigation",
+                                "value": "showNavigation",
+                                "validation": null
+                            },
+                            {
+                                "type": "checkbox",
+                                "label": "Fit image to section size",
+                                "value": "backgroundCover",
+                                "validation": null
+                            },
+                            {
+                                "type": "checkbox",
+                                "label": "Show title",
+                                "value": "showTitle",
+                                "validation": null
+                            },
+                            {
+                                "type": "checkbox",
+                                "label": "Show lead text",
+                                "value": "showLead",
+                                "validation": null
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "sectionHeader": "Download",
+            "component": "layer-file",
+            "settings": {
+                "values": {
+                    "sectionTitle": "",
+                    "sectionDescription": "<p><br></p>",
+                    "showFileviewer": true,
+                    "downloadLink": "https://staging-files.osf.io/v1/resources/jyu4t/providers/osfstorage/596e6d4b8ca57e022b697cda",
+                    "showInNavigation": true,
+                    "bgColor": "#eeeeee",
+                    "color": "#333333",
+                    "alignment": "center"
+                },
+                "form": [
+                    {
+                        "type": "settings",
+                        "items": [
+                            {
+                                "type": "checkbox",
+                                "label": "Show in navigation",
+                                "value": "showInNavigation",
+                                "validation": null
+                            },
+                            {
+                                "type": "checkbox",
+                                "label": "Show file viewer",
+                                "value": "showFileviewer",
+                                "validation": null
+                            }
+                        ]
+                    },
+                    {
+                        "type": "alignment",
+                        "label": "Alignment",
+                        "value": "alignment",
+                        "options": [
+                            "left",
+                            "center",
+                            "right"
+                        ],
+                        "validation": null
+                    }
+                ]
+            }
+        }
+    ]
+}

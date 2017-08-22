@@ -1,0 +1,35 @@
+
+
+.ql-editor{
+    white-space: inherit;
+    padding:0;
+} 
+
+.right, .center, .left {
+    border: none;
+    background: rgba(158, 158, 158, 0.08);
+    font-size: 30px;
+    width:100%;  
+    border-radius: 2px;
+}
+
+.left {
+    text-align: left;
+}
+.center {
+    text-align: center;
+}
+.right {
+    text-align: right;
+}
+
+
+.left-title {
+    text-align: left;
+}
+.center-title {
+    text-align: center;
+}
+.right-title {
+    text-align: right;
+}

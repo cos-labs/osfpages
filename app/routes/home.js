@@ -1,56 +1,73 @@
+/*global $:true*/
+
 import Ember from 'ember';
-
-/* Using static data for now. GUID will load from server */
-
-let layers = [
-    {
-        sectionHeader: 'Title',
-        showInMenu: true,
-        data: {
-            type: 'wiki',
-            source: 'some source'
-        },
-        settings: {
-            themeId: 2,
-            truncate: false
-        }
-    },
-    {
-        sectionHeader: 'Example Wiki Page',
-        showInMenu: true,
-        data: {
-            type: 'wiki',
-            source: 'some source'
-        },
-        settings: {
-            themeId: 1,
-            truncate: false
-        }
-    }
-];
+import TimeMachine from 'ember-time-machine';
+import ENV from '../config/environment';
 
 
-let themes = [
-    {
-        id: 1,
-        background: '#eeeeee',
-        color: '#333333'
-    },
-    {
-        id: 2,
-        background: '#666666',
-        color: '#f8f8f8'
-    }
-];
-
+let theme = {};
 export default Ember.Route.extend({
-    model(params){
+    setupController: function(controller, model) {
+        controller.set('model' , model);
+    },
+    model: async function(params){
+
+        // If testing and parameter is not working use this 'jyu4t' for params.guid
+        let node = await this.store.findRecord('node', params.guid)
+        let firebaseDB = this.store.findRecord('home', params.guid)
+
+        let jsonBlob = await firebaseDB.then((record)=>{        
+            return  record.get('pageData')
+        },function() {
+            return false;
+        });
+        if(!jsonBlob){
+            if( node.get('currentUserPermissions')[1] === 'write'){
+                $.ajax({
+                    type: "GET",
+                    url: ENV.rootURL + "themes/theme_1.json",
+                    async: false,
+                    success: (data)=> {
+                        //add to firebase  
+                        let guid = {
+                            id: params.guid,
+                            pageData: JSON.stringify(data) 
+                        };
+                        let record = this.store.createRecord('home', guid);
+                        record.save()
+
+                        jsonBlob =  JSON.stringify(data);
+                    }});
+            }else{
+                let defaultJSON ='';
+                $.ajax({
+                    type: "GET",
+                    url: ENV.rootURL + "themes/theme_error.json",
+                    async: false,
+                    success: function (data) {
+                        defaultJSON = data;
+                    }
+                });
+                jsonBlob =  JSON.stringify(defaultJSON);
+            }
+        }
+        const content = Ember.Object.create(JSON.parse(jsonBlob));
+        const timeMachine = TimeMachine.Object.create({ content });
+        theme = timeMachine;
+
         return {
-            layers,
-            themes,
-            guid: params.guid
+            theme,
+            guid: params.guid,
+            node: node
+        };
+    },
+    actions: {
+        save(guid){
+            this.store.findRecord('home', guid).then(function(data) {
+                data.set('pageData', JSON.stringify(theme.content));
+                data.save();
+            });
+
         }
     }
 });
-
-

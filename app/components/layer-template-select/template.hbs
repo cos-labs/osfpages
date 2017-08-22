@@ -1,0 +1,33 @@
+{{#if isOpen}}
+    <div class="pages-overlay">
+        <div class="content">
+            <div class="container">
+                <div class="overlay-dismiss">
+                    <i class="material-icons" {{action 'dismiss'}}>close</i>
+                </div>
+                <h2> Select a template</h2>
+                <div class="row p-v-xl">
+                    {{#each themeList as |item|}}
+                        <div class="col-sm-4 m-b-lg">
+                            <div class="theme-select-item" {{action 'renderTemplate' item.id}}>
+                                {{#if (eq theme.id item.id)}}
+                                    <div class="theme-selected">
+                                        <i class="material-icons">check</i>
+                                    </div>
+                                {{/if}}
+                                <div class="theme-thumb" style="background-image:url('{{item.thumb}}')"></div>
+                                <div class="theme-content p-md">
+                                    <h3> {{item.name}}</h3>
+                                    <p>{{item.description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+{{/if}}
+
+
+<button class="btn-outline-cus"  {{action 'openOverlay'}}> Select a template </button>

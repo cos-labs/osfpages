@@ -1,0 +1,15 @@
+{{#if (eq type 'title')}}
+    {{#if editMode}}
+        {{input class=layer.settings.values.alignment maxlength=140 value=layer.settings.values.sectionTitle }}
+    {{else}}
+        <div class="{{layer.settings.values.alignment}}-title"><h2>{{layer.settings.values.sectionTitle}}</h2></div>
+    {{/if}}
+{{else}}
+	{{#if editMode}}
+		{{quill-editor value=layer.content.settings.values.sectionDescription options=options textChange=(action "updateText")}}
+	{{else}}
+	<div  class="ql-editor">
+		{{{layer.content.settings.values.sectionDescription}}}
+	</div>
+	{{/if}}
+{{/if}}

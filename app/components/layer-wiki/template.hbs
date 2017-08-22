@@ -1,0 +1,41 @@
+<div class="">
+    {{edit-text showSettings=showSettings editMode=editMode layer=layer type="title"  alignment=layer.settings.values.alignment}}
+
+    <div class="wiki-markdown {{if (and isTruncated layer.settings.values.addShowMore) 'truncated'}} ">
+        {{markdown-to-html layer.wikiContent}}
+    </div>
+    {{#if layer.settings.values.addShowMore}}
+        <div class="show-more {{if isTruncated 'truncated'}}" {{action 'toggleShow'}}>
+            {{#if isTruncated}}
+                <i class="material-icons ">keyboard_arrow_down</i>
+                <span>Show more</span>
+            {{else}}
+                <i class="material-icons">keyboard_arrow_up</i>
+                <span>Show less</span>
+            {{/if}}
+        </div>
+    {{/if}}
+
+    {{#if editMode}}
+        {{#if showSelect}}
+            <div class="m-v-lg">
+                {{#power-select
+                    options=wikis
+                    selected=currentWiki
+                    onchange=(action "selectWiki") as |wiki|}}
+                    {{wiki.name}}
+                {{/power-select}}
+            </div>
+        {{else}}
+            <div class="select-box p-v-md m-v-lg" {{action 'showSelect'}}>
+                <p>
+                    {{#if layer.wikiContent}}
+                        Change selection
+                    {{else}}
+                        Select a wiki page
+                    {{/if}}
+                </p>
+            </div>
+        {{/if}}
+    {{/if}}
+</div>
