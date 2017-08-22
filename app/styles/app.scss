@@ -33,6 +33,24 @@ body {
 .inline-block {
     display: inline-block;
 }
+.alpha-alert {
+    display: block;
+    position: fixed;
+    background: #FF5722;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    padding: 6px 0;
+    color: #fff;
+    top: 0;
+    z-index: 1031;
+}
+#navbarScope {
+    top: 30px;
+}
+.index-wrapper {
+    margin-top: 80px;
+}
 
 
 
@@ -62,6 +80,7 @@ body {
     color: #fff;
     width: 100%;
     z-index: 100;
+    top:30px;
 }
 
 .layer-title {
