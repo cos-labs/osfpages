@@ -1,0 +1,29 @@
+.pages-nav .btn-link {
+    font-size: 16px;
+}
+.pages-nav .btn-link:hover {
+    background-color: rgba(248, 248, 248, 0.24);
+    border-radius: 2px;
+    text-decoration: none;
+}
+
+.pages-nav {
+    width:100%;
+    &.left {
+       text-align: left;
+    }
+    &.center {
+        text-align: center;
+        margin: 0 auto;
+    }
+    &.right {
+        text-align: right;
+    }
+}
+
+.pages-nav ul{
+	display:inline-flex;
+    margin: 0;
+    padding: 10px 0;
+}
+

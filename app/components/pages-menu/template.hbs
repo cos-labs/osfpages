@@ -1,0 +1,13 @@
+<div class="pages-nav nav navbar-nav {{layer.settings.values.alignment}}">
+    <ul>
+        {{#each layers as |layer index|}}
+            {{#if layer.settings.values.showInNavigation}}
+                <li>
+                    <button class="btn btn-link" {{action 'scrollToLayer' index}} style="{{style}}">{{layer.settings.values.sectionTitle}}</button>
+                </li>
+            {{/if}}
+        {{/each}}
+    </ul>
+</div>
+
+

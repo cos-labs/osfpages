@@ -1,3 +1,30 @@
-.container{
-    background: #eeeeee;
+.layer-wrapper {
+    position: relative;
+    min-height: 55px;
+}
+.layer-content {
+    padding: 25px;
+    width:100%;
+    float: left;
+}
+
+
+.layer-settings {
+    margin-top: 15px;
+}
+
+@mixin settings-shadow($color){
+    box-shadow: 0 0px 21px 0 $color;
+}
+
+.layer-image {
+    button.btn-outline-default-cus {
+        background: #666;
+    }
+}
+
+
+.layer-info, .layer-wiki, .layer-file, .layer-link, .layer-advanced {
+    padding-top: 30px;
+    padding-bottom: 40px;
 }

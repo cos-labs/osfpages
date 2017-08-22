@@ -1,0 +1,36 @@
+<div>
+    {{edit-text showSettings=showSettings editMode=editMode layer=layer type="title"  alignment=layer.settings.values.alignment}}
+
+    {{#if layer.settings.values.showDescription}}
+        <h4>Description</h4>
+        <p>{{node.description}}</p>
+    {{/if}}
+
+    {{#if (and layer.settings.values.showContributors (not layer.settings.values.showBibliographicContributors))}}
+        <div class="m-v-md">
+            <h4> Contributors </h4>
+            {{#each users as |user|}}
+                {{user.fullName}}
+            {{/each}}
+        </div>
+    {{/if}}
+
+
+    {{#if layer.settings.values.showBibliographicContributors}}
+        <div class="m-v-md">
+            <h4>Bibliographic Contributors</h4>
+            {{#each bibliographicUsers as |user|}}
+                {{user.fullName}}
+            {{/each}}
+        </div>
+    {{/if}}
+
+    {{#if (and layer.settings.values.showAffiliatedInstitutions institutions)}}
+        <div class="m-v-md">
+            <h4>Affiliated Institutions</h4>
+            {{#each institutions as |institution|}}
+                {{institution.name}}
+            {{/each}}
+        </div>
+    {{/if}}
+</div>

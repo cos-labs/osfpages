@@ -1,0 +1,14 @@
+{{edit-text showSettings=showSettings editMode=editMode layer=layer type="title" alignment=layer.settings.values.alignment}}
+
+<div style="margin:25px">
+	<div>
+		<img align={{layer.settings.values.alignment}} class="{{layer.settings.values.alignment}} margin-bottom-5" src="{{layer.settings.values.image}}">
+	</div>
+	<div style="margin-bottom:25px;">
+    {{#if editMode}}
+        {{textarea class="edit-text" rows="6" cols="50" value=layer.settings.values.sectionDescription}}
+    {{else}}
+        {{layer.settings.values.sectionDescription}}
+    {{/if}}
+	</div>
+</div>

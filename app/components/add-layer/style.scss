@@ -1,0 +1,115 @@
+$bg: #313131;
+$gray: #565656;
+$text: #838383;
+$accent: #5bc0de;
+
+$size: 2.25em;  // size of links
+$zoom: 1.2;     // amount of scale on hover
+$space: 0.065;  // space between links
+
+.add-layer-toggle {
+    border-bottom: 1px dashed #eee;
+}
+
+.add-layer-toggle>div {
+    width: 42px;
+    padding: 10px 0;
+    border-radius: 21px;
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    left: 50%;
+    margin-top: -20px;
+    cursor: pointer;
+    z-index: 98;
+    background: #FFF;
+    color: #BBB;
+    box-shadow: 0 0 5px -1px #333;
+    font-size: 16px;
+}
+
+
+.add-layer{
+    height: 0;
+}
+
+.add-layer.open {
+    min-height: 250px;
+    height:100%;
+    background: #2b2b2b;
+    box-shadow: inset 0 -5px 40px -11px #333;
+    .add-layer-toggle>div {
+        margin-top: 55px
+    }
+}
+.add-layer .btn-block {
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    background: rgba(255, 255, 255, 0.40);
+    white-space: normal;
+    height: 120px;
+    box-shadow: 0 0 7px -2px #666;
+    border-radius: 3px;
+}
+
+.add-layer .btn-block:hover {
+    background: rgba(255, 255, 255, 0.60);
+}
+
+
+
+.layer-links {
+  max-width: (($size * 24) + (($space * $size)* 2)) * 3;
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.layer-link {
+  width: 3em;
+  height: 3em;
+  font-size: $size;
+  text-decoration: none;
+  background: $gray;
+  color: $text;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin: $space * 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .4s ease-out;
+  transform: translateZ(0px); 
+  border:none;
+  &:hover, 
+  &:focus, 
+  &:active {
+    background: $accent;
+    color: #fff;
+    z-index: 1;
+    box-shadow: 0 0 ($size / 2) 0 rgba(#000, .5);
+    transform: scale($zoom);
+    transition: .3s;
+
+    &:after {
+      bottom: 1em;
+      transition: .3s;
+    }
+
+  }
+
+  &:after {
+    content: attr(title);
+    width: 100%;
+    text-align: center;
+    left: 0;
+    color:white;
+    bottom: ($size * -3);
+    font-size: .35em;
+    position: absolute;
+    transition: .3s;
+    font-family: sans-serif;
+  }
+
+}
