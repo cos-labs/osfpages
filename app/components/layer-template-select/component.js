@@ -2,44 +2,43 @@
 
 import Ember from 'ember';
 import TimeMachine from 'ember-time-machine';
-import ENV from '../../config/environment';
 
 export default Ember.Component.extend({
     themeList: [
         {
             id: 1,
             name: 'All',
-            thumb: ENV.rootURL +'img/all.png',
+            thumb: '/img/all.png',
             description: 'Includes all section types.'
         },
         {
             id: 2,
             name: 'Wiki',
-            thumb: ENV.rootURL +'img/wiki.png',
+            thumb: '/img/wiki.png',
             description: 'A basic page with title and wiki page.'
         },
         {
             id: 3,
             name: 'File',
-            thumb: ENV.rootURL +'img/file.png',
+            thumb: '/img/file.png',
             description: 'Title and file sections ideal for showcasing papers.'
         },
         {
             id: 4,
             name: 'Institution',
-            thumb:  ENV.rootURL +'img/institution.png',
-            description: 'Example of an institution homepage.'
+            thumb: '/img/institution.png',
+            description: 'Includes all section types.'
         },
         {
             id: 5,
             name: 'Portfolio',
-            thumb: ENV.rootURL +'img/portfolio.png',
+            thumb: '/img/portfolio.png',
             description: 'Example of a portfolio page'
         },
         {
             id: 6,
             name: 'RPP',
-            thumb: ENV.rootURL +'img/rpp.png',
+            thumb: '/img/rpp.png',
             description: 'Example of Reproducibility Project: Psychology'
         },
     ],
@@ -50,14 +49,13 @@ export default Ember.Component.extend({
 			let theme = `theme_${id}.json`;
 			$.ajax({
 				type: 'GET',
-				url: ENV.rootURL +'themes/' + theme,
+				url: '/themes/' + theme,
 				async: false,
 				success: function(data) {
                     const content = Ember.Object.create(data);
                     const timeMachine = TimeMachine.Object.create({ content });
 					self.set('theme', timeMachine);
 					self.set('isOpen', false);
-                    $('body').scrollTop(0);
                     $('body').removeClass('no-scroll');
                 }
 			});

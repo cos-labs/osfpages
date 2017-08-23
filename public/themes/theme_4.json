@@ -1,6 +1,6 @@
 {
    "id": 4,
-   "name": "Institution",
+   "name": "File",
    "layers":[
         {
           "sectionHeader": "Title",
@@ -86,6 +86,7 @@
               "sectionTitle": "About the Institution",
               "showInNavigation": true,
               "bgColor": "#f07057",
+              "alignment": "center",
               "color": "#ffffff"
             },
             "form": [
@@ -142,6 +143,7 @@
               "showBibliographicContributors": false,
               "showAffiliatedInstitutions": true,
               "bgColor": "#FFFFFF",
+              "alignment": "center",
               "color": "#333333"
             },
             "form": [
@@ -193,6 +195,7 @@
               "sectionDescription": "<p>Mauris imperdie Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellentesque ut metus odio. Integer fringilla nulla id leo consequat, a sollicitudin sapien fringilla. Fusce vestibulum malesuada nisl. Fusce augue leo, tempus eget matssstis vel, imperdiet at nulla</p>",
               "sectionLink": "www.example.com",
               "bgColor": "#31708f",
+              "alignment": "center",
               "color": "#ffffff"
             },
             "form": [
