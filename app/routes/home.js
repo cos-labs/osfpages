@@ -14,13 +14,20 @@ export default Ember.Route.extend({
 
         // If testing and parameter is not working use this 'jyu4t' for params.guid
         let node = await this.store.findRecord('node', params.guid)
-        let firebaseDB = this.store.findRecord('home', params.guid)
-
-        let jsonBlob = await firebaseDB.then((record)=>{        
+        
+        let jsonBlob = await this.store.findRecord('home', params.guid).then((record)=>{  
             return  record.get('pageData')
-        },function() {
+        },function(e) {
+            console.log(e)
             return false;
         });
+
+        //let  = firebaseDB
+
+        
+       console.log("hertee" , JSON.parse(jsonBlob)); // => GET /posts
+
+
         if(!jsonBlob){
             if( node.get('currentUserPermissions')[1] === 'write'){
                 $.ajax({
@@ -31,7 +38,9 @@ export default Ember.Route.extend({
                         //add to firebase  
                         let guid = {
                             id: params.guid,
-                            pageData: JSON.stringify(data) 
+                            guid: params.guid,
+                            pageData: JSON.stringify(data),
+                            unpublishedPageData: JSON.stringify(data)
                         };
                         let record = this.store.createRecord('home', guid);
                         record.save()
@@ -51,6 +60,7 @@ export default Ember.Route.extend({
                 jsonBlob =  JSON.stringify(defaultJSON);
             }
         }
+
         const content = Ember.Object.create(JSON.parse(jsonBlob));
         const timeMachine = TimeMachine.Object.create({ content });
         theme = timeMachine;

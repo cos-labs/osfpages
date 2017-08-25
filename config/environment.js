@@ -5,6 +5,7 @@ module.exports = function(environment) {
         modulePrefix: 'osfpages-admin',
         environment: environment,
         rootURL: '/',
+        apiBaseUrl: 'https://limitless-atoll-95289.herokuapp.com',
         locationType: 'auto',
         osfAPIUrl: 'https://staging-api.osf.io',
         EmberENV: {
@@ -56,6 +57,10 @@ module.exports = function(environment) {
     if (process.env.BACKEND === 'stage') {
         ENV.osfHostUrl = 'https://api.osf.io';
     }
+
+    ENV['simple-auth'] = {
+        crossOriginWhitelist: ['https://limitless-atoll-95289.herokuapp.com/homes', 'localhost:4200'],
+    };
 
 
     return ENV;
