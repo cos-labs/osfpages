@@ -22,12 +22,6 @@ export default Ember.Route.extend({
             return false;
         });
 
-        //let  = firebaseDB
-
-        
-       console.log("hertee" , JSON.parse(jsonBlob)); // => GET /posts
-
-
         if(!jsonBlob){
             if( node.get('currentUserPermissions')[1] === 'write'){
                 $.ajax({
