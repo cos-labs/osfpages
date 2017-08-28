@@ -6,6 +6,20 @@ import ENV from '../config/environment';
 
 
 let theme = {};
+let jsonBlob;
+function showError(){
+    let defaultJSON ='';
+    $.ajax({
+        type: "GET",
+        url: ENV.rootURL + "themes/theme_error.json",
+        async: false,
+        success: function (data) {
+            defaultJSON = data;
+        }
+    });
+    jsonBlob =  JSON.stringify(defaultJSON);
+}
+
 export default Ember.Route.extend({
     setupController: function(controller, model) {
         controller.set('model' , model);
@@ -15,7 +29,7 @@ export default Ember.Route.extend({
         // If testing and parameter is not working use this 'jyu4t' for params.guid
         let node = await this.store.findRecord('node', params.guid)
         
-        let jsonBlob = await this.store.findRecord('home', params.guid).then((record)=>{  
+        jsonBlob = await this.store.findRecord('home', params.guid).then((record)=>{  
             return  record.get('pageData')
         },function(e) {
             console.log(e)
@@ -42,16 +56,7 @@ export default Ember.Route.extend({
                         jsonBlob =  JSON.stringify(data);
                     }});
             }else{
-                let defaultJSON ='';
-                $.ajax({
-                    type: "GET",
-                    url: ENV.rootURL + "themes/theme_error.json",
-                    async: false,
-                    success: function (data) {
-                        defaultJSON = data;
-                    }
-                });
-                jsonBlob =  JSON.stringify(defaultJSON);
+                showError()
             }
         }
 
