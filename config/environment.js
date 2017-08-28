@@ -5,6 +5,7 @@ module.exports = function(environment) {
         modulePrefix: 'osfpages-admin',
         environment: environment,
         rootURL: '/',
+        apiBaseUrl: 'https://limitless-atoll-95289.herokuapp.com',
         locationType: 'auto',
         osfAPIUrl: 'https://staging-api.osf.io',
         EmberENV: {
@@ -17,13 +18,6 @@ module.exports = function(environment) {
         APP: {
             // Here you can pass flags/options to your application instance
             // when it is created
-        },
-
-        firebase: {
-            apiKey: 'AIzaSyDl_AFSZ10H7Wcegd0UjmGHUt26fdaWvQQ', //safe to show to public in order for them to interact with Firebase
-            authDomain: 'osfpages.firebaseapp.com',
-            databaseURL: 'https://osfpages.firebaseio.com',
-            storageBucket: 'osfpages.appspot.com',
         }
 
     };
@@ -56,6 +50,10 @@ module.exports = function(environment) {
     if (process.env.BACKEND === 'stage') {
         ENV.osfHostUrl = 'https://api.osf.io';
     }
+
+    ENV['simple-auth'] = {
+        crossOriginWhitelist: ['https://limitless-atoll-95289.herokuapp.com/homes', 'localhost:4200'],
+    };
 
 
     return ENV;
