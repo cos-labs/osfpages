@@ -59,6 +59,7 @@
   },
   "private": true,
   "dependencies": {
-    "broccoli-babel-transpiler": "^6.1.2"
+    "broccoli-babel-transpiler": "^6.1.2",
+    "ember-cli-dropzonejs": "^1.0.1"
   }
 }
