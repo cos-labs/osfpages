@@ -27,7 +27,7 @@
             </div>
             {{#bs-popover placement="bottom"}}
             {{input class="form-control" value=(get layer.settings.values item.value)  type="text"}}
-
+                <h5>Select Image <span {{action 'showUpload'}}>(click here to upload)</span></h5>
             {{file-browser rootItem=node openFile=(action 'fileDetail')}}
             {{/bs-popover}}
         </div>
@@ -144,13 +144,34 @@
 
 
 {{#if showRemoveModal}}
-{{#bs-modal onSubmit=(action "removeLayer") onHidden=(action 'hideRemove') as |modal|}}
-{{#modal.header}}
-<h4 class="modal-title">Are you sure you want to delete this section?</h4>
-{{/modal.header}}
-{{#modal.footer as |footer|}}
-{{#bs-button onClick=(action modal.close) type="default"}}Cancel {{/bs-button}}
-{{#bs-button onClick=(action modal.submit) type="danger"}}Delete{{/bs-button}}
-{{/modal.footer}}
-{{/bs-modal}}
+    {{#bs-modal onSubmit=(action "removeLayer") onHidden=(action 'hideRemove') as |modal|}}
+        {{#modal.header}}
+            <h4 class="modal-title">Are you sure you want to delete this section?</h4>
+        {{/modal.header}}
+        {{#modal.footer as |footer|}}
+            {{#bs-button onClick=(action modal.close) type="default"}}Cancel {{/bs-button}}
+            {{#bs-button onClick=(action modal.submit) type="danger"}}Delete{{/bs-button}}
+        {{/modal.footer}}
+    {{/bs-modal}}
+{{/if}}
+
+{{#if showUploadModal}}
+    {{#bs-modal onSubmit=(action "removeLayer") onHidden=(action 'hideRemove') as |modal|}}
+        {{#modal.header}}
+            <h4 class="modal-title">Drop your file to upload</h4>
+        {{/modal.header}}
+        {{#modal.body}}
+            <p>Files will be uploaded to your project.</p>
+            {{dropzone-widget
+                url=url
+                options=dropzoneOptions
+                buildUrl=(action 'buildUrl')
+                error=(action 'error')
+                sending=(action 'sending')
+            }}
+        {{/modal.body}}
+        {{#modal.footer as |footer|}}
+            {{#bs-button onClick=(action modal.close) type="default"}}Close{{/bs-button}}
+        {{/modal.footer}}
+    {{/bs-modal}}
 {{/if}}

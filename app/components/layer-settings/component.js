@@ -20,9 +20,22 @@ export default Ember.Component.extend({
     helpText,
     file_object: null,
     showRemoveModal: false,
+    showUploadModal: false,
     lastIndex: Ember.computed('layers.content.[]',function (){
         return  this.get('layers.content').length-1;
     }),
+    url: Ember.computed('node', function(){
+        return this.get('node.files').then(files => {
+            return files.findBy('name', 'osfstorage').get('links.upload')  + '?';
+        });
+
+    }),
+    dropzoneOptions: {
+        maxFiles: 1,
+        method: 'PUT',
+        uploadMultiple: false,
+        acceptedFiles: 'image/*',
+    },
     backgroundPalette: ['#9e9e9e', '#eeeeee', '#009688', '#00BCD4', '#ffffff', '#31708f', '#f07057'],
     colorPalette: ['#f8f8f8', '#333333', '#ebebeb', '#ffffff', '#f5f5f5'],
     scrollToLayer(index){
@@ -31,6 +44,21 @@ export default Ember.Component.extend({
         $('body').animate({scrollTop:offset.top}, '500');
     },
     actions: {
+        buildUrl(files) {
+            return this.get('url')._result + Ember.$.param({
+                    kind: 'file',
+                    name: files[0].name,
+                });
+        },
+        error(one, two, three, four){
+            console.log(one, two, three, four);
+        },
+        sending(_, dropzone, file, xhr/* formData */) {
+            let _send = xhr.send;
+            xhr.send = function() {
+                _send.call(xhr, file);
+            };
+        },
         changeSize(direction, item){
             if(direction === 'bigger') {
                 this.incrementProperty('layer.settings.values.' + item.get('value'), item.get('incrementSize'));
@@ -76,6 +104,9 @@ export default Ember.Component.extend({
             this.set('layer.settings.values.backgroundImage' , item.get('links').download);
         },
         onFileInputChange(){
+        },
+        showUpload(){
+            this.set('showUploadModal', true);
         }
     }
 });
