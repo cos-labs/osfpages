@@ -22,28 +22,28 @@ export default Ember.Controller.extend({
             let firebaseDB = this.store.findRecord('home', this.get('model.guid'))
 
             if(this.get('editMode')){
-                firebaseDB.then((record)=>{ 
+                firebaseDB.then((record)=>{
                     let pageData = record.get('unpublishedPageData');
                     if(pageData === null){
                         pageData =  record.get('pageData');
                     }
-                    this.set('model.theme.content' , JSON.parse(pageData))  
+                    this.set('model.theme.content' , JSON.parse(pageData))
                     this.set('savedPageData' , JSON.parse(pageData).layers) //save a version of pagedata so we can see if any changes have been made
                 });
 
             }else{
-                firebaseDB.then((record)=>{ 
+                firebaseDB.then((record)=>{
                     let pageData = record.get('pageData');
-                    this.set('model.theme.content' , JSON.parse(record.get('pageData')))  
+                    this.set('model.theme.content' , JSON.parse(record.get('pageData')))
                 });
             }
 
-        }); 
+        });
     }),
     editMode: false,
     actions: {
         canUserEdit(){
-            if(!this.get('model.node.currentUserPermissions').includes('admin')){    
+            if(!this.get('model.node.currentUserPermissions').includes('admin')){
                 this.set('editMode' , false)
             }
         },
@@ -84,10 +84,10 @@ export default Ember.Controller.extend({
                 this.get('model.theme').redo();
             }
         },
-        publish(){//publish will take unpublished data and put it in to page data on firebase 
+        publish(){//publish will take unpublished data and put it in to page data on firebase
             this.set('published' , true)
             this.send('save' , this.get('model.guid') )
-            this.store.findRecord('home', this.get('model.guid')).then((data)=> {               
+            this.store.findRecord('home', this.get('model.guid')).then((data)=> {
                 data.set('pageData',  data.get('unpublishedPageData'));
                 data.save();
             });
