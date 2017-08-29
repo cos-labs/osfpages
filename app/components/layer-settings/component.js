@@ -31,11 +31,11 @@ export default Ember.Component.extend({
 
     }),
     uploadedImageUrl: null, // Temporary holding of uploaded image urls
+    uploadErrorText: '',
     dropzoneOptions: {
         maxFiles: 1,
         method: 'PUT',
         uploadMultiple: false,
-        acceptedFiles: 'image/*',
     },
     backgroundPalette: ['#9e9e9e', '#eeeeee', '#009688', '#00BCD4', '#ffffff', '#31708f', '#f07057'],
     colorPalette: ['#f8f8f8', '#333333', '#ebebeb', '#ffffff', '#f5f5f5'],
@@ -64,6 +64,8 @@ export default Ember.Component.extend({
             if (file.xhr === undefined) return;
             if (Math.floor(file.xhr.status / 100) === 2) {
                 this.set('uploadedImageUrl' , JSON.parse(file.xhr.response).data.links.download);
+            } else {
+                this.set('uploadErrorText', JSON.parse(file.xhr.response).message);
             }
         },
         changeSize(direction, item){

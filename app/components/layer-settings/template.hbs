@@ -171,6 +171,9 @@
                 complete=(action 'complete')
 
             }}
+            {{#if uploadErrorText}}
+                <div class="text-danger">{{uploadErrorText}}</div>
+            {{/if}}
         {{/modal.body}}
         {{#modal.footer as |footer|}}
             {{#bs-button onClick=(action modal.close) type="default"}}Close{{/bs-button}}
