@@ -7,18 +7,21 @@
                         {{layer-template-select theme=model.theme}}
                     {{/if}}
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                 {{#if editMode}}
                     <button class="btn-outline-cus" disabled="{{unless model.theme.canUndo 'disabled'}}" {{action 'undo'}}><i class="material-icons">undo</i></button>
                     <button class="btn-outline-cus" disabled="{{unless model.theme.canRedo 'disabled'}}" {{action 'redo'}}><i class="material-icons">redo</i></button>
                 {{/if}}
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-3">
                 {{#if saved}}
-                    Saving...
+                   <div class="text-center"> Saving...</div>
                 {{/if}}
                 {{#if published}}
-                    Publishing...
+                    <div class="text-center">Publishing...</div>
+                {{/if}}
+                {{#if unpublishedChanges}}
+                    <div class="text-center"> Unpublished changes <a href='' {{action 'toggleEditMode'}}> view now</a></div>
                 {{/if}}
                 </div>
                 <div class="col-sm-3">
@@ -66,7 +69,7 @@
 {{#if showNotSavedModal}}
     {{#bs-modal onSubmit=(action "toggleEditMode" true) onHidden=(action 'toggleModal' false) as |modal|}}
         {{#modal.header}}
-            <h4 class="modal-title">You have unsaved changes, do you want to save them?</h4>
+            <h4 class="modal-title">You have unsaved/unpublished changes, do you want to save them?</h4>
         {{/modal.header}}
         {{#modal.footer as |footer|}}
             {{#bs-button onClick=(action 'toggleEditMode') type="normal"}}Discard changes{{/bs-button}}
