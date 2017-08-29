@@ -122,6 +122,7 @@ export default Ember.Component.extend({
         showUpload(){
             this.set('showUploadModal', true);
             $('.popover').hide();
+            this.set('uploadErrorText', '');
         },
         hideUpload(){
             this.set('showUploadModal', false);
