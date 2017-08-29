@@ -7,6 +7,7 @@ export default Ember.Component.extend({
     currentWiki: null,
     showSelect: false,
     isTruncated: false,
+    wikiContent: null,
     reloadWiki: Ember.computed('layer.settings.wikiId', function(){
         this.get('node.wikis').then(()=>{
             if(!this.get('layers.settings.wikiID')){
@@ -16,7 +17,8 @@ export default Ember.Component.extend({
         })
     }),
     loadFirstWiki(){
-        this.set('currentWiki', this.get('node.wikis').objectAt(0));
+        let firstWiki = this.get('node.wikis').objectAt(0) || 'none';  // Add string when no wiki returned
+        this.set('currentWiki', firstWiki );
         this.loadCurrentWiki();
     },
     loadWikiWithId(){
@@ -32,6 +34,9 @@ export default Ember.Component.extend({
     },
     loadCurrentWiki() {
         let currentWiki = this.get('currentWiki');
+        if(currentWiki === 'none') {
+           this.set('wikiContent', 'This project does not have any Wikis yet');
+        }
         let url = currentWiki.get('links.download');
         let headers = {};
         let authType = config['ember-simple-auth'].authorizer;
@@ -43,7 +48,7 @@ export default Ember.Component.extend({
             headers,
             url
         }).done(data => {
-            this.set('layer.wikiContent', data);
+            this.set('wikiContent', data);
         });
     },
     wikis: Ember.computed('node', function(){

@@ -43,23 +43,23 @@ export default Ember.Controller.extend({
                     if(pageData === null){
                         pageData =  record.get('pageData');
                     }
-                    this.set('model.theme.content' , JSON.parse(pageData))  
+                    this.set('model.theme.content' , JSON.parse(pageData))
                     this.set('savedPageData' , JSON.parse(pageData).layers) //save a version of pagedata so we can see if any changes have been made
                 });
 
             }else{
                 database.then((record)=>{ 
                     let pageData = record.get('pageData');
-                    this.set('model.theme.content' , JSON.parse(record.get('pageData')))  
+                    this.set('model.theme.content' , JSON.parse(record.get('pageData')))
                 });
             }
 
-        }); 
+        });
     }),
     editMode: false,
     actions: {
         canUserEdit(){
-            if(!this.get('model.node.currentUserPermissions').includes('admin')){    
+            if(!this.get('model.node.currentUserPermissions').includes('admin')){
                 this.set('editMode' , false)
             }
         },
@@ -104,7 +104,7 @@ export default Ember.Controller.extend({
             this.set('unpublishedChanges', false);
             this.set('published' , true)
             this.send('save' , this.get('model.guid') )
-            this.store.findRecord('home', this.get('model.guid')).then((data)=> {               
+            this.store.findRecord('home', this.get('model.guid')).then((data)=> {
                 data.set('pageData',  data.get('unpublishedPageData'));
                 data.save();
             });
