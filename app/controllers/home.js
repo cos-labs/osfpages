@@ -23,8 +23,6 @@ export default Ember.Controller.extend({
 
             }
         });
-
-        //return isPublished
     }),
     savedPageData: "",
     isAdmin: Ember.computed('node', function(){
