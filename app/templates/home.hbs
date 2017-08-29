@@ -21,14 +21,18 @@
                     <div class="text-center">Publishing...</div>
                 {{/if}}
                 {{#if unpublishedChanges}}
-                    <div class="text-center"> Unpublished changes <a href='' {{action 'toggleEditMode'}}> view now</a></div>
+                    <div class="text-center"> Unpublished draft
+                        {{#unless editMode}}
+                            <a href='' style='color: #96c3ea' {{action 'toggleEditMode'}}> edit now</a>
+                        {{/unless}}
+                        </div>
                 {{/if}}
                 </div>
                 <div class="col-sm-3">
                     {{#if editMode}}
                     <div class="pull-right">
                         <button class="btn-outline-cus" {{action 'publish'}}><i class="material-icons">publish</i> Publish</button>
-                        <button class="btn-outline-cus" {{action 'save'}}><i class="material-icons">save</i> Save</button>
+                        <button class="btn-outline-cus" {{action 'save'}}><i class="material-icons">save</i> Save draft</button>
                     </div>
                     {{/if}}
                 </div>
