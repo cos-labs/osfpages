@@ -33,6 +33,14 @@ body {
 .inline-block {
     display: inline-block;
 }
+.pseudo-link {
+    color: #38698f;
+    cursor: pointer;
+    &:hover {
+        color: #38698f;
+    }
+}
+
 
 
 

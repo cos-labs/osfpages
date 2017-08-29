@@ -27,7 +27,7 @@
             </div>
             {{#bs-popover placement="bottom"}}
             {{input class="form-control" value=(get layer.settings.values item.value)  type="text"}}
-                <h5>Select Image <span {{action 'showUpload'}}>(click here to upload)</span></h5>
+                <h5>Select Image <span {{action 'showUpload'}} class="pseudo-link">(click here to upload)</span></h5>
             {{file-browser rootItem=node openFile=(action 'fileDetail')}}
             {{/bs-popover}}
         </div>
@@ -156,7 +156,7 @@
 {{/if}}
 
 {{#if showUploadModal}}
-    {{#bs-modal onSubmit=(action "removeLayer") onHidden=(action 'hideRemove') as |modal|}}
+    {{#bs-modal onSubmit=(action "applyUploadedImage") onHidden=(action 'hideUpload') as |modal|}}
         {{#modal.header}}
             <h4 class="modal-title">Drop your file to upload</h4>
         {{/modal.header}}
@@ -168,10 +168,17 @@
                 buildUrl=(action 'buildUrl')
                 error=(action 'error')
                 sending=(action 'sending')
+                complete=(action 'complete')
+
             }}
         {{/modal.body}}
         {{#modal.footer as |footer|}}
             {{#bs-button onClick=(action modal.close) type="default"}}Close{{/bs-button}}
+            {{#if uploadedImageUrl}}
+                {{#bs-button onClick=(action modal.submit) type="success"}}Select as background{{/bs-button}}
+            {{else}}
+                <button class="btn btn-success disabled" disabled>Select as background</button>
+            {{/if}}
         {{/modal.footer}}
     {{/bs-modal}}
 {{/if}}

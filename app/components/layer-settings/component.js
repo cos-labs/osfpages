@@ -30,6 +30,7 @@ export default Ember.Component.extend({
         });
 
     }),
+    uploadedImageUrl: null, // Temporary holding of uploaded image urls
     dropzoneOptions: {
         maxFiles: 1,
         method: 'PUT',
@@ -58,6 +59,12 @@ export default Ember.Component.extend({
             xhr.send = function() {
                 _send.call(xhr, file);
             };
+        },
+        complete(_, dropzone, file){
+            if (file.xhr === undefined) return;
+            if (Math.floor(file.xhr.status / 100) === 2) {
+                this.set('uploadedImageUrl' , JSON.parse(file.xhr.response).data.links.download);
+            }
         },
         changeSize(direction, item){
             if(direction === 'bigger') {
@@ -103,10 +110,19 @@ export default Ember.Component.extend({
         fileDetail(item){
             this.set('layer.settings.values.backgroundImage' , item.get('links').download);
         },
+        applyUploadedImage(){
+            this.set('layer.settings.values.backgroundImage' , this.get('uploadedImageUrl'));
+            this.set('showUploadModal', false);
+            this.set('uploadedImageUrl', null);
+        },
         onFileInputChange(){
         },
         showUpload(){
             this.set('showUploadModal', true);
-        }
+            $('.popover').hide();
+        },
+        hideUpload(){
+            this.set('showUploadModal', false);
+        },
     }
 });
