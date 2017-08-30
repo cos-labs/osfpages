@@ -8,12 +8,11 @@ export default Ember.Controller.extend(OsfTokenLoginControllerMixin, {
 	session: Ember.inject.service(),
 	didStyle: 'background: #FFC107 url('+ ENV.rootURL+'img/bg.png) no-repeat center; background-size: cover',
 	actions: {
-		createPage(guid){
-			console.log('this is cool', this.get('starterGuid'))
-			
+		createPage(){
+			let guid = this.get('starterGuid');
 			//check to see if the page exists 
-			this.store.findRecord('node', this.get('starterGuid')).then((record)=>{  
-				this.transitionTo('home', this.get('starterGuid'));
+			this.store.findRecord('node', guid).then((record)=>{  
+				this.transitionToRoute('home', guid);
 			},(e)=> {
 				console.log(e)
 				this.set('showErrorMessage', true)
