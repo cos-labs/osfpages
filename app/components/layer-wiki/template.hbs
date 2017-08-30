@@ -2,7 +2,7 @@
     {{edit-text showSettings=showSettings editMode=editMode layer=layer type="title"  alignment=layer.settings.values.alignment}}
 
     <div class="wiki-markdown {{if (and isTruncated layer.settings.values.addShowMore) 'truncated'}} ">
-        {{markdown-to-html layer.wikiContent}}
+        {{markdown-to-html wikiContent}}
     </div>
     {{#if layer.settings.values.addShowMore}}
         <div class="show-more {{if isTruncated 'truncated'}}" {{action 'toggleShow'}}>
@@ -29,7 +29,7 @@
         {{else}}
             <div class="select-box p-v-md m-v-lg" {{action 'showSelect'}}>
                 <p>
-                    {{#if layer.wikiContent}}
+                    {{#if wikiContent}}
                         Change selection
                     {{else}}
                         Select a wiki page

@@ -7,9 +7,7 @@ export default Ember.Component.extend({
         let color =  'color: ' + (this.get('layer.settings.values.color') || '#333') + '; ' ;
         let bgImage = '';
         let bgCover = '';
-        if(this.get('layer.component') === 'layer-image'){
-            bgImage = 'background-image: url(' + this.get('layer.settings.values.url') + '); '
-        } else if (this.get('layer.settings.values.backgroundImage')){
+        if (this.get('layer.settings.values.backgroundImage')){
             bgCover = this.get('layer.settings.values.backgroundCover') ? ' background-size: cover;' : '';
             bgImage = 'background-image: url(' + this.get('layer.settings.values.backgroundImage') + '); ';
         }

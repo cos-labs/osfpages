@@ -33,7 +33,27 @@ body {
 .inline-block {
     display: inline-block;
 }
+.pseudo-link {
+    color: #38698f;
+    cursor: pointer;
+    &:hover {
+        color: #38698f;
+    }
+}
 
+.alpha-alert {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    z-index: 1031;
+    background: #FF5722;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    padding: 13px 0;
+    color: #fff;
+    box-shadow: 0 0 32px #4f4f4f;
+}
 
 
 /* Pages-nav */
@@ -283,3 +303,4 @@ button .material-icons {
     white-space: nowrap;
     overflow: hidden;
 }
+

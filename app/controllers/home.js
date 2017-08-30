@@ -10,40 +10,54 @@ export default Ember.Controller.extend({
     showNotSavedModal: false,
     published: false,
     saved: false,
+    unpublishedChanges:  Ember.computed('editMode', function() {
+        return this.store.findRecord('home', this.get('model.guid')).then((record)=>{ 
+            
+            let unpublishedPageData = record.get('unpublishedPageData');
+            let pageData =  record.get('pageData');
+
+            if(_.isEqual(unpublishedPageData, pageData)){
+                this.set('unpublishedChanges', false)
+            }else{
+                this.set('unpublishedChanges', true)
+
+            }
+        });
+    }),
     savedPageData: "",
     isAdmin: Ember.computed('node', function(){
         this.send('canUserEdit')
         return this.get('model.node.currentUserPermissions').includes('admin');
     }),
-    firebaseData: Ember.observer('editMode', function(){
+    databaseData: Ember.observer('editMode', function(){
         $(document).ready(()=>{
             this.send('canUserEdit')
 
-            let firebaseDB = this.store.findRecord('home', this.get('model.guid'))
+            let database = this.store.findRecord('home', this.get('model.guid'))
 
             if(this.get('editMode')){
-                firebaseDB.then((record)=>{ 
+                database.then((record)=>{ 
                     let pageData = record.get('unpublishedPageData');
                     if(pageData === null){
                         pageData =  record.get('pageData');
                     }
-                    this.set('model.theme.content' , JSON.parse(pageData))  
+                    this.set('model.theme.content' , JSON.parse(pageData))
                     this.set('savedPageData' , JSON.parse(pageData).layers) //save a version of pagedata so we can see if any changes have been made
                 });
 
             }else{
-                firebaseDB.then((record)=>{ 
+                database.then((record)=>{ 
                     let pageData = record.get('pageData');
-                    this.set('model.theme.content' , JSON.parse(record.get('pageData')))  
+                    this.set('model.theme.content' , JSON.parse(record.get('pageData')))
                 });
             }
 
-        }); 
+        });
     }),
     editMode: false,
     actions: {
         canUserEdit(){
-            if(!this.get('model.node.currentUserPermissions').includes('admin')){    
+            if(!this.get('model.node.currentUserPermissions').includes('admin')){
                 this.set('editMode' , false)
             }
         },
@@ -84,18 +98,22 @@ export default Ember.Controller.extend({
                 this.get('model.theme').redo();
             }
         },
-        publish(){//publish will take unpublished data and put it in to page data on firebase 
+        publish(){//publish will take unpublished data and put it in to page data on backend 
+            this.set('unpublishedChanges', false);
             this.set('published' , true)
             this.send('save' , this.get('model.guid') )
-            this.store.findRecord('home', this.get('model.guid')).then((data)=> {               
+            this.store.findRecord('home', this.get('model.guid')).then((data)=> {
                 data.set('pageData',  data.get('unpublishedPageData'));
                 data.save();
             });
             setTimeout(()=>{
                 this.set('published' , false)
+                this.set('unpublishedChanges', false);
+
             }, 2000);
         },
         save(guid){
+            this.set('unpublishedChanges', false);
             if(!this.get('published')){
                 this.set('saved' , true)
             }
@@ -110,6 +128,7 @@ export default Ember.Controller.extend({
 
             setTimeout(()=>{
                 this.set('saved' , false)
+                this.set('unpublishedChanges', true);
             }, 2000);
         },
         toggleModal(state){

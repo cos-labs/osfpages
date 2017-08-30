@@ -222,15 +222,15 @@ export default Ember.Component.extend({
                         "component": "layer-settings",
                         "values": {
                             "height": 500,
-                            "url": "http://localhost:4200/img/sample.jpg",
+                            "backgroundImage": "http://localhost:4200/img/sample.jpg",
                             "bgColor": "#FFFFFF",
                             "color": "#333333"
                         },
                         "form": [
                         {
                             "type": "image",
-                            "label": "Image link",
-                            "value": "url",
+                            "label": "Background image",
+                            "value": "backgroundImage",
                             "validation": null
                         },
                         {
@@ -277,9 +277,9 @@ export default Ember.Component.extend({
                             "validation": null
                         },
                         {
-                         "type": "settings",
-                         "items": [
-                         {
+                           "type": "settings",
+                           "items": [
+                           {
                             "type": "checkbox",
                             "label": "Stick to top of page on scroll",
                             "value": "stickToTop",
