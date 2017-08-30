@@ -110,7 +110,7 @@
           "settings": {
             "values": {
               "height": 500,
-              "url": "http://localhost:4200/img/building.jpg",
+              "backgroundImage": "http://localhost:4200/img/building.jpg",
               "bgColor": "#FFFFFF",
               "color": "#333333"
             },
@@ -118,7 +118,7 @@
               {
                 "type": "image",
                 "label": "Image link",
-                "value": "url",
+                "value": "backgroundImage",
                 "validation": null
               },
               {

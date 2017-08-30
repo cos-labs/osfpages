@@ -110,6 +110,7 @@ export default Ember.Component.extend({
             this.toggleProperty('layer.settings.values.' + check.get('value'));
         },
         fileDetail(item){
+            console.log('DEBUGGER', item.get('links').download)
             this.set('layer.settings.values.backgroundImage' , item.get('links').download);
         },
         applyUploadedImage(){
