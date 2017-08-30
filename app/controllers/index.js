@@ -14,7 +14,6 @@ export default Ember.Controller.extend(OsfTokenLoginControllerMixin, {
 			this.store.findRecord('node', guid).then((record)=>{  
 				this.transitionToRoute('home', guid);
 			},(e)=> {
-				console.log(e)
 				this.set('showErrorMessage', true)
 				
 				setTimeout(()=>{
