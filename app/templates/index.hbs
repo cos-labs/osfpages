@@ -100,7 +100,10 @@
                 <p class="lead">
                     http://osf.io/
                     {{input class="form-control" value=starterGuid  type="text" placeholder="enter id"}}
-                    <button class="btn btn-success">Go</button>
+                    <button class="btn btn-success" {{action 'createPage'}} >Go</button>
+                    {{#if showErrorMessage}}
+                        <p class="text-smaller text-danger">No project found with project id: {{starterGuid}}</p>
+                    {{/if}}
                 </p>
                 <p class="text-smaller">Where can I find my project id?</p>
 
