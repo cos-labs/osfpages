@@ -193,7 +193,7 @@
             "settings": {
                 "values": {
                     "height": 500,
-                    "url": "http://localhost:4200/img/sample2.jpg",
+                    "backgroundImage": "http://localhost:4200/img/sample2.jpg",
                     "bgColor": "#FFFFFF",
                     "color": "#333333"
                 },
@@ -201,7 +201,7 @@
                     {
                         "type": "image",
                         "label": "Image link",
-                        "value": "url",
+                        "value": "backgroundImage",
                         "validation": null
                     },
                     {
@@ -341,8 +341,7 @@
                         "validation": null
                     }
                 ]
-            },
-            "wikiContent": "### Home\r\n\r\nconsectetur adipiscing elit. Ut nec turpis nec est auctor sodales sed eget ipsum. Nunc placerat nisl dui, id scelerisque metus molestie a. Duis mollis nunc ac nibh pulvinar ullamcorper. Nunc hendrerit vel lacus ac molestie. Etiam pharetra mi a mi pulvinar elementum sed at nunc. In vestibulum pharetra elit, id dignissim ex efficitur a. Donec quis fringilla mauris, nec sodales erat. Aenean auctor ante nec erat scelerisque mollis.\r\n\r\nMauris imperdiet ligula a mauris porttitor ultricies. Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. **Sed ac metus in augue dignissim malesuada non et sem.** Pellentesque ut metus odio. Integer fringilla nulla id leo consequat, a sollicitudin sapien fringilla. Fusce vestibulum malesuada nisl. Fusce augue leo, tempus eget mattis vel, imperdiet at nulla. Donec eu varius turpis. Vestibulum justo turpis, vestibulum sollicitudin tempus non, vehicula sed mi. Nullam orci dui, tincidunt eu pulvinar quis, viverra et ipsum. Pellentesque tristique placerat est, ut ultrices ante porttitor vel. Cras congue elementum felis in ullamcorper.\r\n\r\n\r\n#### Another section \r\n\r\nAliquam ante massa, tincidunt accumsan mi non, iaculis bibendum urna. *Cras a posuere sem. Duis euismod, felis non ultrices viverra, enim ex dapibus ligula, eu scelerisque nisl nibh non mauris.* Ut rhoncus condimentum libero in lobortis. Phasellus eget dapibus tellus, sed feugiat turpis. Cras et elit iaculis, commodo orci sit amet, finibus lorem. Sed id tortor a odio tempor aliquam.\r\n\r\n\r\n#### Section 3\r\n\r\nMaecenas eu sapien eros. Sed in dolor diam. Vestibulum odio diam, cursus pretium odio ac, egestas rutrum quam. **Pellentesque dapibus ipsum rutrum urna tempor tincidunt id placerat massa. Fusce maximus ut justo eu viverra. Suspendisse pretium risus a metus ornare vulputate non in erat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas sed nunc mauris.** Aenean arcu ligula, dictum vel aliquam in, venenatis vitae magna. Vestibulum hendrerit ac nisi et ultricies. Mauris sem sapien, rutrum finibus nunc rhoncus, fermentum dignissim massa. Aliquam ut aliquam nunc, non commodo dui. Praesent cursus dui ac mattis pulvinar. \r\n\r\n> Lorem ipsum dolor sit amet\r\n\r\nInteger nisl nibh, suscipit ut tristique sed, facilisis sed risus. Morbi nibh tortor, venenatis in urna vitae, eleifend malesuada libero. Mauris at neque justo.\r\n\r\nAenean suscipit diam vel cursus condimentum. Praesent rhoncus congue sem, vitae fermentum tortor tincidunt id. Nullam maximus ipsum in mi tincidunt accumsan. Etiam vulputate nibh sit amet nisl accumsan, non dapibus ligula lacinia. Duis accumsan dolor metus, id maximus dui lobortis dapibus. Proin viverra enim mi, id cursus neque porttitor ac. Praesent eget porta leo, ut aliquet nulla.\r\n"
+            }
         }
     ]
 }
