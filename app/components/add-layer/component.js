@@ -44,9 +44,9 @@ export default Ember.Component.extend({
                             "label": "Alignment",
                             "value": "alignment",
                             "options": [
-                            "left",
-                            "center",
-                            "right"
+                                "left",
+                                "center",
+                                "right"
                             ],
                             "validation": null
                         }
@@ -102,9 +102,9 @@ export default Ember.Component.extend({
                             "label": "Alignment",
                             "value": "alignment",
                             "options": [
-                            "left",
-                            "center",
-                            "right"
+                                "left",
+                                "center",
+                                "right"
                             ],
                             "validation": null
                         }
@@ -150,9 +150,9 @@ export default Ember.Component.extend({
                             "label": "Alignment",
                             "value": "alignment",
                             "options": [
-                            "left",
-                            "center",
-                            "right"
+                                "left",
+                                "center",
+                                "right"
                             ],
                             "validation": null
                         }
@@ -204,9 +204,9 @@ export default Ember.Component.extend({
                             "label": "Alignment",
                             "value": "alignment",
                             "options": [
-                            "left",
-                            "center",
-                            "right"
+                                "left",
+                                "center",
+                                "right"
                             ],
                             "validation": null
                         }
@@ -270,9 +270,9 @@ export default Ember.Component.extend({
                             "label": "Alignment",
                             "value": "alignment",
                             "options": [
-                            "left",
-                            "center",
-                            "right"
+                                "left",
+                                "center",
+                                "right"
                             ],
                             "validation": null
                         },
@@ -329,9 +329,9 @@ export default Ember.Component.extend({
                         "label": "Alignment",
                         "value": "alignment",
                         "options": [
-                        "left",
-                        "center",
-                        "right"
+                            "left",
+                            "center",
+                            "right"
                         ],
                         "validation": null
                     },
@@ -425,9 +425,9 @@ export default Ember.Component.extend({
                         "label": "Alignment",
                         "value": "alignment",
                         "options": [
-                        "left",
-                        "center",
-                        "right"
+                            "left",
+                            "center",
+                            "right"
                         ],
                         "validation": null
                     }
@@ -462,9 +462,9 @@ export default Ember.Component.extend({
                         "label": "Alignment",
                         "value": "alignment",
                         "options": [
-                        "left",
-                        "center",
-                        "right"
+                            "left",
+                            "center",
+                            "right"
                         ],
                         "validation": null
                     },
