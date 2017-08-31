@@ -65,13 +65,6 @@ export default Ember.Controller.extend({
     }),
     editMode: false,
     actions: {
-        makeProjectPublic: function(node){
-            node.set('public' , true)
-            node.save();
-            this.set('isOpen', !node.get('public') )
-
-
-        },
         canUserEdit(){
             if(!this.get('model.node.currentUserPermissions').includes('admin')){
                 this.set('editMode' , false)

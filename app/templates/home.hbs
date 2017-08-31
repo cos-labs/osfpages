@@ -53,7 +53,7 @@
     {{#if isOpen}}
          <div class="alert alert-warning alert-message">
             <strong>Warning!</strong> This OSF project is <strong>not public </strong> and can not be viewed.<br /> Please consider making this project public!<br />
-            <button type="button" class="btn btn-secondary pull-right btn-outline-cus-black" {{action 'makeProjectPublic' model.node}} ><i class="material-icons">public</i> Make public</button>
+              <a href="http://www.osf.io/{{model.guid}}"  type="button" class="btn btn-secondary pull-right btn-outline-cus-black" > Make public</a>
         </div>
     {{/if}}
 
