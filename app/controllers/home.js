@@ -12,7 +12,6 @@ export default Ember.Controller.extend({
     saved: false,
     isOpen: Ember.computed('node', async function(){ 
         let node = await this.get('model.node')
-        console.log(this.get('model.node'))
         this.set('isOpen', !node.get('public') )
 
         $( document ).ready(function() {
