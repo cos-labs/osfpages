@@ -74,8 +74,6 @@ export default Ember.Route.extend({
             guid: params.guid,
             node: node
         };
-
-
     },
     actions: {
         save(guid){

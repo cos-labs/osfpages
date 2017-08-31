@@ -15,7 +15,6 @@ export default Ember.Controller.extend({
         console.log(this.get('model.node'))
         this.set('isOpen', !node.get('public') )
 
-
         $( document ).ready(function() {
             $('.alert-message').css('display' , 'block')
         });
@@ -153,8 +152,6 @@ export default Ember.Controller.extend({
     },
     init(){
         this._super(...arguments);
-
-
         $('body').on('click', function(e){
             if($(e.target).parents('.popover').length === 0){
                 $('.popover').hide();
