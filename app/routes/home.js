@@ -38,8 +38,7 @@ export default Ember.Route.extend({
         try{
             node = await this.store.findRecord('node', params.guid);
         }catch(e){
-            //console.log('yeah BOIIIIIIIIIIiiiiiiiiiiiiIIIiIIiIIi' , node  )
-                            showError()
+            showError()
 
         }
         if(!jsonBlob){
