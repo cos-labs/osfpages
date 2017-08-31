@@ -36,7 +36,12 @@ export default Ember.Controller.extend({
     savedPageData: "",
     isAdmin: Ember.computed('node', function(){
         this.send('canUserEdit')
-        return this.get('model.node.currentUserPermissions').includes('admin');
+        if(this.get('model.node') !== null){    
+            return this.get('model.node.currentUserPermissions').includes('admin');
+        }else{
+            return false;
+        }
+
     }),
     databaseData: Ember.observer('editMode', function(){
         $(document).ready(()=>{
@@ -66,8 +71,10 @@ export default Ember.Controller.extend({
     editMode: false,
     actions: {
         canUserEdit(){
-            if(!this.get('model.node.currentUserPermissions').includes('admin')){
-                this.set('editMode' , false)
+            if(this.get('model.node') !== null){
+                if(!this.get('model.node.currentUserPermissions').includes('admin')){
+                    this.set('editMode' , false)
+                }
             }
         },
         scrollToTop(){
