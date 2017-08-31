@@ -15,7 +15,7 @@ export default Ember.Controller.extend({
         this.set('isOpen', !node.get('public') )
 
         $( document ).ready(function() {
-            $('.alert-message').css('display' , 'block')
+            $('.alert-message').show();
         });
     }),
     unpublishedChanges:  Ember.computed('editMode', function() {
