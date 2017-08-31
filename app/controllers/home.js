@@ -10,9 +10,19 @@ export default Ember.Controller.extend({
     showNotSavedModal: false,
     published: false,
     saved: false,
+    isOpen: Ember.computed('node', async function(){ 
+        let node = await this.get('model.node')
+        console.log(this.get('model.node'))
+        this.set('isOpen', !node.get('public') )
+
+
+        $( document ).ready(function() {
+            $('.alert-message').css('display' , 'block')
+        });
+    }),
     unpublishedChanges:  Ember.computed('editMode', function() {
         return this.store.findRecord('home', this.get('model.guid')).then((record)=>{ 
-            
+
             let unpublishedPageData = record.get('unpublishedPageData');
             let pageData =  record.get('pageData');
 
@@ -20,7 +30,6 @@ export default Ember.Controller.extend({
                 this.set('unpublishedChanges', false)
             }else{
                 this.set('unpublishedChanges', true)
-
             }
         });
     }),
@@ -56,6 +65,7 @@ export default Ember.Controller.extend({
     }),
     editMode: false,
     actions: {
+
         canUserEdit(){
             if(!this.get('model.node.currentUserPermissions').includes('admin')){
                 this.set('editMode' , false)
@@ -137,6 +147,8 @@ export default Ember.Controller.extend({
     },
     init(){
         this._super(...arguments);
+
+
         $('body').on('click', function(e){
             if($(e.target).parents('.popover').length === 0){
                 $('.popover').hide();

@@ -23,6 +23,7 @@ function showError(){
 export default Ember.Route.extend({
     setupController: function(controller, model) {
         controller.set('model' , model);
+
     },
     model: async function(params){
 
@@ -63,6 +64,7 @@ export default Ember.Route.extend({
         const content = Ember.Object.create(JSON.parse(jsonBlob));
         const timeMachine = TimeMachine.Object.create({ content });
         theme = timeMachine;
+
 
         return {
             theme,
