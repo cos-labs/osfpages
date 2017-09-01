@@ -1,4 +1,4 @@
-# {
+{
    "id": 4,
    "name": "Institution",
    "layers":[
@@ -105,31 +105,43 @@
           }
         },
         {
-          "sectionHeader": "Image",
-          "component": "layer-image",
-          "settings": {
-            "values": {
-              "height": 500,
-              "backgroundImage": "http://localhost:4200/img/building.jpg",
-              "bgColor": "#FFFFFF",
-              "color": "#333333"
-            },
-            "form": [
-              {
-                "type": "image",
-                "label": "Image link",
-                "value": "backgroundImage",
-                "validation": null
-              },
-              {
-                "type": "increment",
-                "label": "Section height",
-                "value": "height",
-                "incrementSize": 20,
-                "validation": null
-              }
-            ]
-          }
+            "sectionHeader": "Image",
+            "component": "layer-image",
+            "settings": {
+                "values": {
+                    "height": 500,
+                    "backgroundImage": "http://localhost:4200/img/building.jpg",
+                    "backgroundCover": true,
+                    "bgColor": "#FFFFFF",
+                    "color": "#333333"
+                },
+                "form": [
+                    {
+                        "type": "settings",
+                        "items": [
+                        {
+                            "type": "checkbox",
+                            "label": "Fit image to section size",
+                            "value": "backgroundCover",
+                            "validation": null
+                        }
+                        ]
+                    },
+                    {
+                        "type": "image",
+                        "label": "Background image",
+                        "value": "backgroundImage",
+                        "validation": null
+                    },
+                    {
+                        "type": "increment",
+                        "label": "Section height",
+                        "value": "height",
+                        "incrementSize": 20,
+                        "validation": null
+                    }
+                ]
+            }
         },
         {
           "sectionHeader": "Info",
