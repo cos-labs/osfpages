@@ -34,7 +34,7 @@ export default Ember.Controller.extend({
     savedPageData: "",
     isAdmin: Ember.computed('node', function(){
         this.send('canUserEdit')
-        if(this.get('model.node') !== null){    
+        if(this.get('model.node')){    
             return this.get('model.node.currentUserPermissions').includes('admin');
         }else{
             return false;
