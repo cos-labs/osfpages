@@ -3,8 +3,6 @@
 import Ember from 'ember';
 import {layerSettings} from './settings';
 
-console.log(layerSettings);
-
 const helpText = {
     'layer-info': 'The information section is used for displaying your project description, contributors and affiliated institutions from you OSF project.',
     'layer-title': 'The title section is used for displaying the title of your OSF project, all data here is pulled directly from your project.',
@@ -22,6 +20,9 @@ const helpText = {
 export default Ember.Component.extend({
     helpText,
     layerSettings,
+    thisLayerSettings: Ember.computed('layer.component', function(){
+        return this.get('')
+    }),
     file_object: null,
     showRemoveModal: false,
     showUploadModal: false,
@@ -55,8 +56,7 @@ export default Ember.Component.extend({
                     name: files[0].name,
                 });
         },
-        error(one, two, three, four){
-            console.log(one, two, three, four);
+        error(){
         },
         sending(_, dropzone, file, xhr/* formData */) {
             let _send = xhr.send;
@@ -74,14 +74,14 @@ export default Ember.Component.extend({
         },
         changeSize(direction, item){
             if(direction === 'bigger') {
-                this.incrementProperty('layer.settings.values.' + item.get('value'), item.get('incrementSize'));
+                this.incrementProperty('layer.settings.' + item.value, item.incrementSize);
             }
             if(direction === 'smaller') {
-                this.decrementProperty('layer.settings.values.' + item.get('value'), item.get('incrementSize'));
+                this.decrementProperty('layer.settings.' + item.value, item.incrementSize);
             }
         },
         runOption(option, item){
-            this.set('layer.settings.values.' + item.get('value'), option);
+            this.set('layer.settings.' + item.value, option);
         },
         // Move layer
         moveBefore(index){
@@ -112,14 +112,13 @@ export default Ember.Component.extend({
             this.set('showRemoveModal', false);
         },
         toggleCheck(check){
-            this.toggleProperty('layer.settings.values.' + check.get('value'));
+            this.toggleProperty('layer.settings.' + check.value);
         },
         fileDetail(item){
-            console.log('DEBUGGER', item.get('links').download)
-            this.set('layer.settings.values.backgroundImage' , item.get('links').download);
+            this.set('layer.settings.backgroundImage' , item.get('links').download);
         },
         applyUploadedImage(){
-            this.set('layer.settings.values.backgroundImage' , this.get('uploadedImageUrl'));
+            this.set('layer.settings.backgroundImage' , this.get('uploadedImageUrl'));
             this.set('showUploadModal', false);
             this.set('uploadedImageUrl', null);
         },
