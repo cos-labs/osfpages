@@ -10,9 +10,17 @@ export default Ember.Controller.extend({
     showNotSavedModal: false,
     published: false,
     saved: false,
+    isOpen: Ember.computed('node', async function(){ 
+        let node = await this.get('model.node')
+        this.set('isOpen', !node.get('public') )
+
+        $( document ).ready(function() {
+            $('.alert-message').show();
+        });
+    }),
     unpublishedChanges:  Ember.computed('editMode', function() {
         return this.store.findRecord('home', this.get('model.guid')).then((record)=>{ 
-            
+
             let unpublishedPageData = record.get('unpublishedPageData');
             let pageData =  record.get('pageData');
 
@@ -20,19 +28,22 @@ export default Ember.Controller.extend({
                 this.set('unpublishedChanges', false)
             }else{
                 this.set('unpublishedChanges', true)
-
             }
         });
     }),
     savedPageData: "",
     isAdmin: Ember.computed('node', function(){
         this.send('canUserEdit')
-        return this.get('model.node.currentUserPermissions').includes('admin');
+        if(this.get('model.node')){    
+            return this.get('model.node.currentUserPermissions').includes('admin');
+        }else{
+            return false;
+        }
+
     }),
     databaseData: Ember.observer('editMode', function(){
         $(document).ready(()=>{
             this.send('canUserEdit')
-
             let database = this.store.findRecord('home', this.get('model.guid'))
 
             if(this.get('editMode')){
@@ -51,14 +62,18 @@ export default Ember.Controller.extend({
                     this.set('model.theme.content' , JSON.parse(record.get('pageData')))
                 });
             }
-
         });
     }),
     editMode: false,
     actions: {
         canUserEdit(){
-            if(!this.get('model.node.currentUserPermissions').includes('admin')){
+            if(this.get('model.node') !== null){
+                if(!this.get('model.node.currentUserPermissions').includes('admin')){
+                    this.set('editMode' , false)
+                }
+            }else{
                 this.set('editMode' , false)
+
             }
         },
         scrollToTop(){

@@ -23,12 +23,10 @@ function showError(){
 export default Ember.Route.extend({
     setupController: function(controller, model) {
         controller.set('model' , model);
+
     },
     model: async function(params){
 
-        // If testing and parameter is not working use this 'jyu4t' for params.guid
-        let node = await this.store.findRecord('node', params.guid)
-        
         jsonBlob = await this.store.findRecord('home', params.guid).then((record)=>{  
             return  record.get('pageData')
         },function(e) {
@@ -36,6 +34,13 @@ export default Ember.Route.extend({
             return false;
         });
 
+        let node = null;
+        try{
+            node = await this.store.findRecord('node', params.guid);
+        }catch(e){
+            showError()
+
+        }
         if(!jsonBlob){
             if( node.get('currentUserPermissions')[1] === 'write'){
                 $.ajax({
