@@ -194,13 +194,26 @@
                 "values": {
                     "height": 500,
                     "backgroundImage": "http://localhost:4200/img/sample2.jpg",
+                    "backgroundCover": true,
                     "bgColor": "#FFFFFF",
                     "color": "#333333"
                 },
                 "form": [
                     {
+                        "type": "settings",
+                        "items": [
+                
+                        {
+                            "type": "checkbox",
+                            "label": "Fit image to section size",
+                            "value": "backgroundCover",
+                            "validation": null
+                        }
+                        ]
+                    },
+                    {
                         "type": "image",
-                        "label": "Image link",
+                        "label": "Background image",
                         "value": "backgroundImage",
                         "validation": null
                     },
