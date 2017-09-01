@@ -223,10 +223,28 @@ export default Ember.Component.extend({
                         "values": {
                             "height": 500,
                             "backgroundImage": "http://localhost:4200/img/sample.jpg",
+                            "backgroundCover": true,
                             "bgColor": "#FFFFFF",
                             "color": "#333333"
                         },
                         "form": [
+                        {
+                            "type": "settings",
+                            "items": [
+                            {
+                                "type": "checkbox",
+                                "label": "Show in navigation",
+                                "value": "showInNavigation",
+                                "validation": null
+                            },
+                            {
+                                "type": "checkbox",
+                                "label": "Fit image to section size",
+                                "value": "backgroundCover",
+                                "validation": null
+                            },
+                            ]
+                        },
                         {
                             "type": "image",
                             "label": "Background image",
