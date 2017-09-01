@@ -231,12 +231,7 @@ export default Ember.Component.extend({
                         {
                             "type": "settings",
                             "items": [
-                            {
-                                "type": "checkbox",
-                                "label": "Show in navigation",
-                                "value": "showInNavigation",
-                                "validation": null
-                            },
+                    
                             {
                                 "type": "checkbox",
                                 "label": "Fit image to section size",
