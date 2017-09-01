@@ -44,7 +44,6 @@ export default Ember.Controller.extend({
     databaseData: Ember.observer('editMode', function(){
         $(document).ready(()=>{
             this.send('canUserEdit')
-
             let database = this.store.findRecord('home', this.get('model.guid'))
 
             if(this.get('editMode')){
@@ -63,7 +62,6 @@ export default Ember.Controller.extend({
                     this.set('model.theme.content' , JSON.parse(record.get('pageData')))
                 });
             }
-
         });
     }),
     editMode: false,
@@ -73,6 +71,9 @@ export default Ember.Controller.extend({
                 if(!this.get('model.node.currentUserPermissions').includes('admin')){
                     this.set('editMode' , false)
                 }
+            }else{
+                this.set('editMode' , false)
+
             }
         },
         scrollToTop(){
