@@ -1,6 +1,9 @@
 /*global $:true*/
 
 import Ember from 'ember';
+import {layerSettings} from './settings';
+
+console.log(layerSettings);
 
 const helpText = {
     'layer-info': 'The information section is used for displaying your project description, contributors and affiliated institutions from you OSF project.',
@@ -18,6 +21,7 @@ const helpText = {
 
 export default Ember.Component.extend({
     helpText,
+    layerSettings,
     file_object: null,
     showRemoveModal: false,
     showUploadModal: false,
@@ -97,6 +101,7 @@ export default Ember.Component.extend({
         // Remove layer
         showRemove(){
             this.set('showRemoveModal', true);
+            console.log(this.get('layerSettings'));
         },
         hideRemove(){
             this.set('showRemoveModal', false);
