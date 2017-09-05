@@ -1,17 +1,17 @@
-<div class="layer-title-content {{layer.settings.values.alignment}}">
-    {{#if layer.settings.values.showTitle}}
+<div class="layer-title-content {{layer.settings.alignment}}">
+    {{#if layer.settings.showTitle}}
         <h1 class="title" style="{{titleStyle}}">{{node.title}}</h1>
     {{/if}}
 
-    {{#if layer.settings.values.showLead}}
+    {{#if layer.settings.showLead}}
         {{#if editMode}}
-            {{input class="edit-title-lead" value=layer.settings.values.lead}}
+            {{input class="edit-title-lead" value=layer.settings.lead}}
         {{else}}
-            <p class="lead">{{layer.settings.values.lead}}</p>
+            <p class="lead">{{layer.settings.lead}}</p>
         {{/if}}
     {{/if}}
 
-    {{#if layer.settings.values.showNavigation}}
+    {{#if layer.settings.showNavigation}}
         <div class="title-menu clearfix m-t-xl">
             {{pages-menu layers=layers theme=theme layer=layer}}
         </div>
