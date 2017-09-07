@@ -27,6 +27,10 @@ OSF Pages relies on OSF API to work with OSF projects and requires calls to be m
     - Click create. 
     - Use the Client ID and secret provided for your application in ember configuration settings
 
+### Running
+You will need to define the environment in your terminal application before running ```ember serve``` or you can run it together in this way:
+
+    BACKEND=stage ember serve
 
 
 ## Boilerplate ember instructions
