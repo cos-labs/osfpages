@@ -45,16 +45,14 @@ Osf pages uses a modular structure of layers to provide different types of conte
 
 Below is an example of the data structure of a layer. 
 
-Values depend on what information will be included in the layers. These depend on layer type and settings. Settings change these values and the value they change is represented in form data structure in 'value' field. 
+Settings depend on what information will be included in the layers. Different layers have different settings. The names for these values are used in ```layer-settings``` component to determine which value the settings should change and the views for layers use these values, so be careful when changing existing value names.  
 
-Settings components are under 'form' and toggled settings are under 'form.settings'. Currently there is no validation but these fields will be used for validation requirements. 
 
 ```json
 {
     "sectionHeader": "Title",
     "component": "layer-title",
     "settings": {
-        "values": {
             "backgroundImage": "http://localhost:4200/img/bg.png",
             "backgroundCover": true,
             "showNavigation": true,
@@ -66,33 +64,14 @@ Settings components are under 'form' and toggled settings are under 'form.settin
             "color": "#EEEEEE",
             "alignment": "center",
             "lead": "Reproducible study of solar powered lighthouses"
-        },
-        "form": [
-            {
-                "type": "image",
-                "label": "Background image",
-                "value": "backgroundImage",
-                "validation": null
-            },
-            {
-                "type": "increment",
-                "label": "Title size",
-                "value": "h1Size",
-                "size": 20,
-                "incrementSize": 4,
-                "validation": null
-            },
-            {
-                "type": "alignment",
-                "label": "Alignment",
-                "value": "alignment",
-                "options": [
-                    "left",
-                    "center",
-                    "right"
-                ],
-                "validation": null
-            },
+    }
+}
+   ```
+   
+   The settings bar is built by the ```layer-settings/settings.js``` where an object includes the structure of the settings edit bar. Below is an example: 
+   
+```js
+        "layer-title": [
             {
                 "type": "settings",
                 "items": [
@@ -121,8 +100,33 @@ Settings components are under 'form' and toggled settings are under 'form.settin
                         "validation": null
                     }
                 ]
+            },
+            {
+                "type": "image",
+                "label": "Background image",
+                "value": "backgroundImage",
+                "validation": null
+            },
+            {
+                "type": "increment",
+                "label": "Title size",
+                "value": "h1Size",
+                "size": 20,
+                "incrementSize": 4,
+                "validation": null
+            },
+            {
+                "type": "alignment",
+                "label": "Alignment",
+                "value": "alignment",
+                "options": [
+                    "left",
+                    "center",
+                    "right"
+                ],
+                "validation": null
             }
-        ]
-    }
-}
-   ```
+        ],
+```
+   
+
