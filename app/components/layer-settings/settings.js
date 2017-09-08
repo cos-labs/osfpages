@@ -60,6 +60,19 @@ let layerSettings = {
                 "validation": null
             }
         ],
+        "pages-menu": [
+            {
+                "type": "alignment",
+                "label": "Alignment",
+                "value": "alignment",
+                "options": [
+                    "left",
+                    "center",
+                    "right"
+                ],
+                "validation": null
+            }
+        ],
         "layer-info": [
             {
                 "type": "settings",

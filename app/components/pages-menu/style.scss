@@ -1,5 +1,5 @@
 .pages-nav .btn-link {
-    font-size: 16px;
+    font-size: 16px; 
 }
 .pages-nav .btn-link:hover {
     background-color: rgba(248, 248, 248, 0.24);
@@ -22,8 +22,33 @@
 }
 
 .pages-nav ul{
-	display:inline-flex;
     margin: 0;
     padding: 10px 0;
+        width:100%;
+
 }
 
+.navbar-toggle {
+    z-index:1;
+}
+.navbar {
+   background-color: transparent;
+   background: transparent;
+   border-color: transparent;
+   border:none;
+   box-shadow: none;
+   text-align:center;
+   float:unset;
+   width:100%;
+
+}
+
+@media(min-width:768px) {
+.navbar-collapse.collapse {
+    display: inline-block !important;
+}
+.nav li{
+    display:inline-block
+}
+
+}
