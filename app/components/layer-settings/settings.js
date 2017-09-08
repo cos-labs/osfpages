@@ -176,6 +176,17 @@ let layerSettings = {
                 "value": "height",
                 "incrementSize": 20,
                 "validation": null
+            },
+            {
+                "type": "alignment",
+                "label": "Alignment",
+                "value": "alignment",
+                "options": [
+                    "left",
+                    "center",
+                    "right"
+                ],
+                "validation": null
             }
         ],
         "layer-image": [
