@@ -208,6 +208,12 @@ let layerSettings = {
                 ]
             },
             {
+                "type": "image",
+                "label": "Background image",
+                "value": "backgroundImage",
+                "validation": null
+            },
+            {
                 "type": "alignment",
                 "label": "Alignment",
                 "value": "alignment",
