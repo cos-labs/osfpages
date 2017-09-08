@@ -138,6 +138,33 @@ let layerSettings = {
                 "validation": null
             }
         ],
+        "layer-image-text": [
+            {
+                "type": "settings",
+                "items": [
+
+                    {
+                        "type": "checkbox",
+                        "label": "Fit image to section size",
+                        "value": "backgroundCover",
+                        "validation": null
+                    }
+                ]
+            },
+            {
+                "type": "image",
+                "label": "Background image",
+                "value": "image",
+                "validation": null
+            },
+            {
+                "type": "increment",
+                "label": "Section height",
+                "value": "height",
+                "incrementSize": 20,
+                "validation": null
+            }
+        ],
         "layer-image": [
             {
                 "type": "settings",
