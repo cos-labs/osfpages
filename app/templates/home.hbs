@@ -2,18 +2,18 @@
     <div class="editMenu">
         <div class="container p-sm">
             <div class="row">
-                <div class="col-sm-2">
+                <div class="col-xs-2">
                     {{#if editMode}}
                         {{layer-template-select theme=model.theme}}
                     {{/if}}
                 </div>
-                <div class="col-sm-2">
+                <div class="col-xs-2">
                 {{#if editMode}}
                     <button class="btn-outline-cus" disabled="{{unless model.theme.canUndo 'disabled'}}" {{action 'undo'}}><i class="material-icons">undo</i></button>
                     <button class="btn-outline-cus" disabled="{{unless model.theme.canRedo 'disabled'}}" {{action 'redo'}}><i class="material-icons">redo</i></button>
                 {{/if}}
                 </div>
-                <div class="col-sm-3">
+                <div class="col-xs-3">
                 {{#if saved}}
                    <div class="text-center"> Saving...</div>
                 {{/if}}
@@ -28,7 +28,7 @@
                         </div>
                 {{/if}}
                 </div>
-                <div class="col-sm-3">
+                <div class="col-xs-3">
                     {{#if editMode}}
                     <div class="pull-right">
                         <button class="btn-outline-cus" {{action 'publish'}}><i class="material-icons">publish</i> Publish</button>
@@ -36,7 +36,7 @@
                     </div>
                     {{/if}}
                 </div>
-                <div class="col-sm-2 clearfix">
+                <div class="col-xs-2 clearfix">
                     <div class="pull-right">
                         <button class="btn-outline-cus editModeBtn" {{action 'checkSaveState'}} >
                             {{#if editMode}}

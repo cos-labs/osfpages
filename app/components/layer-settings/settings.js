@@ -60,6 +60,19 @@ let layerSettings = {
                 "validation": null
             }
         ],
+        "pages-menu": [
+            {
+                "type": "alignment",
+                "label": "Alignment",
+                "value": "alignment",
+                "options": [
+                    "left",
+                    "center",
+                    "right"
+                ],
+                "validation": null
+            }
+        ],
         "layer-info": [
             {
                 "type": "settings",
@@ -125,6 +138,44 @@ let layerSettings = {
                         "validation": null
                     }
                 ]
+            },
+            {
+                "type": "alignment",
+                "label": "Alignment",
+                "value": "alignment",
+                "options": [
+                    "left",
+                    "center",
+                    "right"
+                ],
+                "validation": null
+            }
+        ],
+        "layer-image-text": [
+            {
+                "type": "settings",
+                "items": [
+
+                    {
+                        "type": "checkbox",
+                        "label": "Fit image to section size",
+                        "value": "backgroundCover",
+                        "validation": null
+                    }
+                ]
+            },
+            {
+                "type": "image",
+                "label": "Background image",
+                "value": "image",
+                "validation": null
+            },
+            {
+                "type": "increment",
+                "label": "Section height",
+                "value": "height",
+                "incrementSize": 20,
+                "validation": null
             },
             {
                 "type": "alignment",
@@ -206,6 +257,12 @@ let layerSettings = {
                         "validation": null
                     }
                 ]
+            },
+            {
+                "type": "image",
+                "label": "Background image",
+                "value": "backgroundImage",
+                "validation": null
             },
             {
                 "type": "alignment",
