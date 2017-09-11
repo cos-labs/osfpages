@@ -13,44 +13,12 @@ export default Ember.Component.extend({
                     "settings": {
                         "component": "layer-settings",
                         "wikiId": "",
-                        "values": {
-                            "sectionTitle": "Wiki example",
-                            "showInNavigation": true,
-                            "addShowMore": false,
-                            "bgColor": "#FFFFFF",
-                            "color": "#333333",
-                            "alignment": "center"
-                        },
-                        "form": [
-                        {
-                            "type": "settings",
-                            "items": [
-                            {
-                                "type": "checkbox",
-                                "label": "Show in navigation",
-                                "value": "showInNavigation",
-                                "validation": null
-                            },
-                            {
-                                "type": "checkbox",
-                                "label": "Add show more",
-                                "value": "addShowMore",
-                                "validation": null
-                            }
-                            ]
-                        },
-                        {
-                            "type": "alignment",
-                            "label": "Alignment",
-                            "value": "alignment",
-                            "options": [
-                                "left",
-                                "center",
-                                "right"
-                            ],
-                            "validation": null
-                        }
-                        ]
+                        "sectionTitle": "Wiki example",
+                        "showInNavigation": true,
+                        "addShowMore": false,
+                        "bgColor": "#FFFFFF",
+                        "color": "#333333",
+                        "alignment": "center"
                     }
                 };
                 break;
@@ -60,55 +28,16 @@ export default Ember.Component.extend({
                     "component": "layer-file",
                     "settings": {
                         "component": "layer-settings",
-                        "values": {
-                            "sectionTitle": "Download this file",
-                            "sectionDescription": "",
-                            "showFileviewer": true,
-                            "showDownload": true,
-                            "downloadLink": "",
-                            "buttonText":"Download",
-                            "showInNavigation": true,
-                            "bgColor": "#FFFFFF",
-                            "alignment": "center",
-                            "color": "#333333"
-                        },
-                        "form": [
-                        {
-                            "type": "settings",
-                            "items": [
-                            {
-                                "type": "checkbox",
-                                "label": "Show in navigation",
-                                "value": "showInNavigation",
-                                "validation": null
-                            },
-                            {
-                                "type": "checkbox",
-                                "label": "Show download button",
-                                "value": "showDownload",
-                                "validation": null
-                            },
-
-                            {
-                                "type": "checkbox",
-                                "label": "Show file viewer",
-                                "value": "showFileviewer",
-                                "validation": null
-                            }
-                            ]
-                        },
-                        {
-                            "type": "alignment",
-                            "label": "Alignment",
-                            "value": "alignment",
-                            "options": [
-                                "left",
-                                "center",
-                                "right"
-                            ],
-                            "validation": null
-                        }
-                        ]
+                        "sectionTitle": "Download this file",
+                        "sectionDescription": "",
+                        "showFileviewer": true,
+                        "showDownload": true,
+                        "downloadLink": "",
+                        "buttonText":"Download",
+                        "showInNavigation": true,
+                        "bgColor": "#FFFFFF",
+                        "alignment": "center",
+                        "color": "#333333"
                     }
                 };
                 break;
@@ -118,45 +47,13 @@ export default Ember.Component.extend({
                     "component": "layer-link",
                     "settings": {
                         "component": "layer-settings",
-                        "values": {
-                            "sectionTitle": "Link Title",
-                            "showInNavigation": true,
-                            "sectionDescription": "this link goes to a place",
-                            "sectionLink": "www.example.com",
-                            "bgColor": "#FFFFFF",
-                            "alignment": "center",
-                            "color": "#333333"
-                        },
-                        "form": [
-                        {
-                            "type": "settings",
-                            "items": [
-                            {
-                                "type": "checkbox",
-                                "label": "Show in navigation",
-                                "value": "showInNavigation",
-                                "validation": null
-                            },
-                            {
-                                "type": "text",
-                                "label": "Link address",
-                                "value": "sectionLink",
-                                "validation": null
-                            }
-                            ]
-                        },
-                        {
-                            "type": "alignment",
-                            "label": "Alignment",
-                            "value": "alignment",
-                            "options": [
-                                "left",
-                                "center",
-                                "right"
-                            ],
-                            "validation": null
-                        }
-                        ]
+                        "sectionTitle": "Link Title",
+                        "showInNavigation": true,
+                        "sectionDescription": "this link goes to a place",
+                        "sectionLink": "www.example.com",
+                        "bgColor": "#FFFFFF",
+                        "alignment": "center",
+                        "color": "#333333"
                     }
                 };
                 break;
@@ -166,51 +63,12 @@ export default Ember.Component.extend({
                     "component": "layer-advanced",
                     "content": "<p>Mauris imperdie Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellentesque ut metus odio. Integer fringilla nulla id leo consequat, a sollicitudin sapien fringilla. Fusce vestibulum malesuada nisl. Fusce augue leo, tempus eget matssstis vel, imperdiet at nulla</p>",
                     "settings": {
-                        "component": "layer-settings",
-                        "values": {
-                            "sectionTitle": "Advanced",
-                            "backgroundImage": "https://image.ibb.co/kCgzp5/confectionary.png",   
-                            "showInNavigation": true,
-                            "bgColor": "#FFFFFF",
-                            "alignment": "center",
-                            "color": "#333333"
-                        },
-                        "form": [
-                        {
-                            "type": "settings",
-                            "items": [
-                            {
-                                "type": "checkbox",
-                                "label": "Show in navigation",
-                                "value": "showInNavigation",
-                                "validation": null
-                            },
-                            {
-                                "type": "checkbox",
-                                "label": "Fit image to section size",
-                                "value": "backgroundCover",
-                                "validation": null
-                            },
-                            ]
-                        },
-                        {
-                            "type": "image",
-                            "label": "Background image",
-                            "value": "backgroundImage",
-                            "validation": null
-                        },  
-                        {
-                            "type": "alignment",
-                            "label": "Alignment",
-                            "value": "alignment",
-                            "options": [
-                                "left",
-                                "center",
-                                "right"
-                            ],
-                            "validation": null
-                        }
-                        ]
+                        "sectionTitle": "Advanced",
+                        "backgroundImage": "https://image.ibb.co/kCgzp5/confectionary.png",
+                        "showInNavigation": true,
+                        "bgColor": "#FFFFFF",
+                        "alignment": "center",
+                        "color": "#333333"
                     }
                 };
                 break;
@@ -220,27 +78,11 @@ export default Ember.Component.extend({
                     "component": "layer-image",
                     "settings": {
                         "component": "layer-settings",
-                        "values": {
-                            "height": 500,
-                            "backgroundImage": "http://localhost:4200/img/sample.jpg",
-                            "bgColor": "#FFFFFF",
-                            "color": "#333333"
-                        },
-                        "form": [
-                        {
-                            "type": "image",
-                            "label": "Background image",
-                            "value": "backgroundImage",
-                            "validation": null
-                        },
-                        {
-                            "type": "increment",
-                            "label": "Section height",
-                            "value": "height",
-                            "incrementSize": 20,
-                            "validation": null
-                        }
-                        ]
+                        "height": 500,
+                        "backgroundImage": "http://localhost:4200/img/sample.jpg",
+                        "backgroundCover": true,
+                        "bgColor": "#FFFFFF",
+                        "color": "#333333"
                     }
                 };
                 break;
@@ -250,53 +92,19 @@ export default Ember.Component.extend({
                     "component": "pages-menu",
                     "settings": {
                         "component": "layer-settings",
-                        "values": {
-                            "fontSize": 16,
-                            "bgColor": "#FFFFFF",
-                            "color": "#333333",
-                            "alignment": "center",
-                            "stickToTop":false,
-                        },
-                        "form": [
-                        {
-                            "type": "increment",
-                            "label": "Font size",
-                            "value": "fontSize",
-                            "incrementSize": 1,
-                            "validation": null
-                        },
-                        {
-                            "type": "alignment",
-                            "label": "Alignment",
-                            "value": "alignment",
-                            "options": [
-                                "left",
-                                "center",
-                                "right"
-                            ],
-                            "validation": null
-                        },
-                        {
-                           "type": "settings",
-                           "items": [
-                           {
-                            "type": "checkbox",
-                            "label": "Stick to top of page on scroll",
-                            "value": "stickToTop",
-                            "validation": null
-                        }
-                        ]
+                        "fontSize": 16,
+                        "bgColor": "#FFFFFF",
+                        "color": "#333333",
+                        "alignment": "center",
+                        "stickToTop":false,
                     }
-                    ]
-                }
-            };
-            break;
-            case 'title':
-            item = {
-                "sectionHeader": "Title",
-                "component": "layer-title",
-                "settings": {
-                    "values": {
+                };
+                break;
+                case 'title':
+                item = {
+                    "sectionHeader": "Title",
+                    "component": "layer-title",
+                    "settings": {
                         "backgroundImage": "http://localhost:4200/img/bg.png",
                         "backgroundCover": true,
                         "showNavigation": true,
@@ -308,72 +116,14 @@ export default Ember.Component.extend({
                         "color": "#EEEEEE",
                         "alignment": "right",
                         "lead": "Some lead text"
-                    },
-                    "form": [
-                    {
-                        "type": "image",
-                        "label": "Background image",
-                        "value": "backgroundImage",
-                        "validation": null
-                    },
-                    {
-                        "type": "increment",
-                        "label": "Title size",
-                        "value": "h1Size",
-                        "size": 20,
-                        "incrementSize": 4,
-                        "validation": null
-                    },
-                    {
-                        "type": "alignment",
-                        "label": "Alignment",
-                        "value": "alignment",
-                        "options": [
-                            "left",
-                            "center",
-                            "right"
-                        ],
-                        "validation": null
-                    },
-                    {
-                        "type": "settings",
-                        "items": [
-                        {
-                            "type": "checkbox",
-                            "label": "Show navigation",
-                            "value": "showNavigation",
-                            "validation": null
-                        },
-                        {
-                            "type": "checkbox",
-                            "label": "Fit image to section size",
-                            "value": "backgroundCover",
-                            "validation": null
-                        },
-                        {
-                            "type": "checkbox",
-                            "label": "Show title",
-                            "value": "showTitle",
-                            "validation": null
-                        },
-                        {
-                            "type": "checkbox",
-                            "label": "Show lead text",
-                            "value": "showLead",
-                            "validation": null
-                        }
-                        ]
                     }
-                    ]
-                }
-            };
-            break;
-            case 'info':
-            item =  {
-                "sectionHeader": "Info",
-                "component": "layer-info",
-                "settings": {
-                    "values": {
+                };
+                break;
+                case 'info':
+                item =  {
+                    "sectionHeader": "Info",
+                    "component": "layer-info",
+                    "settings": {
                         "sectionTitle": "Info Title",
                         "showInNavigation": true,
                         "showDescription": true,
@@ -383,64 +133,14 @@ export default Ember.Component.extend({
                         "bgColor": "#FFFFFF",
                         "alignment": "center",
                         "color": "#333333"
-                    },
-                    "form": [
-                    {
-                        "type": "settings",
-                        "items": [
-                        {
-                            "type": "checkbox",
-                            "label": "Show in navigation",
-                            "value": "showInNavigation",
-                            "validation": null
-                        },
-                        {
-                            "type": "checkbox",
-                            "label": "Show description",
-                            "value": "showDescription",
-                            "validation": null
-                        },
-                        {
-                            "type": "checkbox",
-                            "label": "Show contributors",
-                            "value": "showContributors",
-                            "validation": null
-                        },
-                        {
-                            "type": "checkbox",
-                            "label": "Show only bibliographic contributors",
-                            "value": "showBibliographicContributors",
-                            "validation": null
-                        },
-                        {
-                            "type": "checkbox",
-                            "label": "Show affiliated institutions",
-                            "value": "showAffiliatedInstitutions",
-                            "validation": null
-                        }
-                        ]
-                    },
-                    {
-                        "type": "alignment",
-                        "label": "Alignment",
-                        "value": "alignment",
-                        "options": [
-                            "left",
-                            "center",
-                            "right"
-                        ],
-                        "validation": null
                     }
-                    ]
-                }
-            };
-            break;
-            case 'imangeAndText':
-            item = {
-                "sectionHeader": "Image-Text",
-                "component": "layer-image-text",
-                "settings": {
-                    "values": {
+                };
+                break;
+                case 'imangeAndText':
+                item = {
+                    "sectionHeader": "Image-Text",
+                    "component": "layer-image-text",
+                    "settings": {
                         "sectionTitle": "Image and Text",
                         "showNavigation": true,
                         "showInNavigation": true,
@@ -449,40 +149,9 @@ export default Ember.Component.extend({
                         "alignment": "right",
                         "sectionDescription": "Mauris imperdiet ligula a mauris porttitor ultricies. Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellentesque ut metus odio. Integer fringilla nulla id leo consequat, a sollicitudin sapien fringilla.",
                         "image": "http://localhost:4200/img/img.jpg"
-                    },
-                    "form": [
-                    {
-                        "type": "image",
-                        "label": "choose your image",
-                        "value": "image",
-                        "validation": null
-                    },
-                    {
-                        "type": "alignment",
-                        "label": "Alignment",
-                        "value": "alignment",
-                        "options": [
-                            "left",
-                            "center",
-                            "right"
-                        ],
-                        "validation": null
-                    },
-                    {
-                        "type": "settings",
-                        "items": [
-                        {
-                            "type": "checkbox",
-                            "label": "show in navigation",
-                            "value": "showInNavigation",
-                            "validation": null
-                        }
-                        ]
                     }
-                    ]
-                }
-            };
-            break;
+                };
+                break;
         }
         let index = this.get('index')+1;
         this.get('layers.content').insertAt(index,item);

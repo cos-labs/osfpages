@@ -1,13 +1,21 @@
-<div class="pages-nav nav navbar-nav {{layer.settings.values.alignment}}">
-    <ul>
-        {{#each layers as |layer index|}}
-            {{#if layer.settings.values.showInNavigation}}
-                <li>
-                    <button class="btn btn-link" {{action 'scrollToLayer' index}} style="{{style}}">{{layer.settings.values.sectionTitle}}</button>
-                </li>
-            {{/if}}
-        {{/each}}
-    </ul>
-</div>
-
-
+<nav class="pages-nav navbar navbar-default {{layer.settings.alignment}}" role="navigation">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+	</div>
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+		<ul class="nav navbar-nav">
+			{{#each layers as |layer index|}}
+				{{#if layer.settings.showInNavigation}}
+				<li>
+					<button class="btn btn-link" {{action 'scrollToLayer' index}} style="{{style}}">{{layer.settings.sectionTitle}}</button>
+				</li>
+				{{/if}}
+			{{/each}}
+		</ul>
+	</div>
+</nav>

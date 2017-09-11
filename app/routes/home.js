@@ -23,27 +23,32 @@ function showError(){
 export default Ember.Route.extend({
     setupController: function(controller, model) {
         controller.set('model' , model);
+
     },
     model: async function(params){
 
-        // If testing and parameter is not working use this 'jyu4t' for params.guid
-        let node = await this.store.findRecord('node', params.guid)
-        
-        jsonBlob = await this.store.findRecord('home', params.guid).then((record)=>{  
+        jsonBlob = await this.store.findRecord('home', params.guid).then((record)=>{
             return  record.get('pageData')
         },function(e) {
             console.log(e)
             return false;
         });
 
+        let node = null;
+        try{
+            node = await this.store.findRecord('node', params.guid);
+        }catch(e){
+            showError()
+
+        }
         if(!jsonBlob){
             if( node.get('currentUserPermissions')[1] === 'write'){
                 $.ajax({
                     type: "GET",
-                    url: ENV.rootURL + "themes/theme_1.json",
+                    url: ENV.rootURL + "themes/theme_starter.json",
                     async: false,
                     success: (data)=> {
-                        //add to firebase  
+                        //add to firebase
                         let guid = {
                             id: params.guid,
                             guid: params.guid,

@@ -1,10 +1,10 @@
 <div class="">
-    {{edit-text showSettings=showSettings editMode=editMode layer=layer type="title"  alignment=layer.settings.values.alignment}}
+    {{edit-text showSettings=showSettings editMode=editMode layer=layer type="title"  alignment=layer.settings.alignment}}
 
-    <div class="wiki-markdown {{if (and isTruncated layer.settings.values.addShowMore) 'truncated'}} ">
+    <div class="wiki-markdown {{if (and isTruncated layer.settings.addShowMore) 'truncated'}} ">
         {{markdown-to-html wikiContent}}
     </div>
-    {{#if layer.settings.values.addShowMore}}
+    {{#if layer.settings.addShowMore}}
         <div class="show-more {{if isTruncated 'truncated'}}" {{action 'toggleShow'}}>
             {{#if isTruncated}}
                 <i class="material-icons ">keyboard_arrow_down</i>

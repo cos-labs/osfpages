@@ -5,7 +5,7 @@
   {
     "sectionHeader": "Advanced",
     "component": "layer-advanced",
-    "content": "<p>We could not find a page for the OSF project that was specified</p>",
+    "content": "<p>There was an error finding a page for the OSF project specified.</p>",
     "settings": {
       "component": "layer-settings",
       "values": {

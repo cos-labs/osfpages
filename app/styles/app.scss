@@ -5,11 +5,12 @@
 
 body {
     font-size: 16px;
+    margin-bottom: 50px; /* Temporary due to notice at bottom */
 }
 .scroll-top {
     position: fixed;
     right: 30px;
-    bottom: 10px;
+    bottom: 50px;
     height: 40px;
     width: 40px;
     border-radius: 25px;
@@ -61,10 +62,6 @@ body {
     list-style-type: none;
     padding-left: 0;
 
-    li {
-        float: left;
-        padding: 4px;
-    }
 }
 .layer-wrapper.pages-menu, .pages-menu .layer-content {
     min-height: 0;
@@ -87,10 +84,6 @@ body {
 .layer-title {
     padding-top: 100px;
     padding-bottom: 20px;
-}
-
-.layer-image {
-    background-size: cover;
 }
 
 /* Index */
@@ -173,6 +166,12 @@ body {
     border: 1px solid #5bc0de;
     color:#5bc0de;
     border-radius:4px;
+}
+.btn-outline-cus-black{
+    border: 1px solid #8a6d3b;
+    color: #8a6d3b;
+    border-radius: 4px;
+    background: transparent;
 }
 .btn-outline-cus[disabled] {
     border-color: #31849c;
@@ -302,5 +301,13 @@ button .material-icons {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+}
+
+.alert-message{
+    position: fixed; 
+    top:55px;
+    right:10px;
+    z-index:1;
+    display:none;
 }
 
