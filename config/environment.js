@@ -4,7 +4,7 @@ module.exports = function(environment) {
     var ENV = {
         modulePrefix: 'osfpages-admin',
         environment: environment,
-        rootURL: '/osfpages',
+        rootURL: '/',
         apiBaseUrl: 'https://limitless-atoll-95289.herokuapp.com',
         locationType: 'auto',
         osfAPIUrl: 'https://api.osf.io',
@@ -41,9 +41,11 @@ module.exports = function(environment) {
         ENV.APP.rootElement = '#ember-testing';
     }
 
-    if (environment === 'prod') {
-         ENV.locationType = 'hash';
-         ENV.rootURL = '/osfpages/';
+    if (environment === 'production') {
+        ENV.locationType = 'hash';
+        ENV.rootURL = '/osfpages/';
+        ENV.osfHostUrl = 'https://api.osf.io';
+
 
     }
 
