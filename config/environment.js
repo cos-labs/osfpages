@@ -4,7 +4,7 @@ module.exports = function(environment) {
     var ENV = {
         modulePrefix: 'osfpages-admin',
         environment: environment,
-        rootURL: '/',
+        rootURL: '/osfpages',
         apiBaseUrl: 'https://limitless-atoll-95289.herokuapp.com',
         locationType: 'auto',
         osfAPIUrl: 'https://api.osf.io',
