@@ -153,18 +153,6 @@ let layerSettings = {
         ],
         "layer-image-text": [
             {
-                "type": "settings",
-                "items": [
-
-                    {
-                        "type": "checkbox",
-                        "label": "Fit image to section size",
-                        "value": "backgroundCover",
-                        "validation": null
-                    }
-                ]
-            },
-            {
                 "type": "image",
                 "label": "Background image",
                 "value": "image",
