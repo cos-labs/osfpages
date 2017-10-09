@@ -52,9 +52,9 @@ export default Ember.Component.extend({
     actions: {
         buildUrl(files) {
             return this.get('url')._result + Ember.$.param({
-                    kind: 'file',
-                    name: files[0].name,
-                });
+                kind: 'file',
+                name: files[0].name,
+            });
         },
         error(){
         },
@@ -115,7 +115,11 @@ export default Ember.Component.extend({
             this.toggleProperty('layer.settings.' + check.value);
         },
         fileDetail(item){
-            this.set('layer.settings.backgroundImage' , item.get('links').download);
+            if(this.get('layer.content.component') === 'layer-image-text'){
+                this.set('layer.content.settings.image' , item.get('links').download);
+            }else{
+                this.set('layer.settings.backgroundImage' , item.get('links').download);
+            }
         },
         applyUploadedImage(){
             this.set('layer.settings.backgroundImage' , this.get('uploadedImageUrl'));
