@@ -1,5 +1,5 @@
 {{osf-navbar loginAction=(action 'login') hideSearch=true}}
-
+{{loading-spinner isLoading=isLoading}}
 <div class="index-page" style={{didStyle}}> 
     <div class="container">
         <div class="row">
@@ -7,7 +7,7 @@
                 <h1>OSF Pages</h1>
                 <p class="p-v-md lead">A free, zero-maintenance website for your OSF Project</p>
                 <div class="p-t-lg">
-                    {{#link-to "home" 'fze7g' class='btn btn-lg btn-success p-v-md'}}See an example{{/link-to}}
+                    <a href="" {{action 'loadPage'}}class='btn btn-lg btn-success p-v-md'>See an example</a>
                 </div>
 
             </div>

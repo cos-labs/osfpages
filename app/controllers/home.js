@@ -10,6 +10,7 @@ export default Ember.Controller.extend({
     showNotSavedModal: false,
     published: false,
     saved: false,
+    isLoading:false,
     isOpen: Ember.computed('node', async function(){ 
         let node = await this.get('model.node')
         this.set('isOpen', !node.get('public') )
@@ -114,6 +115,7 @@ export default Ember.Controller.extend({
             }
         },
         publish(){//publish will take unpublished data and put it in to page data on backend 
+            this.set('isLoading', true)          
             this.set('unpublishedChanges', false);
             this.set('published' , true)
             this.send('save' , this.get('model.guid') )
@@ -124,10 +126,11 @@ export default Ember.Controller.extend({
             setTimeout(()=>{
                 this.set('published' , false)
                 this.set('unpublishedChanges', false);
-
+                this.set('isLoading', false)
             }, 2000);
         },
         save(guid){
+            this.set('isLoading', true)
             this.set('unpublishedChanges', false);
             if(!this.get('published')){
                 this.set('saved' , true)
@@ -144,6 +147,7 @@ export default Ember.Controller.extend({
             setTimeout(()=>{
                 this.set('saved' , false)
                 this.set('unpublishedChanges', true);
+                this.set('isLoading', false)
             }, 2000);
         },
         toggleModal(state){
