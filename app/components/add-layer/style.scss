@@ -10,7 +10,15 @@ $space: 0.065;  // space between links
 .add-layer-toggle {
     border-bottom: 1px dashed #eee;
 }
-
+.white {
+  color:white;
+}
+.white:hover {
+  color:white;
+}
+.white:active {
+  color:white;
+}
 .add-layer-toggle>div {
     width: 42px;
     padding: 10px 0;
@@ -18,7 +26,7 @@ $space: 0.065;  // space between links
     text-align: center;
     margin: auto;
     position: absolute;
-    left: 50%;
+    left: 48.5%;
     margin-top: -20px;
     cursor: pointer;
     z-index: 98;
@@ -31,6 +39,7 @@ $space: 0.065;  // space between links
 
 .add-layer{
     height: 0;
+    padding-bottom:50px;
 }
 
 .add-layer.open {
@@ -61,8 +70,9 @@ $space: 0.065;  // space between links
 
 .layer-links {
   max-width: (($size * 24) + (($space * $size)* 2)) * 3;
-  display: inline-flex;
-  flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;  
+  justify-content: center;
 }
 
 .layer-link {
@@ -112,4 +122,12 @@ $space: 0.065;  // space between links
     font-family: sans-serif;
   }
 
+}
+
+.icon {
+  padding: 0;
+}
+.add-title {
+  font-size:18px;
+  margin-bottom:10px;
 }

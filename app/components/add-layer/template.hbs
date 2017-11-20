@@ -1,20 +1,36 @@
 {{#liquid-if isOpen use='toDown'}}
 <div class="add-layer {{if isOpen 'open'}}">
     <div class="container">
-        <h3 style="color:white">Select a section template</h3>
+        <h3 class="white">Select a block template</h3>
         <div class="row p-v-md">
-        <div class="col-sm-12 text-center">
+            <div class="col-sm-12 text-center">
+
+                <div class="white add-title">Pull content
+                    <button class="btn btn-link white icon">
+                        <i class="material-icons info-circle white ">info_outline</i>
+                        {{#bs-popover placement="top"}}Pull page blocks pull content from your OSF project.{{/bs-popover}}
+                    </button>
+                </div> 
+
                 <div class="layer-links">
-                    <button class="fa fa-wikipedia-w layer-link" href="#" title="Add wiki" {{action 'addLayer' 'wiki'}}></button>
-                    <button class="fa fa-link layer-link" href="#" title="Add Link"  {{action 'addLayer' 'link'}}></button>
-                    <button class="fa fa-file layer-link" href="#" title="Add file" {{action 'addLayer' 'file'}}></button>
+                    <button class="fa fa-wikipedia-w layer-link" href="#" title="Pull wiki" {{action 'addLayer' 'wiki'}}></button>
+                    <button class="fa fa-file layer-link" href="#" title="Pull file" {{action 'addLayer' 'file'}}></button>
+                    <button class="fa fa-bars layer-link" href="#" title="Pull navigation" {{action 'addLayer' 'navigation'}}></button>
+                    <button class="fa fa-info layer-link" href="#" title="Pull info" {{action 'addLayer' 'info'}}></button>
 
-                    <button class="fa fa-paint-brush layer-link" href="#" title="Add advanced" {{action 'addLayer' 'advanced'}}></button>
-                    <button class="fa fa-bars layer-link" href="#" title="Add navigation" {{action 'addLayer' 'navigation'}}></button>
-                    <button class="fa fa-info layer-link" href="#" title="Add info" {{action 'addLayer' 'info'}}></button>
-
-                    <button class="fa fa-image layer-link" href="#" title="Add background" {{action 'addLayer' 'image'}}></button>
-                    <button class="fa fa-tag layer-link" href="#" title="Add title" {{action 'addLayer' 'title'}}></button>
+                    <button class="fa fa-tag layer-link" href="#" title="Pull title" {{action 'addLayer' 'title'}}></button>
+                </div>
+                <br>
+                <div class="white add-title">Add content
+                    <button class="btn btn-link white icon">
+                        <i class="material-icons info-circle white ">info_outline</i>
+                        {{#bs-popover placement="top"}}Add page blocks allow you to add custom text and images to your page{{/bs-popover}}
+                    </button>
+                </div> 
+                <div class="layer-links">
+                    <button class="fa fa-link layer-link" href="#" title="Add Link(s)"  {{action 'addLayer' 'link'}}></button>
+                    <button class="fa fa-paint-brush layer-link" href="#" title="Add custom" {{action 'addLayer' 'advanced'}}></button>
+                    <button class="fa fa-image layer-link" href="#" title="Add splash image" {{action 'addLayer' 'image'}}></button>
                     <button class="fa fa-newspaper-o layer-link" href="#" title="Add image & text" {{action 'addLayer' 'imangeAndText'}}></button>
 
                 </div>

@@ -59,11 +59,11 @@ export default Ember.Component.extend({
                 break;
                 case 'advanced':
                 item = {
-                    "sectionHeader": "Advanced",
+                    "sectionHeader": "custom",
                     "component": "layer-advanced",
                     "content": "<p>Mauris imperdie Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellentesque ut metus odio. Integer fringilla nulla id leo consequat, a sollicitudin sapien fringilla. Fusce vestibulum malesuada nisl. Fusce augue leo, tempus eget matssstis vel, imperdiet at nulla</p>",
                     "settings": {
-                        "sectionTitle": "Advanced",
+                        "sectionTitle": "Custom text block",
                         "backgroundImage": "https://image.ibb.co/kCgzp5/confectionary.png",
                         "showInNavigation": true,
                         "bgColor": "#FFFFFF",
