@@ -1,16 +1,16 @@
 <div class="">
-        {{#if editMode}}
-    <div class="select-box m-v-lg">
-        <div class="m-v-lg">
-            <h4>choose a wiki page to display:</h4>
-            {{#power-select
-                options=wikis
-                selected=currentWiki
-                onchange=(action "selectWiki") as |wiki|}}
-                {{wiki.name}}
-                {{/power-select}}
+    {{#if editMode}}
+        <div class="select-box m-v-lg">
+            <div class="m-v-lg">
+                <h4>choose a wiki page to display:</h4>
+                {{#power-select
+                    options=wikis
+                    selected=currentWiki
+                    onchange=(action "selectWiki") as |wiki|}}
+                    {{wiki.name}}
+                    {{/power-select}}
+            </div>
         </div>
-    </div>
     {{/if}}
     {{edit-text showSettings=showSettings editMode=editMode layer=layer type="title"  alignment=layer.settings.alignment}}
         <div class="wiki-markdown {{if (and isTruncated layer.settings.addShowMore) 'truncated'}} ">
@@ -27,5 +27,4 @@
             {{/if}}
         </div>
     {{/if}}
-
  </div>
