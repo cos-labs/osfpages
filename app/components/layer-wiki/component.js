@@ -5,7 +5,7 @@ import config from 'ember-get-config';
 export default Ember.Component.extend({
     session: Ember.inject.service(),
     currentWiki: null,
-    showSelect: false,
+    showSelect: true,
     isTruncated: false,
     wikiContent: null,
     reloadWiki: Ember.computed('layer.settings.wikiId', function(){
