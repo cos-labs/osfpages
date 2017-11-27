@@ -12,7 +12,7 @@
             </div>
         </div>
     {{/if}}
-    {{edit-text showSettings=showSettings editMode=editMode layer=layer type="title"  alignment=layer.settings.alignment}}
+        {{edit-text showSettings=showSettings editMode=editMode layer=layer type="title"  alignment=layer.settings.alignment}}
         <div class="wiki-markdown {{if (and isTruncated layer.settings.addShowMore) 'truncated'}} ">
             {{markdown-to-html wikiContent}}
         </div>
