@@ -10,7 +10,9 @@
         <div class="m-v-md">
             <h4> Contributors </h4>
             {{#each users as |user|}}
-                {{user.fullName}}
+               <a href="https://osf.io/{{user.id}}/" target="_blank"> {{user.fullName}}</a>
+                                
+
             {{/each}}
         </div>
     {{/if}}
@@ -20,7 +22,8 @@
         <div class="m-v-md">
             <h4>Bibliographic Contributors</h4>
             {{#each bibliographicUsers as |user|}}
-                {{user.fullName}}
+                <a href="https://osf.io/{{user.id}}/" target="_blank"> {{user.fullName}}</a>
+
             {{/each}}
         </div>
     {{/if}}
