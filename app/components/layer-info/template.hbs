@@ -10,7 +10,7 @@
         <div class="m-v-md">
             <h4> Contributors </h4>
             {{#each users as |user|}}
-               <a href="https://osf.io/{{user.id}}/" target="_blank"> {{user.fullName}}</a>
+               <a href="https://osf.io/{{user.id}}/" target="_blank" class="color-black">{{user.fullName}}</a>
                                 
 
             {{/each}}
@@ -22,7 +22,7 @@
         <div class="m-v-md">
             <h4>Bibliographic Contributors</h4>
             {{#each bibliographicUsers as |user|}}
-                <a href="https://osf.io/{{user.id}}/" target="_blank"> {{user.fullName}}</a>
+                <a href="https://osf.io/{{user.id}}/" target="_blank" class="color-black">{{user.fullName}}</a>
 
             {{/each}}
         </div>
