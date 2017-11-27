@@ -35,8 +35,5 @@ export default Ember.Component.extend({
         this._super(...arguments);
         this.getAuthors();
         this.getAffiliatedInst();
-    },
-    didRender(){
-        console.log('users   > ',this.get('users'))
     }
 });
