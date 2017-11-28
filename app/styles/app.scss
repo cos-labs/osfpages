@@ -79,6 +79,15 @@ body {
     color: #fff;
     width: 100%;
     z-index: 100;
+    border-radius: 0 0px 55px 55px;
+}
+
+@media(max-width: 992px) {
+  .btn-outline-white-cus span{ 
+
+    display:none;
+  }
+
 }
 
 .layer-title {
@@ -195,6 +204,7 @@ body {
     background: #252525;
     border: 1px solid #565656;
     color:white;
+    cursor:pointer;
 }
 
 .btn-outline-default-cus:hover{
