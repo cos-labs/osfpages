@@ -14,7 +14,7 @@ export default Ember.Component.extend({
       [{ 'indent': '-1'}, { 'indent': '+1' }],
       [{ 'color': [] }, { 'background': [] }],
       [{ 'align': [] }],
-      ['link', 'image' , 'video' , 'formula'],
+      ['link', 'image' , 'video' ],
       ['clean'],
       [{ 'direction': 'rtl' }],
       ]
