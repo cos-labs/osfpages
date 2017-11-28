@@ -73,7 +73,7 @@ body {
     padding: 50px;
 }
 .editMenu {
-    background: #1b67a4;
+    background: #2b2b2b;
     box-shadow: 0 -8px 26px 5px #000000;
     position: fixed;
     color: #fff;
@@ -165,12 +165,12 @@ body {
     background: transparent;
     border: 1px solid #5bc0de;
     color:#5bc0de;
-    border-radius:4px;
+    border-radius:3px;
 }
 .btn-outline-cus-black{
     border: 1px solid #8a6d3b;
     color: #8a6d3b;
-    border-radius: 4px;
+    border-radius: 3px;
     background: transparent;
 }
 .btn-outline-cus[disabled] {
@@ -181,11 +181,24 @@ body {
     background: transparent;
     border: 1px solid #999;
     color:#999;
-    border-radius:4px;
+    border-radius:3px;
 }
 
-btn-outline-default-cus:hover{
-        background: transparent;
+.btn-outline-white-cus { 
+    background: transparent;
+    border: 1px solid #565656;
+    color:white;
+    border-radius:3px;
+}
+
+.btn-outline-white-cus:hover { 
+    background: #252525;
+    border: 1px solid #565656;
+    color:white;
+}
+
+.btn-outline-default-cus:hover{
+    background: transparent;
 
 }
 .modal-footer {

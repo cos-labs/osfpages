@@ -11,8 +11,8 @@
                 </div>
                 <div class="col-xs-2">
                 {{#if editMode}}
-                    <button class="btn-outline-cus" disabled="{{unless model.theme.canUndo 'disabled'}}" {{action 'undo'}}><i class="material-icons">undo</i></button>
-                    <button class="btn-outline-cus" disabled="{{unless model.theme.canRedo 'disabled'}}" {{action 'redo'}}><i class="material-icons">redo</i></button>
+                    <button class="btn-outline-white-cus" disabled="{{unless model.theme.canUndo 'disabled'}}" {{action 'undo'}}><i class="material-icons">undo</i></button>
+                    <button class="btn-outline-white-cus" disabled="{{unless model.theme.canRedo 'disabled'}}" {{action 'redo'}}><i class="material-icons">redo</i></button>
                 {{/if}}
                 </div>
                 <div class="col-xs-3">
@@ -33,14 +33,14 @@
                 <div class="col-xs-3">
                     {{#if editMode}}
                     <div class="pull-right">
-                        <button class="btn-outline-cus" {{action 'publish'}}><i class="material-icons">publish</i> Publish</button>
-                        <button class="btn-outline-cus" {{action 'save'}}><i class="material-icons">save</i> Save draft</button>
+                        <button class="btn-outline-white-cus" {{action 'publish'}}><i class="material-icons">publish</i> Publish</button>
+                        <button class="btn-outline-white-cus" {{action 'save'}}><i class="material-icons">save</i> Save draft</button>
                     </div>
                     {{/if}}
                 </div>
                 <div class="col-xs-2 clearfix">
                     <div class="pull-right">
-                        <button class="btn-outline-cus editModeBtn" {{action 'checkSaveState'}} >
+                        <button class="btn-outline-white-cus editModeBtn" {{action 'checkSaveState'}} >
                             {{#if editMode}}
                                 <i class="material-icons">close</i>Finish editing 
                             {{else}}
