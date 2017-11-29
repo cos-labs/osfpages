@@ -1,7 +1,14 @@
 <div class="layer-footer p-v-md">
     <div class="container">
         <div class="row">
-            <div class="col-sm-10 p-md">
+            {{#if editMode}}
+                <div  class="col-xs-3">
+
+                </div>
+            {{/if}}
+            <div class="{{holderCSSEditMode}}">
+                <a href="http://www.osf.io/{{guid}}" class="btn-outline-cus btn btn-info btn-lg pull-right" style="margin-top:15px">Visit Project</a>
+
                 <div>powered by Open Science Framework </div>
                 <div class="pages-nav">
                     <ul>
@@ -10,9 +17,7 @@
                         </li>
                     </ul>
                 </div>
-            </div>
-            <div class="col-sm-2">
-                <a href="http://www.osf.io/{{guid}}" class="btn-outline-cus btn btn-info btn-lg" style="margin-top:25px">Visit Project</a>
+    
             </div>
         </div>
     </div>

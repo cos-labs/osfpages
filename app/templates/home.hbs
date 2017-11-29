@@ -1,3 +1,16 @@
+<style>
+    .edit-Mode-View{
+        background: #2b2b2b;
+        position: fixed;
+        top:0;
+        height:100vh;
+        width:25%;
+        z-index: 99;
+        overflow:scroll;
+    }
+ 
+</style>
+
 {{#if isAdmin}}
 {{loading-spinner isLoading=isLoading}}
 
@@ -58,6 +71,12 @@
             </div>
         </div>
     </div>
+    {{#if editMode}}
+        <div class="edit-Mode-View">
+
+            {{add-layer index=index layers=model.theme.layers sideView=true}}
+        </div>
+    {{/if}}
     {{#if isOpen}}
          <div class="alert alert-warning alert-message">
             <strong>Warning!</strong> This OSF project is <strong>not public </strong> and can not be viewed by others.<br /> Please consider making this project public!<br />
@@ -67,19 +86,39 @@
 
 {{/if}}
 
-<div class="holder">
+<div class="holder" >
+
     {{#if  model.theme.layers}}
+    
+    <div class="">
+
         {{#each model.theme.layers as |layer index|}}
-            {{layer-wrapper node=model.node layer=layer layers=model.theme.layers editMode=editMode index=index}}
+            <div class="row"  style="padding:0">
             {{#if editMode}}
-                {{add-layer index=index layers=model.theme.layers}}
+                <div  class="col-xs-3">
+
+                </div>
             {{/if}}
+                <div class="{{holderCSSEditMode}}" style="padding:0">
+                    <div class="layer clearfix">
+
+                        {{layer-wrapper node=model.node layer=layer layers=model.theme.layers editMode=editMode index=index}}
+                        {{#if editMode}}
+                            {{add-layer index=index layers=model.theme.layers}}
+                        {{/if}}
+
+                    </div>
+                </div>
+            </div>
         {{/each}}
+     
+    </div>
+
     {{else}}
         {{add-layer index=index layers=model.theme.layers}}
     {{/if}}
 
-    {{layer-footer guid=model.guid}}
+    {{layer-footer guid=model.guid editMode=editMode holderCSSEditMode=holderCSSEditMode}}
 </div>
 
 

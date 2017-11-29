@@ -11,6 +11,7 @@ export default Ember.Controller.extend({
     published: false,
     saved: false,
     isLoading:false,
+    container:'',
     isOpen: Ember.computed('node', async function(){ 
         let node = await this.get('model.node')
         this.set('isOpen', !node.get('public') )
@@ -32,6 +33,16 @@ export default Ember.Controller.extend({
             }
         });
     }),
+    holderCSSEditMode:  Ember.computed('editMode', function() {
+        if(this.get('editMode')){
+            return 'col-xs-9'
+        }else{
+            return  'col-xs-12'
+        }
+
+        this.set('container' , 'container')
+    }),
+
     savedPageData: "",
     isAdmin: Ember.computed('node', function(){
         this.send('canUserEdit')
