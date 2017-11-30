@@ -4,11 +4,45 @@
         position: fixed;
         top:0;
         height:100vh;
-        width:25%;
         z-index: 99;
+        min-width: 340px;
+        width:25%;
+        padding-left: 15px;
+    }
+     
+    .site-overview {
+        margin-top:50px;
+        height:100%;
+        color:white;
+        padding:0;
+    }
+    .page-overview-block {
+        min-height: 50px;
+        padding:5px;
+        text-align:center;
+        background:#ffffffab;
+
+    }
+
+    .scroll { 
         overflow:scroll;
     }
- 
+    .ss-text {
+        font-size: 2px;
+        padding:0 15px;
+    }
+
+    .
+
+    .fake-file-view {
+        width:60px;
+        height:75px;
+        margin: 15px auto;
+        margin-top:0;
+        background:black;
+    }
+
+
 </style>
 
 {{#if isAdmin}}
@@ -74,7 +108,37 @@
     {{#if editMode}}
         <div class="edit-Mode-View">
 
-            {{add-layer index=index layers=model.theme.layers sideView=true}}
+            <div class="row">
+                <div class="col-xs-7">
+                <div class="site-overview">
+                    <h3>Site Overvew</h3>
+                    {{#each model.theme.layers as |layer index|}}
+                        <div 
+                            class="page-overview-block" 
+                            style='
+                            background: {{layer.settings.bgColor}}; 
+                            background-image: url("{{layer.settings.backgroundImage}}"); 
+                            color:{{layer.settings.color}};
+                            background-size: 100%;
+                            '>
+                            {{#if layer.settings.lead}}
+                             {{model.node.title}}
+                            {{/if}}
+
+                            {{layer.settings.sectionTitle}}
+                            <div class="ss-text">{{layer.content.content}}</div>
+                            {{#if layer.settings.downloadLink}}
+                                <div class="fake-file-view">
+                                </div>
+                            {{/if}}
+                        </div>
+                    {{/each}}
+                </div>
+                </div>
+                <div class="col-xs-4">            
+                    {{add-layer index=index layers=model.theme.layers sideView=true}}
+                </div>
+            </div>
         </div>
     {{/if}}
     {{#if isOpen}}
@@ -88,9 +152,9 @@
 
 <div class="holder" >
 
-    {{#if  model.theme.layers}}
+    {{#if model.theme.layers}}
     
-    <div class="">
+    <div>
 
         {{#each model.theme.layers as |layer index|}}
             <div class="row"  style="padding:0">

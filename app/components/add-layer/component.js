@@ -2,6 +2,17 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
     isOpen: null,
+    didRender(){
+        $(".droppable").droppable({
+            drop: function(event, ui) {
+                $(this).addClass("ui-state-highlight")
+                .find("p").html("Dropped in " + this.id);
+            },
+            over: function(event, ui) {
+                $('.display').html( this.id );
+            }
+        });
+    },
     actions: {
         addLayer (type) {
             let item;
@@ -152,14 +163,14 @@ export default Ember.Component.extend({
                     }
                 };
                 break;
-        }
-        let index = this.get('index')+1;
-        this.get('layers.content').insertAt(index,item);
-        this.set('isOpen', false);
+            }
+            let index = this.get('index')+1;
+            this.get('layers.content').insertAt(index,item);
+            this.set('isOpen', false);
 
-    },
-    toggleProperty(prop){
-        this.toggleProperty(prop);
+        },
+        toggleProperty(prop){
+            this.toggleProperty(prop);
+        }
     }
-}
 });

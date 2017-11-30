@@ -1,7 +1,7 @@
 {{#if sideView}}
 <div class="drag-drop-blocks">
     <h3 class="white">Blocks</h3>
-    <div class="white add-title">Pull content
+    <div class="white add-title">OSF Project content
         <button class="btn btn-link white icon">
             <i class="material-icons info-circle white ">info_outline</i>
             {{#bs-popover placement="top"}}Pull page blocks pull content from your OSF project.{{/bs-popover}}
@@ -15,7 +15,7 @@
 
     <br>
 
-    <div class="white add-title">Add content
+    <div class="white add-title">Custom content
         <button class="btn btn-link white icon">
             <i class="material-icons info-circle white ">info_outline</i>
             {{#bs-popover placement="top"}}Add page blocks allow you to add custom text and images to your page{{/bs-popover}}
@@ -87,7 +87,7 @@ fkffk
 
     {{#unless isOpen}}
     <div class="add-layer-toggle">
-        <div class="plus" {{action 'toggleProperty' 'isOpen'}}> {{fa-icon "plus"}} </div>
+        <div class="plus droppable" {{action 'toggleProperty' 'isOpen'}}> {{fa-icon "plus"}} </div>
     </div>
     {{else}}
     <div class="add-layer-toggle">

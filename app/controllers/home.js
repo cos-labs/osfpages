@@ -12,6 +12,7 @@ export default Ember.Controller.extend({
     saved: false,
     isLoading:false,
     container:'',
+    blockOverviewHeight:'',
     isOpen: Ember.computed('node', async function(){ 
         let node = await this.get('model.node')
         this.set('isOpen', !node.get('public') )
@@ -172,5 +173,21 @@ export default Ember.Controller.extend({
                 $('.popover').hide();
             }
         })
+        Ember.run.schedule("afterRender",this,function() {
+            let layerHeight= [];
+
+
+            $( ".page-overview-block" ).each(function( index ) {
+                //layerHeight.push(($(`#layer${index}`).height()/15))
+                //console.log($(`#layer${index}`).height()/15)
+                //this.style.height= '400px';
+
+            console.log( ($( ".page-overview-block:eq("+index+")" )).css('height', '400px'))
+            });
+
+            console.log(layerHeight)
+            this.set('blockOverviewHeight' , layerHeight)
+
+        });
     }
 });

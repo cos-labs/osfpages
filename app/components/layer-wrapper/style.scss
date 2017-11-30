@@ -1,6 +1,12 @@
 .layer-wrapper {
     position: relative;
     min-height: 55px;
+
+
+    padding-left:150px;
+    padding-right:150px;
+    margin:0 auto;
+    background-position: center;
 }
 .layer-content {
     padding: 25px;
@@ -27,4 +33,12 @@
 .layer-info, .layer-wiki, .layer-file, .layer-link, .layer-advanced {
     padding-top: 30px;
     padding-bottom: 40px;
+}
+
+
+@media screen and (max-width: 600px) {
+    .layer-wrapper {
+        padding-left:50px;
+        padding-right:50px;
+    }
 }
