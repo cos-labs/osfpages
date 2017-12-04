@@ -2,17 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
     isOpen: null,
-    didRender(){
-        $(".droppable").droppable({
-            drop: function(event, ui) {
-                $(this).addClass("ui-state-highlight")
-                .find("p").html("Dropped in " + this.id);
-            },
-            over: function(event, ui) {
-                $('.display').html( this.id );
-            }
-        });
-    },
+    indexVal:null,
+    type:null,
     actions: {
         addLayer (type) {
             let item;
@@ -165,12 +156,54 @@ export default Ember.Component.extend({
                 break;
             }
             let index = this.get('index')+1;
+            if(this.get('indexVal') !== null){
+                index = parseInt(this.get('indexVal'))+1 
+            }
             this.get('layers.content').insertAt(index,item);
             this.set('isOpen', false);
+            this.set('indexVal' , null)
 
         },
         toggleProperty(prop){
             this.toggleProperty(prop);
+        },
+        allowDragOver(){
+            return false;
+
+        },
+        ondrag(){
+            console.log('onDrag')
+        },
+        drag(el, event) {
+           // debugger;
+            console.log('dragginggggggggg' , event.target)
+
+            this.set('type', event.target.dataset.title)
+            $('.add-layer-toggle').addClass('dotted-line');
+            $('.drag-drop-area').css('padding' , '5px');
+            $('.drop-zone-plus').css('display' , 'block');
+            $('.dotted-line-small').css('display' , 'block');
+            
+
+        },
+        dragStop(event) {
+            $('.add-layer-toggle').removeClass('dotted-line');
+            $('.drag-drop-area').css('padding' , '0px');
+            $('.drop-zone-plus').css('display' , 'none');
+            $('.dotted-line-small').css('display' , 'none');
+
+
+        },
+        drop(event) {
+            
+            this.set('indexVal' , event.target.parentNode.parentNode.parentNode.parentNode.childNodes[1].firstChild.id.replace(/\D/g,''))
+            this.send('addLayer' , this.get('type'))
+            $('.add-layer-toggle').removeClass('dotted-line');
+            $('.drag-drop-area').css('padding' , '0px');
+            $('.drop-zone-plus').css('display' , 'none');
+            $('.dotted-line-small').css('display' , 'none');
+
         }
+
     }
 });

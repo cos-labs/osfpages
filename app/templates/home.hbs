@@ -7,21 +7,25 @@
         z-index: 99;
         min-width: 340px;
         width:25%;
-        padding-left: 15px;
     }
      
     .site-overview {
         margin-top:50px;
-        height:100%;
         color:white;
         padding:0;
     }
     .page-overview-block {
-        min-height: 50px;
+        min-height: 10px;
         padding:5px;
         text-align:center;
         background:#ffffffab;
+        border-color:#666;
 
+    }
+
+    .page-overview-block:hover {
+        outline:solid 2px white;
+        cursor:pointer;
     }
 
     .scroll { 
@@ -32,8 +36,6 @@
         padding:0 15px;
     }
 
-    .
-
     .fake-file-view {
         width:60px;
         height:75px;
@@ -41,8 +43,6 @@
         margin-top:0;
         background:black;
     }
-
-
 </style>
 
 {{#if isAdmin}}
@@ -109,9 +109,9 @@
         <div class="edit-Mode-View">
 
             <div class="row">
-                <div class="col-xs-7">
+                <div class="col-xs-8" style="height: 100vh; overflow-x: auto; padding: 0; ">
                 <div class="site-overview">
-                    <h3>Site Overvew</h3>
+                    <h3 class="text-center">Site Map</h3>
                     {{#each model.theme.layers as |layer index|}}
                         <div 
                             class="page-overview-block" 
@@ -119,8 +119,9 @@
                             background: {{layer.settings.bgColor}}; 
                             background-image: url("{{layer.settings.backgroundImage}}"); 
                             color:{{layer.settings.color}};
-                            background-size: 100%;
-                            '>
+                            background-size: 100%;'
+                            {{action 'scrollToLayer' index}}
+                            >
                             {{#if layer.settings.lead}}
                              {{model.node.title}}
                             {{/if}}
@@ -132,11 +133,13 @@
                                 </div>
                             {{/if}}
                         </div>
+                        {{add-layer index=index layers=model.theme.layers type=type mini=true }}
+
                     {{/each}}
                 </div>
                 </div>
-                <div class="col-xs-4">            
-                    {{add-layer index=index layers=model.theme.layers sideView=true}}
+                <div class="col-xs-4" style="height: 100vh; overflow-x: hidden; overflow-y: auto; padding:0 8px 0 5px; ">            
+                    {{add-layer index=index layers=model.theme.layers sideView=true type=type}}
                 </div>
             </div>
         </div>
@@ -168,7 +171,7 @@
 
                         {{layer-wrapper node=model.node layer=layer layers=model.theme.layers editMode=editMode index=index}}
                         {{#if editMode}}
-                            {{add-layer index=index layers=model.theme.layers}}
+                            {{add-layer index=index layers=model.theme.layers type=type}}
                         {{/if}}
 
                     </div>
