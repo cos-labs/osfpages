@@ -169,7 +169,7 @@ export default Ember.Component.extend({
         },
         allowDragOver(event){
             $('.add-layer-toggle').addClass('dotted-line');
-            // $(event.target.parentNode).closest('.add-layer-toggle').addClass('dotted-line')
+            // $(event.target.parentNode).closest('.add-layer-toggle').addClass('dotted-line') //save 
             $('.drag-drop-area').css('padding' , '5px');
             $('.drop-zone-plus').css('display' , 'block');
             $('.plus').css('display' , 'none');
