@@ -74,17 +74,18 @@
 
     {{#unless isOpen}}
        {{#if mini}}
-            <div class="drag-drop-area">
+            <div class="drag-drop-area" ondrop={{action 'drop'}} ondragover={{action 'allowDragOver'}}>
                 <div class="add-layer-toggle dotted-line-small">
-                    <span class="white text-center drop-zone-plus" ondrop={{action 'drop'}} ondragover={{action 'allowDragOver'}}>&nbsp;</span>
+                    <span class="white text-center drop-zone-plus" >&nbsp;</span>
                     <!-- <div class="plus" {{action 'toggleProperty' 'isOpen'}}> {{fa-icon "plus"}} </div> -->
                 </div>
             </div>
         {{else}}
-            <div class="drag-drop-area">
+            <div class="drag-drop-area" ondrop={{action 'drop'}} ondragover={{action 'allowDragOver'}}>
                 <div class="add-layer-toggle ">
-                    <span class="white text-center drop-zone-plus" ondrop={{action 'drop'}} ondragover={{action 'allowDragOver'}}> {{fa-icon "plus"}}</span>
-                    <!-- <div class="plus" {{action 'toggleProperty' 'isOpen'}}> {{fa-icon "plus"}} </div> -->
+                    <span class="white text-center drop-zone-plus"> {{fa-icon "plus"}}</span>
+                     
+                     <div class="plus"> {{fa-icon "plus"}} </div>
                 </div>
             </div>
         {{/if}}

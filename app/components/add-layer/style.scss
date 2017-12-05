@@ -20,20 +20,21 @@ $space: 0.065;  // space between links
   color:white;
 }
 .add-layer-toggle>div {
-  width: 42px;
-  padding: 10px 0;
-  border-radius: 21px;
-  text-align: center;
-  margin: auto;
-  position: absolute;
-  left: 48.5%;
-  margin-top: -20px;
-  cursor: pointer;
-  z-index: 98;
-  background: #FFF;
-  color: #BBB;
-  box-shadow: 0 0 5px -1px #333;
-  font-size: 16px;
+    width: 42px;
+    padding: 10px 0;
+    border-radius: 21px;
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    left: 47.5%;
+    margin-top: -31px;
+    cursor: pointer;
+    z-index: 98;
+    /* background: #FFF; */
+    color: #fff;
+    /* box-shadow: 0 0 5px -1px #333; */
+    font-size: 33px;
+    text-shadow: 0px 2px 2px #000, 0px -2px 2px #000;;
 }
 
 
@@ -165,5 +166,8 @@ $space: 0.065;  // space between links
   display: none;
   font-size: 45px;
   line-height: 130px;
+}
 
+.plus{
+  display: none;
 }
