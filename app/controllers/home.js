@@ -28,7 +28,6 @@ function animate(propertySetter, start, end, speed, units, animationCompletedCal
             propertySetter(start + change * cosPow6Intg(elapsed_time / duration) + units);
             if (elapsed_time >= duration) {
                 propertySetter(end + units);
-                animationCompletedCallback();
                 return;
             }
             step();
@@ -208,8 +207,7 @@ export default Ember.Controller.extend({
                 window.scrollY,
                 anchorOffset,
                 0.2,
-                null,
-                () => history.pushState({}, document.title, location.pathname + href)
+                null
             );
 
 

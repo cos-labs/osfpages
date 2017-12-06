@@ -176,22 +176,22 @@ export default Ember.Component.extend({
             return false;
         },
         drag(el, event) {
-           this.set('type', event.target.dataset.title)
-           $('.plus').css('display' , 'block');
-           $('.dotted-line-small').css('display' , 'block');
-           $('.drag-drop-area').css('padding' , '5px');
+            this.set('type', event.target.dataset.title)
+            $('.plus').css('display' , 'block');
+            $('.dotted-line-small').css('display' , 'block');
+            $('.drag-drop-area').css('padding' , '5px');
        },
        dragStop(event) {
-        $('.add-layer-toggle').removeClass('dotted-line');
-        $('.drag-drop-area').css('padding' , '0px');
-        $('.drop-zone-plus').css('display' , 'none');
-        $('.dotted-line-small').css('display' , 'none');
-        $('.plus').css('display' , 'none');
+            $('.add-layer-toggle').removeClass('dotted-line');
+            $('.drag-drop-area').css('padding' , '0px');
+            $('.drop-zone-plus').css('display' , 'none');
+            $('.dotted-line-small').css('display' , 'none');
+            $('.plus').css('display' , 'none');
         },
         drop(event) {     
             if(this.get('mini')){
                 this.set('indexVal' , this.get('index'))   
-            }else {
+            } else {
                 this.set('indexVal' , event.target.parentNode.parentNode.parentNode.parentNode.childNodes[1].firstChild.id.replace(/\D/g,''))   
             }  
             this.send('addLayer' , this.get('type'))
