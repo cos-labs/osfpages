@@ -1,5 +1,5 @@
 img {
-    width:50%;
+    width:48%;
     margin-bottom: 15px;
 }
 
@@ -16,10 +16,19 @@ img {
 }
 
 .side-description {
-    width:100%;
+    width:48%;
+    height:100%;
 }
 .edit-text {
     border: none;
     background: rgba(158, 158, 158, 0.08);
     border-radius: 2px;
+}
+
+.margin-bottom {
+    margin-bottom:25px;
+}
+
+.margin-25 {
+    margin:25px;
 }

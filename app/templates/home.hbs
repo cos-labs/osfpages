@@ -58,6 +58,51 @@
             </div>
         </div>
     </div>
+    {{#if editMode}}
+        <div class="edit-Mode-View">
+
+            <div class="row">
+                <div class="col-xs-8 sublime-view-scroll">
+                <div class="site-overview">
+                    <h3 class="text-center">Site Map</h3>
+                    {{#each model.theme.layers as |layer index|}}
+                        <div 
+                            class="page-overview-block" 
+                            style='
+                            background: {{layer.settings.bgColor}}; 
+                            background-image: url("{{layer.settings.backgroundImage}}"); 
+                            color:{{layer.settings.color}};
+                            background-size: 100%;'
+                            {{action 'scrollToLayer' index}}
+                            >
+                            {{#if layer.settings.lead}}
+                                {{model.node.title}}
+                            {{/if}}
+
+                            {{layer.settings.sectionTitle}}
+                            <div class="ss-text">{{layer.content.content}}</div>
+                            {{#if layer.settings.downloadLink}}
+                                <div class="fake-file-view">
+                                </div>
+                            {{/if}}
+                            {{#if layer.settings.backgroundImage}}
+                                <div class="background-image-size">
+                                </div>
+                            {{/if}}
+                            
+
+                        </div>
+                        {{add-layer index=index layers=model.theme.layers type=type mini=true styles=styles }}
+
+                    {{/each}}
+                </div>
+                </div>
+                <div class="col-xs-4 add-layer-side-view">            
+                    {{add-layer index=index layers=model.theme.layers sideView=true type=type styles=styles}}
+                </div>
+            </div>
+        </div>
+    {{/if}}
     {{#if isOpen}}
          <div class="alert alert-warning alert-message">
             <strong>Warning!</strong> This OSF project is <strong>not public </strong> and can not be viewed by others.<br /> Please consider making this project public!<br />
@@ -67,19 +112,39 @@
 
 {{/if}}
 
-<div class="holder">
-    {{#if  model.theme.layers}}
+<div class="holder" >
+
+    {{#if model.theme.layers}}
+    
+    <div>
+
         {{#each model.theme.layers as |layer index|}}
-            {{layer-wrapper node=model.node layer=layer layers=model.theme.layers editMode=editMode index=index}}
+            <div class="row"  style="padding:0">
             {{#if editMode}}
-                {{add-layer index=index layers=model.theme.layers}}
+                <div  class="col-xs-3">
+
+                </div>
             {{/if}}
+                <div class="{{holderCSSEditMode}}" style="padding:0">
+                    <div class="layer clearfix">
+
+                        {{layer-wrapper node=model.node layer=layer layers=model.theme.layers editMode=editMode index=index}}
+                        {{#if editMode}}
+                        {{add-layer index=index layers=model.theme.layers type=type style="min-height:2px;"}}
+                        {{/if}}
+
+                    </div>
+                </div>
+            </div>
         {{/each}}
+     
+    </div>
+
     {{else}}
         {{add-layer index=index layers=model.theme.layers}}
     {{/if}}
 
-    {{layer-footer guid=model.guid}}
+    {{layer-footer guid=model.guid editMode=editMode holderCSSEditMode=holderCSSEditMode}}
 </div>
 
 

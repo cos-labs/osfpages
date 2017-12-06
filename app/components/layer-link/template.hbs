@@ -2,27 +2,23 @@
 
 {{edit-text showSettings=showSettings editMode=editMode layer=layer type="title"  alignment=layer.settings.alignment}}
 <div class="layer-footer p-v-md">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-10 p-md">
+    <div class="col-sm-10 p-md">
 
-            {{#if editMode}}
-                <p class="text-muted m-b-sm">Link description text:</p>
-            {{/if}}
-            {{edit-text showSettings=showSettings editMode=editMode layer=layer}}
-            {{#if editMode}}
-                <p class="text-muted m-b-sm">Link:</p>
-                {{input value=layer.settings.sectionLink class="form-control"}}
-            {{/if}}
-            </div>
-            <div class="col-sm-2">
+        {{#if editMode}}
+        <p class="text-muted m-b-sm">Link description text:</p>
+        {{/if}}
+        {{edit-text showSettings=showSettings editMode=editMode layer=layer}}
+        {{#if editMode}}
+        <p class="text-muted m-b-sm">Link:</p>
+        {{input value=layer.settings.sectionLink class="form-control"}}
+        {{/if}}
+    </div>
+    <div class="col-sm-2">
 
-				{{#if layer.settings.sectionLink}}
-                    <a href="//{{layer.settings.sectionLink}}" type="button" class="btn-outline-cus btn btn-info btn-lg" target="_blank">Open</a>
-                {{/if}}
+        {{#if layer.settings.sectionLink}}
+        <a href="//{{layer.settings.sectionLink}}" type="button" class="btn-outline-cus btn btn-info btn-lg" target="_blank">Open</a>
+        {{/if}}
 
-            </div>
-        </div>
     </div>
 </div>
 

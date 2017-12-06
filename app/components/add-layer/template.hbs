@@ -1,51 +1,107 @@
-{{#liquid-if isOpen use='toDown'}}
-<div class="add-layer {{if isOpen 'open'}}">
-    <div class="container">
-        <h3 class="white">Select a block template</h3>
-        <div class="row p-v-md">
-            <div class="col-sm-12 text-center">
+{{#if sideView}}
+<div class="drag-drop-blocks">
+    <h3 class="white text-center">Blocks</h3>
+    <div class="white add-title">OSF Project
+        <button class="btn btn-link white icon">
+            <i class="material-icons info-circle white ">info_outline</i>
+            {{#bs-popover placement="top"}}Drag and drop a blocks to pull content from the OSF{{/bs-popover}}
+        </button>
+    </div>
+    <button draggable="true" ondragend={{action 'dragStop'}} ondragstart={{action 'drag' this}} data-title='wiki' class="fa fa-wikipedia-w layer-link" href="#" title="Pull wiki" ></button>
+    <button draggable="true" ondragend={{action 'dragStop'}} ondragstart={{action 'drag' this}} data-title='file' class="fa fa-file layer-link" href="#" title="Pull file"></button>
+    <button draggable="true" ondragend={{action 'dragStop'}} ondragstart={{action 'drag' this}} data-title='navigation' class="fa fa-bars layer-link" href="#" title="Pull navigation"></button>
+    <button draggable="true" ondragend={{action 'dragStop'}} ondragstart={{action 'drag' this}} data-title='info' class="fa fa-info layer-link" href="#" title="Pull info"></button>
+    <button draggable="true" ondragend={{action 'dragStop'}} ondragstart={{action 'drag' this}} data-title='title' class="fa fa-tag layer-link" href="#" title="Pull title"></button>
 
-                <div class="white add-title">Pull content
-                    <button class="btn btn-link white icon">
-                        <i class="material-icons info-circle white ">info_outline</i>
-                        {{#bs-popover placement="top"}}Pull page blocks pull content from your OSF project.{{/bs-popover}}
-                    </button>
-                </div> 
+    <br>
 
-                <div class="layer-links">
-                    <button class="fa fa-wikipedia-w layer-link" href="#" title="Pull wiki" {{action 'addLayer' 'wiki'}}></button>
-                    <button class="fa fa-file layer-link" href="#" title="Pull file" {{action 'addLayer' 'file'}}></button>
-                    <button class="fa fa-bars layer-link" href="#" title="Pull navigation" {{action 'addLayer' 'navigation'}}></button>
-                    <button class="fa fa-info layer-link" href="#" title="Pull info" {{action 'addLayer' 'info'}}></button>
+    <div class="white add-title">Custom
+        <button class="btn btn-link white icon">
+            <i class="material-icons info-circle white ">info_outline</i>
+            {{#bs-popover placement="top"}}Drag and drop a block and create your own content{{/bs-popover}}
+        </button>
+    </div> 
+    <button draggable="true" ondragend={{action 'dragStop'}} ondragstart={{action 'drag' this}} data-title='link' class="fa fa-link layer-link" href="#" title="Add Link(s)"></button>
+    <button draggable="true" ondragend={{action 'dragStop'}} ondragstart={{action 'drag' this}} data-title='advanced'  class="fa fa-paint-brush layer-link" href="#" title="Add custom" ></button>
+    <button draggable="true" ondragend={{action 'dragStop'}} ondragstart={{action 'drag' this}} data-title='image'  class="fa fa-image layer-link" href="#" title="Add splash image" ></button>
+    <button draggable="true" ondragend={{action 'dragStop'}} ondragstart={{action 'drag' this}} data-title='imangeAndText'  class="fa fa-newspaper-o layer-link" href="#" title="Add image & text" ></button>
+</div>
 
-                    <button class="fa fa-tag layer-link" href="#" title="Pull title" {{action 'addLayer' 'title'}}></button>
-                </div>
-                <br>
-                <div class="white add-title">Add content
-                    <button class="btn btn-link white icon">
-                        <i class="material-icons info-circle white ">info_outline</i>
-                        {{#bs-popover placement="top"}}Add page blocks allow you to add custom text and images to your page{{/bs-popover}}
-                    </button>
-                </div> 
-                <div class="layer-links">
-                    <button class="fa fa-link layer-link" href="#" title="Add Link(s)"  {{action 'addLayer' 'link'}}></button>
-                    <button class="fa fa-paint-brush layer-link" href="#" title="Add custom" {{action 'addLayer' 'advanced'}}></button>
-                    <button class="fa fa-image layer-link" href="#" title="Add splash image" {{action 'addLayer' 'image'}}></button>
-                    <button class="fa fa-newspaper-o layer-link" href="#" title="Add image & text" {{action 'addLayer' 'imangeAndText'}}></button>
 
+
+{{else}}
+    {{#liquid-if isOpen use='toDown'}}
+    <div class="add-layer {{if isOpen 'open'}}">
+        <div class="container">
+            <h3 class="white">Select a block template</h3>
+            <div class="row p-v-md">
+                <div class="col-sm-12 text-center">
+
+                    <div class="white add-title">Pull content
+                        <button class="btn btn-link white icon">
+                            <i class="material-icons info-circle white ">info_outline</i>
+                            {{#bs-popover placement="top"}}Pull page blocks pull content from your OSF project.{{/bs-popover}}
+                        </button>
+                    </div> 
+
+                    <div class="layer-links">
+                        <button class="fa fa-wikipedia-w layer-link" href="#" title="Pull wiki" {{action 'addLayer' 'wiki'}}></button>
+                        <button class="fa fa-file layer-link" href="#" title="Pull file" {{action 'addLayer' 'file'}}></button>
+                        <button class="fa fa-bars layer-link" href="#" title="Pull navigation" {{action 'addLayer' 'navigation'}}></button>
+                        <button class="fa fa-info layer-link" href="#" title="Pull info" {{action 'addLayer' 'info'}}></button>
+
+                        <button class="fa fa-tag layer-link" href="#" title="Pull title" {{action 'addLayer' 'title'}}></button>
+                    </div>
+                    <br>
+                    <div class="white add-title">Add content
+                        <button class="btn btn-link white icon">
+                            <i class="material-icons info-circle white ">info_outline</i>
+                            {{#bs-popover placement="top"}}Add page blocks allow you to add custom text and images to your page{{/bs-popover}}
+                        </button>
+                    </div> 
+                    <div class="layer-links">
+                        <button class="fa fa-link layer-link" href="#" title="Add Link(s)"  {{action 'addLayer' 'link'}}></button>
+                        <button class="fa fa-paint-brush layer-link" href="#" title="Add custom" {{action 'addLayer' 'advanced'}}></button>
+                        <button class="fa fa-image layer-link" href="#" title="Add splash image" {{action 'addLayer' 'image'}}></button>
+                        <button class="fa fa-newspaper-o layer-link" href="#" title="Add image & text" {{action 'addLayer' 'imangeAndText'}}></button>
+
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-{{/liquid-if}}
+    {{/liquid-if}}
 
-{{#unless isOpen}}
-<div class="add-layer-toggle">
-    <div class="plus" {{action 'toggleProperty' 'isOpen'}}> {{fa-icon "plus"}} </div>
-</div>
-{{else}}
-<div class="add-layer-toggle">
-    <div class="times"  {{action 'toggleProperty' 'isOpen'}}> {{fa-icon "times"}} </div>
-</div>
-{{/unless}}
+    {{#unless isOpen}}
+       {{#if mini}}
+            <div class="drag-drop-area" ondrop={{action 'drop'}} ondragover={{action 'allowDragOver'}}>
+                <div class="add-layer-toggle dotted-line-small">
+                    <span class="white text-center drop-zone-plus" >&nbsp;</span>
+                    <!-- <div class="plus" {{action 'toggleProperty' 'isOpen'}}> {{fa-icon "plus"}} </div> -->
+                </div>
+            </div>
+        {{else}}
+            <div class="drag-drop-area" ondrop={{action 'drop'}} ondragover={{action 'allowDragOver'}}>
+                <div class="add-layer-toggle ">
+                    <span class="white text-center drop-zone-plus"> {{fa-icon "plus"}}</span>
+                     
+                     <div class="plus"> {{fa-icon "plus"}} </div>
+                </div>
+            </div>
+        {{/if}}
+    {{else}}
+    <div class="add-layer-toggle">
+        <div class="times"  {{action 'toggleProperty' 'isOpen'}}> {{fa-icon "times"}} </div>
+    </div>
+    {{/unless}}
+
+{{/if}}
+
+
+
+
+
+
+
+
+
