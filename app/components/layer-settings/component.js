@@ -4,19 +4,18 @@ import Ember from 'ember';
 import {layerSettings} from './settings';
 
 
-        let helpText = {
-            'layer-info': 'The information section is used for displaying your project description, contributors and affiliated institutions from you OSF project.',
-            'layer-title': 'The title section is used for displaying the title of your OSF project, all data here is pulled directly from your project. ',
-            'layer-wiki':'The wiki section is used for displaying your project\'s wiki, all data from this section is from you OSF project.',
-            'layer-file': 'The file section is used to show files from your OSF project, you can write a short description about the file.',
-            'layer-image': 'The image section is used to show a banner like image.',
-            'layer-link': 'The link section is used to display a link to a site, you can give a short description as well.',
-            'layer-advanced': 'The Advanced section is used to make custom designs to your OSF site. you can edit this by using the inline editor.',
-            'pages-menu': 'The navigation is used for navigating the site, you can add each section to the navigation in the settings of that section.',
-            'layer-image-text': 'The text and image layer is used to show side by side text and images.'
+let helpText = {
+    'layer-info': 'The information section is used for displaying your project description, contributors and affiliated institutions from you OSF project.',
+    'layer-title': 'The title section is used for displaying the title of your OSF project, all data here is pulled directly from your project. ',
+    'layer-wiki':'The wiki section is used for displaying your project\'s wiki, all data from this section is from you OSF project.',
+    'layer-file': 'The file section is used to show files from your OSF project, you can write a short description about the file.',
+    'layer-image': 'The image section is used to show a banner like image.',
+    'layer-link': 'The link section is used to display a link to a site, you can give a short description as well.',
+    'layer-advanced': 'The Advanced section is used to make custom designs to your OSF site. you can edit this by using the inline editor.',
+    'pages-menu': 'The navigation is used for navigating the site, you can add each section to the navigation in the settings of that section.',
+    'layer-image-text': 'The text and image layer is used to show side by side text and images.'
+}
 
-
-        }
 export default Ember.Component.extend({
     helpText,
     OSFcontent:false,
