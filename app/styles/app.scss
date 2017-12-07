@@ -33,6 +33,7 @@ body {
 }
 .inline-block {
     display: inline-block;
+    padding-top:3px;
 }
 .pseudo-link {
     color: #38698f;
@@ -397,4 +398,10 @@ button .material-icons {
     height: 100vh; 
     overflow-x:
     auto; padding: 0; 
+}
+
+.white {color:white;}
+
+.white:hover {
+    color:snow;
 }

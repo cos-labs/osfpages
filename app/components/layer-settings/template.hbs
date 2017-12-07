@@ -118,17 +118,20 @@
                     chooseText='Select'
                 }}
             </div>
-
             <div class="inline-block settings-divider m-h-sm"></div>
 
             <div class="inline-block settings-button" >
                 <i class="material-icons info-circle ">info_outline</i>
                 {{#bs-popover placement="bottom"}}
-                {{get helpText layer.component}}
+                {{{get helpText layer.component}}}
+                {{#if OSFcontent}}
+                    <a class='' href="http://www.osf.io/{{node.id}}" >View/Change Content</a>
+                {{/if}}
                 {{/bs-popover}}
             </div>
-        </div>
 
+
+        </div>
 
         <div class="inline-block pull-right" {{action 'showRemove'}}>
             <div class="settings-button remove-layer-toggle"><i class="material-icons">delete</i> </div>
