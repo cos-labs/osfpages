@@ -52,7 +52,7 @@ export default Ember.Component.extend({
     },
     didRender(){
         let layerContent = this.get('layer.content.component');
-        if(layerContent === 'layer-link' || layerContent === 'layer-image-text' || layerContent === 'layer-advanced' || layerContent === 'layer-image'){
+        if(layerContent === 'pages-menu' || layerContent === 'layer-link' || layerContent === 'layer-image-text' || layerContent === 'layer-advanced' || layerContent === 'layer-image'){
             this.set('OSFcontent', false);
 
         } else {
