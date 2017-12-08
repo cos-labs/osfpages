@@ -62,9 +62,11 @@
         <div class="edit-Mode-View">
 
             <div class="row">
-                <div class="col-xs-8 sublime-view-scroll">
-                <div class="site-overview">
-                    <h3 class="text-center">Site Map</h3>
+                <div class="col-xs-8 mt-xlg">
+                <br><br>
+                <h4 class="h4 white text-center">Site Map</h4>
+
+                <div class="site-overview sublime-view-scroll">
                     {{#each model.theme.layers as |layer index|}}
                         <div 
                             class="page-overview-block" 
@@ -92,13 +94,18 @@
                             
 
                         </div>
+
                         {{add-layer index=index layers=model.theme.layers type=type mini=true styles=styles }}
 
                     {{/each}}
                 </div>
                 </div>
-                <div class="col-xs-4 add-layer-side-view">            
+                <div class="col-xs-4 padding-0 mt-xlg"> 
+                     <br><br>
+                    <h4 class="h4 white text-center">Draggable Blocks</h4>
+                <div class="add-layer-side-view">       
                     {{add-layer index=index layers=model.theme.layers sideView=true type=type styles=styles}}
+                </div>
                 </div>
             </div>
         </div>

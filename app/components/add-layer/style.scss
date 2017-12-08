@@ -80,7 +80,7 @@ $space: 0.065;  // space between links
 .layer-link {
   width: 3em;
       width: 100%;
-  height: 3em;
+  height: 2em;
   font-size: $size;
   text-decoration: none;
   background: $gray;
@@ -106,7 +106,7 @@ $space: 0.065;  // space between links
     transition: .3s;
 
     &:after {
-      bottom: 1em;
+      bottom: .5em;
       transition: .3s;
     }
 
@@ -137,8 +137,7 @@ $space: 0.065;  // space between links
 
 .drag-drop-blocks {
   height: 100%;
-  margin-top:50px;
-  margin-bottom:50px;
+  margin-bottom:90px;
   text-align: center;
 
 }

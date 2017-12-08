@@ -122,7 +122,7 @@ export default Ember.Controller.extend({
             }
         },
         scrollToTop(){
-            $('body').animate({scrollTop:0}, '500');
+            $('html').animate({scrollTop:0}, '500');
         },
         checkSaveState(){
             if(this.get('editMode')){
