@@ -15,8 +15,8 @@ export default Ember.Component.extend({
         let height = this.get('layer.settings.height') ? 'height: ' + this.get('layer.settings.height') + 'px;' : '';
         return Ember.String.htmlSafe(bgImage + bgCover + height + bgColor + color);
     }),
-    didRender(){
-        if(this.get('editMode')){
+    didRender() {
+        if(this.get('editMode')) {
             this.set('editModePadding', 'padding-left:50px;padding-right:50px;')
         } else {
             this.set('editModePadding', '')

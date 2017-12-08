@@ -6,7 +6,7 @@ import {layerSettings} from './settings';
 
 let helpText = {
     'layer-info': 'The information section is used for displaying your project description, contributors and affiliated institutions from you OSF project.',
-    'layer-title': 'The title section is used for displaying the title of your OSF project, all data here is pulled directly from your project. ',
+    'layer-title': 'The title section is used for displaying the title of your OSF project, all data here is pulled directly from your project.',
     'layer-wiki':'The wiki section is used for displaying your project\'s wiki, all data from this section is from you OSF project.',
     'layer-file': 'The file section is used to show files from your OSF project, you can write a short description about the file.',
     'layer-image': 'The image section is used to show a banner like image.',
@@ -18,7 +18,7 @@ let helpText = {
 
 export default Ember.Component.extend({
     helpText,
-    OSFcontent:false,
+    OSFcontent: false,
     layerSettings,
     thisLayerSettings: Ember.computed('layer.component', function(){
         return this.get('')
@@ -49,9 +49,9 @@ export default Ember.Component.extend({
         let offset = el.offset();
         $('body').animate({scrollTop:offset.top}, '500');
     },
-    didRender(){
+    didRender() {
         let layerContent = this.get('layer.content.component');
-        if(layerContent === 'pages-menu' || layerContent === 'layer-link' || layerContent === 'layer-image-text' || layerContent === 'layer-advanced' || layerContent === 'layer-image'){
+        if(layerContent === 'pages-menu' || layerContent === 'layer-link' || layerContent === 'layer-image-text' || layerContent === 'layer-advanced' || layerContent === 'layer-image') {
             this.set('OSFcontent', false);
 
         } else {
