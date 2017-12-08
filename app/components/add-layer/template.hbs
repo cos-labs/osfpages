@@ -9,7 +9,6 @@
     </div>
     <button draggable="true" ondragend={{action 'dragStop'}} ondragstart={{action 'drag' this}} data-title='wiki' class="fa fa-wikipedia-w layer-link" href="#" title="Pull wiki" ></button>
     <button draggable="true" ondragend={{action 'dragStop'}} ondragstart={{action 'drag' this}} data-title='file' class="fa fa-file layer-link" href="#" title="Pull file"></button>
-    <button draggable="true" ondragend={{action 'dragStop'}} ondragstart={{action 'drag' this}} data-title='navigation' class="fa fa-bars layer-link" href="#" title="Pull navigation"></button>
     <button draggable="true" ondragend={{action 'dragStop'}} ondragstart={{action 'drag' this}} data-title='info' class="fa fa-info layer-link" href="#" title="Pull info"></button>
     <button draggable="true" ondragend={{action 'dragStop'}} ondragstart={{action 'drag' this}} data-title='title' class="fa fa-tag layer-link" href="#" title="Pull title"></button>
 
@@ -21,6 +20,7 @@
             {{#bs-popover placement="top"}}Drag and drop a block and create your own content{{/bs-popover}}
         </button>
     </div> 
+    <button draggable="true" ondragend={{action 'dragStop'}} ondragstart={{action 'drag' this}} data-title='navigation' class="fa fa-bars layer-link" href="#" title="Pull navigation"></button>
     <button draggable="true" ondragend={{action 'dragStop'}} ondragstart={{action 'drag' this}} data-title='link' class="fa fa-link layer-link" href="#" title="Add Link(s)"></button>
     <button draggable="true" ondragend={{action 'dragStop'}} ondragstart={{action 'drag' this}} data-title='advanced'  class="fa fa-paint-brush layer-link" href="#" title="Add custom" ></button>
     <button draggable="true" ondragend={{action 'dragStop'}} ondragstart={{action 'drag' this}} data-title='image'  class="fa fa-image layer-link" href="#" title="Add splash image" ></button>

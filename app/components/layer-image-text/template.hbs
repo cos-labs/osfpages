@@ -1,12 +1,12 @@
 {{edit-text showSettings=showSettings editMode=editMode layer=layer type="title" alignment=layer.settings.alignment}}
 
-<div class="margin-25">
+<div>
 	<div>
 		<img align={{layer.settings.alignment}} class="{{layer.settings.alignment}} margin-bottom-5" src="{{layer.content.settings.image}}">
 	</div>
 	<div class="margin-bottom">
     {{#if editMode}}
-        {{textarea class="edit-text" rows="6" cols="50" value=layer.settings.sectionDescription class="side-description"}}
+        {{textarea class="edit-text" rows="6" cols="50" value=layer.settings.sectionDescription }}
     {{else}}
         {{layer.settings.sectionDescription}}
     {{/if}}
