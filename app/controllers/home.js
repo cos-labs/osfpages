@@ -35,6 +35,13 @@ function animate(propertySetter, start, end, speed, units, animationCompletedCal
     }());
 }
 
+function dragEndListener() {
+    $('.add-layer-toggle').removeClass('dotted-line');
+    $('.drag-drop-area').css('padding' , '0px');
+    $('.drop-zone-plus').css('display' , 'none');
+    $('.dotted-line-small').css('display' , 'none');
+    $('.plus').css('display' , 'none');
+}
 
 export default Ember.Controller.extend({
     queryParams: ['editMode'],
@@ -109,6 +116,12 @@ export default Ember.Controller.extend({
             }
         });
     }),
+
+    init() {
+        this._super(...argument);
+        document.addEventListener("dragend", dragEndListener)
+    },
+
     editMode: false,
     actions: {
         canUserEdit(){

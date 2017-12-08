@@ -1,9 +1,13 @@
 import Ember from 'ember';
 
+
+
 export default Ember.Component.extend({
     isOpen: null,
     indexVal:null,
     type:null,
+
+
     actions: {
         addLayer (type) {
             let item;
@@ -168,6 +172,8 @@ export default Ember.Component.extend({
             this.toggleProperty(prop);
         },
         allowDragOver(event){
+            event.preventDefault();
+            event.stopImmediatePropagation();
             $('.add-layer-toggle').addClass('dotted-line');
             // $(event.target.parentNode).closest('.add-layer-toggle').addClass('dotted-line') //save 
             $('.drag-drop-area').css('padding' , '5px');
@@ -176,10 +182,14 @@ export default Ember.Component.extend({
             return false;
         },
         drag(el, event) {
+            console.log("dragging");
             this.set('type', event.target.dataset.title)
-            $('.plus').css('display' , 'block');
-            $('.dotted-line-small').css('display' , 'block');
-            $('.drag-drop-area').css('padding' , '5px');
+            
+            Ember.run.next(this, function() {  
+                $('.plus').css('display' , 'block');
+                $('.dotted-line-small').css('display' , 'block');
+                $('.drag-drop-area').css('padding' , '5px');
+            });
        },
        dragStop(event) {
             $('.add-layer-toggle').removeClass('dotted-line');
@@ -188,18 +198,15 @@ export default Ember.Component.extend({
             $('.dotted-line-small').css('display' , 'none');
             $('.plus').css('display' , 'none');
         },
-        drop(event) {     
+        drop(event) {
+             
             if(this.get('mini')){
                 this.set('indexVal' , this.get('index'))   
             } else {
                 this.set('indexVal' , event.target.parentNode.parentNode.parentNode.parentNode.childNodes[1].firstChild.id.replace(/\D/g,''))   
             }  
             this.send('addLayer' , this.get('type'))
-            $('.add-layer-toggle').removeClass('dotted-line');
-            $('.drag-drop-area').css('padding' , '0px');
-            $('.drop-zone-plus').css('display' , 'none');
-            $('.dotted-line-small').css('display' , 'none');
-            $('.plus').css('display' , 'block');
+
         }
 
     }
