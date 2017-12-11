@@ -5,6 +5,7 @@ import TimeMachine from 'ember-time-machine';
 import ENV from '../../config/environment';
 
 export default Ember.Component.extend({
+    classNames: ['pull-left'],
     themeList: [
         {
             id: 1,

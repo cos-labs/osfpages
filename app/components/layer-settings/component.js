@@ -47,7 +47,7 @@ export default Ember.Component.extend({
     scrollToLayer(index){
         let el = $('#layer'+index);
         let offset = el.offset();
-        $('body').animate({scrollTop:offset.top}, '500');
+        $('html').animate({scrollTop:offset.top}, '500');
     },
     didRender() {
         let layerContent = this.get('layer.content.component');
