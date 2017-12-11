@@ -182,7 +182,6 @@ export default Ember.Component.extend({
             return false;
         },
         drag(el, event) {
-            console.log("dragging");
             this.set('type', event.target.dataset.title)
             
             Ember.run.next(this, function() {  
