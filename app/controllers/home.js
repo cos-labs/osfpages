@@ -44,6 +44,7 @@ export default Ember.Controller.extend({
     isLoading:false,
     container:'',
     type:null,
+    isDragging:false,
     blockOverviewHeight:'',
     isOpen: Ember.computed('node', async function(){ 
         let node = await this.get('model.node')
@@ -109,6 +110,11 @@ export default Ember.Controller.extend({
             }
         });
     }),
+
+    init() {
+        this._super(...argument);
+    },
+
     editMode: false,
     actions: {
         canUserEdit(){
@@ -122,7 +128,7 @@ export default Ember.Controller.extend({
             }
         },
         scrollToTop(){
-            $('body').animate({scrollTop:0}, '500');
+            $('html').animate({scrollTop:0}, '500');
         },
         checkSaveState(){
             if(this.get('editMode')){
@@ -211,7 +217,8 @@ export default Ember.Controller.extend({
             );
 
 
-           }
+        }
+
     },
     init(){
         this._super(...arguments);

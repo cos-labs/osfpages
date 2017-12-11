@@ -1,4 +1,17 @@
-<div class="">
+    {{#if noFileFound}}
+        <div class="p-v-md">
+            No Files found in OSF Project.
+        </div>
+    {{else}}
+        {{#if editMode}}
+            <div class="margin-top select-box">
+                {{file-browser rootItem=node openFile=(action 'fileDetail') }}
+            </div>
+        {{/if}}
+    {{/if}}
+    <br>
+
+<div>
     {{edit-text showSettings=showSettings editMode=editMode layer=layer type="title" }}
     <div class="row">
         <div class="col-sm-12 p-md">
@@ -8,29 +21,6 @@
         </div>
 
     </div>
-    {{#if noFileFound}}
-        <div class="p-v-md">
-            No Files found in OSF Project.
-        </div>
-    {{else}}
-        {{#if editMode}}
-            {{#if showSelect}}
-                <div class="">
-                    {{file-browser rootItem=node openFile=(action 'fileDetail') }}
-                </div>
-            {{else}}
-                <div class="select-box p-v-md" {{action 'showSelect'}}>
-                    <p>
-                        {{#if layer.settings.downloadLink}}
-                            Change selection
-                        {{else}}
-                            Select a file
-                        {{/if}}
-                    </p>
-                </div>
-            {{/if}}
-        {{/if}}
-    {{/if}}
 
 
     {{#if layer.settings.showFileviewer}}

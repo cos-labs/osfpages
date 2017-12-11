@@ -1,16 +1,15 @@
 {{#if sideView}}
 <div class="drag-drop-blocks">
-    <h3 class="white text-center">Blocks</h3>
     <div class="white add-title">OSF Project
         <button class="btn btn-link white icon">
             <i class="material-icons info-circle white ">info_outline</i>
             {{#bs-popover placement="top"}}Drag and drop a blocks to pull content from the OSF{{/bs-popover}}
         </button>
     </div>
-    <button draggable="true" ondragend={{action 'dragStop'}} ondragstart={{action 'drag' this}} data-title='wiki' class="fa fa-wikipedia-w layer-link" href="#" title="Pull wiki" ></button>
-    <button draggable="true" ondragend={{action 'dragStop'}} ondragstart={{action 'drag' this}} data-title='file' class="fa fa-file layer-link" href="#" title="Pull file"></button>
-    <button draggable="true" ondragend={{action 'dragStop'}} ondragstart={{action 'drag' this}} data-title='info' class="fa fa-info layer-link" href="#" title="Pull info"></button>
-    <button draggable="true" ondragend={{action 'dragStop'}} ondragstart={{action 'drag' this}} data-title='title' class="fa fa-tag layer-link" href="#" title="Pull title"></button>
+    <button draggable="true" ondragstart={{action 'drag' this}} data-title='wiki' class="fa fa-wikipedia-w layer-link" href="#" title="Pull wiki" onclick="return false"></button>
+    <button draggable="true" ondragstart={{action 'drag' this}} data-title='file' class="fa fa-file layer-link" href="#" title="Pull file"></button>
+    <button draggable="true" ondragstart={{action 'drag' this}} data-title='info' class="fa fa-info layer-link" href="#" title="Pull info"></button>
+    <button draggable="true" ondragstart={{action 'drag' this}} data-title='title' class="fa fa-tag layer-link" href="#" title="Pull title"></button>
 
     <br>
 
@@ -20,11 +19,11 @@
             {{#bs-popover placement="top"}}Drag and drop a block and create your own content{{/bs-popover}}
         </button>
     </div> 
-    <button draggable="true" ondragend={{action 'dragStop'}} ondragstart={{action 'drag' this}} data-title='navigation' class="fa fa-bars layer-link" href="#" title="Pull navigation"></button>
-    <button draggable="true" ondragend={{action 'dragStop'}} ondragstart={{action 'drag' this}} data-title='link' class="fa fa-link layer-link" href="#" title="Add Link(s)"></button>
-    <button draggable="true" ondragend={{action 'dragStop'}} ondragstart={{action 'drag' this}} data-title='advanced'  class="fa fa-paint-brush layer-link" href="#" title="Add custom" ></button>
-    <button draggable="true" ondragend={{action 'dragStop'}} ondragstart={{action 'drag' this}} data-title='image'  class="fa fa-image layer-link" href="#" title="Add splash image" ></button>
-    <button draggable="true" ondragend={{action 'dragStop'}} ondragstart={{action 'drag' this}} data-title='imangeAndText'  class="fa fa-newspaper-o layer-link" href="#" title="Add image & text" ></button>
+    <button draggable="true" ondragstart={{action 'drag' this}} data-title='navigation' class="fa fa-bars layer-link" href="#" title="Pull navigation"></button>
+    <button draggable="true" ondragstart={{action 'drag' this}} data-title='link' class="fa fa-link layer-link" href="#" title="Add Link(s)"></button>
+    <button draggable="true" ondragstart={{action 'drag' this}} data-title='advanced'  class="fa fa-paint-brush layer-link" href="#" title="Add custom" ></button>
+    <button draggable="true" ondragstart={{action 'drag' this}} data-title='image'  class="fa fa-image layer-link" href="#" title="Add splash image" ></button>
+    <button draggable="true" ondragstart={{action 'drag' this}} data-title='imangeAndText'  class="fa fa-newspaper-o layer-link" href="#" title="Add image & text" ></button>
 </div>
 
 
@@ -75,18 +74,19 @@
     {{#unless isOpen}}
        {{#if mini}}
             <div class="drag-drop-area" ondrop={{action 'drop'}} ondragover={{action 'allowDragOver'}}>
-                <div class="add-layer-toggle dotted-line-small">
-                    <span class="white text-center drop-zone-plus" >&nbsp;</span>
-                    <!-- <div class="plus" {{action 'toggleProperty' 'isOpen'}}> {{fa-icon "plus"}} </div> -->
-                </div>
+                {{#if isDragging}}
+                    <div class="add-layer-toggle dotted-line-small">
+                        <span class="white text-center drop-zone-plus" >&nbsp;</span>
+                    </div>
+                {{/if}}
             </div>
         {{else}}
             <div class="drag-drop-area" ondrop={{action 'drop'}} ondragover={{action 'allowDragOver'}}>
-                <div class="add-layer-toggle ">
-                    <span class="white text-center drop-zone-plus"> {{fa-icon "plus"}}</span>
-                     
-                     <div class="plus"> {{fa-icon "plus"}} </div>
-                </div>
+                {{#if isDragging}}            
+                    <div class="add-layer-toggle dotted-line">
+                        <span class="white text-center drop-zone-plus"> {{fa-icon "plus"}}</span> 
+                    </div>
+                {{/if}}
             </div>
         {{/if}}
     {{else}}
@@ -96,12 +96,4 @@
     {{/unless}}
 
 {{/if}}
-
-
-
-
-
-
-
-
 

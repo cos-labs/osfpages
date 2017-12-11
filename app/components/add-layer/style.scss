@@ -79,8 +79,8 @@ $space: 0.065;  // space between links
 
 .layer-link {
   width: 3em;
-      width: 100%;
-  height: 3em;
+  width: 100%;
+  height: 2em;
   font-size: $size;
   text-decoration: none;
   background: $gray;
@@ -106,7 +106,7 @@ $space: 0.065;  // space between links
     transition: .3s;
 
     &:after {
-      bottom: 1em;
+      bottom: .5em;
       transition: .3s;
     }
 
@@ -137,14 +137,13 @@ $space: 0.065;  // space between links
 
 .drag-drop-blocks {
   height: 100%;
-  margin-top:50px;
-  margin-bottom:50px;
+  margin-bottom:156px;
   text-align: center;
 
 }
 
 .dotted-line {
-  height:130px;
+  min-height:130px;
   border: 2px dashed #bbb;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -155,7 +154,6 @@ $space: 0.065;  // space between links
   border: 2px dashed #bbb;
   -webkit-border-radius: 5px;
   border-radius: 5px;
-  display: none;
 }
 
 .drag-drop-area {
@@ -164,7 +162,7 @@ $space: 0.065;  // space between links
 }
 
 .drop-zone-plus {
-  display: none;
+  display: block;
   font-size: 45px;
   line-height: 130px;
 }
