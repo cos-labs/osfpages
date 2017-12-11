@@ -27,6 +27,9 @@ export default Ember.Route.extend({
            controller.set('isDragging', false)
        })
     },
+    deactivate: function() {
+        document.removeEventListener("dragend", ()=>{})
+    },
     model: async function(params){
 
         jsonBlob = await this.store.findRecord('home', params.guid).then((record)=>{
