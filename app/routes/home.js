@@ -21,14 +21,16 @@ function showError(){
 }
 
 export default Ember.Route.extend({
+    isDragging:'',
     setupController: function(controller, model) {
+        this.set('isDragging', function isDragging(){
+            controller.set('isDragging', false)
+        });
         controller.set('model' , model);
-        document.addEventListener("dragend", ()=>{
-           controller.set('isDragging', false)
-       })
+        document.addEventListener("dragend", this.get('isDragging'))
     },
     deactivate: function() {
-        document.removeEventListener("dragend", ()=>{})
+        document.removeEventListener("dragend" , this.get('isDragging'))
     },
     model: async function(params){
 
