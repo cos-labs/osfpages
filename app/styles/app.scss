@@ -84,7 +84,7 @@ body {
   .btn-outline-white-cus span{ 
 
     display:none;
-  }
+}
 
 }
 
@@ -346,7 +346,7 @@ button .material-icons {
     min-width: 340px;
     width:25%;
 }
- 
+
 .site-overview {
     color:white;
     padding:0;
@@ -391,12 +391,14 @@ button .material-icons {
     overflow-x: hidden; 
     overflow-y: auto; 
     padding:0 8px 0 5px;
- }
+}
 
 .sublime-view-scroll {
-    height: 100vh; 
-    overflow-x:
-    auto; padding: 0; 
+    height: calc(100vh - 134px); 
+    overflow-x: auto; 
+    overflow-y: auto; 
+    padding: 0; 
+    margin-bottom: 180px;
 }
 
 .white {
