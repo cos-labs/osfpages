@@ -7,7 +7,6 @@ export default Ember.Component.extend({
     indexVal:null,
     type:null,
     isDragging:null,
-
     actions: {
         addLayer (type) {
             let item;
@@ -174,26 +173,23 @@ export default Ember.Component.extend({
         allowDragOver(event){
             event.preventDefault();
             event.stopImmediatePropagation();
-           
-
-
             return false;
         },
         drag(el, event) {
             this.set('type', event.target.dataset.title)
             Ember.run.next(this, ()=> {  
                 this.set('isDragging' , true)
-                // $('.add-layer-toggle').addClass('dotted-line');
                 // $(event.target.parentNode).closest('.add-layer-toggle').addClass('dotted-line') //save 
-                // $('.drop-zone-plus').css('display' , 'block');
             });
-       },
+        },
         drop(event) {
-             
+
             if(this.get('mini')){
                 this.set('indexVal' , this.get('index'))   
             } else {
-                this.set('indexVal' , event.target.parentNode.parentNode.parentNode.parentNode.childNodes[1].firstChild.id.replace(/\D/g,''))   
+                if(event.target.parentNode.parentNode.parentNode.parentNode.childNodes[1].firstChild !== null){
+                    this.set('indexVal' , event.target.parentNode.parentNode.parentNode.parentNode.childNodes[1].firstChild.id.replace(/\D/g,''))   
+                }
             }  
             this.send('addLayer' , this.get('type'))
 

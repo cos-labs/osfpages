@@ -24,9 +24,8 @@ export default Ember.Route.extend({
     setupController: function(controller, model) {
         controller.set('model' , model);
         document.addEventListener("dragend", ()=>{
-             controller.set('isDragging', false)
-        })
-
+           controller.set('isDragging', false)
+       })
     },
     model: async function(params){
 
