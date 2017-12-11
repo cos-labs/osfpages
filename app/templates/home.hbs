@@ -95,7 +95,7 @@
 
                         </div>
 
-                        {{add-layer index=index layers=model.theme.layers type=type mini=true styles=styles }}
+                        {{add-layer index=index layers=model.theme.layers type=type mini=true styles=styles isDragging=isDragging}}
 
                     {{/each}}
                 </div>
@@ -104,7 +104,7 @@
                      <br><br>
                     <h4 class="h4 white text-center">Draggable Blocks</h4>
                 <div class="add-layer-side-view">       
-                    {{add-layer index=index layers=model.theme.layers sideView=true type=type styles=styles}}
+                    {{add-layer index=index layers=model.theme.layers sideView=true type=type styles=styles isDragging=isDragging}}
                 </div>
                 </div>
             </div>
@@ -137,7 +137,7 @@
 
                         {{layer-wrapper node=model.node layer=layer layers=model.theme.layers editMode=editMode index=index}}
                         {{#if editMode}}
-                        {{add-layer index=index layers=model.theme.layers type=type style="min-height:2px;"}}
+                        {{add-layer index=index layers=model.theme.layers type=type style="min-height:2px;" isDragging=isDragging}}
                         {{/if}}
 
                     </div>
@@ -148,7 +148,7 @@
     </div>
 
     {{else}}
-        {{add-layer index=index layers=model.theme.layers}}
+        {{add-layer index=index layers=model.theme.layers editMode=editMode isDragging=isDragging}}
     {{/if}}
 
     {{layer-footer guid=model.guid editMode=editMode holderCSSEditMode=holderCSSEditMode}}

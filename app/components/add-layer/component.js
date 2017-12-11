@@ -6,7 +6,7 @@ export default Ember.Component.extend({
     isOpen: null,
     indexVal:null,
     type:null,
-
+    isDragging:null,
 
     actions: {
         addLayer (type) {
@@ -174,29 +174,20 @@ export default Ember.Component.extend({
         allowDragOver(event){
             event.preventDefault();
             event.stopImmediatePropagation();
-            $('.add-layer-toggle').addClass('dotted-line');
-            // $(event.target.parentNode).closest('.add-layer-toggle').addClass('dotted-line') //save 
-            $('.drag-drop-area').css('padding' , '5px');
-            $('.drop-zone-plus').css('display' , 'block');
-            $('.plus').css('display' , 'none');
+           
+
+
             return false;
         },
         drag(el, event) {
             this.set('type', event.target.dataset.title)
-            
-            Ember.run.next(this, function() {  
-                $('.plus').css('display' , 'block');
-                $('.dotted-line-small').css('display' , 'block');
-                $('.drag-drop-area').css('padding' , '5px');
+            Ember.run.next(this, ()=> {  
+                this.set('isDragging' , true)
+                // $('.add-layer-toggle').addClass('dotted-line');
+                // $(event.target.parentNode).closest('.add-layer-toggle').addClass('dotted-line') //save 
+                // $('.drop-zone-plus').css('display' , 'block');
             });
        },
-       dragStop(event) {
-            $('.add-layer-toggle').removeClass('dotted-line');
-            $('.drag-drop-area').css('padding' , '0px');
-            $('.drop-zone-plus').css('display' , 'none');
-            $('.dotted-line-small').css('display' , 'none');
-            $('.plus').css('display' , 'none');
-        },
         drop(event) {
              
             if(this.get('mini')){

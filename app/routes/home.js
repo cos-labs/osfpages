@@ -19,17 +19,13 @@ function showError(){
     });
     jsonBlob =  JSON.stringify(defaultJSON);
 }
-function dragEndListener() {
-    $('.add-layer-toggle').removeClass('dotted-line');
-    $('.drag-drop-area').css('padding' , '0px');
-    $('.drop-zone-plus').css('display' , 'none');
-    $('.dotted-line-small').css('display' , 'none');
-    $('.plus').css('display' , 'none');
-}
+
 export default Ember.Route.extend({
     setupController: function(controller, model) {
         controller.set('model' , model);
-        document.addEventListener("dragend", dragEndListener)
+        document.addEventListener("dragend", ()=>{
+             controller.set('isDragging', false)
+        })
 
     },
     model: async function(params){
