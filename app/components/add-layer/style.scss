@@ -1,9 +1,8 @@
 $bg: #313131;
-$text: #838383;
 $accent: #5bc0de;
 
 $size: 2.25em;  // size of links
-$zoom: 1.2;     // amount of scale on hover
+$zoom: 1.05;     // amount of scale on hover
 $space: 0.065;  // space between links
 
 .add-layer-toggle {
@@ -76,14 +75,17 @@ $space: 0.065;  // space between links
   justify-content: center;
 }
 
+.layer-link:active {
+    cursor: -webkit-grabbing;
+}
 .layer-link {
   width: 3em;
   width: 100%;
   height: 2em;
   font-size: $size;
   text-decoration: none;
-  background: #3a4852;
-  color: $text;
+  background: rgba(255,255,255,.8);
+  color: #273947;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -94,6 +96,8 @@ $space: 0.065;  // space between links
   transition: all .4s ease-out;
   transform: translateZ(0px); 
   border:none;
+  border-radius: 3px;
+  cursor: -webkit-grab;
   &:hover, 
   &:focus, 
   &:active {
@@ -141,9 +145,7 @@ $space: 0.065;  // space between links
 
 }
 
-.drag-drop-blocks button{
-  color: white;
-}
+
 .dotted-line {
   min-height:130px;
   border: 2px dashed #bbb;
