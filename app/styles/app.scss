@@ -8,8 +8,8 @@ body {
     margin-bottom: 50px; /* Temporary due to notice at bottom */
 }
 html { 
-    min-width: 630px;
- }
+    min-width: 800px;
+}
 .scroll-top {
     position: fixed;
     right: 30px;
@@ -55,8 +55,10 @@ html {
     width: 100%;
     text-align: center;
     font-size: 14px;
-    padding: 13px 0;
     color: #fff;
+    padding:12px;
+    min-height: 40px;
+    max-height: 40px;
 }
 
 
@@ -80,7 +82,16 @@ html {
     position: fixed;
     color: #fff;
     width: 100%;
+    min-height: 40px;
+    max-height: 40px;
+    height:40px;
+    padding:5px 106px;
     z-index: 100;
+    white-space:nowrap;
+}
+
+.editMenu button, .editMenu div.d-inline, .editMenu .d-inline {
+    display: inline;
 }
 
 @media(max-width: 992px) {
@@ -199,7 +210,6 @@ html {
     border: 1px solid #565656;
     color:white;
     border-radius:3px;
-    margin:0px 3px;
 }
 
 .btn-outline-white-cus:hover { 
@@ -424,3 +434,41 @@ button .material-icons {
 .h4 {
   font-size: 23px;
 }
+
+.osf-logo {
+    margin: 0px 0px 0px 3px;
+}
+
+.navbar-space {
+    margin-right:30px;
+}
+
+.btn-small {
+    font-size: 17px;
+    padding: 0px 3px;
+    margin: 0px;
+}
+.btn-small i {
+    margin-bottom: 2px;
+}
+
+.btn-spacing { 
+  margin:0px 10px
+}
+
+.d-inline {
+    display: inline;
+}
+
+.save-staus {
+    margin: auto; 
+    margin-top: 7px;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    width:300px;
+    height:30px;
+    background: rgba(39, 57, 71, 0.7411764705882353);
+    border-radius: 0 0 25px 25px;
+
+}
+
