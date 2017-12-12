@@ -10,17 +10,16 @@
         <div class="m-v-md">
             <h4> Contributors </h4>
             {{#each users as |user|}}
-                <a href="https://osf.io/{{user.id}}/" target="_blank" class="color-black">{{user.fullName}}</a>
+                <a href="https://osf.io/{{user.id}}/" target="_blank" style= "color:{{layer.settings.color}}">{{user.fullName}}</a>
             {{/each}}
         </div>
     {{/if}}
-
 
     {{#if layer.settings.showBibliographicContributors}}
         <div class="m-v-md">
             <h4>Bibliographic Contributors</h4>
             {{#each bibliographicUsers as |user|}}
-                <a href="https://osf.io/{{user.id}}/" target="_blank" class="color-black">{{user.fullName}}</a>
+                <a href="https://osf.io/{{user.id}}/" target="_blank" style= "color:{{layer.settings.color}}">{{user.fullName}}</a>
             {{/each}}
         </div>
     {{/if}}

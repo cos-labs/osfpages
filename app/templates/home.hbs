@@ -1,63 +1,55 @@
 {{#if isAdmin}}
 {{loading-spinner isLoading=isLoading}}
 
-    <div class="editMenu">
-        <div class="container p-sm">
-            <div class="row">
-                <div class="col-xs-2">
-                    {{#if editMode}}
-                        {{layer-template-select theme=model.theme}}
-                    {{/if}}
-                </div>
-                <div class="col-xs-2">
-                {{#if editMode}}
-                    <button class="btn-outline-white-cus" disabled="{{unless model.theme.canUndo 'disabled'}}" {{action 'undo'}}><i class="material-icons">undo</i></button>
-                    <button class="btn-outline-white-cus" disabled="{{unless model.theme.canRedo 'disabled'}}" {{action 'redo'}}><i class="material-icons">redo</i></button>
-                {{/if}}
-                </div>
-                <div class="col-xs-3">
-                {{#if saved}}
-                   <div class="text-center"> Saving...</div>
-                {{/if}}
-                {{#if published}}
-                    <div class="text-center">Publishing...</div>
-                {{/if}}
-                {{#if unpublishedChanges}}
-                    <div class="text-center"> Unpublished draft
-                        {{#unless editMode}}
-                            <a href='' style='color: #96c3ea' {{action 'toggleEditMode'}}> edit now</a>
-                        {{/unless}}
-                        </div>
-                {{/if}}
-                </div>
-                <div class="col-xs-3">
-                    {{#if editMode}}
-                    <div class="pull-right">
-                        <button class="btn-outline-white-cus" {{action 'publish'}}>
-                            <i class="material-icons">publish</i>
-                            <span> Publish</span>
-                        </button>
-                        <button class="btn-outline-white-cus" {{action 'save'}}>
-                            <i class="material-icons">save</i>
-                            <span> Save draft</span>
-                         </button>
-                    </div>
-                    {{/if}}
-                </div>
-                <div class="col-xs-2 clearfix">
-                    <div class="pull-right">
-                        <button class="btn-outline-white-cus editModeBtn" {{action 'checkSaveState'}}  title="Edit Mode">
-                            {{#if editMode}}
-                                <i class="material-icons">close</i><span>Finish editing </span> 
-                            {{else}}
-                                <i class="material-icons">edit</i> Edit
-                            {{/if}}
-                        </button>
-                    </div>
-                </div>
+ <div class="editMenu d-inline">
+    <span width="27" class="osf-navbar-logo osf-logo d-inline"></span>
+    <h3 class="osf-logo navbar-space d-inline">OSF<span style="font-weight:normal;" class="d-inline">PAGES</span></h3>
+    
+    {{#if editMode}}
+        {{layer-template-select theme=model.theme}}
+    {{/if}}
+    {{#if editMode}}
+        <button class="btn-outline-white-cus btn-small d-inline" disabled="{{unless model.theme.canUndo 'disabled'}}" {{action 'undo'}}><i class="material-icons d-inline">undo</i></button>
+        <button class="btn-outline-white-cus btn-small d-inline" disabled="{{unless model.theme.canRedo 'disabled'}}" {{action 'redo'}}><i class="material-icons d-inline">redo</i></button>
+    {{/if}}
+    {{#if saved}}
+       <div class="text-center d-inline save-staus"> Saving...</div>
+    {{/if}}
+    {{#if published}}
+        <div class="text-center d-inline save-staus">Publishing...</div>
+    {{/if}}
+    {{#if unpublishedChanges}}
+        <div class="text-center d-inline save-staus"> Unpublished draft
+            {{#unless editMode}}
+                <a href='' style='color: #96c3ea' {{action 'toggleEditMode'}}> edit now</a>
+            {{/unless}}
             </div>
-        </div>
+    {{/if}}
+    <div class="pull-right d-inline">
+        {{#if editMode}}
+            <button class="btn-outline-white-cus d-inline" {{action 'publish'}}>
+                <i class="material-icons d-inline">publish</i>
+                <span> Publish</span>
+            </button>
+            <button class="btn-outline-white-cus navbar-space d-inline" {{action 'save'}}>
+                <i class="material-icons d-inline">save</i>
+                <span> Save draft</span>
+            </button>
+        {{/if}}
+
+        <button class="btn-outline-white-cus editModeBtn d-inline" {{action 'checkSaveState'}}  title="Edit Mode">
+            {{#if editMode}}
+                <i class="material-icons d-inline">close</i><span>Finish editing </span> 
+            {{else}}
+                <i class="material-icons d-inline">edit</i> Edit
+            {{/if}}
+        </button>
     </div>
+
+</div>
+
+
+
     {{#if editMode}}
         <div class="edit-Mode-View">
 

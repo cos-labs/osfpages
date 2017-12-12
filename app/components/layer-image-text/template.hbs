@@ -4,7 +4,7 @@
 	<div>
 		<img align={{layer.settings.alignment}} class="{{layer.settings.alignment}} margin-bottom-5" src="{{layer.content.settings.image}}">
 	</div>
-	<div class="margin-bottom">
+	<div class="margin-bottom {{layer.settings.alignment}}">
     {{#if editMode}}
         {{textarea class="edit-text" rows="6" cols="50" value=layer.settings.sectionDescription }}
     {{else}}
