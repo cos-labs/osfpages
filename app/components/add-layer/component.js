@@ -7,6 +7,67 @@ export default Ember.Component.extend({
     indexVal:null,
     type:null,
     isDragging:null,
+    mouseMovePageX:'',
+    didRender(){
+        var i = 0;
+        var dragging = false;
+        $('.resizable-control').mousedown((e)=>{
+            e.preventDefault();
+
+            dragging = true;
+            var main = $('.resizable-control');
+
+            $(document).mousemove((e)=>{
+                if( e.pageX <= 0){
+                    main.css("left",0);  
+                }else{
+                    main.css("left",e.pageX);
+
+                }
+              this.set('mouseMovePageX' , e.pageX)
+              if(e.pageX <= 200) {
+                $('.layer-wrapper').css("padding", "0 150px");
+            }else {
+                $('.layer-wrapper').css("padding", "0 50px");
+
+            }
+        });
+
+        });
+
+        $(document).mouseup(function(e){
+         if (dragging) 
+         {
+             var percentage = (e.pageX / window.innerWidth) * 100;
+             var mainPercentage = 100-percentage;
+
+               $('.edit-Mode-View').css("width",percentage + "%");
+               $('.holder .col-xs-3').css("width",percentage + "%");
+               $('.holder .col-xs-9').css("width",mainPercentage + "%");
+               $('#ghostbar').remove();
+
+               if( $('.edit-Mode-View').width() <= 150){
+                $('.edit-Mode-View .col-xs-8').hide()
+                $('.edit-Mode-View .col-xs-4').css('width' , '100%')
+
+               }else { 
+                $('.edit-Mode-View .col-xs-8').show()
+                $('.edit-Mode-View .col-xs-4').css('width' , '33.33333%')
+
+               }
+               $(document).unbind('mousemove');
+               dragging = false;
+           }
+       });
+        window.onresize = (e)=> {
+            $('.edit-Mode-View').css("width","25%");
+            $('.holder .col-xs-3').css("width", "25%");
+            $('.layer-footer .col-xs-3').css("width", "25%");
+            $('.layer-footer.clearfix.row.col-xs-9').css("width","75%");
+            $('.holder .col-xs-9').css("width","75%");
+            $('.resizable-control').css("left",this.get('mouseMovePageX'));
+        };
+    },
     actions: {
         addLayer (type) {
             let item;

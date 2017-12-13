@@ -36,6 +36,7 @@ function animate(propertySetter, start, end, speed, units, animationCompletedCal
 }
 
 
+
 export default Ember.Controller.extend({
     queryParams: ['editMode'],
     showNotSavedModal: false,
@@ -113,6 +114,9 @@ export default Ember.Controller.extend({
 
     init() {
         this._super(...argument);
+    },
+    didRender() {
+
     },
 
     editMode: false,
