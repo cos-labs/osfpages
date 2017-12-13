@@ -1,14 +1,15 @@
 import Ember from 'ember';
 
-
-
+var overallpercentage = '25';
+var mouseMovePageX = '';
 export default Ember.Component.extend({
     isOpen: null,
     indexVal:null,
     type:null,
     isDragging:null,
-    mouseMovePageX:'',
+
     didRender(){
+        let self = this;
         var i = 0;
         var dragging = false;
         $('.resizable-control').mousedown((e)=>{
@@ -24,48 +25,53 @@ export default Ember.Component.extend({
                     main.css("left",e.pageX);
 
                 }
-              this.set('mouseMovePageX' , e.pageX)
-              if(e.pageX <= 200) {
-                $('.layer-wrapper').css("padding", "0 150px");
-            }else {
-                $('.layer-wrapper').css("padding", "0 50px");
+                if(e.pageX <= 200) {
+                    $('.layer-wrapper').css("padding-left", "150px");
+                    $('.layer-wrapper').css("padding-right", "150px");
 
-            }
+                }else {
+                    $('.layer-wrapper').css("padding-left", "50px");
+                    $('.layer-wrapper').css("padding-right", "50px");
+                }
+               mouseMovePageX = e.pageX;
+            });
+
         });
 
-        });
-
-        $(document).mouseup(function(e){
-         if (dragging) 
-         {
-             var percentage = (e.pageX / window.innerWidth) * 100;
-             var mainPercentage = 100-percentage;
+        $(document).mouseup((e)=>{
+           if (dragging) {
+               var percentage = (e.pageX / window.innerWidth) * 100;
+               var mainPercentage = 100-percentage;
 
                $('.edit-Mode-View').css("width",percentage + "%");
                $('.holder .col-xs-3').css("width",percentage + "%");
                $('.holder .col-xs-9').css("width",mainPercentage + "%");
                $('#ghostbar').remove();
+               overallpercentage = percentage;
 
-               if( $('.edit-Mode-View').width() <= 150){
+               if( $('.edit-Mode-View').width() <= 200){
                 $('.edit-Mode-View .col-xs-8').hide()
                 $('.edit-Mode-View .col-xs-4').css('width' , '100%')
 
-               }else { 
+            }else { 
                 $('.edit-Mode-View .col-xs-8').show()
                 $('.edit-Mode-View .col-xs-4').css('width' , '33.33333%')
 
-               }
-               $(document).unbind('mousemove');
-               dragging = false;
-           }
-       });
+            }
+            $(document).unbind('mousemove');
+            dragging = false;
+
+
+
+        }
+    });
         window.onresize = (e)=> {
             $('.edit-Mode-View').css("width","25%");
             $('.holder .col-xs-3').css("width", "25%");
             $('.layer-footer .col-xs-3').css("width", "25%");
             $('.layer-footer.clearfix.row.col-xs-9').css("width","75%");
             $('.holder .col-xs-9').css("width","75%");
-            $('.resizable-control').css("left",this.get('mouseMovePageX'));
+            $('.resizable-control').css("left",mouseMovePageX);
         };
     },
     actions: {
@@ -253,6 +259,24 @@ export default Ember.Component.extend({
                 }
             }  
             this.send('addLayer' , this.get('type'))
+            Ember.run.next(this, ()=> {  
+
+                let percentage = overallpercentage;
+                let mainPercentage = 100-percentage;
+                console.log('in drop' , overallpercentage , percentage)
+                $('.holder .col-xs-3').css("width",percentage + "%");
+                $('.holder .col-xs-9').css("width",mainPercentage + "%");
+
+
+                if(mouseMovePageX <= 200) {
+                    $('.layer-wrapper').css("padding-left", "150px");
+                    $('.layer-wrapper').css("padding-right", "150px");
+
+                }else {
+                    $('.layer-wrapper').css("padding-left", "50px");
+                    $('.layer-wrapper').css("padding-right", "50px");
+                }
+            });
 
         }
 
