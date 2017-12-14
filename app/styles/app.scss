@@ -5,7 +5,7 @@
 
 body {
     font-size: 16px;
-    margin-bottom: 50px; /* Temporary due to notice at bottom */
+    margin-bottom: 40px; /* Temporary due to notice at bottom */
 }
 html { 
     min-width: 600px;
@@ -33,6 +33,18 @@ html {
     border: 2px dashed #ccc;
     text-align: center;
     cursor: pointer;
+    background: rgba(93, 138, 179, 0.42);
+    background: rgba(92, 104, 115, 0.6);
+}
+
+.select-box * {color:white;}
+.ember-power-select-selected-item { color:black; }
+.ember-power-select-selected-item:hover {color:black;}
+.file-browser-item:hover {background-color: rgba(245, 245, 245, 0.46);}
+
+.breadcrumb > li + li:before {
+    content: "/ ";
+    color: #fff;
 }
 .inline-block {
     display: inline-block;
@@ -424,9 +436,6 @@ button .material-icons {
     color: snow;
 }
 
-.margin-top {
-    margin-top: -55px;
-}
 
 .padding-0 { 
     padding:0;

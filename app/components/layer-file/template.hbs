@@ -4,13 +4,13 @@
         </div>
     {{else}}
         {{#if editMode}}
-            <div class="margin-top select-box">
+            <div class="{{marginTop}} select-box">
                 {{file-browser rootItem=node openFile=(action 'fileDetail') }}
             </div>
         {{/if}}
     {{/if}}
-    <br>
-
+    
+{{preview-line layer=layer text="Preview" editMode=editMode}}
 <div>
     {{edit-text showSettings=showSettings editMode=editMode layer=layer type="title" }}
     <div class="row">
