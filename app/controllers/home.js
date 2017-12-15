@@ -48,8 +48,8 @@ export default Ember.Controller.extend({
     isDragging:false,
     blockOverviewHeight:'',
 
-    percentage:'25',
-    mainPercentage:'75',
+    percentage:'0',
+    mainPercentage:'100',
     isResizing: false,
     sublimeView: 'block',
     draggableBlocks: '33.33333',
@@ -291,12 +291,14 @@ export default Ember.Controller.extend({
 
 
         window.onresize = (e)=> {
-            this.set('resizableControl' , '25%')
-            this.set('draggableBlocks' , '33.33333') 
-            this.set('sublimeView' , 'block')
-            this.set('mainPercentage' , '75')
-            this.set('percentage' , '25')  
-            this.set('layerPadding' , '0 50px')
+            if(this.get('editMode')){
+                this.set('resizableControl' , '25%')
+                this.set('draggableBlocks' , '33.33333') 
+                this.set('sublimeView' , 'block')
+                this.set('mainPercentage' , '75')
+                this.set('percentage' , '25')  
+                this.set('layerPadding' , '0 50px')
+            }
         };
 
 

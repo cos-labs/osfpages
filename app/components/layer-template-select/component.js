@@ -62,14 +62,6 @@ export default Ember.Component.extend({
                     $('body').removeClass('no-scroll');
                 }
 			});
-            $('.edit-Mode-View .col-xs-8').show()
-            $('.edit-Mode-View .col-xs-4').css('width' , '33.33333%')
-            $('.edit-Mode-View').css("width","25%");
-            $('.holder .col-xs-3').css("width", "25%");
-            $('.layer-footer .col-xs-3').css("width", "25%");
-            $('.layer-footer.clearfix.row.col-xs-9').css("width","75%");
-            $('.holder .col-xs-9').css("width","75%");
-            $('.resizable-control').css("left", '25%');
 		},
         openOverlay(){
             this.set('isOpen', true);

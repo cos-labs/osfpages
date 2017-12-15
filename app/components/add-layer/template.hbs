@@ -81,7 +81,7 @@
                 {{/if}}
             </div>
         {{else}}
-            <div class="drag-drop-area" ondrop={{action 'drop'}} ondragover={{action 'allowDragOver'}}>
+            <div class="drag-drop-area" ondrop={{action 'drop'}} ondragover={{action 'allowDragOver'}} >
                 {{#if isDragging}}            
                     <div class="add-layer-toggle dotted-line">
                         <span class="white text-center drop-zone-plus"> {{fa-icon "plus"}}</span> 

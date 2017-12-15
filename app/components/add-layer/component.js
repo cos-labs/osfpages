@@ -6,7 +6,6 @@ export default Ember.Component.extend({
     isOpen: null,
     indexVal:null,
     type:null,
-    isDragging:null,
 
     actions: {
         addLayer (type) {
