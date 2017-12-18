@@ -1,7 +1,5 @@
 import Ember from 'ember';
 
-var overallpercentage = '25';
-var mouseMovePageX = '';
 export default Ember.Component.extend({
     isOpen: null,
     indexVal:null,

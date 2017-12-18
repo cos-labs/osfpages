@@ -524,3 +524,10 @@ button .material-icons {
   -khtml-user-select: none;
   -webkit-user-select: none;
 }
+
+
+@-moz-document url-prefix() { 
+  .edit-menu-action-group {
+     margin-top: -25px;
+  }
+}
