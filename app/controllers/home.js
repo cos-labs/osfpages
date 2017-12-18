@@ -133,8 +133,6 @@ export default Ember.Controller.extend({
         } else {
             this.set('mainPercentage' , '75')
             this.set('percentage' , '25')  
-
-
         }
     }),
     editMode: false,
