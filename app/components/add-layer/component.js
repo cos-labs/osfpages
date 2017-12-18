@@ -180,6 +180,7 @@ export default Ember.Component.extend({
             return false;
         },
         drag(el, event) {
+            event.dataTransfer.setData('text/html', event.target.dataset.title) // for firefox 
             this.set('type', event.target.dataset.title)
             Ember.run.next(this, ()=> {  
                 this.set('isDragging' , true)

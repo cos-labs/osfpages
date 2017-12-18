@@ -6,10 +6,10 @@
             {{#bs-popover placement="top"}}Drag and drop a block from below to pull content from your OSF project{{/bs-popover}}
         </button>
     </div>
-    <button draggable="true" ondragstart={{action 'drag' this}} data-title='wiki' class="fa fa-wikipedia-w layer-link" href="#" title="Pull wiki" onclick="return false"><i class="fa fa-grip fa-rotate-90 drag-icon"></i></button>
-    <button draggable="true" ondragstart={{action 'drag' this}} data-title='file' class="fa fa-file layer-link" href="#" title="Pull file"><i class="fa fa-grip fa-rotate-90 drag-icon"></i></button>
-    <button draggable="true" ondragstart={{action 'drag' this}} data-title='info' class="fa fa-info layer-link" href="#" title="Pull info"><i class="fa fa-grip fa-rotate-90 drag-icon"></i></button>
-    <button draggable="true" ondragstart={{action 'drag' this}} data-title='title' class="fa fa-tag layer-link" href="#" title="Pull title"><i class="fa fa-grip fa-rotate-90 drag-icon"></i></button>
+    <div draggable="true" forceFallback="true" ondragstart={{action 'drag' this}} data-title='wiki' class="fa fa-wikipedia-w layer-link" href="#" title="Pull wiki"><i class="fa fa-grip fa-rotate-90 drag-icon"></i></div>
+    <div draggable="true" ondragstart={{action 'drag' this}} data-title='file' class="fa fa-file layer-link" href="#" title="Pull file"><i class="fa fa-grip fa-rotate-90 drag-icon"></i></div>
+    <div draggable="true" ondragstart={{action 'drag' this}} data-title='info' class="fa fa-info layer-link" href="#" title="Pull info"><i class="fa fa-grip fa-rotate-90 drag-icon"></i></div>
+    <div draggable="true" ondragstart={{action 'drag' this}} data-title='title' class="fa fa-tag layer-link" href="#" title="Pull title"><i class="fa fa-grip fa-rotate-90 drag-icon"></i></div>
 
     <br>
 
@@ -19,11 +19,11 @@
             {{#bs-popover placement="top"}}Drag and drop a block and create your own content{{/bs-popover}}
         </button>
     </div> 
-    <button draggable="true" ondragstart={{action 'drag' this}} data-title='navigation' class="fa fa-bars layer-link" href="#" title="Pull navigation"><i class="fa fa-grip fa-rotate-90 drag-icon"></i></button>
-    <button draggable="true" ondragstart={{action 'drag' this}} data-title='link' class="fa fa-link layer-link" href="#" title="Add Link(s)"><i class="fa fa-grip fa-rotate-90 drag-icon"></i></button>
-    <button draggable="true" ondragstart={{action 'drag' this}} data-title='advanced'  class="fa fa-paint-brush layer-link" href="#" title="Add custom" ><i class="fa fa-grip fa-rotate-90 drag-icon"></i></button>
-    <button draggable="true" ondragstart={{action 'drag' this}} data-title='image'  class="fa fa-image layer-link" href="#" title="Add splash image" ><i class="fa fa-grip fa-rotate-90 drag-icon"></i></button>
-    <button draggable="true" ondragstart={{action 'drag' this}} data-title='imangeAndText'  class="fa fa-newspaper-o layer-link" href="#" title="Add image & text" ><i class="fa fa-grip fa-rotate-90 drag-icon"></i></button>
+    <div draggable="true" ondragstart={{action 'drag' this}} data-title='navigation' class="fa fa-bars layer-link" href="#" title="Pull navigation"><i class="fa fa-grip fa-rotate-90 drag-icon"></i></div>
+    <div draggable="true" ondragstart={{action 'drag' this}} data-title='link' class="fa fa-link layer-link" href="#" title="Add Link(s)"><i class="fa fa-grip fa-rotate-90 drag-icon"></i></div>
+    <div draggable="true" ondragstart={{action 'drag' this}} data-title='advanced'  class="fa fa-paint-brush layer-link" href="#" title="Add custom" ><i class="fa fa-grip fa-rotate-90 drag-icon"></i></div>
+    <div draggable="true" ondragstart={{action 'drag' this}} data-title='image'  class="fa fa-image layer-link" href="#" title="Add splash image" ><i class="fa fa-grip fa-rotate-90 drag-icon"></i></div>
+    <div draggable="true" ondragstart={{action 'drag' this}} data-title='imangeAndText'  class="fa fa-newspaper-o layer-link" href="#" title="Add image & text" ><i class="fa fa-grip fa-rotate-90 drag-icon"></i></div>
 </div>
 
 

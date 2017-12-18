@@ -510,7 +510,7 @@ button .material-icons {
     color:white;
     left:25%;
     cursor: col-resize;
-    z-index: 101;
+    z-index: 102;
 }
 .resizable-control span {
     color: rgba(40, 57, 71, 0.70);
@@ -518,5 +518,9 @@ button .material-icons {
     top:50%;
     left:1.5px;
 }
-
-
+[draggable=true] {
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+}
