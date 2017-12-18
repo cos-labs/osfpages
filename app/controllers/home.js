@@ -120,9 +120,7 @@ export default Ember.Controller.extend({
             }
         });
 
-        console.log('edit mode changed')
-
-        if(!this.get('editMode')){
+        if (!this.get('editMode')) {
             this.set('mainPercentage' , '100')
             this.set('percentage' , '0')  
             this.set('layerPadding' , '0 150px')

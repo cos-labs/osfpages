@@ -6,7 +6,7 @@
             {{#bs-popover placement="top"}}Drag and drop a block from below to pull content from your OSF project{{/bs-popover}}
         </button>
     </div>
-    <div draggable="true" forceFallback="true" ondragstart={{action 'drag' this}} data-title='wiki' class="fa fa-wikipedia-w layer-link" href="#" title="Pull wiki"><i class="fa fa-grip fa-rotate-90 drag-icon"></i></div>
+    <div draggable="true" ondragstart={{action 'drag' this}} data-title='wiki' class="fa fa-wikipedia-w layer-link" href="#" title="Pull wiki"><i class="fa fa-grip fa-rotate-90 drag-icon"></i></div>
     <div draggable="true" ondragstart={{action 'drag' this}} data-title='file' class="fa fa-file layer-link" href="#" title="Pull file"><i class="fa fa-grip fa-rotate-90 drag-icon"></i></div>
     <div draggable="true" ondragstart={{action 'drag' this}} data-title='info' class="fa fa-info layer-link" href="#" title="Pull info"><i class="fa fa-grip fa-rotate-90 drag-icon"></i></div>
     <div draggable="true" ondragstart={{action 'drag' this}} data-title='title' class="fa fa-tag layer-link" href="#" title="Pull title"><i class="fa fa-grip fa-rotate-90 drag-icon"></i></div>
@@ -81,7 +81,7 @@
                 {{/if}}
             </div>
         {{else}}
-            <div class="drag-drop-area" ondrop={{action 'drop'}} ondragover={{action 'allowDragOver'}} >
+            <div class="drag-drop-area" ondrop={{action 'drop'}} ondragover={{action 'allowDragOver'}}>
                 {{#if isDragging}}            
                     <div class="add-layer-toggle dotted-line">
                         <span class="white text-center drop-zone-plus"> {{fa-icon "plus"}}</span> 

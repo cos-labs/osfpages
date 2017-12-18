@@ -160,9 +160,9 @@ export default Ember.Component.extend({
             if(this.get('indexVal') !== null){
                 index = parseInt(this.get('indexVal'))+1 
             }
-            try{
+            try {
                 this.get('layers.content').insertAt(index,item);
-            }catch(e){
+            } catch(e) {
                 this.get('layers.content').insertAt(0,item);
             }
             this.set('isOpen', false);
@@ -196,16 +196,12 @@ export default Ember.Component.extend({
             this.send('addLayer' , this.get('type'))
 
             Ember.run.next(this, ()=> {  
-
-
                 let percentage = this.get('percentage');
                 let mainPercentage = 100-percentage;
 
                 this.set('percentage' , percentage)
                 this.set('mainPercentage' , mainPercentage)
-
             });
-            $(document).unbind('mousemove');
         }
 
     }
