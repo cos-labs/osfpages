@@ -8,6 +8,12 @@ export default Ember.Component.extend({
     showSelect: true,
     isTruncated: false,
     wikiContent: null,
+    marginTop: Ember.computed('editMode', function(){
+        if(this.get('editMode')){
+            return 'margin-top';
+        }
+        return '';
+    }),
     reloadWiki: Ember.computed('layer.settings.wikiId', function(){
         this.get('node.wikis').then(()=>{
             if(!this.get('layers.settings.wikiID')){
@@ -16,6 +22,8 @@ export default Ember.Component.extend({
             this.loadWikiWithId();
         })
     }),
+    didRender() { 
+    },
     loadFirstWiki(){
         let firstWiki = this.get('node.wikis').objectAt(0) || 'none';  // Add string when no wiki returned
         this.set('currentWiki', firstWiki );

@@ -36,6 +36,7 @@ function animate(propertySetter, start, end, speed, units, animationCompletedCal
 }
 
 
+
 export default Ember.Controller.extend({
     queryParams: ['editMode'],
     showNotSavedModal: false,
@@ -46,6 +47,15 @@ export default Ember.Controller.extend({
     type:null,
     isDragging:false,
     blockOverviewHeight:'',
+
+    percentage:'0',
+    mainPercentage:'100',
+    isResizing: false,
+    sublimeView: 'block',
+    draggableBlocks: '33.33333',
+    layerPadding: '0 50px',
+    resizableControl: '',
+
     isOpen: Ember.computed('node', async function(){ 
         let node = await this.get('model.node')
         this.set('isOpen', !node.get('public') )
@@ -109,12 +119,20 @@ export default Ember.Controller.extend({
                 });
             }
         });
+
+        if (!this.get('editMode')) {
+            this.set('mainPercentage' , '100')
+            this.set('percentage' , '0')  
+            this.set('layerPadding' , '0 150px')
+            this.set('resizableControl' , '25%')
+            this.set('sublimeView' , 'block')
+            this.set('draggableBlocks' , '33.33333') 
+
+        } else {
+            this.set('mainPercentage' , '75')
+            this.set('percentage' , '25')  
+        }
     }),
-
-    init() {
-        this._super(...argument);
-    },
-
     editMode: false,
     actions: {
         canUserEdit(){
@@ -214,9 +232,57 @@ export default Ember.Controller.extend({
                 anchorOffset,
                 0.2,
                 null
-            );
+                );
 
 
+        },
+        moveResizableControl(e) { 
+            e.preventDefault();
+            this.set('isResizing' , true)
+
+            const mouseMove = (e) => {
+
+                if(e.pageX <= 200) {
+                    this.set('layerPadding' , '0 150px')
+                    this.set('sublimeView' , 'none')
+                    this.set('draggableBlocks' , '100')
+
+                }else {
+                    this.set('layerPadding' , '0 50px')
+                    this.set('sublimeView' , 'block')
+                    this.set('draggableBlocks' , '33.33333') 
+                }
+
+                var percentage = (e.pageX / window.innerWidth) * 100;
+                if(percentage >= 33.33){
+                    percentage = 33.33;
+                }
+                var mainPercentage = 100-percentage;
+
+
+                this.set('mainPercentage' , mainPercentage)
+                this.set('percentage' , percentage)  
+
+                if( e.pageX <= 0){
+                    this.set('resizableControl' , '0px')
+                }else if(e.pageX >= $( document ).width()/3) { 
+                    this.set('resizableControl' , $( document ).width()/3 +'px')
+
+                }else{
+                    this.set('resizableControl' , e.pageX+'px')
+                }
+
+            };
+
+            const mouseUp = (e) => {
+                if (this.get('isResizing')) {
+                    document.removeEventListener('mousemove' , mouseMove);
+                    document.removeEventListener('mouseup' , mouseUp);
+                    this.set('isResizing' , false);
+                }
+            };
+            document.addEventListener('mousemove', mouseMove);   
+            document.addEventListener('mouseup', mouseUp);
         }
 
     },
@@ -227,5 +293,19 @@ export default Ember.Controller.extend({
                 $('.popover').hide();
             }
         })
+
+
+        window.onresize = (e)=> {
+            if(this.get('editMode')){
+                this.set('resizableControl' , '25%')
+                this.set('draggableBlocks' , '33.33333') 
+                this.set('sublimeView' , 'block')
+                this.set('mainPercentage' , '75')
+                this.set('percentage' , '25')  
+                this.set('layerPadding' , '0 50px')
+            }
+        };
+
+
     }
 });

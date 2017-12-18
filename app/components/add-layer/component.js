@@ -1,12 +1,10 @@
 import Ember from 'ember';
 
-
-
 export default Ember.Component.extend({
     isOpen: null,
     indexVal:null,
     type:null,
-    isDragging:null,
+
     actions: {
         addLayer (type) {
             let item;
@@ -162,7 +160,11 @@ export default Ember.Component.extend({
             if(this.get('indexVal') !== null){
                 index = parseInt(this.get('indexVal'))+1 
             }
-            this.get('layers.content').insertAt(index,item);
+            try {
+                this.get('layers.content').insertAt(index,item);
+            } catch(e) {
+                this.get('layers.content').insertAt(0,item);
+            }
             this.set('isOpen', false);
             this.set('indexVal' , null)
 
@@ -176,6 +178,7 @@ export default Ember.Component.extend({
             return false;
         },
         drag(el, event) {
+            event.dataTransfer.setData('text/html', event.target.dataset.title) // for firefox 
             this.set('type', event.target.dataset.title)
             Ember.run.next(this, ()=> {  
                 this.set('isDragging' , true)
@@ -183,7 +186,6 @@ export default Ember.Component.extend({
             });
         },
         drop(event) {
-
             if(this.get('mini')){
                 this.set('indexVal' , this.get('index'))   
             } else {
@@ -193,6 +195,13 @@ export default Ember.Component.extend({
             }  
             this.send('addLayer' , this.get('type'))
 
+            Ember.run.next(this, ()=> {  
+                let percentage = this.get('percentage');
+                let mainPercentage = 100-percentage;
+
+                this.set('percentage' , percentage)
+                this.set('mainPercentage' , mainPercentage)
+            });
         }
 
     }

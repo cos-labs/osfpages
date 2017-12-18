@@ -3,6 +3,12 @@ import Ember from 'ember';
 export default Ember.Component.extend({
     showSelect: false,
     noFileFound: true,
+    marginTop: Ember.computed('editMode', function(){
+        if(this.get('editMode')){
+            return 'margin-top';
+        }
+        return '';
+    }),
     didRender() {
         if(!this.get('layer.settings.downloadLink')){
             this.get('node.files').then((result)=>{

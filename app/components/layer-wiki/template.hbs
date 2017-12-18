@@ -1,4 +1,4 @@
-<div class="margin-top">
+<div class="{{marginTop}}">
     {{#if editMode}}
         <div class="select-box m-v-lg">
             <div class="m-v-lg">
@@ -12,8 +12,10 @@
             </div>
         </div>
     {{/if}}
+        {{preview-line layer=layer text="Preview" editMode=editMode}}
+
         {{edit-text showSettings=showSettings editMode=editMode layer=layer type="title"  alignment=layer.settings.alignment}}
-        <div class="wiki-markdown {{if (and isTruncated layer.settings.addShowMore) 'truncated'}} ">
+        <div class="wiki-markdown {{layer.settings.alignment}} {{if (and isTruncated layer.settings.addShowMore) 'truncated'}} ">
             {{markdown-to-html wikiContent}}
         </div>
         {{#if layer.settings.addShowMore}}
