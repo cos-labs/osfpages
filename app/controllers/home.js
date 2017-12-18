@@ -245,11 +245,6 @@ export default Ember.Controller.extend({
             this.set('isResizing' , true)
 
             const mouseMove = (e) => {
-                if( e.pageX <= 0){
-                    this.set('resizableControl' , '0px')
-                }else{
-                    this.set('resizableControl' , e.pageX+'px')
-                }
 
                 if(e.pageX <= 200) {
                     this.set('layerPadding' , '0 150px')
@@ -263,10 +258,24 @@ export default Ember.Controller.extend({
                 }
 
                 var percentage = (e.pageX / window.innerWidth) * 100;
+                if(percentage >= 33.33){
+                    percentage = 33.33;
+                }
                 var mainPercentage = 100-percentage;
+
 
                 this.set('mainPercentage' , mainPercentage)
                 this.set('percentage' , percentage)  
+
+                if( e.pageX <= 0){
+                    this.set('resizableControl' , '0px')
+                }else if(e.pageX >= $( document ).width()/3) { 
+                    this.set('resizableControl' , $( document ).width()/3 +'px')
+
+                }else{
+                    this.set('resizableControl' , e.pageX+'px')
+                }
+
             };
 
             const mouseUp = (e) => {
@@ -302,5 +311,5 @@ export default Ember.Controller.extend({
         };
 
 
- }
+    }
 });
