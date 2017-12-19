@@ -15,6 +15,7 @@ export default Ember.Component.extend({
                     "component": "layer-wiki",
                     "settings": {
                         "component": "layer-settings",
+                        "sectionTitle": "Wiki example",
                         "wikiId": "",
                         "sectionTitle": "Wiki example",
                         "showInNavigation": true,
@@ -66,6 +67,7 @@ export default Ember.Component.extend({
                     "component": "layer-advanced",
                     "content": "<p>Mauris imperdie Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellentesque ut metus odio. Integer fringilla nulla id leo consequat, a sollicitudin sapien fringilla. Fusce vestibulum malesuada nisl. Fusce augue leo, tempus eget matssstis vel, imperdiet at nulla</p>",
                     "settings": {
+                        "component": "layer-settings",
                         "sectionTitle": "Custom text block",
                         "backgroundImage": "https://image.ibb.co/kCgzp5/confectionary.png",
                         "showInNavigation": true,
@@ -108,6 +110,8 @@ export default Ember.Component.extend({
                     "sectionHeader": "Title",
                     "component": "layer-title",
                     "settings": {
+                        "component": "layer-settings",
+                        "lead": "Some lead text",
                         "backgroundImage": "http://localhost:4200/img/bg.png",
                         "backgroundCover": true,
                         "showNavigation": true,
@@ -117,8 +121,7 @@ export default Ember.Component.extend({
                         "h1Size": 30,
                         "bgColor": "#333333",
                         "color": "#EEEEEE",
-                        "alignment": "right",
-                        "lead": "Some lead text"
+                        "alignment": "right"
                     }
                 };
                 break;
@@ -127,6 +130,7 @@ export default Ember.Component.extend({
                     "sectionHeader": "Info",
                     "component": "layer-info",
                     "settings": {
+                        "component": "layer-settings",
                         "sectionTitle": "Info Title",
                         "showInNavigation": true,
                         "showDescription": true,
@@ -144,6 +148,7 @@ export default Ember.Component.extend({
                     "sectionHeader": "Image-Text",
                     "component": "layer-image-text",
                     "settings": {
+                        "component": "layer-settings",
                         "sectionTitle": "Image and Text",
                         "showNavigation": true,
                         "showInNavigation": true,
