@@ -86,7 +86,7 @@ export default Ember.Component.extend({
 			let theme = `theme_${id}.json`;
 			$.ajax({
 				type: 'GET',
-				url: ENV.rootURL +'themes/' + theme,
+				url: ENV.rootURL +'templates/' + theme,
 				async: false,
 				success: function(data) {
                     var content = Ember.Object.create(data);
@@ -104,7 +104,8 @@ export default Ember.Component.extend({
                             //👍 14  
                             if(currentContent.layers[i].component === content.layers[k].component) {
                                 if(allowed){
-                                    content.layers[k].settings = _.defaultsDeep(currentContent.layers[i].settings , content.layers[k].settings )
+                            
+                                    content.layers[k].settings = _.defaults(currentContent.layers[i].settings , content.layers[k].settings )
                                     count.push(k)
                                     break;
                                 }else {
@@ -115,7 +116,7 @@ export default Ember.Component.extend({
                         }
                    }
 
-                   content.layers = _.union(content.layers, removedLayers);
+                    content.layers = _.union(content.layers, removedLayers);
                     console.log('at end LAYER REMOVED' , content.layers)
 
                     const timeMachine = TimeMachine.Object.create({ content });

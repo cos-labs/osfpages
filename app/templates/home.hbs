@@ -7,6 +7,8 @@
     
     {{#if editMode}}
         {{layer-template-select theme=model.theme}}
+
+        {{layer-theme-select model=model}}
     {{/if}}
     {{#if editMode}}
         <button class="btn-outline-white-cus btn-small d-inline" disabled="{{unless model.theme.canUndo 'disabled'}}" {{action 'undo'}}><i class="material-icons d-inline">undo</i></button>

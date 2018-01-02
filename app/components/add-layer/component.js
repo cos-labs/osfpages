@@ -154,9 +154,7 @@ export default Ember.Component.extend({
                         "showInNavigation": true,
                         "bgColor": "#ffffff",
                         "color": "#333333",
-                        "alignment": "right",
-                        "sectionDescription": "Mauris imperdiet ligula a mauris porttitor ultricies. Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellentesque ut metus odio. Integer fringilla nulla id leo consequat, a sollicitudin sapien fringilla.",
-                        "image": "http://localhost:4200/img/img.jpg"
+                        "alignment": "right"
                     }
                 };
                 break;
