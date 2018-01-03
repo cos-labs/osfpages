@@ -126,6 +126,10 @@ export default Ember.Component.extend({
 
                     self.set('theme', timeMachine);
 					self.set('isOpen', false);
+
+                    self.set('showTemplates' , false) //strange right?
+                    self.set('model.metaData.showTemplates' , false)
+
                     $('body').scrollTop(0);
                     $('body').removeClass('no-scroll');
                 }

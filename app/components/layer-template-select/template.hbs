@@ -9,14 +9,14 @@
                 <div class="row p-v-xl">
                     {{#each themeList as |item|}}
                         <div class="col-sm-4 m-b-lg">
-                            <div class="theme-select-item" {{action 'renderTemplate' item.id}}>
+                            <div class="template-select-item" {{action 'renderTemplate' item.id}}>
                                 {{#if (eq theme.id item.id)}}
-                                    <div class="theme-selected">
+                                    <div class="template-selected">
                                         <i class="material-icons">check</i>
                                     </div>
                                 {{/if}}
                                 <div class="theme-thumb" style="background-image:url('{{item.thumb}}')"></div>
-                                <div class="theme-content p-md">
+                                <div class="template-content p-md">
                                     <h3> {{item.name}}</h3>
                                     <p>{{item.description}}</p>
                                 </div>
@@ -30,4 +30,8 @@
 {{/if}}
 
 
-<button class="btn-outline-white-cus btn-spacing d-inline"  {{action 'openOverlay'}}> Templates </button>
+{{#if showButton}}
+    <button class="btn-link" {{action 'openOverlay'}}>View Templates</button>
+{{else}}
+    <button class="btn-outline-white-cus btn-spacing d-inline"  {{action 'openOverlay'}}> Templates </button>
+{{/if}}

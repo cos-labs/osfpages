@@ -6,9 +6,11 @@
     <h3 class="osf-logo navbar-space d-inline">OSF<span style="font-weight:normal;" class="d-inline">PAGES</span></h3>
     
     {{#if editMode}}
-        {{layer-template-select theme=model.theme}}
-
-        {{layer-theme-select model=model}}
+        {{#if showTemplates}}
+            {{layer-template-select model=model theme=model.theme showButton=showButton}}
+        {{else}}
+            {{layer-theme-select model=model}}
+        {{/if}}
     {{/if}}
     {{#if editMode}}
         <button class="btn-outline-white-cus btn-small d-inline" disabled="{{unless model.theme.canUndo 'disabled'}}" {{action 'undo'}}><i class="material-icons d-inline">undo</i></button>

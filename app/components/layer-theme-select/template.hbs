@@ -7,7 +7,8 @@
 			<div class="overlay-dismiss">
 				<i class="material-icons" {{action 'dismiss'}}>close</i>
 			</div>
-			<h2> Select a theme</h2>
+			<h2  class="btn-margin-bottom"> Select a theme</h2>
+			{{layer-template-select model=model theme=model.theme showButton=true }}
 			<div class="row p-v-xl">
 				{{#each themeList as |item|}}
 				<div class="col-sm-3 m-b-lg">

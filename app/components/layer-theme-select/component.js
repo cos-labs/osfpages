@@ -5,6 +5,7 @@ import TimeMachine from 'ember-time-machine';
 
 export default Ember.Component.extend({
 	isOpen: null,
+	classNames: ['d-inline'],
 	themeList: [ 
 		{
 			id: 1,
