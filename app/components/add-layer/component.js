@@ -1,4 +1,8 @@
 import Ember from 'ember';
+import { settings } from '../../renderer/defaultSettings';
+import _ from 'lodash';
+
+
 
 export default Ember.Component.extend({
     isOpen: null,
@@ -7,155 +11,62 @@ export default Ember.Component.extend({
 
     actions: {
         addLayer (type) {
+            let tempSettings = _.cloneDeep(settings);
             let item;
             switch(type) {
                 case 'wiki' :
                 item = {
-                    "sectionHeader": "Wiki example",
                     "component": "layer-wiki",
-                    "settings": {
-                        "component": "layer-settings",
-                        "sectionTitle": "Wiki example",
-                        "wikiId": "",
-                        "sectionTitle": "Wiki example",
-                        "showInNavigation": true,
-                        "addShowMore": false,
-                        "bgColor": "#FFFFFF",
-                        "color": "#333333",
-                        "alignment": "center"
-                    }
+                    "settings": tempSettings['layer-wiki']
                 };
                 break;
                 case 'file':
                 item = {
-                    "sectionHeader": "File",
                     "component": "layer-file",
-                    "settings": {
-                        "component": "layer-settings",
-                        "sectionTitle": "Download this file",
-                        "sectionDescription": "",
-                        "showFileviewer": true,
-                        "showDownload": true,
-                        "downloadLink": "",
-                        "buttonText":"Download",
-                        "showInNavigation": true,
-                        "bgColor": "#FFFFFF",
-                        "alignment": "center",
-                        "color": "#333333"
-                    }
+                    "settings": tempSettings['layer-file']
                 };
                 break;
                 case 'link':
                 item = {
-                    "sectionHeader": "Link",
                     "component": "layer-link",
-                    "settings": {
-                        "component": "layer-settings",
-                        "sectionTitle": "Link Title",
-                        "showInNavigation": true,
-                        "sectionDescription": "this link goes to a place",
-                        "sectionLink": "www.example.com",
-                        "bgColor": "#FFFFFF",
-                        "alignment": "center",
-                        "color": "#333333"
-                    }
+                    "settings": tempSettings['layer-link']
                 };
                 break;
                 case 'advanced':
                 item = {
-                    "sectionHeader": "custom",
                     "component": "layer-advanced",
                     "content": "<p>Mauris imperdie Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellentesque ut metus odio. Integer fringilla nulla id leo consequat, a sollicitudin sapien fringilla. Fusce vestibulum malesuada nisl. Fusce augue leo, tempus eget matssstis vel, imperdiet at nulla</p>",
-                    "settings": {
-                        "component": "layer-settings",
-                        "sectionTitle": "Custom text block",
-                        "backgroundImage": "https://image.ibb.co/kCgzp5/confectionary.png",
-                        "showInNavigation": true,
-                        "bgColor": "#FFFFFF",
-                        "alignment": "center",
-                        "color": "#333333"
-                    }
+                    "settings": tempSettings['layer-advanced']
                 };
                 break;
                 case 'image':
                 item = {
-                    "sectionHeader": "Image",
                     "component": "layer-image",
-                    "settings": {
-                        "component": "layer-settings",
-                        "height": 500,
-                        "backgroundImage": "http://localhost:4200/img/sample.jpg",
-                        "backgroundCover": true,
-                        "bgColor": "#FFFFFF",
-                        "color": "#333333"
-                    }
+                    "settings": tempSettings['layer-image']
                 };
                 break;
                 case 'navigation':
                 item = {
-                    "sectionHeader": "Navigation",
                     "component": "pages-menu",
-                    "settings": {
-                        "component": "layer-settings",
-                        "fontSize": 16,
-                        "bgColor": "#FFFFFF",
-                        "color": "#333333",
-                        "alignment": "center",
-                        "stickToTop":false,
-                    }
+                    "settings": tempSettings['pages-menu']
                 };
                 break;
                 case 'title':
                 item = {
-                    "sectionHeader": "Title",
                     "component": "layer-title",
-                    "settings": {
-                        "component": "layer-settings",
-                        "lead": "Some lead text",
-                        "backgroundImage": "http://localhost:4200/img/bg.png",
-                        "backgroundCover": true,
-                        "showNavigation": true,
-                        "showTitle": true,
-                        "showLead": true,
-                        "showInNavigation": false,
-                        "h1Size": 30,
-                        "bgColor": "#333333",
-                        "color": "#EEEEEE",
-                        "alignment": "right"
-                    }
+                    "settings": tempSettings['layer-title']
                 };
                 break;
                 case 'info':
                 item =  {
-                    "sectionHeader": "Info",
                     "component": "layer-info",
-                    "settings": {
-                        "component": "layer-settings",
-                        "sectionTitle": "Info Title",
-                        "showInNavigation": true,
-                        "showDescription": true,
-                        "showContributors": true,
-                        "showBibliographicContributors": false,
-                        "showAffiliatedInstitutions": true,
-                        "bgColor": "#FFFFFF",
-                        "alignment": "center",
-                        "color": "#333333"
-                    }
+                    "settings": tempSettings['layer-info']
                 };
                 break;
                 case 'imangeAndText':
                 item = {
-                    "sectionHeader": "Image-Text",
                     "component": "layer-image-text",
-                    "settings": {
-                        "component": "layer-settings",
-                        "sectionTitle": "Image and Text",
-                        "showNavigation": true,
-                        "showInNavigation": true,
-                        "bgColor": "#ffffff",
-                        "color": "#333333",
-                        "alignment": "right"
-                    }
+                    "settings": tempSettings['layer-image-text']
                 };
                 break;
             }
@@ -164,6 +75,7 @@ export default Ember.Component.extend({
                 index = parseInt(this.get('indexVal'))+1 
             }
             try {
+                console.log(this.get('layers.content'))
                 this.get('layers.content').insertAt(index,item);
             } catch(e) {
                 this.get('layers.content').insertAt(0,item);
@@ -201,7 +113,7 @@ export default Ember.Component.extend({
             Ember.run.next(this, ()=> {  
                 let percentage = this.get('percentage');
                 let mainPercentage = 100-percentage;
-
+                console.log('ddvd' , this.get('percentage'))
                 this.set('percentage' , percentage)
                 this.set('mainPercentage' , mainPercentage)
             });

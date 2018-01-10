@@ -5,148 +5,170 @@ import TimeMachine from 'ember-time-machine';
 import ENV from '../../config/environment';
 import _ from 'lodash';
 
+import { layouts } from '../../renderer/layouts';
+import { settings } from '../../renderer/defaultSettings';
+import { themes } from '../../renderer/defaultThemes';
+
+//import * as util from "./util";
 
 
-function mergeJSON(o1, o2) {
-       //console.log(o1 , o2)
 
-    var tempNewObj = o1;
+function isEven(value) {
+    return (value%2 == 0);
+}
+//layoutKey , themeId)
+let templatesList = [
+{
+    'layoutName': 'landing Page',
+    'layout': 'landing-page-v0.0.1',
+    'themeId' : 3 ,
+    'url' : ENV.rootURL +'img/blue.png',
+    'colors':themes[3].theme
+}, 
+{
+    'layoutName': 'Research Paper',
+    'layout': 'research-paper-v0.0.1', 
+    'themeId' : 1 , 
+    'url' : ENV.rootURL +'img/orange.png',
+    'colors':themes[1].theme
+},
+{
+    'layoutName': 'Data Feature',
+    'layout': 'data-feature-v0.0.1', 
+    'themeId' : 2 , 
+    'url' : ENV.rootURL +'img/green.png',
+    'colors':themes[2].theme
+}
+];
 
-    //if o1 is an object - {}
-    if (o1.length === undefined && typeof o1 !== "number") {
-        $.each(o2, function(key, value) {
-            if (o1[key] === undefined) {
-                tempNewObj[key] = value;
-            } else {
-                tempNewObj[key] = mergeDeep(o1[key], o2[key]);
-            }
-        });
-    } else if (o1.length > 0 && typeof o1 !== "string") {//else if o1 is an array - []
-        $.each(o2, function(index) {
-            if (JSON.stringify(o1).indexOf(JSON.stringify(o2[index])) === -1) {
-                tempNewObj.push(o2[index]);
-            }
-        });
-    } else {//handling other types like string or number
-        //taking value from the second object o2
-        //could be modified to keep o1 value with tempNewObj = o1;
-        tempNewObj = o2;
+function compareUserSettings(layerType ,systemSettings , userSettings) { 
+    const ignoredSettings = ['backgroundImage' , 'bgColor' , 'color' , 'alignment']
+    let newSettings = {};
+
+
+    for(let i = 0; i < userSettings.length; i++) { //Loop over users settings           
+
+        if(userSettings[i].component === layerType) { //if the component setting type is equal to a system setting type  
+            Object.keys(userSettings[i].settings).forEach((setting , index)=> {  
+                if(!ignoredSettings.includes(setting)){
+                    newSettings[Object.keys(userSettings[i].settings)[index]] = Object.values(userSettings[i].settings)[index];
+                }
+            });         
+        }
     }
+    //Take data from left and migrate any like key / values to the right | UPDATES newSettings
+    return  _.defaults(newSettings, systemSettings[layerType]);
 
-    return tempNewObj;
-};
-
-
-
+}
 
 export default Ember.Component.extend({
     classNames: ['d-inline'],
-    themeList: [
-        {
-            id: 1,
-            name: 'All',
-            thumb: ENV.rootURL +'img/all.png',
-            description: 'Includes all section types.'
-        },
-        {
-            id: 2,
-            name: 'Wiki',
-            thumb: ENV.rootURL +'img/wiki.png',
-            description: 'A basic page with title and wiki page.'
-        },
-        {
-            id: 3,
-            name: 'File',
-            thumb: ENV.rootURL +'img/file.png',
-            description: 'Title and file sections ideal for showcasing papers.'
-        },
-        {
-            id: 4,
-            name: 'Institution',
-            thumb:  ENV.rootURL +'img/institution.png',
-            description: 'Example of an institution homepage.'
-        },
-        {
-            id: 5,
-            name: 'Portfolio',
-            thumb: ENV.rootURL +'img/portfolio.png',
-            description: 'Example of a portfolio page'
-        },
-        {
-            id: 6,
-            name: 'RPP',
-            thumb: ENV.rootURL +'img/rpp.png',
-            description: 'Example of Reproducibility Project: Psychology'
-        },
-    ],
-	isOpen: null,
-	actions: {
-		renderTemplate(id) {
-			let self = this;
-			let theme = `theme_${id}.json`;
-			$.ajax({
-				type: 'GET',
-				url: ENV.rootURL +'templates/' + theme,
-				async: false,
-				success: function(data) {
-                    var content = Ember.Object.create(data);
-                    var currentContent = self.get('theme.content');
+    templates: templatesList,
+    isOpen: null,
+    keepContent:true,
+    actions: {
+      renderTemplate(layoutKey , themeId) {
+        let currentUserLayout = [];
 
-                    var removedLayers = [];
+        let finalLayout = [];
 
-                    let count = [];
-                    for(let i = 0; i < currentContent.layers.length; i++) {       
-                        for(let k = 0; k < content.layers.length; k++) {
-                            let allowed = true;
-                            if(_.hasIn(count, k)){
-                                allowed = false;
-                            }
-                            //👍 14  
-                            if(currentContent.layers[i].component === content.layers[k].component) {
-                                if(allowed){
-                            
-                                    content.layers[k].settings = _.defaults(currentContent.layers[i].settings , content.layers[k].settings )
-                                    count.push(k)
-                                    break;
-                                }else {
-                                    removedLayers.push(currentContent.layers[i])
-                                    console.log('LAYER REMOVED', currentContent.layers[i])
-                                }
-                            }
-                        }
-                   }
+        //get users current layout with settings 
+        let currentUserLayers = this.get('model.theme.content.layers');
 
-                    content.layers = _.union(content.layers, removedLayers);
-                    console.log('at end LAYER REMOVED' , content.layers)
+        //get the layout that the users wants to change to
+        let layout = layouts[layoutKey];
+        let removedVersionLayout = []; 
+        //remove Version from layout 
+        Object.values(layout).forEach((layerType , index)=> {
+            //remove version from type will use later 👍👍👍👍
+            layerType = layerType.substring(0, layerType.lastIndexOf('-'));
+            removedVersionLayout.push(layerType)
+        });
 
-                    const timeMachine = TimeMachine.Object.create({ content });
+        currentUserLayers.forEach((aUserLayer , index)=> {
+            currentUserLayout.push(aUserLayer.component)
+        });
 
 
-
-
-                    self.set('theme', timeMachine);
-					self.set('isOpen', false);
-
-                    self.set('showTemplates' , false) //strange right?
-                    self.set('model.metaData.showTemplates' , false)
-
-                    $('body').scrollTop(0);
-                    $('body').removeClass('no-scroll');
-                }
-			});
-		},
-        openOverlay(){
-            this.set('isOpen', true);
-            $('body').addClass('no-scroll');
-        },
-        closeOverlay(){
-            this.set('isOpen', false);
-            $('body').removeClass('no-scroll');
-        },
-        dismiss(){
-            this.set('isOpen', false);
-            $('body').removeClass('no-scroll');
-
+        //combine user and layout in to one layout
+        finalLayout = _.defaults(currentUserLayout, removedVersionLayout);
+        if(!this.get('keepContent')) {
+            finalLayout = removedVersionLayout;
         }
-	}
+        //remove all layers
+        this.set('model.theme.content.layers' , [])
+        //loop over layout
+        finalLayout.reverse().forEach((layerType , index)=> {
+
+            //grab all user settings and apply them to appropriate layers 
+            let newSetting = compareUserSettings(layerType , settings, currentUserLayers) 
+            console.log(newSetting)
+            if(themeId){
+                //apply theme
+                let theme = themes[themeId].theme;
+
+                console.log('layerType' , layerType)
+                if(isEven(index)){
+                    Ember.set( newSetting, "bgColor",  theme.secondaryColor); 
+                    Ember.set( newSetting, "color",  theme.secondaryTextColor); 
+                    Ember.set( newSetting, "alignment",  theme.alignment); 
+                } else {
+                    Ember.set( newSetting, "bgColor",  theme.tertiaryColor); 
+                    Ember.set( newSetting, "color",  theme.tertiaryTextColor); 
+                    Ember.set( newSetting, "alignment",  theme.alignment); 
+                }
+
+
+                //Block specific settings
+                if(layerType === 'layer-title') {
+                   Ember.set( newSetting, "bgColor",  theme.primaryColor); 
+                   Ember.set( newSetting, "color",  theme.primaryTextColor); 
+                   Ember.set( newSetting, "alignment",  theme.alignment); 
+                   if(theme.blockSettings){
+                        Ember.set( newSetting, "backgroundImage",  theme.blockSettings['layer-title'].backgroundImage);
+                    } else {
+                        Ember.set( newSetting, "backgroundImage",  '');
+    
+                    }
+
+                }
+
+            }
+
+            //apply appropriate settings to the layer
+            //build each layer based on layout layers
+            let item = {
+                "component": layerType,
+                "settings": newSetting
+            }
+            //add to page
+
+            this.get('model.theme.content.layers').insertAt(0,item)
+
+
+        });
+
+        this.set('isOpen', false);
+        $('body').scrollTop(0);
+        $('body').removeClass('no-scroll');
+
+
+    },
+    toggleKeepContent(){
+        this.toggleProperty('keepContent')
+    },
+    openOverlay(){
+        this.set('isOpen', true);
+        $('body').addClass('no-scroll');
+    },
+    closeOverlay(){
+        this.set('isOpen', false);
+        $('body').removeClass('no-scroll');
+    },
+    dismiss(){
+        this.set('isOpen', false);
+        $('body').removeClass('no-scroll');
+
+    }
+}
 });

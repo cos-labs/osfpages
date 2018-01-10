@@ -56,7 +56,7 @@ export default Ember.Controller.extend({
     isResizing: false,
     sublimeView: 'block',
     draggableBlocks: '33.33333',
-    layerPadding: '0 50px',
+    layerPadding: '0 150px',
     resizableControl: '',
 
     isOpen: Ember.computed('node', async function(){ 
@@ -81,7 +81,9 @@ export default Ember.Controller.extend({
         });
     }),
     holderCSSEditMode:  Ember.computed('editMode', function() {
+
         if(this.get('editMode')){
+            this.set('layerPadding' , '0 50px')
             return 'col-xs-9'
         }else{
             return  'col-xs-12'

@@ -16,7 +16,7 @@ export default Ember.Component.extend({
 		},
 		{
 			id: 2,
-			name: 'Blue sky',
+			name: 'Orange fruit',
 			colorOne: '#f07057',
 			colorTwo: 'snow',
 			colorThree: '#eeeeee' 

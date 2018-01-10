@@ -1,6 +1,6 @@
 .template-select-item {
     box-shadow: 0 0 11px -2px #999;
-    height: 340px;
+    height: 255px;
     color: #333;
     border-radius: 4px;
     background: #FFF;
@@ -41,3 +41,38 @@
     margin-left:60px;
 }
 
+.clear {
+    padding: 0;
+    margin: 0;
+}
+
+
+.text-padding { 
+    padding: 13px 10px;
+}
+
+.bubble {
+  margin:5px;
+  margin-top:-23px;
+  display:inline-block;
+  height:35px;
+  position:relative;
+  overflow:hidden;
+  background:#666;
+ 
+
+  
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  
+  
+  cursor:pointer;
+}
+
+.slider-label{
+    margin-left: 55px;
+    font-size: 15px;
+}

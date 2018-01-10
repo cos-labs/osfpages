@@ -8,6 +8,11 @@
 		"secondaryTextColor" : "#black",
 		"tertiaryColor" : "#eeeeee",
 		"tertiaryTextColor" : "black",
-		"alignment": "center"
+		"alignment": "center",
+		"blockSettings" : {
+			"layer-title" :{
+				"backgroundImage":"https://image.ibb.co/cqBWUw/bg.png"
+			}
+		}
 	}
 }

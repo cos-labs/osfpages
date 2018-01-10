@@ -1,6 +1,6 @@
 {
 	"id": 4,
-	"name": "Green Forest",
+	"name": "Go Science",
 	"theme" : {
 		"primaryColor" : "#166595",
 		"primaryTextColor" : "snow",
@@ -8,6 +8,11 @@
 		"secondaryTextColor" :"black",
 		"tertiaryColor" : "#474747",
 		"tertiaryTextColor" : "snow",
-		"alignment": "center"
+		"alignment": "center",
+		"blockSettings" : {
+			"layer-title" :{
+				"backgroundImage":"https://image.ibb.co/dtk89w/vlad_ciule_43599.jpg"
+			}
+		}
 	}
 }

@@ -6,19 +6,23 @@
                     <i class="material-icons" {{action 'dismiss'}}>close</i>
                 </div>
                 <h2> Select a template</h2>
+                <label class="switch">
+                <input  onclick={{action 'toggleKeepContent'}} checked={{keepContent}} type="checkbox">
+                    <span class="slider"></span>
+                    <span class="slider-label">Keep current page content</span>
+                </label>
                 <div class="row p-v-xl">
-                    {{#each themeList as |item|}}
+                    {{#each templates as |item|}}
                         <div class="col-sm-4 m-b-lg">
-                            <div class="template-select-item" {{action 'renderTemplate' item.id}}>
-                                {{#if (eq theme.id item.id)}}
-                                    <div class="template-selected">
-                                        <i class="material-icons">check</i>
+                            <div class="template-select-item" {{action 'renderTemplate' item.layout item.themeId}}>
+                                <div class="theme-thumb" style="background-image:url('{{item.url}}')"></div>
+                                <div class="template-content text-padding ">
+                                    <h3 class="clear"> {{item.layoutName}}</h3>
+                                    <div class="pull-right">
+                                        <div class="bubble" style="background: {{item.colors.primaryColor}}"></div>
+                                        <div class="bubble" style="background: {{item.colors.secondaryColor}}"></div>
+                                        <div class="bubble" style="background: {{item.colors.tertiaryColor}}"></div>
                                     </div>
-                                {{/if}}
-                                <div class="theme-thumb" style="background-image:url('{{item.thumb}}')"></div>
-                                <div class="template-content p-md">
-                                    <h3> {{item.name}}</h3>
-                                    <p>{{item.description}}</p>
                                 </div>
                             </div>
                         </div>
@@ -29,9 +33,4 @@
     </div>
 {{/if}}
 
-
-{{#if showButton}}
-    <button class="btn-link" {{action 'openOverlay'}}>View Templates</button>
-{{else}}
-    <button class="btn-outline-white-cus btn-spacing d-inline"  {{action 'openOverlay'}}> Templates </button>
-{{/if}}
+<button class="btn-outline-white-cus btn-spacing d-inline"  {{action 'openOverlay'}}> Templates </button>

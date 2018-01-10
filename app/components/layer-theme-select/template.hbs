@@ -13,13 +13,10 @@
 				{{#each themeList as |item|}}
 				<div class="col-sm-3 m-b-lg">
 					<div class="theme-select-item" {{action 'selectTheme' item.id}}>
-				       <!--  {{#if (eq theme.id item.id)}}
-                            <div class="theme-selected">
-                                <i class="material-icons">check</i>
-                            </div>
-                        {{/if}} -->
-
-						<div class="theme-thumb" style="background: linear-gradient( {{item.colorOne}} 0%,{{item.colorOne}} 33.33%,{{item.colorTwo}} 33.33%,{{item.colorTwo}} 66.66%,{{item.colorThree}} 66.66%,{{item.colorThree}} 100%);"></div>
+						<div class="theme-thumb" style="background: linear-gradient( {{item.colorOne}} 0%,{{item.colorOne}} 33.33%,{{item.colorTwo}} 33.33%,{{item.colorTwo}} 66.66%,{{item.colorThree}} 66.66%,{{item.colorThree}} 100%);">
+							
+						</div>
+						<div class="text-center"><h4>{{item.name}}</h4></div>
 					</div>
 				</div>
 				{{/each}}
