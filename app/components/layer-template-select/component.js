@@ -66,7 +66,21 @@ export default Ember.Component.extend({
     templates: templatesList,
     isOpen: null,
     keepContent:true,
+    showContentWarrning:false,
+    layoutKey:'',
+    themeId:'',
     actions: {
+      shouldKeepContent(layoutKey , themeId) {
+        this.set('layoutKey' , layoutKey)
+        this.set('themeId' , themeId)
+
+        if(this.get('keepContent')) {
+            this.send('renderTemplate' ,layoutKey , themeId);
+        } else {
+            this.set('showContentWarrning' , true )
+        }
+
+      },
       renderTemplate(layoutKey , themeId) {
         let currentUserLayout = [];
 
@@ -93,6 +107,7 @@ export default Ember.Component.extend({
         //combine user and layout in to one layout
         finalLayout = _.defaults(currentUserLayout, removedVersionLayout);
         if(!this.get('keepContent')) {
+            console.log('clear all content on page')
             finalLayout = removedVersionLayout;
         }
         //remove all layers
@@ -151,11 +166,15 @@ export default Ember.Component.extend({
         this.set('isOpen', false);
         $('body').scrollTop(0);
         $('body').removeClass('no-scroll');
+        this.send('dismissModal')
+        this.set('keepContent' , true)
 
 
     },
     toggleKeepContent(){
         this.toggleProperty('keepContent')
+        this.set('showContentWarrning' , false)
+
     },
     openOverlay(){
         this.set('isOpen', true);
@@ -164,11 +183,25 @@ export default Ember.Component.extend({
     closeOverlay(){
         this.set('isOpen', false);
         $('body').removeClass('no-scroll');
+        this.set('keepContent' , true)
+        this.set('showContentWarrning' , false)
+
     },
     dismiss(){
         this.set('isOpen', false);
         $('body').removeClass('no-scroll');
+        this.set('keepContent' , true)
+        this.set('showContentWarrning' , false)
 
+
+    }, 
+    modalChoice(choice) {
+        console.log(choice)
+        this.set('keepContent' , choice)
+        this.send('renderTemplate' , this.get('layoutKey') , this.get('themeId'));
+    },
+    dismissModal(){
+        this.set('showContentWarrning' , false)
     }
 }
 });

@@ -14,7 +14,7 @@
                 <div class="row p-v-xl">
                     {{#each templates as |item|}}
                         <div class="col-sm-4 m-b-lg">
-                            <div class="template-select-item" {{action 'renderTemplate' item.layout item.themeId}}>
+                            <div class="template-select-item" {{action 'shouldKeepContent' item.layout item.themeId}}>
                                 <div class="theme-thumb" style="background-image:url('{{item.url}}')"></div>
                                 <div class="template-content text-padding ">
                                     <h3 class="clear"> {{item.layoutName}}</h3>
@@ -31,6 +31,20 @@
             </div>
         </div>
     </div>
+
+
+{{#if showContentWarrning}}
+    {{#bs-modal onHidden=(action 'dismissModal') as |modal|}}
+        {{#modal.header}}
+            <h4 class="modal-title">This will remove your current content blocks, are you sure you want to do this?</h4>
+        {{/modal.header}}
+        {{#modal.footer as |footer|}}
+            {{#bs-button type="normal" onClick=(action 'dismissModal') }}No{{/bs-button}}
+            {{#bs-button type="success" onClick=(action 'modalChoice' false) }}Yes{{/bs-button}}
+        {{/modal.footer}}
+    {{/bs-modal}}
+{{/if}}
+
 {{/if}}
 
 <button class="btn-outline-white-cus btn-spacing d-inline"  {{action 'openOverlay'}}> Templates </button>
