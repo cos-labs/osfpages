@@ -105,7 +105,7 @@ create a new theme in this file in the below structure
 
 ```
 
-**renderer defaultTheme.js** <br>
+**renderer/defaultTheme.js** <br>
 _add name of theme to themeList at top of page_ <br>
 ` let  themeList = [ 'theme_1.json', 'theme_2.json' , 'theme_3.json' , 'theme_4.json']`
 <br>
