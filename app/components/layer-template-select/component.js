@@ -107,7 +107,6 @@ export default Ember.Component.extend({
         //combine user and layout in to one layout
         finalLayout = _.defaults(currentUserLayout, removedVersionLayout);
         if(!this.get('keepContent')) {
-            console.log('clear all content on page')
             finalLayout = removedVersionLayout;
         }
         //remove all layers
@@ -117,12 +116,10 @@ export default Ember.Component.extend({
 
             //grab all user settings and apply them to appropriate layers 
             let newSetting = compareUserSettings(layerType , settings, currentUserLayers) 
-            console.log(newSetting)
             if(themeId){
                 //apply theme
                 let theme = themes[themeId].theme;
 
-                console.log('layerType' , layerType)
                 if(isEven(index)){
                     Ember.set( newSetting, "bgColor",  theme.secondaryColor); 
                     Ember.set( newSetting, "color",  theme.secondaryTextColor); 
@@ -196,7 +193,6 @@ export default Ember.Component.extend({
 
     }, 
     modalChoice(choice) {
-        console.log(choice)
         this.set('keepContent' , choice)
         this.send('renderTemplate' , this.get('layoutKey') , this.get('themeId'));
     },
