@@ -11,7 +11,7 @@ function showError(){
     let defaultJSON ='';
     $.ajax({
         type: "GET",
-        url: ENV.rootURL + "themes/theme_error.json",
+        url: ENV.rootURL + "templates/theme_error.json",
         async: false,
         success: function (data) {
             defaultJSON = data;
