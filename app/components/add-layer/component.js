@@ -75,7 +75,6 @@ export default Ember.Component.extend({
                 index = parseInt(this.get('indexVal'))+1 
             }
             try {
-                console.log(this.get('layers.content'))
                 this.get('layers.content').insertAt(index,item);
             } catch(e) {
                 this.get('layers.content').insertAt(0,item);
@@ -113,7 +112,6 @@ export default Ember.Component.extend({
             Ember.run.next(this, ()=> {  
                 let percentage = this.get('percentage');
                 let mainPercentage = 100-percentage;
-                console.log('ddvd' , this.get('percentage'))
                 this.set('percentage' , percentage)
                 this.set('mainPercentage' , mainPercentage)
             });
