@@ -78,6 +78,56 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 Specify what it takes to deploy your app.
 
+### Creating a new templates 
+templates are made of a theme and a layout, below are the structures needed to create a new template
+
+**Creating a new theme** <br>
+_public/defaultThemes/_ <br>
+create a new theme in this file in the below structure 
+``` 
+{
+	"id": 2,
+	"name": "Orange Tree",
+	"theme" : {
+		"primaryColor" : "#f07057",
+		"primaryTextColor" : "snow",
+		"secondaryColor" : "snow",
+		"secondaryTextColor" : "#black",
+		"tertiaryColor" : "#eeeeee",
+		"tertiaryTextColor" : "black",
+		"alignment": "center",
+		"blockSettings" : {
+			"layer-title" :{
+				"backgroundImage":"https://image.ibb.co/cqBWUw/bg.png"
+			}
+	}
+}
+
+```
+
+**renderer defaultTheme.js** <br>
+_add name of theme to themeList at top of page_ <br>
+` let  themeList = [ 'theme_1.json', 'theme_2.json' , 'theme_3.json' , 'theme_4.json']`
+<br>
+**Create a new template** <br>
+_Layouts.js_ <br>
+Add a new layout <br>
+`"landing-page-v0.0.1": [ "layer-title-v0.0.1", "layer-info-v0.0.1" , "layer-file-v0.0.1"]
+`
+<br>
+**Layer-template-select.js**<br>
+_Add to the templatesList (this makes it show up on the page )_ <br>
+```
+{
+    'layoutName': 'Data Feature', //Name on page
+    'layout': 'data-feature-v0.0.1',  //Layout with version for use in code 
+    'themeId' : 2 , // Theme ID  (theme id 2 would get theme_3.json [0-index])
+    'url' : ENV.rootURL +'img/green.png', //Link to image used to show what theme looks like
+    'colors':themes[2].theme // pulls in colors from theme to show on page to user
+}
+```
+
+
 ### Further Reading / Useful Links
 
 * [ember.js](http://emberjs.com/)
