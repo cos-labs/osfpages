@@ -7,7 +7,7 @@ module.exports = function(environment) {
         rootURL: '/',
         apiBaseUrl: 'https://limitless-atoll-95289.herokuapp.com',
         locationType: 'auto',
-        osfAPIUrl: 'https://staging-api.osf.io',
+        osfAPIUrl: 'https://api.osf.io',
         EmberENV: {
             FEATURES: {
                 // Here you can enable experimental features on an ember canary build
@@ -44,6 +44,8 @@ module.exports = function(environment) {
     if (environment === 'production') {
         ENV.locationType = 'hash';
         ENV.rootURL = '/osfpages/';
+        ENV.osfHostUrl = 'https://api.osf.io';
+
 
     }
 

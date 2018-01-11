@@ -67,11 +67,15 @@ export default Ember.Component.extend({
         $('.layer-content').css('padding' , '0');
     },
     actions: {
-            scrollToLayer(index){
-                console.log(JSON.stringify(this.get('layers.content'), null, 2))
-                let el = $('#layer'+index);
-                let offset = el.offset();
-                $('body').animate({scrollTop:offset.top}, '500');
-            }
-        }
-    });
+        scrollToLayer(index){
+               // console.log('scroll to',index)
+               // console.log(JSON.stringify(this.get('layers.content'), null, 2))
+               let el = $('#layer'+index);
+               let offset = el.offset();
+               console.log(el , offset)
+               $('html, body').animate({
+                scrollTop: el.offset().top
+            }, 500);
+           }
+       }
+   });

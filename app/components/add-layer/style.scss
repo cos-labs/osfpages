@@ -1,77 +1,91 @@
 $bg: #313131;
-$gray: #565656;
-$text: #838383;
 $accent: #5bc0de;
 
 $size: 2.25em;  // size of links
-$zoom: 1.2;     // amount of scale on hover
+$zoom: 1.05;     // amount of scale on hover
 $space: 0.065;  // space between links
 
 .add-layer-toggle {
-    border-bottom: 1px dashed #eee;
+  border-bottom: 1px dashed #eee;
+}
+.white {
+  color:white;
+}
+.white:hover {
+  color:white;
+}
+.white:active {
+  color:white;
 }
 
-.add-layer-toggle>div {
+.add-layer-toggle > div {
     width: 42px;
     padding: 10px 0;
     border-radius: 21px;
     text-align: center;
     margin: auto;
     position: absolute;
-    left: 50%;
-    margin-top: -20px;
+    left: 47.5%;
+    margin-top: -31px;
     cursor: pointer;
     z-index: 98;
-    background: #FFF;
-    color: #BBB;
-    box-shadow: 0 0 5px -1px #333;
-    font-size: 16px;
+    /* background: #FFF; */
+    color: #fff;
+    /* box-shadow: 0 0 5px -1px #333; */
+    font-size: 33px;
+    text-shadow: 0px 2px 2px #000, 0px -2px 2px #000;;
 }
 
 
 .add-layer{
-    height: 0;
+  height: 0;
+  padding-bottom:50px;
 }
 
 .add-layer.open {
-    min-height: 250px;
-    height:100%;
-    background: #2b2b2b;
-    box-shadow: inset 0 -5px 40px -11px #333;
-    .add-layer-toggle>div {
-        margin-top: 55px
-    }
+  min-height: 250px;
+  height:100%;
+  background: #263947;
+  box-shadow: inset 0 -5px 40px -11px #333;
+  .add-layer-toggle>div {
+    margin-top: 55px
+  }
 }
 .add-layer .btn-block {
-    padding: 15px;
-    font-size: 16px;
-    border: none;
-    background: rgba(255, 255, 255, 0.40);
-    white-space: normal;
-    height: 120px;
-    box-shadow: 0 0 7px -2px #666;
-    border-radius: 3px;
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  background: rgba(255, 255, 255, 0.40);
+  white-space: normal;
+  height: 120px;
+  box-shadow: 0 0 7px -2px #666;
+  border-radius: 3px;
 }
 
 .add-layer .btn-block:hover {
-    background: rgba(255, 255, 255, 0.60);
+  background: rgba(255, 255, 255, 0.60);
 }
 
 
 
 .layer-links {
   max-width: (($size * 24) + (($space * $size)* 2)) * 3;
-  display: inline-flex;
-  flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;  
+  justify-content: center;
 }
 
+.layer-link:active {
+    cursor: -webkit-grabbing;
+}
 .layer-link {
   width: 3em;
-  height: 3em;
+  width: 100%;
+  height: 2em;
   font-size: $size;
   text-decoration: none;
-  background: $gray;
-  color: $text;
+  background: rgba(255,255,255,.8);
+  color: #273947;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -82,6 +96,8 @@ $space: 0.065;  // space between links
   transition: all .4s ease-out;
   transform: translateZ(0px); 
   border:none;
+  border-radius: 3px;
+  cursor: -webkit-grab;
   &:hover, 
   &:focus, 
   &:active {
@@ -93,7 +109,7 @@ $space: 0.065;  // space between links
     transition: .3s;
 
     &:after {
-      bottom: 1em;
+      bottom: .5em;
       transition: .3s;
     }
 
@@ -112,4 +128,48 @@ $space: 0.065;  // space between links
     font-family: sans-serif;
   }
 
+}
+
+.icon {
+  padding: 0;
+}
+.add-title {
+  font-size:18px;
+  margin-bottom:10px;
+}
+
+.drag-drop-blocks {
+  height: 100%;
+  margin-bottom:156px;
+  text-align: center;
+
+}
+
+
+.dotted-line {
+  min-height:130px;
+  border: 2px dashed #bbb;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+.dotted-line-small {
+  height:13px;
+  border: 2px dashed #bbb;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.drag-drop-area {
+  background:#263947;
+
+}
+
+.drop-zone-plus {
+  display: block;
+  font-size: 45px;
+  line-height: 130px;
+}
+
+.plus{
+  display: none;
 }

@@ -1,25 +1,35 @@
 img {
-    width:50%;
+    width:48%;
     margin-bottom: 15px;
 }
 
 .center {
     margin: 15px auto;
     display: block;
+    text-align: center;
 }
 .left {
-    margin-right:15px;
-}
-.right {
-     margin-left:15px;
+    margin-right: 15px;
+    text-align: left;
 
 }
 
 .side-description {
-    width:100%;
+    height: 100%;
+    width: 100%;
 }
-.edit-text {
+.edit-text[readonly] {
     border: none;
     background: rgba(158, 158, 158, 0.08);
     border-radius: 2px;
+    width: 40%;
+
+}
+
+.margin-bottom {
+    margin-bottom: 25px;
+}
+
+.margin-25 {
+    margin: 25px;
 }

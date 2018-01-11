@@ -14,8 +14,7 @@ export default Ember.Component.extend({
 
   actions: {
     updateText(editor) {
-      this.set('layer.content.settings.values.sectionDescription' , editor.root.innerHTML)
-
+      this.set('layer.content.settings.sectionDescription' , editor.root.innerHTML)
     }
   }
 });

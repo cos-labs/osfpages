@@ -1,10 +1,24 @@
-<div class="">
-    {{edit-text showSettings=showSettings editMode=editMode layer=layer type="title"  alignment=layer.settings.alignment}}
+<div class="{{marginTop}}">
+    {{#if editMode}}
+        <div class="select-box m-v-lg">
+            <div class="m-v-lg">
+                <h4>choose a wiki page to display:</h4>
+                {{#power-select
+                    options=wikis
+                    selected=currentWiki
+                    onchange=(action "selectWiki") as |wiki|}}
+                    {{wiki.name}}
+                    {{/power-select}}
+            </div>
+        </div>
+    {{/if}}
+        {{preview-line layer=layer text="Preview" editMode=editMode}}
 
-    <div class="wiki-markdown {{if (and isTruncated layer.settings.addShowMore) 'truncated'}} ">
-        {{markdown-to-html wikiContent}}
-    </div>
-    {{#if layer.settings.addShowMore}}
+        {{edit-text showSettings=showSettings editMode=editMode layer=layer type="title"  alignment=layer.settings.alignment}}
+        <div class="wiki-markdown {{layer.settings.alignment}} {{if (and isTruncated layer.settings.addShowMore) 'truncated'}} ">
+            {{markdown-to-html wikiContent}}
+        </div>
+        {{#if layer.settings.addShowMore}}
         <div class="show-more {{if isTruncated 'truncated'}}" {{action 'toggleShow'}}>
             {{#if isTruncated}}
                 <i class="material-icons ">keyboard_arrow_down</i>
@@ -15,27 +29,4 @@
             {{/if}}
         </div>
     {{/if}}
-
-    {{#if editMode}}
-        {{#if showSelect}}
-            <div class="m-v-lg">
-                {{#power-select
-                    options=wikis
-                    selected=currentWiki
-                    onchange=(action "selectWiki") as |wiki|}}
-                    {{wiki.name}}
-                {{/power-select}}
-            </div>
-        {{else}}
-            <div class="select-box p-v-md m-v-lg" {{action 'showSelect'}}>
-                <p>
-                    {{#if wikiContent}}
-                        Change selection
-                    {{else}}
-                        Select a wiki page
-                    {{/if}}
-                </p>
-            </div>
-        {{/if}}
-    {{/if}}
-</div>
+ </div>

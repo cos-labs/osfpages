@@ -1,77 +1,162 @@
 {{#if isAdmin}}
-    <div class="editMenu">
-        <div class="container p-sm">
+{{loading-spinner isLoading=isLoading}}
+
+ <div class="editMenu d-inline">
+    <span width="27" class="osf-navbar-logo osf-logo d-inline"></span>
+    {{#link-to 'index' class="no-style"}}
+        <h3 class="osf-logo navbar-space d-inline">OSF<span style="font-weight:normal;" class="d-inline">PAGES</span></h3>
+    {{/link-to}}
+    {{#if editMode}}
+
+        {{layer-template-select model=model theme=model.theme }}
+
+        <!-- {{#if showTemplates}} -->
+        <!-- {{else}} -->
+            <!-- {{layer-theme-select model=model}} -->
+        <!-- {{/if}} -->
+    {{/if}}
+    {{#if editMode}}
+        <button class="btn-outline-white-cus btn-small d-inline" disabled="{{unless model.theme.canUndo 'disabled'}}" {{action 'undo'}}><i class="material-icons d-inline">undo</i></button>
+        <button class="btn-outline-white-cus btn-small d-inline" disabled="{{unless model.theme.canRedo 'disabled'}}" {{action 'redo'}}><i class="material-icons d-inline">redo</i></button>
+    {{/if}}
+    {{#if saved}}
+       <div class="text-center d-inline save-staus"> Saving...</div>
+    {{/if}}
+    {{#if published}}
+        <div class="text-center d-inline save-staus">Publishing...</div>
+    {{/if}}
+    {{#if unpublishedChanges}}
+        <div class="text-center d-inline save-staus"> Unpublished draft
+            {{#unless editMode}}
+                <a href='' style='color: #96c3ea' {{action 'toggleEditMode'}}> edit now</a>
+            {{/unless}}
+            </div>
+    {{/if}}
+    <div class="pull-right d-inline edit-menu-action-group">
+        {{#if editMode}}
+            <button class="btn-outline-white-cus d-inline" {{action 'publish'}}>
+                <i class="material-icons d-inline">publish</i>
+                <span> Publish</span>
+            </button>
+            <button class="btn-outline-white-cus navbar-space d-inline" {{action 'save'}}>
+                <i class="material-icons d-inline">save</i>
+                <span> Save draft</span>
+            </button>
+        {{/if}}
+
+        <button class="btn-outline-white-cus editModeBtn d-inline" {{action 'checkSaveState'}}  title="Edit Mode">
+            {{#if editMode}}
+                <i class="material-icons d-inline">close</i><span>Finish editing </span> 
+            {{else}}
+                <i class="material-icons d-inline">edit</i> Edit
+            {{/if}}
+        </button>
+    </div>
+
+</div>
+
+
+
+    {{#if editMode}}
+        <div class="edit-Mode-View" style="width:{{percentage}}%;">
+
             <div class="row">
-                <div class="col-xs-2">
-                    {{#if editMode}}
-                        {{layer-template-select theme=model.theme}}
-                    {{/if}}
-                </div>
-                <div class="col-xs-2">
-                {{#if editMode}}
-                    <button class="btn-outline-cus" disabled="{{unless model.theme.canUndo 'disabled'}}" {{action 'undo'}}><i class="material-icons">undo</i></button>
-                    <button class="btn-outline-cus" disabled="{{unless model.theme.canRedo 'disabled'}}" {{action 'redo'}}><i class="material-icons">redo</i></button>
-                {{/if}}
-                </div>
-                <div class="col-xs-3">
-                {{#if saved}}
-                   <div class="text-center"> Saving...</div>
-                {{/if}}
-                {{#if published}}
-                    <div class="text-center">Publishing...</div>
-                {{/if}}
-                {{#if unpublishedChanges}}
-                    <div class="text-center"> Unpublished draft
-                        {{#unless editMode}}
-                            <a href='' style='color: #96c3ea' {{action 'toggleEditMode'}}> edit now</a>
-                        {{/unless}}
-                        </div>
-                {{/if}}
-                </div>
-                <div class="col-xs-3">
-                    {{#if editMode}}
-                    <div class="pull-right">
-                        <button class="btn-outline-cus" {{action 'publish'}}><i class="material-icons">publish</i> Publish</button>
-                        <button class="btn-outline-cus" {{action 'save'}}><i class="material-icons">save</i> Save draft</button>
-                    </div>
-                    {{/if}}
-                </div>
-                <div class="col-xs-2 clearfix">
-                    <div class="pull-right">
-                        <button class="btn-outline-cus editModeBtn" {{action 'checkSaveState'}} >
-                            {{#if editMode}}
-                                <i class="material-icons">close</i>Finish editing 
-                            {{else}}
-                                <i class="material-icons">edit</i> Edit
+                <div class="col-xs-8 padding-0" style="display:{{sublimeView}};">
+                <br><br>
+                <h4 class="h4 white text-center">Site Map</h4>
+
+                <div class="site-overview sublime-view-scroll">
+                    {{#each model.theme.layers as |layer index|}}
+                        <div 
+                            class="page-overview-block" 
+                            style='
+                            background: {{layer.settings.bgColor}}; 
+                            background-image: url("{{layer.settings.backgroundImage}}"); 
+                            color:{{layer.settings.color}};
+                            background-size: 100%;'
+                            {{action 'scrollToLayer' index}}
+                            >
+                            {{#if layer.settings.lead}}
+                                {{model.node.title}}
                             {{/if}}
-                        </button>
-                    </div>
+
+                            {{layer.settings.sectionTitle}}
+                            <div class="ss-text">{{layer.content.content}}</div>
+                            {{#if layer.settings.downloadLink}}
+                                <div class="fake-file-view">
+                                </div>
+                            {{/if}}
+                            {{#if layer.settings.backgroundImage}}
+                                <div class="background-image-size">
+                                </div>
+                            {{/if}}
+                            
+
+                        </div>
+
+                        {{add-layer index=index layers=model.theme.layers type=type mini=true styles=styles isDragging=isDragging percentage=percentage}}
+
+                    {{/each}}
+                </div>
+                </div>
+                <div class="col-xs-4 padding-0 mt-xlg" style="width:{{draggableBlocks}}%;"> 
+                     <br><br>
+                    <h4 class="h4 white text-center">Blocks</h4>
+                <div class="add-layer-side-view">       
+                    {{add-layer index=index layers=model.theme.layers sideView=true type=type styles=styles isDragging=isDragging percentage=percentage}}
+                </div>
                 </div>
             </div>
+            <div class="resizable-control" onmousedown={{action 'moveResizableControl'}} style="left:{{resizableControl}};" ><span>||</span></div>
         </div>
-    </div>
+    {{/if}}
     {{#if isOpen}}
          <div class="alert alert-warning alert-message">
             <strong>Warning!</strong> This OSF project is <strong>not public </strong> and can not be viewed by others.<br /> Please consider making this project public!<br />
-              <a href="http://staging.osf.io/{{model.guid}}"  type="button" class="btn btn-secondary pull-right btn-outline-cus-black" > Make public</a>
+              <a href="http://osf.io/{{model.guid}}"  type="button" class="btn btn-secondary pull-right btn-outline-cus-black" > Make public</a>
         </div>
     {{/if}}
 
 {{/if}}
 
-<div class="holder">
-    {{#if  model.theme.layers}}
+<div class="holder" >
+
+    {{#if model.theme.layers}}
+    
+    <div>
+        {{#if editMode}}
+        <br>
+        {{/if}}
         {{#each model.theme.layers as |layer index|}}
-            {{layer-wrapper node=model.node layer=layer layers=model.theme.layers editMode=editMode index=index}}
+            <div class="row"  style="padding:0">
             {{#if editMode}}
-                {{add-layer index=index layers=model.theme.layers}}
+                <div class="col-xs-3" style="width:{{percentage}}%;"></div>
             {{/if}}
+                <div class="{{holderCSSEditMode}}" style="width:{{mainPercentage}}%; padding:0">
+                    <div class="layer clearfix">
+                        {{layer-wrapper node=model.node layer=layer layers=model.theme.layers editMode=editMode index=index layerPadding=layerPadding}}
+                        {{#if editMode}} 
+                            {{add-layer index=index layers=model.theme.layers type=type style="min-height:2px;" isDragging=isDragging percentage=percentage}}
+                        {{/if}}
+
+                    </div>
+                </div>
+            </div>
         {{/each}}
+     
+    </div>
+
     {{else}}
-        {{add-layer index=index layers=model.theme.layers}}
+        <div  class="col-xs-3">
+
+        </div>
+        <div class="{{holderCSSEditMode}}" style="padding:0">
+            <br><br>
+            {{add-layer index=index layers=model.theme.layers editMode=editMode type=type isDragging=isDragging percentage=percentage}}
+        </div>
     {{/if}}
 
-    {{layer-footer guid=model.guid}}
+    {{layer-footer guid=model.guid editMode=editMode holderCSSEditMode=holderCSSEditMode percentage=percentage mainPercentage=mainPercentage}}
 </div>
 
 

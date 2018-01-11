@@ -1,0 +1,20 @@
+.full-page {
+	background: #f5f5ea00;
+	position: fixed;
+	top:0;
+	bottom:0;
+	right:0;
+	left: 0; 
+	z-index: 110;
+	overflow:hidden;
+
+}
+
+.spinner {
+	position: fixed;
+	top:50%;
+	left:49%;
+	z-index: 110;
+	color:#FFFCFB;
+	text-shadow: 1px 1px 1px #A0A099;
+}

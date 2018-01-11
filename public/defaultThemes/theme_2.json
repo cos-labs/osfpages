@@ -1,0 +1,18 @@
+{
+	"id": 2,
+	"name": "Orange Tree",
+	"theme" : {
+		"primaryColor" : "#f07057",
+		"primaryTextColor" : "snow",
+		"secondaryColor" : "snow",
+		"secondaryTextColor" : "#black",
+		"tertiaryColor" : "#eeeeee",
+		"tertiaryTextColor" : "black",
+		"alignment": "center",
+		"blockSettings" : {
+			"layer-title" :{
+				"backgroundImage":"https://image.ibb.co/cqBWUw/bg.png"
+			}
+		}
+	}
+}

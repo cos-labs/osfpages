@@ -1,0 +1,13 @@
+{
+	"id": 1,
+	"name": "Blue Sky",
+	"theme" : {
+		"primaryColor" : "#31708f",
+		"primaryTextColor" : "snow",
+		"secondaryColor" : "snow",
+		"secondaryTextColor" : "#666",
+		"tertiaryColor" : "#98cbe4",
+		"tertiaryTextColor" : "white",
+		"alignment": "left"
+	}
+}
