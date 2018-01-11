@@ -41,23 +41,19 @@ let templatesList = [
     }
 ];
 
-function compareUserSettings(layerType ,systemSettings , userSettings) { 
-    const ignoredSettings = ['backgroundImage' , 'bgColor' , 'color' , 'alignment']
+let layersAlreadyMerged = [];
+function mergeUserSettings(layerType ,systemSettings , aUserLayerSetting, layerTypeIndex) { 
     let newSettings = {};
-
-    for(let i = 0; i < userSettings.length; i++) { //Loop over users settings           
-
-        if(userSettings[i].component === layerType) { //if the component setting type is equal to a system setting type  
-            Object.keys(userSettings[i].settings).forEach((setting , index)=> {  
-                if(!ignoredSettings.includes(setting)){
-                    newSettings[Object.keys(userSettings[i].settings)[index]] = Object.values(userSettings[i].settings)[index];
-                }
-            });         
-        }
+    //if the component setting type is equal to a system setting type  
+    if(aUserLayerSetting[layerTypeIndex].component === layerType) { 
+        Object.keys(aUserLayerSetting[layerTypeIndex].settings).reverse().forEach((setting , index)=> { 
+            newSettings[Object.keys(aUserLayerSetting[layerTypeIndex].settings)[index]] = Object.values(aUserLayerSetting[layerTypeIndex].settings)[index];
+        }); 
+    } else {
+        console.log('something went wrong')
     }
     //Take data from left and migrate any like key / values to the right | UPDATES newSettings
-    return  _.defaults(newSettings, systemSettings[layerType]);
-
+    return  _.defaultsDeep(newSettings, systemSettings[layerType]);
 }
 
 export default Ember.Component.extend({
@@ -109,14 +105,15 @@ export default Ember.Component.extend({
         //remove all layers
         this.set('model.theme.content.layers' , [])
         //loop over layout
+        let reversedIndex = finalLayout.length -1;
         finalLayout.reverse().forEach((layerType , index)=> {
 
             //grab all user settings and apply them to appropriate layers 
-            let newSetting = compareUserSettings(layerType , settings, currentUserLayers) 
-            if(themeId){
+            let newSetting = mergeUserSettings(layerType , settings, currentUserLayers, reversedIndex) 
+            reversedIndex--;
+            if(themeId){ 
                 //apply theme
                 let theme = themes[themeId].theme;
-
                 if(isEven(index)){
                     Ember.set( newSetting, "bgColor",  theme.secondaryColor); 
                     Ember.set( newSetting, "color",  theme.secondaryTextColor); 
@@ -126,6 +123,7 @@ export default Ember.Component.extend({
                     Ember.set( newSetting, "color",  theme.tertiaryTextColor); 
                     Ember.set( newSetting, "alignment",  theme.alignment); 
                 }
+
                 //Block specific settings
                 if(layerType === 'layer-title') {
                    Ember.set( newSetting, "bgColor",  theme.primaryColor); 
