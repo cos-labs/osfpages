@@ -18,33 +18,32 @@ function isEven(value) {
 }
 //layoutKey , themeId)
 let templatesList = [
-{
-    'layoutName': 'landing Page',
-    'layout': 'landing-page-v0.0.1',
-    'themeId' : 3 ,
-    'url' : ENV.rootURL +'img/blue.png',
-    'colors':themes[3].theme
-}, 
-{
-    'layoutName': 'Research Paper',
-    'layout': 'research-paper-v0.0.1', 
-    'themeId' : 1 , 
-    'url' : ENV.rootURL +'img/orange.png',
-    'colors':themes[1].theme
-},
-{
-    'layoutName': 'Data Feature',
-    'layout': 'data-feature-v0.0.1', 
-    'themeId' : 2 , 
-    'url' : ENV.rootURL +'img/green.png',
-    'colors':themes[2].theme
-}
+    {
+        'layoutName': 'landing Page',
+        'layout': 'landing-page-v0.0.1',
+        'themeId' : 3 ,
+        'url' : ENV.rootURL +'img/blue.png',
+        'colors':themes[3].theme
+    }, 
+    {
+        'layoutName': 'Research Paper',
+        'layout': 'research-paper-v0.0.1', 
+        'themeId' : 1 , 
+        'url' : ENV.rootURL +'img/orange.png',
+        'colors':themes[1].theme
+    },
+    {
+        'layoutName': 'Data Feature',
+        'layout': 'data-feature-v0.0.1', 
+        'themeId' : 2 , 
+        'url' : ENV.rootURL +'img/green.png',
+        'colors':themes[2].theme
+    }
 ];
 
 function compareUserSettings(layerType ,systemSettings , userSettings) { 
     const ignoredSettings = ['backgroundImage' , 'bgColor' , 'color' , 'alignment']
     let newSettings = {};
-
 
     for(let i = 0; i < userSettings.length; i++) { //Loop over users settings           
 
@@ -79,7 +78,6 @@ export default Ember.Component.extend({
         } else {
             this.set('showContentWarrning' , true )
         }
-
     },
     renderTemplate(layoutKey , themeId) {
         let currentUserLayout = [];
@@ -102,7 +100,6 @@ export default Ember.Component.extend({
         currentUserLayers.forEach((aUserLayer , index)=> {
             currentUserLayout.push(aUserLayer.component)
         });
-
 
         //combine user and layout in to one layout
         finalLayout = _.defaults(currentUserLayout, removedVersionLayout);
@@ -129,24 +126,18 @@ export default Ember.Component.extend({
                     Ember.set( newSetting, "color",  theme.tertiaryTextColor); 
                     Ember.set( newSetting, "alignment",  theme.alignment); 
                 }
-
-
                 //Block specific settings
                 if(layerType === 'layer-title') {
-                 Ember.set( newSetting, "bgColor",  theme.primaryColor); 
-                 Ember.set( newSetting, "color",  theme.primaryTextColor); 
-                 Ember.set( newSetting, "alignment",  theme.alignment); 
-                 if(theme.blockSettings){
+                   Ember.set( newSetting, "bgColor",  theme.primaryColor); 
+                   Ember.set( newSetting, "color",  theme.primaryTextColor); 
+                   Ember.set( newSetting, "alignment",  theme.alignment); 
+                   if(theme.blockSettings){
                     Ember.set( newSetting, "backgroundImage",  theme.blockSettings['layer-title'].backgroundImage);
                 } else {
                     Ember.set( newSetting, "backgroundImage",  '');
-                    
                 }
-
             }
-
         }
-
             //apply appropriate settings to the layer
             //build each layer based on layout layers
             let item = {
@@ -154,10 +145,7 @@ export default Ember.Component.extend({
                 "settings": newSetting
             }
             //add to page
-
             this.get('model.theme.content.layers').insertAt(0,item)
-
-
         });
 
         this.set('isOpen', false);
@@ -165,8 +153,6 @@ export default Ember.Component.extend({
         $('body').removeClass('no-scroll');
         this.send('dismissModal')
         this.set('keepContent' , true)
-
-
     },
     toggleKeepContent(){
         this.toggleProperty('keepContent')
@@ -189,8 +175,6 @@ export default Ember.Component.extend({
         $('body').removeClass('no-scroll');
         this.set('keepContent' , true)
         this.set('showContentWarrning' , false)
-
-
     }, 
     modalChoice(choice) {
         this.set('keepContent' , choice)
