@@ -12,64 +12,10 @@ export default Ember.Component.extend({
     actions: {
         addLayer (type) {
             let tempSettings = _.cloneDeep(settings);
-            let item;
-            switch(type) {
-                case 'wiki' :
-                item = {
-                    "component": "layer-wiki",
-                    "settings": tempSettings['layer-wiki']
-                };
-                break;
-                case 'file':
-                item = {
-                    "component": "layer-file",
-                    "settings": tempSettings['layer-file']
-                };
-                break;
-                case 'link':
-                item = {
-                    "component": "layer-link",
-                    "settings": tempSettings['layer-link']
-                };
-                break;
-                case 'advanced':
-                item = {
-                    "component": "layer-advanced",
-                    "content": "<p>Mauris imperdie Praesent ut fringilla orci. Proin feugiat auctor augue non rutrum. Sed ac metus in augue dignissim malesuada non et sem. Pellentesque ut metus odio. Integer fringilla nulla id leo consequat, a sollicitudin sapien fringilla. Fusce vestibulum malesuada nisl. Fusce augue leo, tempus eget matssstis vel, imperdiet at nulla</p>",
-                    "settings": tempSettings['layer-advanced']
-                };
-                break;
-                case 'image':
-                item = {
-                    "component": "layer-image",
-                    "settings": tempSettings['layer-image']
-                };
-                break;
-                case 'navigation':
-                item = {
-                    "component": "pages-menu",
-                    "settings": tempSettings['pages-menu']
-                };
-                break;
-                case 'title':
-                item = {
-                    "component": "layer-title",
-                    "settings": tempSettings['layer-title']
-                };
-                break;
-                case 'info':
-                item =  {
-                    "component": "layer-info",
-                    "settings": tempSettings['layer-info']
-                };
-                break;
-                case 'imangeAndText':
-                item = {
-                    "component": "layer-image-text",
-                    "settings": tempSettings['layer-image-text']
-                };
-                break;
-            }
+            let item =  {
+                "component": type,
+                "settings": tempSettings[type]
+            };
             let index = this.get('index')+1;
             if(this.get('indexVal') !== null){
                 index = parseInt(this.get('indexVal'))+1 
