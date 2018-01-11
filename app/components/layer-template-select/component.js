@@ -80,8 +80,8 @@ export default Ember.Component.extend({
             this.set('showContentWarrning' , true )
         }
 
-      },
-      renderTemplate(layoutKey , themeId) {
+    },
+    renderTemplate(layoutKey , themeId) {
         let currentUserLayout = [];
 
         let finalLayout = [];
@@ -133,19 +133,19 @@ export default Ember.Component.extend({
 
                 //Block specific settings
                 if(layerType === 'layer-title') {
-                   Ember.set( newSetting, "bgColor",  theme.primaryColor); 
-                   Ember.set( newSetting, "color",  theme.primaryTextColor); 
-                   Ember.set( newSetting, "alignment",  theme.alignment); 
-                   if(theme.blockSettings){
-                        Ember.set( newSetting, "backgroundImage",  theme.blockSettings['layer-title'].backgroundImage);
-                    } else {
-                        Ember.set( newSetting, "backgroundImage",  '');
-    
-                    }
-
+                 Ember.set( newSetting, "bgColor",  theme.primaryColor); 
+                 Ember.set( newSetting, "color",  theme.primaryTextColor); 
+                 Ember.set( newSetting, "alignment",  theme.alignment); 
+                 if(theme.blockSettings){
+                    Ember.set( newSetting, "backgroundImage",  theme.blockSettings['layer-title'].backgroundImage);
+                } else {
+                    Ember.set( newSetting, "backgroundImage",  '');
+                    
                 }
 
             }
+
+        }
 
             //apply appropriate settings to the layer
             //build each layer based on layout layers
