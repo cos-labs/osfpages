@@ -1,0 +1,18 @@
+{
+	"id": 3,
+	"name": "Green Forest",
+	"theme" : {
+		"primaryColor" : "#15c789",
+		"primaryTextColor" : "#282928",
+		"secondaryColor" : "#ffffff",
+		"secondaryTextColor" :"#656565",
+		"tertiaryColor" : "#d6d6d6",
+		"tertiaryTextColor" : "#5a5a5a",
+		"alignment": "center",
+		"blockSettings" : {
+			"layer-title" :{
+				"backgroundImage":"https://image.ibb.co/kZKdE6/green.jpg"
+			}
+		}
+	}
+}

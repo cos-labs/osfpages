@@ -1,0 +1,37 @@
+{
+    "id": 3,
+    "name": "File",
+    "layers": [
+        {
+            "sectionHeader": "Title",
+            "component": "layer-title",
+            "settings": {
+                "backgroundImage": "http://demo.rockettheme.com/live/wordpress/crystalline/wp-content/themes/rt_crystalline_wp/images/overlays/headers/header-1.png",
+                "backgroundCover": true,
+                "showNavigation": false,
+                "showTitle": true,
+                "showLead": true,
+                "showInNavigation": false,
+                "h1Size": 38,
+                "bgColor": "#eeeeee",
+                "color": "#333333",
+                "alignment": "center",
+                "lead": "Sed vehicula nec ante non porttitor. Cras at eros vel tellus sagittis pharetra rhoncus a ante. "
+            }
+        },
+        {
+            "sectionHeader": "Download",
+            "component": "layer-file",
+            "settings": {
+                "sectionTitle": "",
+                "sectionDescription": "<p><br></p>",
+                "showFileviewer": true,
+                "downloadLink": "https://staging-files.osf.io/v1/resources/jyu4t/providers/osfstorage/596e6d4b8ca57e022b697cda",
+                "showInNavigation": true,
+                "bgColor": "#eeeeee",
+                "color": "#333333",
+                "alignment": "center"
+            }
+        }
+    ]
+}

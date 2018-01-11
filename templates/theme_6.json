@@ -1,0 +1,102 @@
+{
+    "id": 6,
+    "name" : "RPP",
+    "layers": [
+        {
+            "sectionHeader": "Title",
+            "component": "layer-title",
+            "settings": {
+                "backgroundImage": "http://localhost:4200/img/rpp.jpg",
+                "backgroundCover": true,
+                "showNavigation": false,
+                "showTitle": true,
+                "showLead": true,
+                "showInNavigation": false,
+                "h1Size": 40,
+                "bgColor": "#FFFFFF",
+                "color": "#333333",
+                "alignment": "right",
+                "lead": "Open Science Collaboration"
+            }
+        },
+        {
+            "sectionHeader": "Navigation",
+            "component": "pages-menu",
+            "settings": {
+                "fontSize": 16,
+                "bgColor": "#00bcd4",
+                "color": "#ffffff",
+                "alignment": "center",
+                "stickToTop": false
+            }
+        },
+        {
+            "sectionHeader": "Wiki example",
+            "component": "layer-wiki",
+            "settings": {
+                "wikiId": "",
+                "sectionTitle": "About",
+                "showInNavigation": true,
+                "addShowMore": false,
+                "bgColor": "#eeeeee",
+                "alignment": "left",
+                "color": "#333333"
+            }
+        },
+        {
+            "sectionHeader": "Wiki example",
+            "component": "layer-wiki",
+            "settings": {
+                "wikiId": "yje3h",
+                "sectionTitle": "Abstract",
+                "showInNavigation": true,
+                "addShowMore": false,
+                "bgColor": "#009688",
+                "alignment": "left",
+                "color": "#ffffff"
+            },
+            "wikiContent": "The Reproducibility Project: Psychology began in November 2011, finished primary data collection in December 2014, and published a summary of the results in August 2015. The project was coordinated by the Center for Open Science. Replication teams followed a research protocol and received logistical assistance as they collected materials, identified the key finding for replication, ran their experiment, conducted analyses, and reported their findings.\r\n\r\nAs stated in an initial report from 2012, \"The Reproducibility Project uses an open methodology to test the reproducibility of psychological science. It also models procedures designed to simplify and improve reproducibility\" (Open Science Collaboration, 2012). To that end, all project materials, data, and findings are posted on the Open Science Framework, a free service of the Center for Open Science. Moreover, the project models reproducibility by making it easy to reproduce the analyses of each individual project, and the results of the aggregate report.\r\n\r\nAs the first in-depth exploration of its kind, the project results provide insight into reproducibility and its correlates. With a large, open dataset, many additional research questions can be investigated.\r\n\r\nThe project was designed to be a collaborative endeavor. Ultimately over 270 contributors earned authorship on the summary report and 86 others provided volunteer support. Replication teams designed, ran, and reported their replication studies. Brian Nosek, Johanna Cohoon, and Mallory Kidwell provided project coordination. Marcel van Assen, Chris Hartgerink, and Robbie van Aert led the analysis of results, Fred Hasselman generated the figures, and Sacha Epskamp led the analysis audit. Scores of additional volunteers assisted with coding of articles, analyses, and administrative tasks.\r\n\r\nSince its inception, other similar initiatives have begun in other scientific domains. The Center for Open Science coordinates one of these such efforts, the Reproducibility Project: Cancer Biology."
+        },
+        {
+            "sectionHeader": "Download",
+            "component": "layer-file",
+            "settings": {
+                "sectionTitle": "Download paper",
+                "sectionDescription": "<p>Download the preprint version of our study from OSF</p>",
+                "showFileviewer": false,
+                "downloadLink": "https://staging-files.osf.io/v1/resources/nc43h/providers/osfstorage/59820ae08ca57e02367f2771",
+                "showInNavigation": true,
+                "bgColor": "#232323",
+                "alignment": "left",
+                "color": "#f5f5f5"
+            }
+        },
+        {
+            "sectionHeader": "Download",
+            "component": "layer-file",
+            "settings": {
+                "sectionTitle": "Effect size chart",
+                "sectionDescription": "<p>Original study effect size versus replication effect size (correlation coefficients).</p>",
+                "showFileviewer": true,
+                "downloadLink": "https://staging-files.osf.io/v1/resources/nc43h/providers/osfstorage/59820aa20dc310022eaf02ba",
+                "showInNavigation": true,
+                "bgColor": "#FFFFFF",
+                "alignment": "left",
+                "color": "#333333"
+            }
+        },
+        {
+            "sectionHeader": "Link",
+            "component": "layer-link",
+            "settings": {
+                "sectionTitle": "Files",
+                "showInNavigation": true,
+                "sectionDescription": "<p>Visit project files page to see documents from all replication studies in this research.&nbsp;</p>",
+                "sectionLink": "https://osf.io/ezcuj/files/",
+                "bgColor": "#31708f",
+                "alignment": "left",
+                "color": "#ebebeb"
+            }
+        }
+    ]
+}
