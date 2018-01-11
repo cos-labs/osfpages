@@ -41,7 +41,6 @@ let templatesList = [
     }
 ];
 
-let layersAlreadyMerged = [];
 function mergeUserSettings(layerType ,systemSettings , aUserLayerSetting, layerTypeIndex) { 
     let newSettings = {};
     //if the component setting type is equal to a system setting type  
