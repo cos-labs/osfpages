@@ -1,0 +1,37 @@
+{
+    "id": 7,
+    "name": "Starter",
+    "layers": [
+        {
+            "sectionHeader": "Title",
+            "component": "layer-title",
+            "settings": {
+                "backgroundImage": "http://localhost:4200/img/bg.png",
+                "backgroundCover": true,
+                "showNavigation": true,
+                "showTitle": true,
+                "showLead": true,
+                "showInNavigation": false,
+                "h1Size": 46,
+                "bgColor": "#333333",
+                "color": "#EEEEEE",
+                "alignment": "center",
+                "lead": "Change the lead text or hide it"
+            }
+        },
+        {
+            "sectionHeader": "Advanced",
+            "component": "layer-advanced",
+            "settings": {
+                "content": "<p>Welcome to OSF Pages. This is your project website.</p><p><br></p><p>To start editing this page and make it your own start by clicking on the Edit button on the blue menu bar at the top of the page.&nbsp;</p><p><br></p><p>You can quickly add content from your project or add new content. drag and drop blocks from the left to add a new content type.</p><p> You can add wiki's or files from your project or information panel with description and contributor information. You can also add images, links and custom text like this one. Add as many panels as you like and then move them up or down to organize. You can remove these panels by clicking on the trash can in the edit bar for each section.&nbsp;</p><p><br></p><p>If you need some inspiration you can select Templates by clicking Edit and then Templates button. This will load some example sections you can edit.&nbsp;</p>",
+                "sectionTitle": "Getting started",
+                "backgroundImage": "",
+                "showInNavigation": true,
+                "bgColor": "#FFFFFF",
+                "alignment": "center",
+                "color": "#333333"
+            }
+        }
+    ]
+}
+

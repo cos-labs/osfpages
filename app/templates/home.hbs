@@ -3,10 +3,17 @@
 
  <div class="editMenu d-inline">
     <span width="27" class="osf-navbar-logo osf-logo d-inline"></span>
-    <h3 class="osf-logo navbar-space d-inline">OSF<span style="font-weight:normal;" class="d-inline">PAGES</span></h3>
-    
+    {{#link-to 'index' class="no-style"}}
+        <h3 class="osf-logo navbar-space d-inline">OSF<span style="font-weight:normal;" class="d-inline">PAGES</span></h3>
+    {{/link-to}}
     {{#if editMode}}
-        {{layer-template-select theme=model.theme}}
+
+        {{layer-template-select model=model theme=model.theme }}
+
+        <!-- {{#if showTemplates}} -->
+        <!-- {{else}} -->
+            <!-- {{layer-theme-select model=model}} -->
+        <!-- {{/if}} -->
     {{/if}}
     {{#if editMode}}
         <button class="btn-outline-white-cus btn-small d-inline" disabled="{{unless model.theme.canUndo 'disabled'}}" {{action 'undo'}}><i class="material-icons d-inline">undo</i></button>

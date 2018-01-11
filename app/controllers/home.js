@@ -47,13 +47,16 @@ export default Ember.Controller.extend({
     type:null,
     isDragging:false,
     blockOverviewHeight:'',
+    showButton:false,
 
+    showTemplates: '',
+    
     percentage:'0',
     mainPercentage:'100',
     isResizing: false,
     sublimeView: 'block',
     draggableBlocks: '33.33333',
-    layerPadding: '0 50px',
+    layerPadding: '0 150px',
     resizableControl: '',
 
     isOpen: Ember.computed('node', async function(){ 
@@ -78,7 +81,9 @@ export default Ember.Controller.extend({
         });
     }),
     holderCSSEditMode:  Ember.computed('editMode', function() {
+
         if(this.get('editMode')){
+            this.set('layerPadding' , '0 50px')
             return 'col-xs-9'
         }else{
             return  'col-xs-12'
@@ -102,7 +107,7 @@ export default Ember.Controller.extend({
             this.send('canUserEdit')
             let database = this.store.findRecord('home', this.get('model.guid'))
 
-            if(this.get('editMode')){
+            if(this.get('editMode')){ //if user is in edit mode
                 database.then((record)=>{ 
                     let pageData = record.get('unpublishedPageData');
                     if(pageData === null){
@@ -110,12 +115,17 @@ export default Ember.Controller.extend({
                     }
                     this.set('model.theme.content' , JSON.parse(pageData))
                     this.set('savedPageData' , JSON.parse(pageData).layers) //save a version of pagedata so we can see if any changes have been made
+                    this.set('model.metaData' , JSON.parse(record.get('metaData')))
+                    this.set('showTemplates' , JSON.parse(record.get('metaData')).showTemplates)
+
                 });
 
-            }else{
+            }else{ //if user is not editng 
                 database.then((record)=>{ 
                     let pageData = record.get('pageData');
                     this.set('model.theme.content' , JSON.parse(record.get('pageData')))
+                    this.set('model.metaData' , JSON.parse(record.get('metaData')))
+
                 });
             }
         });
@@ -205,7 +215,10 @@ export default Ember.Controller.extend({
             }
             if(this.get('editMode')){
                 this.store.findRecord('home', this.get('model.guid')).then((data)=> {
+                   
                     data.set('unpublishedPageData', JSON.stringify(this.get('model.theme.content')));
+                    data.set('metaData', JSON.stringify(this.get('model.metaData')));
+
                     data.save();
                 });
             }

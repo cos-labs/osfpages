@@ -11,7 +11,7 @@ function showError(){
     let defaultJSON ='';
     $.ajax({
         type: "GET",
-        url: ENV.rootURL + "themes/theme_error.json",
+        url: ENV.rootURL + "templates/theme_error.json",
         async: false,
         success: function (data) {
             defaultJSON = data;
@@ -20,6 +20,7 @@ function showError(){
     jsonBlob =  JSON.stringify(defaultJSON);
 }
 
+let metaData = '';
 export default Ember.Route.extend({
     isDragging:'',
     setupController: function(controller, model) {
@@ -49,22 +50,22 @@ export default Ember.Route.extend({
 
         }
         if(!jsonBlob){
+            metaData = JSON.stringify({'showTemplates':true});
             if( node.get('currentUserPermissions')[1] === 'write'){
                 $.ajax({
                     type: "GET",
-                    url: ENV.rootURL + "themes/theme_starter.json",
+                    url: ENV.rootURL + "templates/theme_starter.json",
                     async: false,
                     success: (data)=> {
-                        //add to firebase
                         let guid = {
                             id: params.guid,
                             guid: params.guid,
                             pageData: JSON.stringify(data),
-                            unpublishedPageData: JSON.stringify(data)
+                            unpublishedPageData: JSON.stringify(data),
+                            metaData: metaData
                         };
                         let record = this.store.createRecord('home', guid);
                         record.save()
-
                         jsonBlob =  JSON.stringify(data);
                     }});
             }else{
@@ -79,7 +80,8 @@ export default Ember.Route.extend({
         return {
             theme,
             guid: params.guid,
-            node: node
+            node: node,
+            metaData:metaData
         };
     },
     actions: {
