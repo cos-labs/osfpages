@@ -2,8 +2,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-    style: Ember.computed('layer.settings.values.color', 'layer.settings.values.fontSize', function(){
-        return Ember.String.htmlSafe('color: ' + (this.get('layer.settings.values.color') || '#333') + '; font-size: ' +  (this.get('layer.settings.values.fontSize')) + 'px;');
+    style: Ember.computed('layer.settings.color', 'layer.settings.fontSize', function(){
+        return Ember.String.htmlSafe('color: ' + (this.get('layer.settings.color') || '#333') + '; font-size: ' +  (this.get('layer.settings.fontSize')) + 'px;');
     }),
     didRender(){
         let topOfNav = null;
@@ -16,7 +16,7 @@ export default Ember.Component.extend({
             topOfNav = $('.pages-menu').offset().top;
         }
         let self = this;
-        if(this.get('layer.settings.values.stickToTop')){
+        if(this.get('layer.settings.stickToTop')){
             $(window).on('scroll.nav', function () {
                 let paddedNavOffset = null;
                 paddedNavOffset = topOfNav;
@@ -62,16 +62,20 @@ export default Ember.Component.extend({
             if($('.editMenu')[0]){
                 $('.pages-menu').removeClass('sticky-nav-adjustment')
             }
-        }    
+        }
 
         $('.layer-content').css('padding' , '0');
     },
     actions: {
-            scrollToLayer(index){
-                console.log(JSON.stringify(this.get('layers.content'), null, 2))
-                let el = $('#layer'+index);
-                let offset = el.offset();
-                $('body').animate({scrollTop:offset.top}, '500');
-            }
-        }
-    });
+        scrollToLayer(index){
+               // console.log('scroll to',index)
+               // console.log(JSON.stringify(this.get('layers.content'), null, 2))
+               let el = $('#layer'+index);
+               let offset = el.offset();
+               console.log(el , offset)
+               $('html, body').animate({
+                scrollTop: el.offset().top
+            }, 500);
+           }
+       }
+   });

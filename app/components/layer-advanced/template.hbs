@@ -2,10 +2,10 @@
 
 {{#if editMode}}
     <div class="m-t-md">
-        {{quill-editor value=layer.content.content options=options textChange=(action "updateText")}}
+        {{quill-editor value=layer.content.settings.content options=options textChange=(action "updateText")}}
     </div>
 {{else}}
-    <div  class="ql-editor">
-        {{{layer.content.content}}}
+    <div class="ql-editor">
+        {{{layer.content.settings.content}}}
     </div>
 {{/if}}

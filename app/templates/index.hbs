@@ -1,14 +1,13 @@
 {{osf-navbar loginAction=(action 'login') hideSearch=true}}
-
-<div class="index-page" style={{didStyle}}>
+{{loading-spinner isLoading=isLoading}}
+<div class="index-page" style={{didStyle}}> 
     <div class="container">
         <div class="row">
             <div class="col-xs-12 p-t-xl p-b-lg">
-                <h1> OSF Pages</h1>
-                <p class="p-v-md lead">Free and zero maintenance website for your OSF Projects</p>
+                <h1>OSF Pages</h1>
+                <p class="p-v-md lead">A free, zero-maintenance website for your OSF Project</p>
                 <div class="p-t-lg">
-                    {{#link-to "home" 'jyu4t' class='btn btn-lg btn-success p-v-md'}}See an example{{/link-to}}
-                    {{#link-to "home" 'nc43h' class='btn btn-lg btn-info p-v-md'}}RPP Example{{/link-to}}
+                    <a href="" {{action 'loadPage'}}class='btn btn-lg btn-success p-v-md'>See an example</a>
                 </div>
 
             </div>
@@ -17,11 +16,11 @@
 </div>
 
 
-
+ 
 <div class="learn-more">
     <div class="container">
         <div class="row p-v-xl">
-            <h2>What can you do with OSFPages?</h2>
+            <h2>What can you do with OSFPages?</h2> 
 
             <div class="col-sm-4">
                 <i class="material-icons">school</i>
@@ -97,7 +96,7 @@
             <div class="col-xs-12 text-center">
 
                 <h3> Start with your project:</h3>
-                <p class="lead">
+                <p class="lead m-t-lg">
                     http://osf.io/
                     {{input class="form-control" value=starterGuid  type="text" placeholder="enter id"}}
                     <button class="btn btn-success" {{action 'createPage'}} >Go</button>
@@ -105,8 +104,6 @@
                         <p class="text-smaller text-danger">No project found with project id: {{starterGuid}}</p>
                     {{/if}}
                 </p>
-                <p class="text-smaller">Where can I find my project id?</p>
-
             </div>
         </div>
     </div>

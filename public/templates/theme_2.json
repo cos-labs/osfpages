@@ -1,0 +1,76 @@
+{
+    "id": 2,
+    "name" : "Wiki",
+    "layers": [
+        {
+            "sectionHeader": "Title",
+            "component": "layer-title",
+            "settings": {
+                "backgroundImage": "https://staging-files.osf.io/v1/resources/jyu4t/providers/osfstorage/5995a8360dc3100263180c6a",
+                "backgroundCover": true,
+                "showNavigation": true,
+                "showTitle": true,
+                "showLead": true,
+                "showInNavigation": false,
+                "h1Size": 39,
+                "bgColor": "#666666",
+                "color": "#333333",
+                "alignment": "left",
+                "lead": "Our research methodology and structure"
+            }
+        },
+        {
+            "sectionHeader": "Info",
+            "component": "layer-info",
+            "settings": {
+                "sectionTitle": "Project Summary",
+                "showInNavigation": true,
+                "showDescription": true,
+                "showContributors": true,
+                "showBibliographicContributors": false,
+                "showAffiliatedInstitutions": true,
+                "bgColor": "#009688",
+                "alignment": "center",
+                "color": "#ffffff"
+            }
+        },
+        {
+            "sectionHeader": "Wiki",
+            "component": "layer-wiki",
+            "settings": {
+                "wikiId": "",
+                "sectionTitle": "Research questions",
+                "showInNavigation": true,
+                "addShowMore": false,
+                "bgColor": "#FFFFFF",
+                "alignment": "center",
+                "color": "#333333"
+            }
+        },
+        {
+            "sectionHeader": "Wiki example",
+            "component": "layer-wiki",
+            "settings": {
+                "wikiId": "ukfwn",
+                "sectionTitle": "Methodology",
+                "showInNavigation": true,
+                "addShowMore": false,
+                "bgColor": "#414141",
+                "color": "#ffffff",
+                "alignment": "center"
+            }
+        },
+        {
+            "sectionHeader": "Advanced",
+            "component": "layer-advanced",
+            "content": "<p class=\"ql-align-center\">For questions or inquiries about this research project please get in touch.&nbsp;</p><p class=\"ql-align-center\"><br></p><p class=\"ql-align-center\"><strong>Marcia Gonzales</strong></p><p class=\"ql-align-center\">Principal Investigator, University of Virginia</p><p class=\"ql-align-center\">mcjs456gh@virginia.edu</p>",
+            "settings": {
+                "sectionTitle": "Contact Us",
+                "showInNavigation": true,
+                "bgColor": "#31708f",
+                "alignment": "center",
+                "color": "#f5f5f5"
+            }
+        }
+    ]
+}

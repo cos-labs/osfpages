@@ -1,7 +1,17 @@
-.file-browser {
-    background: #FFF;
+.breadcrumb {
+    background-color: rgba(245, 245, 245, 0.46);
+    border-radius:0;
 }
 
 .file-browser .file-browser-list {
     height: 300px;
+}
+
+
+.margin-top {
+	margin-top:-57px;
+}
+
+.btn-file {
+	margin-bottom:20px;
 }

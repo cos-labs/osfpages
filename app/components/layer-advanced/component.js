@@ -14,7 +14,7 @@ export default Ember.Component.extend({
       [{ 'indent': '-1'}, { 'indent': '+1' }],
       [{ 'color': [] }, { 'background': [] }],
       [{ 'align': [] }],
-      ['link', 'image' , 'video' , 'formula'],
+      ['link', 'image' , 'video' ],
       ['clean'],
       [{ 'direction': 'rtl' }],
       ]
@@ -22,7 +22,7 @@ export default Ember.Component.extend({
   },
   actions: {
     updateText(editor) {
-      this.set('layer.content.content' , editor.root.innerHTML)
+      this.set('layer.content.settings.content' , editor.root.innerHTML)
 
     }
   }

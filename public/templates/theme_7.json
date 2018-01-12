@@ -1,0 +1,121 @@
+{
+    "id": 1,
+    "name": "Article",
+    "layers": [
+  {
+    "sectionHeader": "Title",
+    "component": "layer-title",
+    "settings": {
+      "backgroundImage": "",
+      "backgroundCover": true,
+      "showNavigation": false,
+      "showTitle": true,
+      "showLead": true,
+      "showInNavigation": false,
+      "h1Size": 38,
+      "bgColor": "#eeeeee",
+      "color": "#333333",
+      "alignment": "left",
+      "lead": "Open Science Collaboration"
+    }
+  },
+  {
+    "sectionHeader": "Navigation",
+    "component": "pages-menu",
+    "settings": {
+      "component": "layer-settings",
+      "fontSize": 16,
+      "bgColor": "#31708f",
+      "color": "#ebebeb",
+      "alignment": "center",
+      "stickToTop": false
+    }
+  },
+  {
+    "sectionHeader": "Advanced",
+    "component": "layer-advanced",
+    "content": "<p>Reproducibility is a defining feature of science. However, because of strong incentives for innovation and weak incentives for confirmation, direct replication is rarely practiced or published. The Reproducibility Project is an open, large-scale, collaborative effort to systematically examine the rate and predictors of reproducibility in psychological science. So far, 72 volunteer researchers from 41 institutions have organized to openly and transparently replicate studies published in three prominent psychological journals from 2008. Multiple methods will be used to evaluate the findings, calculate an empirical rate of replication, and investigate factors that predict reproducibility. Whatever the result, a better understanding of reproducibility will ultimately improve confidence in scientific methodology and findings.&nbsp;</p>",
+    "settings": {
+      "sectionTitle": "Abstract",
+      "backgroundImage": "",
+      "showInNavigation": true,
+      "bgColor": "#FFFFFF",
+      "alignment": "left",
+      "color": "#333333"
+    }
+  },
+  {
+    "sectionHeader": "Advanced",
+    "component": "layer-advanced",
+    "content": "<p>There exists very little evidence to provide reproducibility estimates for scientific fields, though some empirically informed estimates are disquieting (Ioannidis, 2005). When independent researchers tried to replicate dozens of important studies in cancer, women’s health, and cardiovascular disease, only 25% confirmed the original result (Prinz et al., 2011). In a similar investigation, Begley and Ellis (2012) reported a meager 11% replication rate. In psychology, a survey of unpublished replication attempts found that about 50% replicated the original results (Hartshorne &amp; Schachner, 2012; see also Wager et al., 2009 for neuroscience). In this paper, we introduce the Reproducibility Project: an effort to systematically estimate the reproducibility rate of psychological science as practiced currently, and to investigate factors that predict reproducibility.</p><p><br></p>",
+    "settings": {
+      "sectionTitle": "Introduction",
+      "backgroundImage": "",
+      "showInNavigation": true,
+      "bgColor": "#FFFFFF",
+      "alignment": "left",
+      "color": "#333333"
+    }
+  },
+  {
+    "sectionHeader": "File",
+    "component": "layer-file",
+    "settings": {
+      "component": "layer-settings",
+      "sectionTitle": "",
+      "sectionDescription": "",
+      "showFileviewer": true,
+      "showDownload": true,
+      "downloadLink": "https://staging-files.osf.io/v1/resources/ed5vu/providers/osfstorage/59b1815e0dc310024e44490b",
+      "buttonText": "Download",
+      "showInNavigation": false,
+      "bgColor": "#FFFFFF",
+      "alignment": "center",
+      "color": "#333333"
+    }
+  },
+  {
+    "sectionHeader": "Advanced",
+    "component": "layer-advanced",
+    "content": "<p>Obtaining a meaningful estimate of reproducibility requires conducting replications of a sizable number of studies. However, because of existing incentive structures, it is not in an individual scientist’s professional interest to conduct numerous replications. The Reproducibility Project addresses these barriers by spreading the workload over a large number of researchers. As of August 23rd, 2012, 72 volunteers from 41 institutions had joined the replication effort.</p><p><br></p><p>Each contributor plays an important, but circumscribed, role such as contributing on a team conducting one replication study. Researchers volunteer to contribute based on interest, skills, and available resources. The project coordination, planning, materials, and execution are available publicly on the Open Science Framework (http://openscienceframework.org/). Open practices increase the accountability of the replication team and, ideally, the quality of the designs and results.</p><p><br></p><p><strong>Selecting studies for replication.</strong>&nbsp;Studies eligible for replication were selected from 2008 issues of three prominent journals that differ in topical emphasis and publishing format (i.e., short report versus long-form articles):&nbsp;<em>Journal of Experimental Psychology: Learning,&nbsp;Memory, and Cognition</em>,&nbsp;<em>Journal of Personality and Social Psychology,</em>&nbsp;and<em>&nbsp;Psychological Science</em>. To minimize selection biases even within this restricted sample, replication teams choose from among the first 30 articles published in each journal. From the selected article, the team selects a single study (the last study unless it is unfeasible to replicate) and key finding for replication. As eligible articles are claimed, additional articles from the sampling frame are made available for selection. Not all studies can be replicated. For example, some used unique samples or specialized equipment that is unavailable, others were dependent on a specific historical event. Although feasibility constraints will reduce the generalizability of the ultimate results, they are also inevitably part and parcel of reproducibility itself.&nbsp;</p><p><br></p><p><strong>Conducting the replications.&nbsp;</strong>The project’s replication attempts follow a standardized protocol aimed at minimizing irrelevant variation in data collection and reporting methods, and maximizing quality of replication efforts. The project attempts direct replications – “repetition of an experimental procedure” in order to “verify a piece of knowledge” (Schmidt, 2009, p. 92, 93). Replications must have high statistical power (1-β ≥ .80 for the effect size of the original study) and use the original materials, if available. Researchers solicit feedback from the original authors on research design before data collection, particularly to identify factors that may interfere with replication. Identified threats are either remedied with revisions or coded as a potential predictor of reproducibility and written into the replication report.&nbsp;</p><p><br></p><p><strong>Evaluation of replication study results.&nbsp;</strong>Successful replication can be defined by “vote-counting” narrowly (obtaining the same statistically significant effect as original study) or broadly (obtaining a directionally similar, but not necessarily statistically significant result), or quantitatively – for example, through meta-analytic estimates combining the original and replication study, comparisons of effect sizes, or an updated estimate of Bayesian priors. As&nbsp;yet, there is no single, general standard to answer “What is replication?” so we employ multiple criteria (Valentine et al., 2011).&nbsp;</p><p><br></p><p>Failures to replicate might result from several factors. The first is a simple type II error with an occurrence rate of 1-β: Some true findings will fail to replicate purely by chance. However, the overall replication rate can be compared against the average power across studies. For this reason, the project focuses on the overall reproducibility rate. Individual studies that fail to replicate are not treated as disconfirmed. Other reasons for failures to replicate include: (1) the original effect is false; (2) the actual effect is of lower size than reported originally, making it more difficult to detect; (3) the design, implementation, or analysis of either the original or replication study is flawed; or (4) the replication methodology differs from the original in ways that are critical for successful replication.5 All reasons are important for evaluating reproducibility, but the most interesting may be the last. Identifying specific ways that replications and original studies differ, especially when replications fail, can advance theoretical understanding of the previously unconsidered conditions necessary to obtain an effect. Thus, replication is theoretically consequential.&nbsp;</p><p><br></p><p>The most important point is that a failure to replicate does not directly indicate that the original effect is false. It may also not replicate because of insufficient power, design problems, or known and unknown limiting conditions. As such, the Reproducibility Project is investigating factors such as replication power, the evaluation of the study design by the original authors, and the original study’s sample and effect sizes as predictors of reproducibility. Identifying the contribution of these factors to reproducibility is useful because each has distinct implications for interventions to improve reproducibility.&nbsp;</p><p><br></p><p><strong>Implications of the Reproducibility Project.&nbsp;</strong>An estimate of the reproducibility of current psychological science will be an important first. A high reproducibility estimate might boost confidence in conventional research and peer review practices in the face of criticisms about inappropriate flexibility in design, analysis, and reporting decisions that can inflate the rate of false positives (Greenwald, 1975; John et al., 2012; Simmons et al., 2011). A low estimate might prompt reflection on the quality of standard practice, motivate further investigation of reproducibility, and ultimately lead to changes in daily practice and publishing standards (Bertamini &amp; Munafo, 2012; LeBel &amp; Peters, 2011).</p><p><br></p><p>Some may worry that discovering a low reproducibility rate will damage the image of psychology or science more generally. It is certainly possible that opponents of science will use such a result to renew their calls to reduce funding for basic research. However, we believe that there is a much worse alternative: having a low reproducibility rate, but failing to investigate and discover it. If reproducibility is lower than acceptable, then we believe it is vitally important that we know about it in order to address it. Self-critique, and the promise of self-correction, is why science is such an important part of humanity’s effort to understand nature and ourselves.&nbsp;</p>",
+    "settings": {
+      "sectionTitle": "The Reproducibility Project",
+      "backgroundImage": "",
+      "showInNavigation": true,
+      "bgColor": "#FFFFFF",
+      "alignment": "left",
+      "color": "#333333"
+    }
+  },
+  {
+    "sectionHeader": "File",
+    "component": "layer-file",
+    "settings": {
+      "component": "layer-settings",
+      "sectionTitle": "",
+      "sectionDescription": "",
+      "showFileviewer": true,
+      "showDownload": true,
+      "downloadLink": "https://staging-files.osf.io/v1/resources/ed5vu/providers/osfstorage/59b1815e8ca57e024da2c711",
+      "buttonText": "Download Figure",
+      "showInNavigation": false,
+      "bgColor": "#FFFFFF",
+      "alignment": "center",
+      "color": "#333333"
+    }
+  },
+  {
+    "sectionHeader": "Advanced",
+    "component": "layer-advanced",
+    "content": "<p>The Reproducibility Project uses an open methodology to test the reproducibility of psychological science. It also models procedures designed to simplify and improve reproducibility. Readers can review the discussion history of the project, examine the project design and structured protocol, retrieve replication materials from the various teams, obtain the reports or raw data from completed replications, and join the project to conduct a replication (start here: <span style=\"color: rgb(0, 0, 255);\">http://openscienceframework.org/project/EZcUj/&nbsp;</span>). Adding to the community of volunteers will strengthen the power and impact of the project. With this open, large-scale, collaborative scientific effort, we hope to identify the factors that contribute to the reproducibility and validity of psychological science. Ultimately, such evidence – and steps toward resolution if&nbsp;the evidence produces a call for action – can improve psychological science’s most important asset: confidence in its methodology and findings.&nbsp;</p>",
+    "settings": {
+      "sectionTitle": "Conclusion",
+      "backgroundImage": "",
+      "showInNavigation": true,
+      "bgColor": "#FFFFFF",
+      "alignment": "left",
+      "color": "#333333"
+    }
+  }
+]
+}

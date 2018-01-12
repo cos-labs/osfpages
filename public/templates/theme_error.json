@@ -1,0 +1,17 @@
+{
+  "id": 7,
+  "name" : "error",
+  "layers": [
+    {
+      "component": "layer-advanced",
+      "settings": {
+        "content": "<p>There was an error finding a page for the OSF project specified.</p>",
+        "sectionTitle": "Error",
+        "showInNavigation": true,
+        "bgColor": "white",
+        "alignment": "left",
+        "color": "black"
+      }
+    }
+  ]
+}

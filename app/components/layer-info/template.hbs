@@ -1,31 +1,30 @@
 <div>
-    {{edit-text showSettings=showSettings editMode=editMode layer=layer type="title"  alignment=layer.settings.values.alignment}}
+    {{edit-text showSettings=showSettings editMode=editMode layer=layer type="title"  alignment=layer.settings.alignment}}
 
-    {{#if layer.settings.values.showDescription}}
+    {{#if layer.settings.showDescription}}
         <h4>Description</h4>
         <p>{{node.description}}</p>
     {{/if}}
 
-    {{#if (and layer.settings.values.showContributors (not layer.settings.values.showBibliographicContributors))}}
+    {{#if (and layer.settings.showContributors (not layer.settings.showBibliographicContributors))}}
         <div class="m-v-md">
             <h4> Contributors </h4>
             {{#each users as |user|}}
-                {{user.fullName}}
+                <a href="https://osf.io/{{user.id}}/" target="_blank" style= "color:{{layer.settings.color}}">{{user.fullName}}</a>
             {{/each}}
         </div>
     {{/if}}
 
-
-    {{#if layer.settings.values.showBibliographicContributors}}
+    {{#if layer.settings.showBibliographicContributors}}
         <div class="m-v-md">
             <h4>Bibliographic Contributors</h4>
             {{#each bibliographicUsers as |user|}}
-                {{user.fullName}}
+                <a href="https://osf.io/{{user.id}}/" target="_blank" style= "color:{{layer.settings.color}}">{{user.fullName}}</a>
             {{/each}}
         </div>
     {{/if}}
 
-    {{#if (and layer.settings.values.showAffiliatedInstitutions institutions)}}
+    {{#if (and layer.settings.showAffiliatedInstitutions institutions)}}
         <div class="m-v-md">
             <h4>Affiliated Institutions</h4>
             {{#each institutions as |institution|}}

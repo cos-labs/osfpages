@@ -16,79 +16,73 @@
             <div class="settings-button" disabled> <i class="material-icons">arrow_downward</i>  {{#bs-tooltip placement="bottom"}}Already at bottom{{/bs-tooltip}}</div>
             {{/if}}
         </div>
+
         <div class="inline-block settings-divider m-h-sm"></div>
-        {{#each layer.settings.form as |item|}}
-        {{#if (eq item.type 'image')}}
-        <div class="inline-block">
-            <div class="settings-button">
-                <i class="material-icons">insert_photo</i>
+        {{#each (get layerSettings layer.component) as |item|}}
+            {{#if (eq item.type 'image')}}
+                <div class="inline-block">
+                    <div class="settings-button">
+                        <i class="material-icons">insert_photo</i>
 
-                {{#bs-tooltip placement="bottom"}}{{item.label}}{{/bs-tooltip}}
-            </div>
-            {{#bs-popover placement="bottom"}}
-            {{input class="form-control" value=(get layer.settings.values item.value)  type="text"}}
-                <h5>Select Image <span {{action 'showUpload'}} class="pseudo-link">(click here to upload)</span></h5>
-            {{file-browser rootItem=node openFile=(action 'fileDetail')}}
-            {{/bs-popover}}
-        </div>
-
-
-        {{/if}}
-
-
-        {{#if (eq item.type 'increment')}}
-        <div class="inline-block settings-group">
-            {{item.label}}
-            <div class="settings-button text-small" {{action 'changeSize' 'smaller' item}}><i class="material-icons">remove</i> </div>
-            {{layer.settings.values.h1Size}}
-            <div class="settings-button text-big" {{action 'changeSize' 'bigger' item}}><i class="material-icons">add</i> </div>
-        </div>
-        {{/if}}
-
-        {{#if (eq item.type 'alignment')}}
-        <div class="inline-block">
-            <div class="btn-group" role="group" aria-label="...">
-                {{#each item.options as |option|}}
-                <div type="button" class="settings-button {{if (eq layer.settings.values.alignment option) 'active'}}" {{action 'runOption' option item}} >
-                    <i class="material-icons">
-                        {{#if (eq option 'left')}}
-                        format_align_left
-                        {{/if}}
-                        {{#if (eq option 'center')}}
-                        format_align_center
-                        {{/if}}
-                        {{#if (eq option 'right')}}
-                        format_align_right
-                        {{/if}}
-                    </i>
+                        {{#bs-tooltip placement="bottom"}}{{item.label}}{{/bs-tooltip}}
+                    </div>
+                    {{#bs-popover placement="bottom"}}
+                    {{input class="form-control" value=(get layer.settings item.value)  type="text"}}
+                        <h5>Select Image <span {{action 'showUpload'}} class="pseudo-link">(click here to upload)</span></h5>
+                    {{file-browser rootItem=node openFile=(action 'fileDetail')}}
+                    {{/bs-popover}}
                 </div>
-
-                {{/each}}
-            </div>
-        </div>
-        {{/if}}
-
-        {{#if (eq item.type 'settings')}}
-        <div class="settings-block inline-block">
-            <i class="material-icons">settings</i>
-            <i class="material-icons">arrow_drop_down</i>
-            {{#bs-popover placement="bottom"}}
-            {{#each item.items as |check|}}
-            {{#if (eq check.type 'checkbox')}}
-            <div class="checkbox m-v-md" {{action 'toggleCheck' check}}>
-                {{#if (get layer.settings.values check.value)}}
-                <i class="material-icons text-success">check</i>
-                {{else}}
-                <i class="material-icons text-disabled">check</i>
-                {{/if}}
-                {{check.label}}
-            </div>
             {{/if}}
-            {{/each}}
-            {{/bs-popover}}
-        </div>
-        {{/if}}
-        <div class="inline-block settings-divider m-h-sm"></div>
+            {{#if (eq item.type 'increment')}}
+                <div class="inline-block settings-group">
+                    {{item.label}}
+                    <div class="settings-button text-small" {{action 'changeSize' 'smaller' item}}><i class="material-icons">remove</i> </div>
+                    {{layer.settings.h1Size}}
+                    <div class="settings-button text-big" {{action 'changeSize' 'bigger' item}}><i class="material-icons">add</i> </div>
+                </div>
+            {{/if}}
+            {{#if (eq item.type 'alignment')}}
+                <div class="inline-block">
+                    <div class="btn-group" role="group" aria-label="...">
+                        {{#each item.options as |option|}}
+                            <div type="button" class="settings-button {{if (eq layer.settings.alignment option) 'active'}}" {{action 'runOption' option item}} >
+                                <i class="material-icons">
+                                    {{#if (eq option 'left')}}
+                                    format_align_left
+                                    {{/if}}
+                                    {{#if (eq option 'center')}}
+                                    format_align_center
+                                    {{/if}}
+                                    {{#if (eq option 'right')}}
+                                    format_align_right
+                                    {{/if}}
+                                </i>
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+            {{/if}}
+            {{#if (eq item.type 'settings')}}
+                <div class="settings-block inline-block">
+                    <i class="material-icons">settings</i>
+                    <i class="material-icons">arrow_drop_down</i>
+                    {{#bs-popover placement="bottom"}}
+                        {{#each item.items as |check|}}
+                            {{#if (eq check.type 'checkbox')}}
+                            <div class="checkbox m-v-md" {{action 'toggleCheck' check}}>
+                                {{#if (get layer.settings check.value)}}
+                                    <i class="material-icons text-success">check</i>
+                                {{else}}
+                                    <i class="material-icons text-disabled">check</i>
+                                {{/if}}
+                                {{check.label}}
+                            </div>
+                            {{/if}}
+                        {{/each}}
+                    {{/bs-popover}}
+                </div>
+            {{/if}}
+            <div class="inline-block settings-divider m-h-sm"></div>
         {{/each}}
 
 
@@ -96,50 +90,55 @@
             <div class="settings-group">
                 <i class="material-icons">format_color_fill</i>
                 {{spectrum-color-picker
-                color=layer.settings.values.bgColor
-                showInput=true
-                preferredFormat='hex'
-                showPalette=true
-                palette=backgroundPalette
-                showPaletteOnly=true
-                togglePaletteOnly=true
-                hideAfterPaletteSelect=true
-                showInitial=true
-                chooseText='Select'
-            }}
+                    color=layer.settings.bgColor
+                    showInput=true
+                    preferredFormat='hex'
+                    showPalette=true
+                    palette=backgroundPalette
+                    showPaletteOnly=true
+                    togglePaletteOnly=true
+                    hideAfterPaletteSelect=true
+                    showInitial=true
+                    chooseText='Select'
+                }}
+            </div>
+
+            <div class="settings-group">
+                <i class="material-icons">format_color_text</i>
+                {{spectrum-color-picker
+                    color=layer.settings.color
+                    showInput=true
+                    preferredFormat='hex'
+                    showPalette=true
+                    palette=colorPalette
+                    showPaletteOnly=true
+                    togglePaletteOnly=true
+                    hideAfterPaletteSelect=true
+                    showInitial=true
+                    chooseText='Select'
+                }}
+            </div>
+            <div class="inline-block settings-divider m-h-sm"></div>
+
+            <div class="inline-block settings-button" >
+                <i class="material-icons info-circle ">info_outline</i>
+                {{#bs-popover placement="bottom"}}
+                {{{get helpText layer.component}}}
+                {{#if OSFcontent}}
+                    <br>
+                    <a class='' href="http://www.osf.io/{{node.id}}" target="_blank" >View/Change Content</a>
+                {{/if}}
+                {{/bs-popover}}
+            </div>
+
+
         </div>
-        <div class="settings-group">
-            <i class="material-icons">format_color_text</i> {{spectrum-color-picker
-            color=layer.settings.values.color
-            showInput=true
-            preferredFormat='hex'
-            showPalette=true
-            palette=colorPalette
-            showPaletteOnly=true
-            togglePaletteOnly=true
-            hideAfterPaletteSelect=true
-            showInitial=true
-            chooseText='Select'
 
-        }}
+        <div class="inline-block pull-right" {{action 'showRemove'}}>
+            <div class="settings-button remove-layer-toggle"><i class="material-icons">delete</i> </div>
+        </div>
+
     </div>
-
-    <div class="inline-block settings-divider m-h-sm"></div>
-
-    <div class="inline-block settings-button" >
-        <i class="material-icons info-circle ">info_outline</i>
-        {{#bs-popover placement="bottom"}}
-        {{get helpText layer.component}}
-        {{/bs-popover}}
-    </div>
-</div>
-
-
-<div class="inline-block pull-right" {{action 'showRemove'}}>
-    <div class="settings-button remove-layer-toggle"><i class="material-icons">delete</i> </div>
-</div>
-
-</div>
 </div>
 
 
@@ -185,3 +184,5 @@
         {{/modal.footer}}
     {{/bs-modal}}
 {{/if}}
+
+<div class="spacer"></div>
